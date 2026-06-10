@@ -1,0 +1,43 @@
+;; kanata config — GASC home row mods + Caps / Left-Ctrl remaps (Windows)
+;; Run:  kanata.exe --cfg kanata.kbd   (run terminal as admin for elevated apps)
+
+(defcfg
+  process-unmapped-keys no   ;; only the keys in defsrc are grabbed; everything else passes through
+)
+
+(defvar
+  tap-time  200   ;; ms: shorter = letters register faster
+  hold-time 200   ;; ms: shorter = mods trigger sooner (more misfires); longer = mods feel laggy
+)
+
+(defsrc
+  caps
+  a    s    d    f    j    k    l    ;
+  lctl
+)
+
+(defalias
+  ;; Caps Lock: tap = Esc, hold = Left Ctrl (hold fires immediately on chord)
+  cesc (tap-hold-press $tap-time $hold-time esc lctl)
+
+  ;; Left Ctrl key: switch input language (Win + Space), fired once per press
+  lang (macro M-spc)
+
+  ;; ---- GASC home row mods :  GUI · Alt · Shift · Ctrl ----
+  ;; Left hand:  A=GUI  S=Alt  D=Shift  F=Ctrl
+  a  (tap-hold-release $tap-time $hold-time a lmet)
+  s  (tap-hold-release $tap-time $hold-time s lalt)
+  d  (tap-hold-release $tap-time $hold-time d lsft)
+  f  (tap-hold-release $tap-time $hold-time f lctl)
+  ;; Right hand: J=Ctrl  K=Shift  L=Alt  ;=GUI
+  j  (tap-hold-release $tap-time $hold-time j rctl)
+  k  (tap-hold-release $tap-time $hold-time k rsft)
+  l  (tap-hold-release $tap-time $hold-time l ralt)
+  sc (tap-hold-release $tap-time $hold-time ; rmet)
+)
+
+(deflayer base
+  @cesc
+  @a   @s   @d   @f   @j   @k   @l   @sc
+  @lang
+)
