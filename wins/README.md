@@ -2,8 +2,6 @@
 
 A [kanata](https://github.com/jtroo/kanata) configuration for Windows implementing **urob-style "timerless" home row mods**: type as fast as you want with zero misfires and zero letter reordering, while still getting all four modifiers on your home row, plus navigation, symbol, number, and function layers — all without moving your hands.
 
-Ported and adapted from a macOS config (credits at the bottom). The headline fix over the previous version of this config: letters can no longer come out in the wrong order (the old `"os"` → `"so"` bug), because every key is now sequenced through kanata and home row mods are disarmed while you're actively typing.
-
 ---
 
 ## Contents
