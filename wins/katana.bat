@@ -1,3 +1,2 @@
 @echo off
-kanata.exe --cfg "%USERPROFILE%\wins.kbd"
-if errorlevel 1 pause
+powershell -NoProfile -WindowStyle Hidden -Command "Start-Process -WindowStyle Hidden -FilePath 'kanata.exe' -ArgumentList '--cfg','%USERPROFILE%\wins.kbd'"
