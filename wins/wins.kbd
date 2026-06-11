@@ -160,7 +160,7 @@
   num_nav  (tap-hold-release $tapping-term $quick-tap-ms (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
   ;; num typing macros
   r$       (macro S-r S-4 spc)
-  ,00      (macro , Digit0 Digit0 spc)
+  ,000     (macro , Digit0 Digit0 Digit0 spc)
   000      (macro Digit0 Digit0 Digit0)
 )
 
@@ -240,7 +240,7 @@
   _
   S-9  S-0  XX   @r$  XX        S-=  7  8  9  S-8
   @osm @osa @oss @osc bspc      -    4  5  6  /   _
-  XX   @oss XX   @000 @,00      ,    1  2  3  .
+  XX   @oss XX   @000 @,000     ,    1  2  3  .
   _ XX @num_nav @num_spc @0_sym
 )
 
