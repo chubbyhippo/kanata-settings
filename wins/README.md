@@ -73,12 +73,12 @@ Esc   {   [   (   %        &   )   ]   }   "
 ```
  (    )    ·    R$   ·        +   7   8   9   *
 osWin osAlt osSft osCtl Bksp   -   4   5   6   /
- ·   osSft  ·   000  ,00      ,   1   2   3   .
+ ·   osSft  ·   000  ,000     ,   1   2   3   .
 
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: exit] [tap: 0 | hold: SYM]
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,00` are typing macros; `R$` types "R$ " — edit or delete in the config.
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config.
 
 ### FUN — hold both Alts (or hold `z`)
 
