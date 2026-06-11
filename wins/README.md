@@ -10,7 +10,7 @@ A [kanata](https://github.com/jtroo/kanata) config for Windows with urob-style "
 |---|---|
 | Copy / Paste / Cut / Undo | hold left Alt (NAV) + `c` / `v` / `x` / `z` |
 | …or classic style | hold Caps (= Ctrl) + `c`/`v`/`x`/`z`/`w`… |
-| Alt+Tab | hold left Alt (NAV), tap `w` repeatedly, release Alt to switch |
+| Alt+Tab | works as always: hold left Alt, tap Tab (or `w`), release Alt to switch |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `v` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NAV: tap `f`, tap `d`, release, press `t` |
 | Next / previous browser tab | NAV + `r` / NAV + `e` |
@@ -57,7 +57,7 @@ osWin  osAlt    osSft  osCtl  ←Back       PgDn   ←     ↓     →     Enter
 C-z    C-x      C-c    C-v    F18         Media  F19   Vol−  Vol+  Del
 ```
 
-`Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. `F18`/`F19` are spare keys for your own bindings.
+Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. `F18`/`F19` are spare keys for your own bindings.
 
 ### SYM — hold right Alt
 
@@ -132,7 +132,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 ## What's remapped
 
-Only 37 keys. Number row, F-row, Esc, Tab, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched.
+Only 38 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere except on NAV, where it's the Alt-Tab swapper.
 
 | Physical key | Tap | Hold |
 |---|---|---|
@@ -148,7 +148,7 @@ Only 37 keys. Number row, F-row, Esc, Tab, Enter, Backspace, Shift, arrows, Dele
 
 ## Troubleshooting
 
-- **"My Alt key doesn't work."** It's a layer key now: left = NAV, right = SYM, both = FUN. The Alt *modifier* is on `s`/`l`; Alt+Tab is NAV+`w`.
+- **"My Alt key doesn't work."** It's a layer key now: left = NAV, right = SYM, both = FUN. The Alt *modifier* is on `s`/`l`; Alt+Tab itself works normally.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot.
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
 - **"A weird Office thing opened."** Tapping `g`/`h`'s Hyper hold alone is Windows' "Office key". Harmless; change `@hyper` to `XX` if unused.
