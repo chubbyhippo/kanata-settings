@@ -2,7 +2,7 @@
 
 A [kanata](https://github.com/jtroo/kanata) config for Windows with urob-style "timerless" home row mods: type as fast as you want with zero misfires and zero letter reordering, while keeping all four modifiers plus navigation, symbol, number, and function layers on the home position.
 
-**The one rule:** while you're typing, the home row is just letters — mods only arm after a 250 ms pause. Rhythm for any shortcut: **tiny pause → hold → press**. Cross-hand chords are instant (pause, then `f`+`j` = Ctrl+J). Same-hand mod+letter never chords — use a one-shot or hold the mod a full 0.3 s first. (Exception: `d`/`k` keep their Shift hold even mid-burst.)
+**The one rule:** while you're typing, the home row is just letters — mods only arm after a 250 ms pause. Rhythm for any shortcut: **tiny pause → hold → press**. Cross-hand chords are instant (pause, then `f`+`j` = Ctrl+J). Same-hand mod+letter never chords — use a one-shot or hold the mod a full 0.3 s first. (Exceptions: `d`/`k` keep their Shift hold and `f`/`j` their Ctrl hold even mid-burst.)
 
 ## Install
 
@@ -25,6 +25,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Alt+Tab | works as always: hold left Alt, tap Tab (or `w`), release Alt to switch |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `v` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NAV: tap `f`, tap `d`, release, press `t` |
+| Ctrl+Alt+key (Emacs `C-M-…`) | hold `j`+`k` together + left-hand key, or `d`+`f` + right-hand key |
 | Next / previous browser tab | NAV + `r` / NAV + `e` |
 | Browser back / forward | NAV + `g` / NAV + `t` |
 | Arrows, PgUp/PgDn, Home/End | hold left Alt (NAV), right hand |
@@ -118,6 +119,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `s d f` / `j k l` | Enter |
 | `s f` / `j l` | Backspace |
 | `d k` | Caps Word on/off |
+| `d f` / `j k` (keep held) | Ctrl+Alt while held — for Emacs `C-M-…` |
 | `m , .` | Num Word on/off |
 | `f` / `s` / `d` + right Alt | `~` / `^` / `` ` `` |
 | `q w e r` | Muggle mode on/off |
@@ -164,7 +166,7 @@ Only 38 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 ## Troubleshooting
 
 - **"My Alt key doesn't work."** It's a layer key now: left = NAV, right = SYM, both = FUN. The Alt *modifier* is on `s`/`l`; Alt+Tab itself works normally.
-- **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot.
+- **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
 - **"A weird Office thing opened."** Tapping `g`/`h`'s Hyper hold alone is Windows' "Office key". Harmless; change `@hyper` to `XX` if unused.
 - **"Remaps don't work in Task Manager / admin windows."** Run kanata as administrator.

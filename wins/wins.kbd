@@ -99,6 +99,9 @@
   zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; [win] no macOS fn/globe key: hold z = function layer instead
   cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
 
+  ;; held Ctrl+Alt for Emacs-style C-M- chords (used by the d+f / j+k chords below)
+  cm (multi lctl lalt)
+
   ;; one-shot mods for Callum-style modding (mirrors the GASC order above)
   osm (one-shot $one-shot-timeout lmet)
   oss (one-shot $one-shot-timeout lshift)
@@ -179,6 +182,11 @@
   (j   l)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
 
   (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num       ) ;; caps_word on the home row, because why not
+
+  ;; held Ctrl+Alt for Emacs C-M- bindings: chord on one hand, letter on the other
+  ;; e.g. C-M-f = hold j+k, press f; C-M-u = hold d+f, press u; release to drop the mods
+  (d f)     @cm              $combo-timeout all-released  (    nav sym fun     nomods)
+  (j k)     @cm              $combo-timeout all-released  (    nav sym fun     nomods)
   (m , .)   @toggle_num_word $combo-timeout all-released  (    nav sym fun     nomods)
 
   ;; [win] these used the right Cmd thumb on mac; now the SYM thumb (Right Alt)
@@ -231,10 +239,10 @@
   @lang @num @tlnav @spc @tlsym
 )
 
-(deflayer nomods ;; active briefly while typing fast: no hold-taps = no misfires, no reordering
+(deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
   _ tab
   q  w  e  r  t      y  u  i  o  p
-  a  s @d  f  g      h  j @k  l  ;  '  ;; shift stays a home row mod so you can capitalize even when typing fast
+  a  s @d @f  g      h @j @k  l  ;  '  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
   z  x  c  v  b      n  m  ,  .  /
   _ _ _ _ _
 )
