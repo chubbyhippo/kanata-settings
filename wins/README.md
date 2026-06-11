@@ -83,9 +83,11 @@ Esc   {   [   (   %        &   )   ]   }   "
 ### NUM — hold left Win (or hold `c`)
 
 ```
- (    )    ·    R$   ·        +   7   8   9   *
-osWin osAlt osSft osCtl Bksp   -   4   5   6   /
- ·   osSft  ·   000  ,000     ,   1   2   3   .
+(      )      ·      R$     ·         +     7     8     9     *
+osWin  osAlt  osSft  osCtl  Bksp      -     4     5     6     /
+·      osSft  ·      000    ,000      ,     1     2     3     .
+
+                            Space = 0
 
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: exit / 0 while c held] [tap: 0 | hold: SYM]
 ```
