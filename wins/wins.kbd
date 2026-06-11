@@ -216,7 +216,7 @@
 ;; source keys — [win] standard ANSI board: F-row left untouched (passes through),
 ;; thumbs are LCtrl / LWin / LAlt / Space / RAlt
 (defsrc
-  caps
+  caps tab
   q w e r t      y u i o p
   a s d f g      h j k l ; '
   z x c v b      n m , . /
@@ -224,7 +224,7 @@
 )
 
 (deflayer def
-  @cesc
+  @cesc tab
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;  @'
   @zfn @x @cnum @v  @b        @n  @m  @,  @.  @/
@@ -232,7 +232,7 @@
 )
 
 (deflayer nomods ;; active briefly while typing fast: no hold-taps = no misfires, no reordering
-  _
+  _ tab
   q  w  e  r  t      y  u  i  o  p
   a  s @d  f  g      h  j @k  l  ;  '  ;; shift stays a home row mod so you can capitalize even when typing fast
   z  x  c  v  b      n  m  ,  .  /
@@ -240,7 +240,7 @@
 )
 
 (deflayer num
-  _
+  _ _
   S-9  S-0  XX   @r$  XX        S-=  7  8  9  S-8
   @osm @osa @oss @osc bspc      -    4  5  6  /   _
   XX   @oss XX   @000 @,000     ,    1  2  3  .
@@ -248,7 +248,7 @@
 )
 
 (deflayer nav
-  _
+  _ @swapper ;; physical Tab on NAV = the swapper, so Alt+Tab works like stock
   tab  @swapper S-C-tab C-tab A-right     pgup   home up   end   bspc
   @osm @osa     @oss    @osc  A-left      pgdn   left down right enter  _
   C-z  C-x      C-c     C-v   f18         @ppmnp f19  vold volu  del
@@ -256,7 +256,7 @@
 )
 
 (deflayer sym
-  _
+  _ _
   esc  S-lbrc lbrc S-9   S-5      S-7  S-0  rbrc S-rbrc S-'
   -    S-6    grv  S-grv S-4      S-3  @osc @oss @osa   @osm  _
   S-=  =      S-8  /     S-2      S-\  \    S-/  S-1    S-;
@@ -264,7 +264,7 @@
 )
 
 (deflayer fun
-  _
+  _ _
   1    2    3    4    5        6    7    8    9    0
   @osm @osa @oss @osc f11      f12  @osc @oss @osa @osm  _
   f1   f2   f3   f4   f5       f6   f7   f8   f9   f10
@@ -272,7 +272,7 @@
 )
 
 (deflayer muggle ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
-  caps
+  caps tab
   q w e r t      y u i o p
   a s d f g      h j k l ; '
   z x c v b      n m , . /
