@@ -257,9 +257,9 @@
 
 (deflayer nav
   _ @swapper ;; physical Tab on NAV = the swapper, so Alt+Tab works like stock
-  tab  @swapper S-C-tab C-tab A-right     pgup   home up   end   bspc
-  @osm @osa     @oss    @osc  A-left      pgdn   left down right enter  _
-  C-z  C-x      C-c     C-v   f18         @ppmnp f19  vold volu  del
+  tab  @swapper end     C-tab A-right     C-v    pgup tab  bspc up
+  home @osa     pgdn    right A-left      left   down up   right enter  _
+  C-z  C-x      C-c     C-v   left        down   @ppmnp vold volu  del
   _ _ _ _ _
 )
 

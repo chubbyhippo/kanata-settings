@@ -14,7 +14,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-set
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/katana.bat" -OutFile "$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\kanata.bat"
 ```
 
-Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `i` → ↑.
+Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `k` → ↑.
 
 ## Keyboard shortcuts
 
@@ -24,16 +24,18 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | …or classic style | hold Caps (= Ctrl) + `c`/`v`/`x`/`z`/`w`… |
 | Alt+Tab | works as always: hold left Alt, tap Tab (or `w`), release Alt to switch |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `v` (F4) |
-| Reopen tab (Ctrl+Shift+T) | NAV: tap `f`, tap `d`, release, press `t` |
+| Reopen tab (Ctrl+Shift+T) | NUM (hold left Win): tap `f`, tap `d`, release, press `t` |
 | Ctrl+Alt+key (Emacs `C-M-…`) | hold `j`+`k` together + left-hand key, or `d`+`f` + right-hand key |
-| Next / previous browser tab | NAV + `r` / NAV + `e` |
+| Emacs-style arrows | hold left Alt (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
+| Vim-style arrows | hold left Alt (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
+| Next / previous browser tab | NAV + `r` / hold Caps + Shift, tap Tab |
 | Browser back / forward | NAV + `g` / NAV + `t` |
-| Arrows, PgUp/PgDn, Home/End | hold left Alt (NAV), right hand |
+| Arrows, PgUp/PgDn, Home/End | hold left Alt (NAV) |
 | Switch input language | tap left Ctrl |
 | Start menu | tap left Win |
-| Win+E, Win+R, Win+D… | NAV: tap `a` (one-shot Win), release NAV, press the letter |
-| Screenshot (Win+Shift+S) | NAV: tap `a`, tap `d`, release NAV, press `s` |
-| Select text | NAV: tap `d` (one-shot Shift), then arrows on NAV |
+| Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
+| Screenshot (Win+Shift+S) | NUM: tap `a`, tap `d`, release, press `s` |
+| Select text | hold real Shift + NAV arrows |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,`+`.` together → Num Word; Space exits automatically |
 | Esc / Tab / Enter / Backspace | combos `w·e·r` / `w·r` / `s·d·f` / `s·f` (right hand: `u·i·o` / `u·o` / `j·k·l` / `j·l`) |
@@ -65,12 +67,12 @@ caps:    [Esc|Ctrl]
 ### NAV — hold left Alt
 
 ```
-Tab    Swapper  Tab←   Tab→   Fwd→        PgUp   Home  ↑     End   Bksp
-osWin  osAlt    osSft  osCtl  ←Back       PgDn   ←     ↓     →     Enter
-C-z    C-x      C-c    C-v    F18         Media  F19   Vol−  Vol+  Del
+Tab    Swapper  End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
+Home   osAlt    PgDn   →      ←Back       ←      ↓     ↑     →     Enter
+C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
 ```
 
-Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. `F18`/`F19` are spare keys for your own bindings.
+Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Alt instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
 
 ### SYM — hold right Alt
 
@@ -127,7 +129,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 
 ## One-shot mods
 
-Every layer's home row has `osWin osAlt osSft osCtl` (and mirrored on the right where shown). **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NAV → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `v`.
+NUM, SYM (right hand), and FUN have the full `osWin osAlt osSft osCtl` home row; NAV keeps only `osAlt` on `s` (its `a`/`d`/`f` are now Home/PgDn/→). **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `v`.
 
 ## Caps Word and Num Word
 
@@ -141,7 +143,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 1. Validate: `kanata.exe --cfg wins.kbd --check`
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
-3. Test: hold left Alt + `i` → ↑. Tap Caps Lock → Esc.
+3. Test: hold left Alt + `k` → ↑. Tap Caps Lock → Esc.
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 
