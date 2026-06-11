@@ -163,7 +163,7 @@
   num_nav  (tap-hold-release $tapping-term $quick-tap-ms (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
   ;; num typing macros
   r$       (macro S-r S-4 spc)
-  ,000     (macro , Digit0 Digit0 Digit0 spc)
+  ,000     (macro , Digit0 Digit0 Digit0)
   000      (macro Digit0 Digit0 Digit0)
 )
 
