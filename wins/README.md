@@ -74,10 +74,11 @@ Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. `M
 ### SYM — hold right Alt
 
 ```
-Esc   {   [   (   %        &   )   ]   }   "
- -    ^   `   ~   $        #  osCtl osSft osAlt osWin
- +    =   *   /   @        |   \   ?   !   :
-                      Space = _
+Esc    {      [      (      %         &     )     ]     }     "
+-      ^      `      ~      $         #     osCtl osSft osAlt osWin
++      =      *      /      @         |     \     ?     !     :
+
+                            Space = _
 ```
 
 ### NUM — hold left Win (or hold `c`)
@@ -97,11 +98,11 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 ### FUN — hold both Alts (or hold `z`)
 
 ```
- 1    2    3    4    5         6    7    8    9    0
-osWin osAlt osSft osCtl F11    F12 osCtl osSft osAlt osWin
- F1   F2   F3   F4   F5        F6   F7   F8   F9   F10
+1      2      3      4      5         6     7     8     9     0
+osWin  osAlt  osSft  osCtl  F11       F12   osCtl osSft osAlt osWin
+F1     F2     F3     F4     F5        F6    F7    F8    F9    F10
 
-                Space = Caps Lock
+                        Space = Caps Lock
 ```
 
 The config-reload combo `g`+`h` only works on this layer.
