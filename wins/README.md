@@ -4,6 +4,18 @@ A [kanata](https://github.com/jtroo/kanata) config for Windows with urob-style "
 
 **The one rule:** while you're typing, the home row is just letters — mods only arm after a 250 ms pause. Rhythm for any shortcut: **tiny pause → hold → press**. Cross-hand chords are instant (pause, then `f`+`j` = Ctrl+J). Same-hand mod+letter never chords — use a one-shot or hold the mod a full 0.3 s first. (Exception: `d`/`k` keep their Shift hold even mid-burst.)
 
+## Install
+
+Needs `kanata.exe` (v1.10.1+, [releases](https://github.com/jtroo/kanata/releases)) on your PATH. Then:
+
+```powershell
+# config → %USERPROFILE%, launcher → Startup folder (starts kanata silently at every login)
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/wins.kbd" -OutFile "$Home\wins.kbd"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/katana.bat" -OutFile "$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\kanata.bat"
+```
+
+Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `i` → ↑.
+
 ## Keyboard shortcuts
 
 | You want | Do this |
@@ -126,7 +138,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
 3. Test: hold left Alt + `i` → ↑. Tap Caps Lock → Esc.
 
-**Autostart:** `Win+R` → `shell:startup` → drop in a shortcut with target `C:\path\to\kanata.exe --cfg C:\path\to\wins.kbd`. For elevated without UAC prompts, use Task Scheduler ("At log on", "Run with highest privileges").
+**Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 
 **After editing the config:** run `--check`, then restart kanata or live-reload: hold both Alts (FUN) and press `g`+`h`. A failed reload keeps the previous good config running.
 
