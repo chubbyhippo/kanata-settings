@@ -1,4 +1,4 @@
-;; kanata config — macOS port of the urob-style "timerless" home row mods setup
+;; kanata config — macOS port of the "timerless" home row mods setup
 ;; Derived from the Windows config (../wins/wins.kbd); macOS-specific changes are marked with [mac].
 ;; (Full circle: the Windows config was itself ported from a macOS config.)
 ;;
