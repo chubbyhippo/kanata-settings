@@ -23,17 +23,10 @@ Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases))
 4. **Config + autostart** (the mac equivalent of `katana.bat` — starts everything at boot):
 
    ```sh
-   base=https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/mac
-   sudo mkdir -p /etc/kanata
-   sudo curl -fsSL $base/mac.kbd -o /etc/kanata/mac.kbd
-   sudo curl -fsSL $base/org.pqrs.Karabiner-VirtualHIDDevice-Daemon.plist -o /Library/LaunchDaemons/org.pqrs.Karabiner-VirtualHIDDevice-Daemon.plist
-   sudo curl -fsSL $base/dev.kanata.kanata.plist -o /Library/LaunchDaemons/dev.kanata.kanata.plist
-   sudo chown root:wheel /Library/LaunchDaemons/org.pqrs.Karabiner-VirtualHIDDevice-Daemon.plist /Library/LaunchDaemons/dev.kanata.kanata.plist
-   sudo launchctl bootstrap system /Library/LaunchDaemons/org.pqrs.Karabiner-VirtualHIDDevice-Daemon.plist
-   sudo launchctl bootstrap system /Library/LaunchDaemons/dev.kanata.kanata.plist
+   curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/mac/install.sh | sudo sh
    ```
 
-   Skip the `org.pqrs` plist if you also run Karabiner-Elements (it manages the daemon itself). Installed kanata with Homebrew? Edit the binary path in `dev.kanata.kanata.plist` first (`/opt/homebrew/bin/kanata` on Apple Silicon).
+   [`install.sh`](install.sh) puts the config at `/etc/kanata/mac.kbd`, validates it, installs both LaunchDaemons pointed at wherever your kanata binary lives, and skips the `org.pqrs` daemon if Karabiner-Elements already manages it. Idempotent — re-run it any time.
 
 Then test: hold left Cmd + `k` → ↑.
 
