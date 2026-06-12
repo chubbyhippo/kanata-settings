@@ -31,7 +31,7 @@
   home-row-right-keys (h j k l ;)           ;; home row mods       - output tap if released after the first key
 )
 
-;; home row mod templates mimicking urob's timerless home row mods implementation
+;; home row mod templates implementing the timerless behavior
 (deftemplate lhrm (tappingterm tap-key hold-key)  ;; left hand mods
   (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $left-side-keys $home-row-left-keys)
 )
@@ -133,7 +133,7 @@
     (on-release tap-virtualkey      evaluate_tri_layer)
   )
 
-  ;; urob-style tri-state swapper: [mac] holds right Cmd and taps Tab = Cmd-Tab app switcher.
+  ;; tri-state swapper: [mac] holds right Cmd and taps Tab = Cmd-Tab app switcher.
   ;; Each press sends another Tab; releasing the NAV thumb releases Cmd and switches.
   swapper (multi
     (on-press   press-virtualkey    swapperrcmd)
