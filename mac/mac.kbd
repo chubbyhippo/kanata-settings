@@ -1,0 +1,290 @@
+;; kanata config — macOS port of the urob-style "timerless" home row mods setup
+;; Derived from the Windows config (../wins/wins.kbd); macOS-specific changes are marked with [mac].
+;; (Full circle: the Windows config was itself ported from a macOS config.)
+;;
+;; Run:    sudo kanata --cfg mac.kbd          (needs the Karabiner VirtualHIDDevice driver, see README)
+;; Check:  kanata --cfg mac.kbd --check       (validate after any edit)
+
+(defcfg
+  process-unmapped-keys yes   ;; every key goes through kanata's queue, so output order is always preserved
+  block-unmapped-keys no      ;; do NOT turn unmapped keys into no-ops
+  log-layer-changes no        ;; no logging
+  concurrent-tap-hold yes     ;; required to allow combos and tap-hold features to coexist
+  delegate-to-first-layer yes ;; transparent keys (_) fall back to the first layer (def), not defsrc
+  chords-v2-min-idle 350      ;; like ZMK's require-prior-idle, but for combos
+  ;; [mac] to remap only specific keyboards, uncomment and edit:
+  ;; macos-dev-names-include ("Apple Internal Keyboard / Trackpad")
+)
+
+(defvar
+  ;; timings in ms using ZMK-like names
+  one-shot-timeout 60000      ;; 60 seconds.
+  tapping-term 300            ;; higher = one-handed mod chords work, fewer false-holds when typing fast
+  quick-tap-ms 200            ;; same as ZMK ($tap-repress-timeout in kanata docs)
+  require-prior-idle 250      ;; same as ZMK (emulated below via the nomods layer + on-idle)
+  combo-timeout 60            ;; same as ZMK
+
+  ;; keys for the tap-hold-release-tap-keys-release templates
+  left-side-keys   (q w e r t x c v b)      ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
+  right-side-keys  (y u i o p n m , . / ')  ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
+  home-row-left-keys  (a s d f g z)         ;; home row mods (+ z) - output tap if released after the first key
+  home-row-right-keys (h j k l ;)           ;; home row mods       - output tap if released after the first key
+)
+
+;; home row mod templates mimicking urob's timerless home row mods implementation
+(deftemplate lhrm (tappingterm tap-key hold-key)  ;; left hand mods
+  (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $left-side-keys $home-row-left-keys)
+)
+
+(deftemplate rhrm (tappingterm tap-key hold-key)  ;; right hand mods
+  (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $right-side-keys $home-row-right-keys)
+)
+
+(deftemplate nomod (tap-key)
+  (multi $tap-key @tap)
+)
+
+(defalias
+  hyper (multi lctrl lalt lshift lmet) ;; shorthand for hyper key ([mac] the classic mac Hyper: Ctrl+Opt+Shift+Cmd)
+
+  ;; quasi-ZMK 'require-prior-idle' behavior
+  tap (multi
+    (layer-switch nomods)                                ;; temporarily switch to a layer with no home row mods
+    (on-idle $require-prior-idle tap-virtualkey to-base) ;; once typing pauses for $require-prior-idle, return to base
+  )
+
+  ;; ---- from the old config: Caps Lock and Left Ctrl remaps ----
+  cesc (tap-hold-press $quick-tap-ms $tapping-term esc lctl)           ;; Caps: tap = Esc, hold = Ctrl
+  lang (tap-hold-press $quick-tap-ms $tapping-term (macro C-spc) lctl) ;; [mac] LCtrl: tap = switch input source (Ctrl+Space), hold = Ctrl
+
+  ;; ---- home row mods, GASC like the Windows config — Ctrl on the index finger (Emacs-friendly) ----
+  ;; Left:  A=Cmd  S=Opt D=Shift F=Ctrl      Right: J=Ctrl K=Shift  L=Opt  ;=Cmd
+  a (t! lhrm   $tapping-term        a lmet   )
+  s (t! lhrm   $tapping-term        s lalt   )
+  d (t! lhrm   $tapping-term        d lsft   )
+  f (t! lhrm   $tapping-term        f lctl   )
+  g (t! lhrm   $tapping-term        g @hyper )
+
+  h (t! rhrm   $tapping-term        h @hyper )
+  j (t! rhrm   $tapping-term        j rctl   )
+  k (t! rhrm   $tapping-term        k rsft   )
+  l (t! rhrm   $tapping-term        l lalt   )
+  ; (t! rhrm   $tapping-term        ; rmet   )
+
+  ;; all other typing keys get the require-prior-idle-like behavior
+  q (t! nomod q)
+  w (t! nomod w)
+  e (t! nomod e)
+  r (t! nomod r)
+  t (t! nomod t)
+
+  y (t! nomod y)
+  u (t! nomod u)
+  i (t! nomod i)
+  o (t! nomod o)
+  p (t! nomod p)
+
+  x (t! nomod x)
+  c (t! nomod c)
+  v (t! nomod v)
+  b (t! nomod b)
+
+  n (t! nomod n)
+  m (t! nomod m)
+  , (t! nomod ,)
+  . (t! nomod .)
+  ' (t! nomod ')
+  / (t! nomod /)
+  spc (t! nomod spc)
+
+  ;; other hold-taps on the bottom row
+  zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; [mac] fn/Globe stays untouched; hold z = function layer, as on Windows
+  cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
+
+  ;; held Ctrl+Opt for Emacs-style C-M- chords (used by the d+f / j+k chords below)
+  cm (multi lctl lalt)
+
+  ;; one-shot mods for Callum-style modding (mirrors the GASC order above)
+  osm (one-shot $one-shot-timeout lmet)
+  oss (one-shot $one-shot-timeout lshift)
+  osa (one-shot $one-shot-timeout lalt)
+  osc (one-shot $one-shot-timeout lctrl)
+
+  ;; media tap-dance on NAV: tap = play/pause, hold = mute, 2x = next, 3x = prev
+  ppmnp (tap-dance 200 ((tap-hold $quick-tap-ms $tapping-term pp mute) next prev))
+
+  ;; layer keys with tri-layer logic (see defvirtualkeys below)
+  tlnav (multi
+    (on-press   press-virtualkey    lnav)
+    (on-press   tap-virtualkey      release_all_mods)
+    (on-press   tap-virtualkey      evaluate_tri_layer)
+    (on-release tap-virtualkey      ops)              ;; keeps sticky keys alive when returning to default layer
+    (on-release release-virtualkey  lnav)
+    (on-release release-virtualkey  swapperrcmd)      ;; kills the held swapper Cmd when released (see below)
+    (on-release tap-virtualkey      evaluate_tri_layer)
+  )
+
+  tlsym (multi
+    (on-press   press-virtualkey    lsym)
+    ;; (on-press   tap-virtualkey      release_all_mods)
+    (on-press   tap-virtualkey      evaluate_tri_layer)
+    (on-release tap-virtualkey      ops)              ;; keeps sticky keys alive when returning to default layer
+    (on-release release-virtualkey  lsym)
+    (on-release tap-virtualkey      evaluate_tri_layer)
+  )
+
+  ;; urob-style tri-state swapper: [mac] holds right Cmd and taps Tab = Cmd-Tab app switcher.
+  ;; Each press sends another Tab; releasing the NAV thumb releases Cmd and switches.
+  swapper (multi
+    (on-press   press-virtualkey    swapperrcmd)
+    (on-press   tap-virtualkey      swappertab)
+  )
+
+  ;; num_word toggle
+  toggle_num_word
+    (switch
+      ((layer def)) (layer-switch num) break
+      ((layer num)) (layer-switch def) break
+    )
+
+  ;; to let other people use the keyboard without having to learn the layers and combos
+  toggle_muggle_mode
+    (switch
+      ((layer def)) (layer-switch muggle) break
+      ((layer muggle)) (layer-switch def) break
+    )
+
+  ;; [mac] num thumb: tap = Spotlight (Cmd+Space), hold = numbers layer
+  num (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) (layer-while-held num))
+
+  capsword (caps-word-custom-toggle 5000 (a b c d e f g h i j k l m n o p q r s t u v w x y z) (lshift rshift grv apos 6 nop0 nop1 nop9 bspc))
+
+  ;; num keys
+  0_sym    (tap-hold-release $tapping-term $quick-tap-ms 0 (layer-while-held sym))             ;; symbols accessible from holding 0
+  num_spc  (switch
+    ((input real c)) 0 break
+    () (multi (layer-switch def) spc) break
+  )                                                                                            ;; holding c: space = 0; otherwise cancel num_word on space tap
+  num_nav  (tap-hold-release $tapping-term $quick-tap-ms (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
+  ;; num typing macros
+  r$       (macro S-r S-4 spc)
+  ,000     (macro , Digit0 Digit0 Digit0)
+  000      (macro Digit0 Digit0 Digit0)
+)
+
+(defchordsv2
+  (w e r)   esc              $combo-timeout all-released  (    nav sym fun     nomods)
+  (w   r)   tab              $combo-timeout all-released  (    nav sym fun     nomods)
+  (s d f)   enter            $combo-timeout first-release (    nav sym fun     nomods)
+  (s   f)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
+
+  (u i o)   esc              $combo-timeout all-released  (    nav sym fun     nomods) ;; esc on the right side, great for NUM
+  (u   o)   tab              $combo-timeout all-released  (    nav sym fun     nomods) ;; tab on the right side, great for NUM
+  (j k l)   enter            $combo-timeout first-release (    nav sym fun     nomods)
+  (j   l)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
+
+  (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num       ) ;; caps_word on the home row, because why not
+
+  ;; held Ctrl+Opt for Emacs C-M- bindings: chord on one hand, letter on the other
+  ;; e.g. C-M-f = hold j+k, press f; C-M-u = hold d+f, press u; release to drop the mods
+  (d f)     @cm              $combo-timeout all-released  (    nav sym fun     nomods)
+  (j k)     @cm              $combo-timeout all-released  (    nav sym fun     nomods)
+  (m , .)   @toggle_num_word $combo-timeout all-released  (    nav sym fun     nomods)
+
+  ;; [mac] back on the right Cmd thumb (the SYM thumb), as in the original mac config
+  (f rmet)  S-grv            $combo-timeout all-released  (    nav sym fun num       ) ;; ~ even during caps_word
+  (s rmet)  S-6              $combo-timeout all-released  (    nav sym fun num       ) ;; ^ even during caps_word
+  (d rmet)  grv              $combo-timeout all-released  (    nav sym fun num       ) ;; ` even during caps_word
+
+  (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods) ;; reload config, only from FUN
+
+  (q w e r) @toggle_muggle_mode $combo-timeout all-released (   nav sym fun num       )
+)
+
+(defvirtualkeys
+  to-base (layer-switch def)         ;; used by @tap to return to base after the idle period
+
+  ops (one-shot-pause-processing 10) ;; lets sticky keys stay triggered when moving back to the default layer
+
+  swapperrcmd rmet                   ;; [mac] swapper holds right Cmd → Cmd-Tab app switcher (the name fits again)
+  swappertab tab                     ;; sends Tab on every new press while the swapper is active
+
+  ;; tri-layer logic
+  lnav nop0                          ;; no-output key for tri-layer logic
+  lsym nop1                          ;; no-output key for tri-layer logic
+
+  evaluate_tri_layer (switch         ;; switch layer based on which layer keys are pressed
+    ((and nop0 nop1)) (layer-switch fun) break
+    ((and nop0 (not nop1))) (layer-switch nav) break
+    ((and nop1 (not nop0))) (layer-switch sym) break
+    ((not (and nop0 nop1))) (layer-switch def) break
+  )
+
+  release_all_mods nop9              ;; absorbs all queued one-shot mods, cancelling them
+)
+
+;; source keys — [mac] mac board: F-row and fn/Globe left untouched (pass through),
+;; thumbs are LCtrl / LOpt / LCmd / Space / RCmd; right Opt stays a real Option for accents
+(defsrc
+  caps tab
+  q w e r t      y u i o p
+  a s d f g      h j k l ; '
+  z x c v b      n m , . /
+  lctl lalt lmet spc rmet
+)
+
+(deflayer def
+  @cesc tab
+  @q   @w @e    @r  @t        @y  @u  @i  @o  @p
+  @a   @s @d    @f  @g        @h  @j  @k  @l  @;  @'
+  @zfn @x @cnum @v  @b        @n  @m  @,  @.  @/
+  @lang @num @tlnav @spc @tlsym
+)
+
+(deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
+  _ tab
+  q  w  e  r  t      y  u  i  o  p
+  a  s @d @f  g      h @j @k  l  ;  '  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
+  z  x  c  v  b      n  m  ,  .  /
+  _ _ _ _ _
+)
+
+(deflayer num
+  _ _
+  S-9  S-0  XX   @r$  XX        S-=  7  8  9  S-8
+  @osm @osa @oss @osc bspc      -    4  5  6  /   _
+  XX   @oss XX   @000 @,000     ,    1  2  3  .
+  _ XX @num_nav @num_spc @0_sym
+)
+
+(deflayer nav
+  _ @swapper ;; physical Tab on NAV = the swapper, so Cmd+Tab works like stock
+  tab  @swapper end     C-tab M-rbrc      M-v    pgup tab  bspc up
+  home M-s      pgdn    right M-lbrc      left   down up   right enter  _
+  M-z  M-x      M-c     M-v   left        down   @ppmnp vold volu  del
+  _ _ _ _ _
+)
+
+(deflayer sym
+  _ _
+  esc  S-lbrc lbrc S-9   S-5      S-7  S-0  rbrc S-rbrc S-'
+  -    S-6    grv  S-grv S-4      S-3  @osc @oss @osa   @osm  _
+  S-=  =      S-8  /     S-2      S-\  \    S-/  S-1    S-;
+  _ _ _ S-- _
+)
+
+(deflayer fun
+  _ _
+  1    2    3    4    5        6    7    8    9    0
+  @osm @osa @oss @osc f11      f12  @osc @oss @osa @osm  _
+  f1   f2   f3   f4   f5       f6   f7   f8   f9   f10
+  _ _ _ caps _
+)
+
+(deflayer muggle ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
+  caps tab
+  q w e r t      y u i o p
+  a s d f g      h j k l ; '
+  z x c v b      n m , . /
+  lctl lalt lmet spc rmet
+)
