@@ -29,7 +29,7 @@
   home-row-right-keys (h j k l ;)           ;; home row mods       - output tap if released after the first key
 )
 
-;; home row mod templates mimicking urob's timerless home row mods implementation
+;; home row mod templates implementing the timerless behavior
 (deftemplate lhrm (tappingterm tap-key hold-key)  ;; left hand mods
   (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $left-side-keys $home-row-left-keys)
 )
@@ -131,7 +131,7 @@
     (on-release tap-virtualkey      evaluate_tri_layer)
   )
 
-  ;; urob-style tri-state swapper: [win] holds Alt and taps Tab = Alt-Tab window switcher.
+  ;; tri-state swapper: [win] holds Alt and taps Tab = Alt-Tab window switcher.
   ;; Each press sends another Tab; releasing the NAV thumb releases Alt and switches.
   swapper (multi
     (on-press   press-virtualkey    swapperrcmd)
