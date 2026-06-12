@@ -1,4 +1,4 @@
-;; kanata config — Windows port of the urob-style "timerless" home row mods setup
+;; kanata config — Windows port of the "timerless" home row mods setup
 ;; Adapted from a macOS config; Windows-specific changes are marked with [win].
 ;;
 ;; Run:    kanata.exe --cfg wins.kbd          (run terminal as admin for elevated apps)
