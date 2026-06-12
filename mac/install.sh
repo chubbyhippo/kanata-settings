@@ -1,5 +1,5 @@
 #!/bin/sh
-# kanata mac setup — config + LaunchDaemons (the mac equivalent of katana.bat).
+# kanata mac setup — config + LaunchDaemons.
 # Usage:  curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/mac/install.sh | sudo sh
 #
 # Prereqs (manual, see README.md): Karabiner driver v6.2.0 installed + activated,

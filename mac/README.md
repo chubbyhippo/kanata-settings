@@ -20,7 +20,7 @@ Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases))
 
 3. **Permissions:** System Settings → Privacy & Security → add the kanata binary to **Input Monitoring** and **Accessibility**.
 
-4. **Config + autostart** (the mac equivalent of `katana.bat` — starts everything at boot):
+4. **Config + autostart** (starts everything at boot):
 
    ```sh
    curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/mac/install.sh | sudo sh
