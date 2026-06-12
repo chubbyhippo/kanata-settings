@@ -47,7 +47,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 
 ## Layer maps
 
-`os◌` = one-shot modifier (applies to the next key). `·` = nothing.
+`os` = one-shot modifier (applies to the next key). `·` = nothing.
 
 ### DEF — base layer
 
