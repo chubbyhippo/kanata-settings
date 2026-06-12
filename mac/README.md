@@ -6,27 +6,19 @@ A [kanata](https://github.com/jtroo/kanata) config for macOS with "timerless" ho
 
 ## Install
 
-Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases)) and the Karabiner driver. One-time setup:
+Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases)). One-time setup:
 
-1. **Driver:** install the [Karabiner-DriverKit-VirtualHIDDevice **v6.2.0**](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v6.2.0) `.pkg` (kanata is built against exactly this version), then activate and approve it:
+1. **kanata binary:** `brew install kanata`, or put the release binary at `/usr/local/bin/kanata` (`chmod +x` it).
 
-   ```sh
-   sudo /Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager forceActivate
-   ```
-
-   Toggle it on under System Settings → General → Login Items & Extensions → Driver Extensions.
-
-2. **kanata binary:** `brew install kanata`, or put the release binary at `/usr/local/bin/kanata` (`chmod +x` it).
-
-3. **Permissions:** System Settings → Privacy & Security → add the kanata binary to **Input Monitoring** and **Accessibility**.
-
-4. **Config + autostart** (starts everything at boot):
+2. **Everything else** — Karabiner driver, config, autostart:
 
    ```sh
    curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/mac/install.sh | sudo sh
    ```
 
-   [`install.sh`](install.sh) puts the config at `/etc/kanata/mac.kbd`, validates it, installs both LaunchDaemons pointed at wherever your kanata binary lives, and skips the `org.pqrs` daemon if Karabiner-Elements already manages it. Idempotent — re-run it any time.
+   [`install.sh`](install.sh) downloads the [Karabiner driver **v6.2.0**](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v6.2.0) (the exact version kanata is built against), checksum-verifies and installs it, and activates the extension. Approving it is the one step Apple keeps manual: the script stops and points you to System Settings → General → Login Items & Extensions → Driver Extensions. Approve, re-run the same command, and it finishes — config at `/etc/kanata/mac.kbd` (validated first), both LaunchDaemons installed and pointed at your kanata binary, the `org.pqrs` daemon skipped if Karabiner-Elements already manages it. Idempotent — re-run any time.
+
+3. **Permissions:** System Settings → Privacy & Security → add the kanata binary to **Input Monitoring** and **Accessibility**.
 
 Then test: hold left Cmd + `k` → ↑.
 

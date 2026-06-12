@@ -1,10 +1,11 @@
 #!/bin/sh
-# kanata mac setup — config + LaunchDaemons.
+# kanata mac setup — Karabiner driver + config + LaunchDaemons.
 # Usage:  curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/mac/install.sh | sudo sh
 #
-# Prereqs (manual, see README.md): Karabiner driver v6.2.0 installed + activated,
-# kanata binary installed, Input Monitoring + Accessibility granted.
-# Idempotent: safe to re-run after editing the config or moving the binary.
+# Prereqs (manual, see README.md): kanata binary installed, Input Monitoring +
+# Accessibility granted. Approving the driver extension is the one step Apple
+# keeps manual — the script stops and tells you when.
+# Idempotent: safe to re-run; it skips whatever is already done.
 
 set -eu                                       # -e: abort on the first failed command; -u: abort on undefined variables
 
@@ -13,11 +14,33 @@ main() {
     daemons="/Library/LaunchDaemons"          # where macOS looks for system (root) services to start at boot
     kanata_plist="dev.kanata.kanata.plist"    # service definition that runs kanata
     vhid_plist="org.pqrs.Karabiner-VirtualHIDDevice-Daemon.plist"   # service definition for the Karabiner virtual-keyboard daemon
+    driver_ver="6.2.0"                        # kanata is built against this exact driver release — do not bump casually
+    driver_sha="9e8c46239f0748161241e42444857901224e5c82f5b58a1731df4c70bf0736a8"   # sha256 of the official v6.2.0 pkg
+    manager="/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager"   # CLI that (de)activates the driver
 
     [ "$(id -u)" -eq 0 ] || {                 # id -u prints the numeric user id; 0 = root — everything below needs root
         echo "must run as root:  curl -fsSL $base/install.sh | sudo sh" >&2   # >&2 = print to stderr, not stdout
         exit 1                                # stop with a failure exit code
     }
+
+    # ---- Karabiner driver: download, install, activate (approval itself can't be scripted) ----
+    if systemextensionsctl list 2>/dev/null | grep "org.pqrs.Karabiner-DriverKit-VirtualHIDDevice" | grep -q "activated enabled"; then   # is the extension already live?
+        echo "Karabiner driver already activated"
+    else
+        if [ ! -x "$manager" ]; then          # no manager app = the driver pkg was never installed
+            pkg="/tmp/Karabiner-DriverKit-VirtualHIDDevice-$driver_ver.pkg"   # where to put the download
+            curl -fsSL "https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/download/v$driver_ver/Karabiner-DriverKit-VirtualHIDDevice-$driver_ver.pkg" -o "$pkg"   # fetch the official pkg
+            echo "$driver_sha  $pkg" | shasum -a 256 -c - >/dev/null   # verify the checksum; a corrupt or tampered download aborts here
+            installer -pkg "$pkg" -target /   # Apple's CLI installer; -target / = install onto the boot volume
+            rm -f "$pkg"                      # tidy up the download
+        fi
+        "$manager" forceActivate              # ask macOS to load the system extension (harmless if already pending)
+        echo ""
+        echo "driver installed — one manual step Apple requires:"
+        echo "  System Settings -> General -> Login Items & Extensions -> Driver Extensions -> enable Karabiner-DriverKit-VirtualHIDDevice"
+        echo "then re-run this script to finish:  curl -fsSL $base/install.sh | sudo sh"
+        exit 0                                # stop here; the rest is pointless until the extension is approved
+    fi
 
     # ---- find the kanata binary ----
     kanata_bin=""                             # will hold the first location that matches
