@@ -1,6 +1,5 @@
-;; kanata config — macOS port of the "timerless" home row mods setup
-;; Derived from the Windows config (../wins/wins.kbd); macOS-specific changes are marked with [mac].
-;; (Full circle: the Windows config was itself ported from a macOS config.)
+;; kanata config — macOS "timerless" home row mods setup
+;; macOS-specific choices are marked with [mac].
 ;;
 ;; Run:    sudo kanata --cfg mac.kbd          (needs the Karabiner VirtualHIDDevice driver, see README)
 ;; Check:  kanata --cfg mac.kbd --check       (validate after any edit)
@@ -98,7 +97,7 @@
   spc (t! nomod spc)
 
   ;; other hold-taps on the bottom row
-  zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; [mac] fn/Globe stays untouched; hold z = function layer, as on Windows
+  zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; [mac] fn/Globe stays untouched; hold z = function layer
   cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
 
   ;; held Ctrl+Opt for Emacs-style C-M- chords (used by the d+f / j+k chords below)
