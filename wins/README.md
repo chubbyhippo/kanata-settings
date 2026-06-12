@@ -68,7 +68,7 @@ caps:    [Esc|Ctrl]
 
 ```
 Tab    Swapper  End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
-Home   osAlt    PgDn   →      ←Back       ←      ↓     ↑     →     Enter
+Home   C-s      PgDn   →      ←Back       ←      ↓     ↑     →     Enter
 C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
 ```
 
