@@ -159,10 +159,7 @@
 
   ;; num keys
   0_sym    (tap-hold-release $tapping-term $quick-tap-ms 0 (layer-while-held sym))             ;; symbols accessible from holding 0
-  num_spc  (switch
-    ((input real c)) 0 break
-    () (multi (layer-switch def) spc) break
-  )                                                                                            ;; holding c: space = 0; otherwise cancel num_word on space tap
+  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit via NAV-thumb tap or the m , . combo
   num_nav  (tap-hold-release $tapping-term $quick-tap-ms (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
   ;; num typing macros
   r$       (macro S-r S-4 spc)
