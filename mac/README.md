@@ -60,7 +60,7 @@ Then test: hold left Cmd + `k` → ↑.
 
 ```
 tap:   q   w   e   r   t        y   u   i   o   p
-       a   s   d   f   g        h   j   k   l   ;   '
+       a   s   d   f   g        h   j   k   l   ;
        z   x   c   v   b        n   m   ,   .   /
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
@@ -85,7 +85,7 @@ Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. `Med
 ### SYM — hold right Cmd
 
 ```
-Esc    {      [      (      %         &     )     ]     }     "
+'      {      [      (      %         &     )     ]     }     "
 -      ^      `      ~      $         #     osCtl osSft osOpt osCmd
 +      =      *      /      @         |     \     ?     !     :
 
@@ -159,7 +159,7 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 ## What's remapped
 
-Only 38 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere except on NAV, where it's the Cmd-Tab swapper.
+Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere except on NAV, where it's the Cmd-Tab swapper.
 
 | Physical key | Tap | Hold |
 |---|---|---|

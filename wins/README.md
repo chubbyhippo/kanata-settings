@@ -53,7 +53,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 
 ```
 tap:   q   w   e   r   t        y   u   i   o   p
-       a   s   d   f   g        h   j   k   l   ;   '
+       a   s   d   f   g        h   j   k   l   ;
        z   x   c   v   b        n   m   ,   .   /
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
@@ -77,7 +77,7 @@ Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. `M
 ### SYM — hold right Alt
 
 ```
-Esc    {      [      (      %         &     )     ]     }     "
+'      {      [      (      %         &     )     ]     }     "
 -      ^      `      ~      $         #     osCtl osSft osAlt osWin
 +      =      *      /      @         |     \     ?     !     :
 
@@ -151,7 +151,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 ## What's remapped
 
-Only 38 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere except on NAV, where it's the Alt-Tab swapper.
+Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere except on NAV, where it's the Alt-Tab swapper.
 
 | Physical key | Tap | Hold |
 |---|---|---|

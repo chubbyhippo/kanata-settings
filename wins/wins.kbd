@@ -24,7 +24,7 @@
 
   ;; keys for the tap-hold-release-tap-keys-release templates
   left-side-keys   (q w e r t x c v b)      ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
-  right-side-keys  (y u i o p n m , . / ')  ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
+  right-side-keys  (y u i o p n m , . /)  ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
   home-row-left-keys  (a s d f g z)         ;; home row mods (+ z) - output tap if released after the first key
   home-row-right-keys (h j k l ;)           ;; home row mods       - output tap if released after the first key
 )
@@ -91,7 +91,6 @@
   m (t! nomod m)
   , (t! nomod ,)
   . (t! nomod .)
-  ' (t! nomod ')
   / (t! nomod /)
   spc (t! nomod spc)
 
@@ -223,7 +222,7 @@
 (defsrc
   caps tab
   q w e r t      y u i o p
-  a s d f g      h j k l ; '
+  a s d f g      h j k l ;
   z x c v b      n m , . /
   lctl lmet lalt spc ralt
 )
@@ -231,7 +230,7 @@
 (deflayer def
   @cesc tab
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
-  @a   @s @d    @f  @g        @h  @j  @k  @l  @;  @'
+  @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @x @cnum @v  @b        @n  @m  @,  @.  @/
   @lang @num @tlnav @spc @tlsym
 )
@@ -239,7 +238,7 @@
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
   _ tab
   q  w  e  r  t      y  u  i  o  p
-  a  s @d @f  g      h @j @k  l  ;  '  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
+  a  s @d @f  g      h @j @k  l  ;  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
   z  x  c  v  b      n  m  ,  .  /
   _ _ _ _ _
 )
@@ -247,7 +246,7 @@
 (deflayer num
   _ _
   S-9  S-0  XX   @r$  XX        S-=  7  8  9  S-8
-  @osm @osa @oss @osc bspc      -    4  5  6  /   _
+  @osm @osa @oss @osc bspc      -    4  5  6  /
   XX   @oss XX   @000 @,000     ,    1  2  3  .
   _ XX @num_nav @num_spc @0_sym
 )
@@ -255,15 +254,15 @@
 (deflayer nav
   _ @swapper ;; physical Tab on NAV = the swapper, so Alt+Tab works like stock
   tab  @swapper end     C-tab A-right     C-v    pgup tab  bspc up
-  home C-s      pgdn    right A-left      left   down up   right enter  _
+  home C-s      pgdn    right A-left      left   down up   right enter
   C-z  C-x      C-c     C-v   left        down   @ppmnp vold volu  del
   _ _ _ _ _
 )
 
 (deflayer sym
   _ _
-  esc  S-lbrc lbrc S-9   S-5      S-7  S-0  rbrc S-rbrc S-'
-  -    S-6    grv  S-grv S-4      S-3  @osc @oss @osa   @osm  _
+  '    S-lbrc lbrc S-9   S-5      S-7  S-0  rbrc S-rbrc S-'
+  -    S-6    grv  S-grv S-4      S-3  @osc @oss @osa   @osm
   S-=  =      S-8  /     S-2      S-\  \    S-/  S-1    S-;
   _ _ _ S-- _
 )
@@ -271,7 +270,7 @@
 (deflayer fun
   _ _
   1    2    3    4    5        6    7    8    9    0
-  @osm @osa @oss @osc f11      f12  @osc @oss @osa @osm  _
+  @osm @osa @oss @osc f11      f12  @osc @oss @osa @osm
   f1   f2   f3   f4   f5       f6   f7   f8   f9   f10
   _ _ _ caps _
 )
@@ -279,7 +278,7 @@
 (deflayer muggle ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
   caps tab
   q w e r t      y u i o p
-  a s d f g      h j k l ; '
+  a s d f g      h j k l ;
   z x c v b      n m , . /
   lctl lmet lalt spc ralt
 )
