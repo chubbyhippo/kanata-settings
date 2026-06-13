@@ -67,7 +67,7 @@ caps:    [Esc|Ctrl]
 ### NAV — hold left Alt
 
 ```
-Tab    Swapper  End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
+Esc    Swapper  End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
 Home   C-s      PgDn   →      ←Back       ←      ↓     ↑     →     Enter
 C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
 ```

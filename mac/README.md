@@ -75,7 +75,7 @@ caps:    [Esc|Ctrl]
 ### NAV — hold left Cmd
 
 ```
-Tab    Swapper  End    Tab→   Fwd→        ⌘V     PgUp  Tab   Bksp  ↑
+Esc    Swapper  End    Tab→   Fwd→        ⌘V     PgUp  Tab   Bksp  ↑
 Home   ⌘S       PgDn   →      ←Back       ←      ↓     ↑     →     Enter
 ⌘Z     ⌘X       ⌘C     ⌘V     ←           ↓      Media Vol−  Vol+  Del
 ```

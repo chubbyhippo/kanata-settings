@@ -254,7 +254,7 @@
 
 (deflayer nav
   _ @swapper ;; physical Tab on NAV = the swapper, so Cmd+Tab works like stock
-  tab  @swapper end     C-tab M-rbrc      M-v    pgup tab  bspc up
+  esc  @swapper end     C-tab M-rbrc      M-v    pgup tab  bspc up
   home M-s      pgdn    right M-lbrc      left   down up   right enter
   M-z  M-x      M-c     M-v   left        down   @ppmnp vold volu  del
   _ _ _ _ _
