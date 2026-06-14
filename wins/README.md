@@ -58,7 +58,7 @@ tap:   q   w   e   r   t        y   u   i   o   p
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win
-       FUN NAV NUM ·   ·        ·   ·   NUM NAV FUN
+       FUN NAV NUM SYM ·        ·   SYM NUM NAV FUN
 
 thumbs:  [Lang|Ctrl] [Win|NUM] [NAV] [Space] [SYM]
 caps:    [Esc|Ctrl]
@@ -74,7 +74,7 @@ C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
 
 Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. Holding `x` or `.` reaches NAV without the thumb's extras (the Tab swapper and tri-layer FUN), so use the thumb for Alt+Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Alt instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
 
-### SYM — hold right Alt
+### SYM — hold right Alt (or hold `v` / `m`)
 
 ```
 '      {      [      (      %         &     )     ]     }     "
@@ -83,6 +83,8 @@ Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. Ho
 
                             Space = _
 ```
+
+Holding `v` or `m` reaches SYM without the thumb's tri-layer FUN; `v` is the comfortable side for the right-hand symbols and one-shot mods.
 
 ### NUM — hold left Win (or hold `c` / `,`)
 
@@ -166,6 +168,7 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
 | `x` / `.` | the letter / symbol | **NAV** |
+| `v` / `m` | the letter | **SYM** |
 
 ## Troubleshooting
 

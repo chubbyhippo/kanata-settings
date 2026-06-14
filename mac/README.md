@@ -65,7 +65,7 @@ tap:   q   w   e   r   t        y   u   i   o   p
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Cmd Opt Sft Ctl Hyp      Hyp Ctl Sft Opt Cmd
-       FUN NAV NUM ·   ·        ·   ·   NUM NAV FUN
+       FUN NAV NUM SYM ·        ·   SYM NUM NAV FUN
 
 thumbs:  [Lang|Ctrl] [Spotlight|NUM] [NAV] [Space] [SYM]
          (LCtrl)     (LOpt)          (LCmd)        (RCmd)
@@ -82,7 +82,7 @@ Home   ⌘S       PgDn   →      ←Back       ←      ↓     ↑     →    
 
 Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Holding `x` or `.` reaches NAV without the thumb's extras (the Tab swapper and tri-layer FUN), so use the thumb for Cmd+Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
 
-### SYM — hold right Cmd
+### SYM — hold right Cmd (or hold `v` / `m`)
 
 ```
 '      {      [      (      %         &     )     ]     }     "
@@ -91,6 +91,8 @@ Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Hold
 
                             Space = _
 ```
+
+Holding `v` or `m` reaches SYM without the thumb's tri-layer FUN; `v` is the comfortable side for the right-hand symbols and one-shot mods.
 
 ### NUM — hold left Opt (or hold `c` / `,`)
 
@@ -174,6 +176,7 @@ Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
 | `x` / `.` | the letter / symbol | **NAV** |
+| `v` / `m` | the letter | **SYM** |
 
 ## Troubleshooting
 
