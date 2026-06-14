@@ -160,9 +160,9 @@
   capsword (caps-word-custom-toggle 5000 (a b c d e f g h i j k l m n o p q r s t u v w x y z) (lshift rshift grv apos 6 nop0 nop1 nop9 bspc))
 
   ;; num keys
-  0_sym    (tap-hold-release $tapping-term $quick-tap-ms 0 (layer-while-held sym))             ;; symbols accessible from holding 0
+  0_sym    (tap-hold-release $quick-tap-ms $tapping-term 0 (layer-while-held sym))             ;; symbols accessible from holding 0
   num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit via NAV-thumb tap or the m , . combo
-  num_nav  (tap-hold-release $tapping-term $quick-tap-ms (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
+  num_nav  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
   ;; num typing macros
   r$       (macro S-r S-4 spc)
   ,000     (macro , Digit0 Digit0 Digit0)
