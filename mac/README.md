@@ -46,7 +46,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,`+`.` together → Num Word; Space types 0 and stays on |
 | Esc / Tab / Enter / Backspace | combos `w·e·r` / `w·r` / `s·d·f` / `s·f` (right hand: `u·i·o` / `u·o` / `j·k·l` / `j·l`) |
-| F-keys | hold `z` or both Cmds: bottom row = F1–F10 |
+| F-keys | hold `z` / `/` or both Cmds: bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -65,7 +65,7 @@ tap:   q   w   e   r   t        y   u   i   o   p
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Cmd Opt Sft Ctl Hyp      Hyp Ctl Sft Opt Cmd ·
-       FUN ·   NUM ·   ·        ·   ·   ·   ·   ·
+       FUN ·   NUM ·   ·        ·   ·   NUM ·   FUN
 
 thumbs:  [Lang|Ctrl] [Spotlight|NUM] [NAV] [Space] [SYM]
          (LCtrl)     (LOpt)          (LCmd)        (RCmd)
@@ -92,7 +92,7 @@ Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. `Med
                             Space = _
 ```
 
-### NUM — hold left Opt (or hold `c`)
+### NUM — hold left Opt (or hold `c` / `,`)
 
 ```
 (      )      ·      R$     ·         +     7     8     9     *
@@ -104,9 +104,9 @@ osCmd  osOpt  osSft  osCtl  Bksp      -     4     5     6     /
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or left Opt), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Opt), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
 
-### FUN — hold both Cmds (or hold `z`)
+### FUN — hold both Cmds (or hold `z` / `/`)
 
 ```
 1      2      3      4      5         6     7     8     9     0
@@ -172,6 +172,7 @@ Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
 | `g` / `h` | the letter | Hyper (Ctrl+Opt+Shift+Cmd) |
 | `z` / `c` | the letter | **FUN** / **NUM** |
+| `/` / `,` | the symbol | **FUN** / **NUM** |
 
 ## Troubleshooting
 

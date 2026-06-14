@@ -98,6 +98,8 @@
   ;; other hold-taps on the bottom row
   zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; [mac] fn/Globe stays untouched; hold z = function layer
   cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
+  slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun)) ;; / : tap = '/', hold = function layer
+  commanum (tap-hold-release $quick-tap-ms $tapping-term @, (layer-while-held num)) ;; , : tap = ',', hold = numbers layer
 
   ;; held Ctrl+Opt for Emacs-style C-M- chords (used by the d+f / j+k chords below)
   cm (multi lctl lalt)
@@ -232,7 +234,7 @@
   @cesc tab
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
-  @zfn @x @cnum @v  @b        @n  @m  @,  @.  @/
+  @zfn @x @cnum @v  @b        @n  @m  @commanum  @.  @slashfn
   @lang @num @tlnav @spc @tlsym
 )
 

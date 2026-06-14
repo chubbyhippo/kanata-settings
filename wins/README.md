@@ -39,7 +39,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,`+`.` together → Num Word; Space types 0 and stays on |
 | Esc / Tab / Enter / Backspace | combos `w·e·r` / `w·r` / `s·d·f` / `s·f` (right hand: `u·i·o` / `u·o` / `j·k·l` / `j·l`) |
-| F-keys | hold `z` or both Alts: bottom row = F1–F10 |
+| F-keys | hold `z` / `/` or both Alts: bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -58,7 +58,7 @@ tap:   q   w   e   r   t        y   u   i   o   p
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win ·
-       FUN ·   NUM ·   ·        ·   ·   ·   ·   ·
+       FUN ·   NUM ·   ·        ·   ·   NUM ·   FUN
 
 thumbs:  [Lang|Ctrl] [Win|NUM] [NAV] [Space] [SYM]
 caps:    [Esc|Ctrl]
@@ -84,7 +84,7 @@ Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. `M
                             Space = _
 ```
 
-### NUM — hold left Win (or hold `c`)
+### NUM — hold left Win (or hold `c` / `,`)
 
 ```
 (      )      ·      R$     ·         +     7     8     9     *
@@ -96,9 +96,9 @@ osWin  osAlt  osSft  osCtl  Bksp      -     4     5     6     /
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or left Win), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
 
-### FUN — hold both Alts (or hold `z`)
+### FUN — hold both Alts (or hold `z` / `/`)
 
 ```
 1      2      3      4      5         6     7     8     9     0
@@ -164,6 +164,7 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |
 | `g` / `h` | the letter | Hyper (Ctrl+Alt+Shift+Win) |
 | `z` / `c` | the letter | **FUN** / **NUM** |
+| `/` / `,` | the symbol | **FUN** / **NUM** |
 
 ## Troubleshooting
 
