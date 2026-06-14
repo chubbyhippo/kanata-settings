@@ -183,6 +183,10 @@
   (j k l)   enter            $combo-timeout first-release (    nav sym fun     nomods)
   (j   l)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
 
+  ;; delete word backward (Ctrl+Backspace)
+  (s d)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods)
+  (k l)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods)
+
   (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num       ) ;; caps_word on the home row, because why not
 
   ;; held Ctrl+Alt for Emacs C-M- bindings: chord on one hand, letter on the other

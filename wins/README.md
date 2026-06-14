@@ -122,6 +122,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `w r` / `u o` | Tab |
 | `s d f` / `j k l` | Enter |
 | `s f` / `j l` | Backspace |
+| `s d` / `k l` | Delete word back (Ctrl+Backspace) |
 | `d k` | Caps Word on/off |
 | `d f` / `j k` (keep held) | Ctrl+Alt while held — for Emacs `C-M-…` |
 | `m , .` | Num Word on/off |
