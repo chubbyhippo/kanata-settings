@@ -64,7 +64,7 @@ tap:   q   w   e   r   t        y   u   i   o   p
        z   x   c   v   b        n   m   ,   .   /
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
-       Cmd Opt Sft Ctl Hyp      Hyp Ctl Sft Opt Cmd ·
+       Cmd Opt Sft Ctl Hyp      Hyp Ctl Sft Opt Cmd
        FUN ·   NUM ·   ·        ·   ·   NUM ·   FUN
 
 thumbs:  [Lang|Ctrl] [Spotlight|NUM] [NAV] [Space] [SYM]

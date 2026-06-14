@@ -57,7 +57,7 @@ tap:   q   w   e   r   t        y   u   i   o   p
        z   x   c   v   b        n   m   ,   .   /
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
-       Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win ·
+       Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win
        FUN ·   NUM ·   ·        ·   ·   NUM ·   FUN
 
 thumbs:  [Lang|Ctrl] [Win|NUM] [NAV] [Space] [SYM]
