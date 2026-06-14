@@ -30,7 +30,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Vim-style arrows | hold left Alt (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | NAV + `r` / hold Caps + Shift, tap Tab |
 | Browser back / forward | NAV + `g` / NAV + `t` |
-| Arrows, PgUp/PgDn, Home/End | hold left Alt (NAV) |
+| Arrows, PgUp/PgDn, Home/End | hold left Alt (NAV), or hold `x` / `.` |
 | Switch input language | tap left Ctrl |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
@@ -58,13 +58,13 @@ tap:   q   w   e   r   t        y   u   i   o   p
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win
-       FUN ·   NUM ·   ·        ·   ·   NUM ·   FUN
+       FUN NAV NUM ·   ·        ·   ·   NUM NAV FUN
 
 thumbs:  [Lang|Ctrl] [Win|NUM] [NAV] [Space] [SYM]
 caps:    [Esc|Ctrl]
 ```
 
-### NAV — hold left Alt
+### NAV — hold left Alt (or hold `x` / `.`)
 
 ```
 Esc    Swapper  End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
@@ -72,7 +72,7 @@ Home   C-s      PgDn   →      ←Back       ←      ↓     ↑     →     E
 C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
 ```
 
-Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Alt instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
+Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. Holding `x` or `.` reaches NAV without the thumb's extras (the Tab swapper and tri-layer FUN), so use the thumb for Alt+Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Alt instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
 
 ### SYM — hold right Alt
 
@@ -165,6 +165,7 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 | `g` / `h` | the letter | Hyper (Ctrl+Alt+Shift+Win) |
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
+| `x` / `.` | the letter / symbol | **NAV** |
 
 ## Troubleshooting
 

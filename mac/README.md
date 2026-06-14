@@ -36,7 +36,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Vim-style arrows | hold left Cmd (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | NAV + `r` / hold Caps + Shift, tap Tab |
 | Browser back / forward | NAV + `g` / NAV + `t` (Cmd+[ / Cmd+]) |
-| Arrows, PgUp/PgDn, Home/End | hold left Cmd (NAV) |
+| Arrows, PgUp/PgDn, Home/End | hold left Cmd (NAV), or hold `x` / `.` |
 | Switch input language | tap left Ctrl (Ctrl+Space) |
 | Spotlight | tap left Opt (Cmd+Space) |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
@@ -65,14 +65,14 @@ tap:   q   w   e   r   t        y   u   i   o   p
 
 hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Cmd Opt Sft Ctl Hyp      Hyp Ctl Sft Opt Cmd
-       FUN ·   NUM ·   ·        ·   ·   NUM ·   FUN
+       FUN NAV NUM ·   ·        ·   ·   NUM NAV FUN
 
 thumbs:  [Lang|Ctrl] [Spotlight|NUM] [NAV] [Space] [SYM]
          (LCtrl)     (LOpt)          (LCmd)        (RCmd)
 caps:    [Esc|Ctrl]
 ```
 
-### NAV — hold left Cmd
+### NAV — hold left Cmd (or hold `x` / `.`)
 
 ```
 Esc    Swapper  End    Tab→   Fwd→        ⌘V     PgUp  Tab   Bksp  ↑
@@ -80,7 +80,7 @@ Home   ⌘S       PgDn   →      ←Back       ←      ↓     ↑     →    
 ⌘Z     ⌘X       ⌘C     ⌘V     ←           ↓      Media Vol−  Vol+  Del
 ```
 
-Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
+Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Holding `x` or `.` reaches NAV without the thumb's extras (the Tab swapper and tri-layer FUN), so use the thumb for Cmd+Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
 
 ### SYM — hold right Cmd
 
@@ -173,6 +173,7 @@ Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 | `g` / `h` | the letter | Hyper (Ctrl+Opt+Shift+Cmd) |
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
+| `x` / `.` | the letter / symbol | **NAV** |
 
 ## Troubleshooting
 

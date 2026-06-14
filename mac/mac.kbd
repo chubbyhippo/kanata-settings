@@ -100,6 +100,8 @@
   cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
   slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun)) ;; / : tap = '/', hold = function layer
   commanum (tap-hold-release $quick-tap-ms $tapping-term @, (layer-while-held num)) ;; , : tap = ',', hold = numbers layer
+  xnav     (tap-hold-release $quick-tap-ms $tapping-term @x (layer-while-held nav)) ;; x : tap = x, hold = nav layer
+  dotnav   (tap-hold-release $quick-tap-ms $tapping-term @. (layer-while-held nav)) ;; . : tap = ., hold = nav layer
 
   ;; held Ctrl+Opt for Emacs-style C-M- chords (used by the d+f / j+k chords below)
   cm (multi lctl lalt)
@@ -234,7 +236,7 @@
   @cesc tab
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
-  @zfn @x @cnum @v  @b        @n  @m  @commanum  @.  @slashfn
+  @zfn @xnav @cnum @v  @b        @n  @m  @commanum  @dotnav  @slashfn
   @lang @num @tlnav @spc @tlsym
 )
 
