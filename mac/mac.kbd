@@ -243,7 +243,7 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @lang @num @tlnav @spc @tlsym
+  @lang lctl  @tlnav @spc @tlsym   ;; [mac] LOpt thumb = Ctrl (was @num; num still on hold-c/, ). Right Option key already passes through as Alt.
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering

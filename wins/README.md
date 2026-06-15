@@ -14,23 +14,23 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-set
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/katana.bat" -OutFile "$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\kanata.bat"
 ```
 
-Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `k` → ↑.
+Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `c` → Ctrl+C (left Alt is Ctrl now), and hold `x` + `k` → ↑ (NAV).
 
 ## Keyboard shortcuts
 
 | You want | Do this |
 |---|---|
-| Copy / Paste / Cut / Undo | hold left Alt (NAV) + `c` / `v` / `x` / `z` |
+| Copy / Paste / Cut / Undo | hold left Alt (= Ctrl) + `c` / `v` / `x` / `z` |
 | …or classic style | hold Caps (= Ctrl) + `c`/`v`/`x`/`z`/`w`… |
-| Alt+Tab | works as always: hold left Alt, tap Tab (or `w`), release Alt to switch |
+| Alt+Tab | hold right Alt + Tab, release to switch (it's a real Alt now) |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `v` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold left Win): tap `f`, tap `d`, release, press `t` |
 | Ctrl+Alt+key (Emacs `C-M-…`) | hold `j`+`k` together + left-hand key, or `d`+`f` + right-hand key |
-| Emacs-style arrows | hold left Alt (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
-| Vim-style arrows | hold left Alt (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
-| Next / previous browser tab | NAV + `r` / hold Caps + Shift, tap Tab |
-| Browser back / forward | NAV + `g` / NAV + `t` |
-| Arrows, PgUp/PgDn, Home/End | hold left Alt (NAV), or hold `x` / `.` |
+| Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
+| Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
+| Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
+| Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` |
+| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
 | Switch input language | tap left Ctrl |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
@@ -39,7 +39,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,`+`.` together → Num Word; Space types 0 and stays on |
 | Esc / Tab / Enter / Backspace | combos `w·e·r` / `w·r` / `s·d·f` / `s·f` (right hand: `u·i·o` / `u·o` / `j·k·l` / `j·l`) |
-| F-keys | hold `z` / `/` or both Alts: bottom row = F1–F10 |
+| F-keys | hold `z` / `/` (FUN): bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -60,21 +60,22 @@ hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win
        FUN NAV NUM SYM ·        ·   SYM NUM NAV FUN
 
-thumbs:  [Lang|Ctrl] [Win|NUM] [NAV] [Space] [SYM]
+thumbs:  [Lang|Ctrl] [Win|NUM] [Ctrl] [Space] [Alt]
+         (LCtrl)     (LWin)    (LAlt)         (RAlt)
 caps:    [Esc|Ctrl]
 ```
 
-### NAV — hold left Alt (or hold `x` / `.`)
+### NAV — hold `x` / `.`
 
 ```
-Esc    Swapper  End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
+Esc    Tab      End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
 Home   C-s      PgDn   →      ←Back       ←      ↓     ↑     →     Enter
 C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
 ```
 
-Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. Holding `x` or `.` reaches NAV without the thumb's extras (the Tab swapper and tri-layer FUN), so use the thumb for Alt+Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Alt instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
+Reach NAV by holding `x` or `.` (the left-Alt thumb is plain Ctrl now). For Alt+Tab, hold the right-Alt thumb and tap Tab — it's a real Alt, so it works like stock Windows. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, on NAV instead of with Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
 
-### SYM — hold right Alt (or hold `v` / `m`)
+### SYM — hold `v` / `m`
 
 ```
 '      {      [      (      %         &     )     ]     }     "
@@ -84,7 +85,7 @@ Physical Tab on NAV is also the swapper, so Alt+Tab works like stock Windows. Ho
                             Space = _
 ```
 
-Holding `v` or `m` reaches SYM without the thumb's tri-layer FUN; `v` is the comfortable side for the right-hand symbols and one-shot mods.
+Reach SYM by holding `v` or `m` (the right-Alt thumb is plain Alt now); `v` is the comfortable side for the right-hand symbols and one-shot mods.
 
 ### NUM — hold left Win (or hold `c` / `,`)
 
@@ -100,7 +101,7 @@ thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
 
 Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
 
-### FUN — hold both Alts (or hold `z` / `/`)
+### FUN — hold `z` / `/`
 
 ```
 1      2      3      4      5         6     7     8     9     0
@@ -146,24 +147,23 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 1. Validate: `kanata.exe --cfg wins.kbd --check`
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
-3. Test: hold left Alt + `k` → ↑. Tap Caps Lock → Esc.
+3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `k` → ↑ (NAV); tap Caps Lock → Esc.
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 
-**After editing the config:** run `--check`, then restart kanata or live-reload: hold both Alts (FUN) and press `g`+`h`. A failed reload keeps the previous good config running.
+**After editing the config:** run `--check`, then restart kanata or live-reload: hold `z`/`/` (FUN) and press `g`+`h`. A failed reload keeps the previous good config running.
 
 ## What's remapped
 
-Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere except on NAV, where it's the Alt-Tab swapper.
+Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere (the old NAV Alt-Tab swapper is gone — use the right-Alt thumb for Alt+Tab).
 
 | Physical key | Tap | Hold |
 |---|---|---|
 | Caps Lock | Esc | Ctrl |
 | Left Ctrl | switch language (Win+Space) | Ctrl |
 | Left Win | Win (Start menu) | **NUM** |
-| Left Alt | — | **NAV** |
-| Right Alt | — | **SYM** |
-| Both Alts | — | **FUN** |
+| Left Alt | (quick Ctrl) | **Ctrl** |
+| Right Alt | (quick Alt) | **Alt** |
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |
 | `g` / `h` | the letter | Hyper (Ctrl+Alt+Shift+Win) |
 | `z` / `c` | the letter | **FUN** / **NUM** |
@@ -173,7 +173,7 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 
 ## Troubleshooting
 
-- **"My Alt key doesn't work."** It's a layer key now: left = NAV, right = SYM, both = FUN. The Alt *modifier* is on `s`/`l`; Alt+Tab itself works normally.
+- **"Where did the layers on my Alt keys go?"** The Alt thumbs are plain modifiers now — **left Alt = Ctrl, right Alt = Alt**. The layers moved to letter-holds: NAV = hold `x`/`.`, SYM = hold `v`/`m`, FUN = hold `z`/`/`. Alt+Tab = hold right Alt + Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
 - **"A weird Office thing opened."** Tapping `g`/`h`'s Hyper hold alone is Windows' "Office key". Harmless; change `@hyper` to `XX` if unused.

@@ -242,7 +242,7 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @lang @num @tlnav @spc @tlsym
+  @lang @num lctl  @spc lalt   ;; [win] LAlt thumb = Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
@@ -262,8 +262,8 @@
 )
 
 (deflayer nav
-  _ @swapper ;; physical Tab on NAV = the swapper, so Alt+Tab works like stock
-  esc  @swapper end     C-tab A-right     C-v    pgup tab  bspc up
+  _ tab ;; [win] physical Tab on NAV = plain Tab now; Alt+Tab is the right-Alt thumb (left thumb is Ctrl)
+  esc  tab      end     C-tab A-right     C-v    pgup tab  bspc up
   home C-s      pgdn    right A-left      left   down up   right enter
   C-z  C-x      C-c     C-v   left        down   @ppmnp vold volu  del
   _ _ _ _ _

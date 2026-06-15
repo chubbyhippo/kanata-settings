@@ -29,7 +29,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Copy / Paste / Cut / Undo | hold left Cmd (NAV) + `c` / `v` / `x` / `z` |
 | Ctrl chords (Emacs, terminal) | hold Caps (= Ctrl) + the key — or pause, hold `f`/`j` + a cross-hand key |
 | Cmd+Tab | works as always: hold left Cmd, tap Tab (or `w`), release to switch |
-| Quit / close (Cmd+Q / Cmd+W) | NUM (hold left Opt): tap `a` (one-shot Cmd), release, press `q` / `w` |
+| Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
 | Ctrl+Opt+key (Emacs `C-M-…`) | hold `j`+`k` together + left-hand key, or `d`+`f` + right-hand key |
 | Emacs-style arrows | hold left Cmd (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
@@ -38,7 +38,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Browser back / forward | NAV + `g` / NAV + `t` (Cmd+[ / Cmd+]) |
 | Arrows, PgUp/PgDn, Home/End | hold left Cmd (NAV), or hold `x` / `.` |
 | Switch input language | tap left Ctrl (Ctrl+Space) |
-| Spotlight | tap left Opt (Cmd+Space) |
+| Spotlight (Cmd+Space) | hold `a` (Cmd) + Space |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
 | Screenshot (Cmd+Shift+4) | NUM: tap `a`, tap `d`, press `u` (= 4) |
 | Select text | hold real Shift + NAV arrows |
@@ -67,8 +67,8 @@ hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Cmd Opt Sft Ctl Hyp      Hyp Ctl Sft Opt Cmd
        FUN NAV NUM SYM ·        ·   SYM NUM NAV FUN
 
-thumbs:  [Lang|Ctrl] [Spotlight|NUM] [NAV] [Space] [SYM]
-         (LCtrl)     (LOpt)          (LCmd)        (RCmd)
+thumbs:  [Lang|Ctrl] [Ctrl] [NAV] [Space] [SYM]
+         (LCtrl)     (LOpt) (LCmd)        (RCmd)
 caps:    [Esc|Ctrl]
 ```
 
@@ -94,7 +94,7 @@ Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Hold
 
 Holding `v` or `m` reaches SYM without the thumb's tri-layer FUN; `v` is the comfortable side for the right-hand symbols and one-shot mods.
 
-### NUM — hold left Opt (or hold `c` / `,`)
+### NUM — hold `c` / `,`
 
 ```
 (      )      ·      R$     ·         +     7     8     9     *
@@ -106,7 +106,7 @@ osCmd  osOpt  osSft  osCtl  Bksp      -     4     5     6     /
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Opt), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
 
 ### FUN — hold both Cmds (or hold `z` / `/`)
 
@@ -168,7 +168,7 @@ Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 |---|---|---|
 | Caps Lock | Esc | Ctrl |
 | Left Ctrl | switch input source (Ctrl+Space) | Ctrl |
-| Left Opt | Spotlight (Cmd+Space) | **NUM** |
+| Left Opt | (quick Ctrl) | **Ctrl** |
 | Left Cmd | — | **NAV** |
 | Right Cmd | — | **SYM** |
 | Both Cmds | — | **FUN** |
@@ -183,7 +183,7 @@ Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 
 - **"My Cmd keys don't work."** They're layer keys now: left = NAV, right = SYM, both = FUN. The Cmd *modifier* is on `a`/`;`; Cmd+Tab itself works normally.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
-- **"Spotlight pops up randomly."** You tapped left Opt without pressing anything else — that's its tap action. Press Esc. (Accents live on *right* Opt.)
+- **"Left Opt is Ctrl now."** The left Option thumb is a plain Ctrl modifier (a tap just sends a quick Ctrl). NUM moved to hold `c`/`,`; Spotlight is hold `a` (Cmd) + Space. Accents still live on the untouched *right* Opt.
 - **"kanata dies instantly (`filesystem_error`)."** In order of likelihood: not running as root, driver not installed/approved, or another process (e.g. Karabiner-Elements) is grabbing the keyboard.
 - **"`connect_failed asio.system:2` in a loop."** The VirtualHIDDevice daemon isn't running — bootstrap the `org.pqrs` LaunchDaemon from [Install](#install).
 - **"Keys remap but nothing types."** Give the kanata binary Input Monitoring permission; after replacing the binary, toggle the permission off and on.
