@@ -60,7 +60,7 @@ hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
        Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win
        FUN NAV NUM SYM ·        ·   SYM NUM NAV FUN
 
-thumbs:  [Lang|Ctrl] [Win|NUM] [Ctrl] [Space] [Alt]
+thumbs:  [Lang|Alt]  [Win|NUM] [Ctrl] [Space] [Alt]
          (LCtrl)     (LWin)    (LAlt)         (RAlt)
 caps:    [Esc|Ctrl]
 ```
@@ -160,7 +160,7 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 | Physical key | Tap | Hold |
 |---|---|---|
 | Caps Lock | Esc | Ctrl |
-| Left Ctrl | switch language (Win+Space) | Ctrl |
+| Left Ctrl | switch language (Win+Space) | **Alt** |
 | Left Win | Win (Start menu) | **NUM** |
 | Left Alt | (quick Ctrl) | **Ctrl** |
 | Right Alt | (quick Alt) | **Alt** |

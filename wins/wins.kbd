@@ -53,7 +53,7 @@
 
   ;; ---- from the old config: Caps Lock and Left Ctrl remaps ----
   cesc (tap-hold-press $quick-tap-ms $tapping-term esc lctl)           ;; Caps: tap = Esc, hold = Ctrl
-  lang (tap-hold-press $quick-tap-ms $tapping-term (macro M-spc) lctl) ;; LCtrl: tap = switch language (Win+Space), hold = Ctrl
+  lang (tap-hold-press $quick-tap-ms $tapping-term (macro M-spc) lalt) ;; LCtrl: tap = switch language (Win+Space), hold = Alt
 
   ;; ---- home row mods, GASC like your old config (not the mac CASG of the source) ----
   ;; Left:  A=Win  S=Alt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Alt  ;=Win
