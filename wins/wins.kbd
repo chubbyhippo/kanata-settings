@@ -178,6 +178,7 @@
 
   (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods) ;; enter on the right home row
   (u i)     bspc             $combo-timeout first-release (    nav sym fun     nomods) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
+  (r t)     del              $combo-timeout first-release (    nav sym fun     nomods) ;; forward delete — same-finger (left index) so "tr-" words can't misfire
 
   ;; delete word: forward = s+d (Ctrl+Del), backward = k+l (Ctrl+Backspace)
   (s d)     C-del            $combo-timeout first-release (    nav sym fun     nomods) ;; delete word forward
