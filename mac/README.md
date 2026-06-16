@@ -45,7 +45,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,`+`.` together → Num Word; Space types 0 and stays on |
-| Esc / Tab / Enter / Backspace | combos `q·w` / `w·r` / `l·;` / `o·p` (Tab also `u·o`) |
+| Esc / Tab / Enter / Backspace | combos `q·w` / `a·s` / `l·;` / `o·p` |
 | F-keys | hold `z` / `/` or both Cmds: bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
@@ -127,7 +127,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | Combo | Result |
 |---|---|
 | `q w` | Esc |
-| `w r` / `u o` | Tab |
+| `a s` | Tab |
 | `l ;` | Enter |
 | `o p` | Backspace |
 | `s d` / `k l` | Delete word back (Opt+Backspace) |
@@ -147,7 +147,7 @@ NUM, SYM (right hand), and FUN have the full `osCmd osOpt osSft osCtl` home row;
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`+`.`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the NAV thumb (or `m`+`,`+`.` again) to exit. The right-hand combos (`u·o` = Tab, `o·p` = Backspace) stay available.
+**Num Word** (`m`+`,`+`.`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the NAV thumb (or `m`+`,`+`.` again) to exit. The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
 
 ## Quick start
 
