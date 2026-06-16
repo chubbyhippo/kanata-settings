@@ -45,7 +45,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,`+`.` together → Num Word; Space types 0 and stays on |
-| Esc / Tab / Enter / Backspace | combos `q·w` / `w·r` / `s·d·f` / `o·p` (right hand Tab/Enter: `u·o` / `j·k·l`) |
+| Esc / Tab / Enter / Backspace | combos `q·w` / `w·r` / `l·;` / `o·p` (Tab also `u·o`) |
 | F-keys | hold `z` / `/` or both Cmds: bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
@@ -128,7 +128,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 |---|---|
 | `q w` | Esc |
 | `w r` / `u o` | Tab |
-| `s d f` / `j k l` | Enter |
+| `l ;` | Enter |
 | `o p` | Backspace |
 | `s d` / `k l` | Delete word back (Opt+Backspace) |
 | `d k` | Caps Word on/off |

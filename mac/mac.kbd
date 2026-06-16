@@ -176,10 +176,9 @@
 (defchordsv2
   (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods)
   (w   r)   tab              $combo-timeout all-released  (    nav sym fun     nomods)
-  (s d f)   enter            $combo-timeout first-release (    nav sym fun     nomods)
 
   (u   o)   tab              $combo-timeout all-released  (    nav sym fun     nomods) ;; tab on the right side, great for NUM
-  (j k l)   enter            $combo-timeout first-release (    nav sym fun     nomods)
+  (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods) ;; enter on the right home row
   (o p)     bspc             $combo-timeout first-release (    nav sym fun     nomods) ;; backspace on the top-row right
 
   ;; delete word backward (Opt+Backspace; Ctrl+Backspace isn't the mac standard)
