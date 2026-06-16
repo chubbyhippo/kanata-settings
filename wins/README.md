@@ -126,6 +126,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `s d` / `k l` | Delete word back (Ctrl+Backspace) |
 | `d k` | Caps Word on/off |
 | `d f` / `j k` (keep held) | Ctrl+Alt while held — for Emacs `C-M-…` |
+| `z x` / `x c` / `c v` | Cut / Copy / Paste (Ctrl+`X` / `C` / `V`) |
 | `m , .` | Num Word on/off |
 | `f` / `s` / `d` + right Alt | `~` / `^` / `` ` `` |
 | `q w e r` | Muggle mode on/off |

@@ -196,6 +196,11 @@
   (j k)     @cm              $combo-timeout all-released  (    nav sym fun     nomods)
   (m , .)   @toggle_num_word $combo-timeout all-released  (    nav sym fun     nomods)
 
+  ;; [mac] cut / copy / paste on the bottom row (Cmd) — overlapping pairs share x and c
+  (z x)     M-x              $combo-timeout all-released  (    nav sym fun num nomods) ;; cut
+  (x c)     M-c              $combo-timeout all-released  (    nav sym fun num nomods) ;; copy
+  (c v)     M-v              $combo-timeout all-released  (    nav sym fun num nomods) ;; paste
+
   ;; [mac] back on the right Cmd thumb (the SYM thumb), as in the original mac config
   (f rmet)  S-grv            $combo-timeout all-released  (    nav sym fun num       ) ;; ~ even during caps_word
   (s rmet)  S-6              $combo-timeout all-released  (    nav sym fun num       ) ;; ^ even during caps_word
