@@ -180,9 +180,9 @@
   (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods) ;; enter on the right home row
   (o p)     bspc             $combo-timeout first-release (    nav sym fun     nomods) ;; backspace on the top-row right
 
-  ;; delete word backward (Opt+Backspace; Ctrl+Backspace isn't the mac standard)
-  (s d)     A-bspc           $combo-timeout first-release (    nav sym fun     nomods)
-  (k l)     A-bspc           $combo-timeout first-release (    nav sym fun     nomods)
+  ;; delete word: forward = s+d (Opt+Del), backward = k+l (Opt+Backspace)
+  (s d)     A-del            $combo-timeout first-release (    nav sym fun     nomods) ;; delete word forward
+  (k l)     A-bspc           $combo-timeout first-release (    nav sym fun     nomods) ;; delete word backward
 
   (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num       ) ;; caps_word on the home row, because why not
 

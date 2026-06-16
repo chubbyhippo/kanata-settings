@@ -124,7 +124,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `a s d` | Tab |
 | `l ;` | Enter |
 | `o p` | Backspace |
-| `s d` / `k l` | Delete word back (Ctrl+Backspace) |
+| `s d` / `k l` | Delete word forward / back (Ctrl+Del / Ctrl+Bksp) |
 | `d k` | Caps Word on/off |
 | `d f` / `j k` | Move word right / left (Ctrl+→ / Ctrl+←) |
 | `f g` / `h j` | Select word right / left (Shift+Ctrl+→ / ←) |
