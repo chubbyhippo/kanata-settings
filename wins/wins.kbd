@@ -164,7 +164,7 @@
 
   ;; num keys
   0_sym    (tap-hold-release $quick-tap-ms $tapping-term 0 (layer-while-held sym))             ;; symbols accessible from holding 0
-  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit via NAV-thumb tap or the m , . combo
+  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit with the m , . combo again, or a left-Alt thumb tap (@num_nav)
   num_nav  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
   ;; num typing macros
   r$       (macro S-r S-4 spc)
@@ -202,7 +202,7 @@
   (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods) ;; copy
   (c v)     C-v              $combo-timeout all-released  (    nav sym fun num nomods) ;; paste
 
-  ;; [win] these used the right Cmd thumb on mac; now the SYM thumb (Right Alt)
+  ;; [win] these used the right Cmd thumb on mac; now the Right Alt thumb
   (f ralt)  S-grv            $combo-timeout all-released  (    nav sym fun num       ) ;; ~ even during caps_word
   (s ralt)  S-6              $combo-timeout all-released  (    nav sym fun num       ) ;; ^ even during caps_word
   (d ralt)  grv              $combo-timeout all-released  (    nav sym fun num       ) ;; ` even during caps_word (fixed: source sent ^ twice)

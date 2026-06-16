@@ -103,7 +103,7 @@ osWin  osAlt  osSft  osCtl  Bksp      -     4     5     6     /
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win), pressing `m`+`,`+`.` again, or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
 
 ### FUN — hold `z` / `/`
 
@@ -146,7 +146,7 @@ NUM, SYM (right hand), and FUN have the full `osWin osAlt osSft osCtl` home row;
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`+`.`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the NAV thumb (or `m`+`,`+`.` again) to exit. The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
+**Num Word** (`m`+`,`+`.`): sticky NUM layer, no key held. Space types a **0** and stays on; press `m`+`,`+`.` again to exit (it's a toggle — no thumb needed). The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
 
 ## Quick start
 
