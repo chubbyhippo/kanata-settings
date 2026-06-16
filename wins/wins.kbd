@@ -208,6 +208,11 @@
   (i k)     -                $combo-timeout all-released  (    nav sym fun num nomods) ;; -
   (o l)     S-8              $combo-timeout all-released  (    nav sym fun num nomods) ;; *
 
+  ;; app commands — left-hand top+home verticals, same-finger (misfire-proof) like the math ops; home key = mnemonic
+  (w s)     C-s              $combo-timeout all-released  (    nav sym fun num nomods) ;; save
+  (q a)     C-a              $combo-timeout all-released  (    nav sym fun num nomods) ;; select all
+  (r f)     C-f              $combo-timeout all-released  (    nav sym fun num nomods) ;; find
+
   ;; [win] these used the right Cmd thumb on mac; now the Right Alt thumb
   (f ralt)  S-grv            $combo-timeout all-released  (    nav sym fun num       ) ;; ~ even during caps_word
   (s ralt)  S-6              $combo-timeout all-released  (    nav sym fun num       ) ;; ^ even during caps_word

@@ -44,6 +44,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
 | Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `u·i` / `r·t` |
+| Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | F-keys | hold `z` / `/` (FUN): bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
@@ -135,6 +136,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `f g` / `h j` | Select word right / left (Shift+Ctrl+→ / ←) |
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Ctrl+`X` / `C` / `V`) |
 | `s f` / `j l` | Undo / Redo (Ctrl+Z / Ctrl+Shift+Z) |
+| `w s` / `q a` / `r f` | Save / Select all / Find (Ctrl+S / A / F) |
 | `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
 | `u j` / `i k` / `o l` | `+` / `-` / `*` (vertical, same-finger) |
 | `f` / `s` / `d` + right Alt | `~` / `^` / `` ` `` |
