@@ -176,11 +176,10 @@
   (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods)
   (w   r)   tab              $combo-timeout all-released  (    nav sym fun     nomods)
   (s d f)   enter            $combo-timeout first-release (    nav sym fun     nomods)
-  (s   f)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
 
   (u   o)   tab              $combo-timeout all-released  (    nav sym fun     nomods) ;; tab on the right side, great for NUM
   (j k l)   enter            $combo-timeout first-release (    nav sym fun     nomods)
-  (j   l)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
+  (o p)     bspc             $combo-timeout first-release (    nav sym fun     nomods) ;; backspace on the top-row right
 
   ;; delete word backward (Ctrl+Backspace)
   (s d)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods)
