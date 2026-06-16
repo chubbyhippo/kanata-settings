@@ -30,6 +30,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Delete word forward / back | `s`+`d` = Ctrl+Del · `k`+`l` = Ctrl+Bksp |
 | Undo / Redo | `s`+`f` = Ctrl+Z · `j`+`l` = Ctrl+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
+| Type + - * | `u`+`j` = + · `i`+`k` = - · `o`+`l` = * |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
@@ -134,6 +135,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Ctrl+`X` / `C` / `V`) |
 | `s f` / `j l` | Undo / Redo (Ctrl+Z / Ctrl+Shift+Z) |
 | `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
+| `u j` / `i k` / `o l` | `+` / `-` / `*` (vertical, same-finger) |
 | `f` / `s` / `d` + right Alt | `~` / `^` / `` ` `` |
 | `q w e r` | Muggle mode on/off |
 | `g h` (FUN layer only) | live-reload the config |

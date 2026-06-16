@@ -203,6 +203,11 @@
   (x c)     M-c              $combo-timeout all-released  (    nav sym fun num nomods) ;; copy
   (c v)     M-v              $combo-timeout all-released  (    nav sym fun num nomods) ;; paste
 
+  ;; vertical math operators — top + home, same finger column (misfire-proof: one finger can't hit both fast)
+  (u j)     S-=              $combo-timeout all-released  (    nav sym fun num nomods) ;; +
+  (i k)     -                $combo-timeout all-released  (    nav sym fun num nomods) ;; -
+  (o l)     S-8              $combo-timeout all-released  (    nav sym fun num nomods) ;; *
+
   ;; [mac] back on the right Cmd thumb (the SYM thumb), as in the original mac config
   (f rmet)  S-grv            $combo-timeout all-released  (    nav sym fun num       ) ;; ~ even during caps_word
   (s rmet)  S-6              $combo-timeout all-released  (    nav sym fun num       ) ;; ^ even during caps_word
