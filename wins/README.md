@@ -43,7 +43,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Select text | hold real Shift + NAV arrows |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
-| Esc / Tab / Enter / Backspace | combos `q·w` / `a·s·d` / `l·;` / `o·p` |
+| Esc / Tab / Enter / Backspace | combos `q·w` / `a·s·d` / `l·;` / `u·i` |
 | F-keys | hold `z` / `/` (FUN): bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
@@ -127,7 +127,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `q w` | Esc |
 | `a s d` | Tab |
 | `l ;` | Enter |
-| `o p` | Backspace |
+| `u i` | Backspace |
 | `s d` / `k l` | Delete word forward / back (Ctrl+Del / Ctrl+Bksp) |
 | `d k` | Caps Word on/off |
 | `d f` / `j k` | Move word right / left (Ctrl+→ / Ctrl+←) |
@@ -148,7 +148,7 @@ NUM, SYM (right hand), and FUN have the full `osWin osAlt osSft osCtl` home row;
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. The right-hand combos (`l·;` = Enter, `u·i` = Backspace) stay available.
 
 ## Quick start
 
