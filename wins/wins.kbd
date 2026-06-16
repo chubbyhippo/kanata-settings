@@ -191,7 +191,7 @@
   ;; select word: extend selection one word left / right (hold to repeat)
   (f g)     S-C-right        $combo-timeout all-released  (    nav sym fun     nomods) ;; select word right
   (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun     nomods) ;; select word left
-  (m , .)   @toggle_num_word $combo-timeout all-released  (    nav sym fun     nomods)
+  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods) ;; Num Word on; cancel with the Ctrl thumb (Left Alt = @num_nav). Disabled in NUM so "12" can't toggle it.
 
   ;; undo / redo
   (s f)     C-z              $combo-timeout all-released  (    nav sym fun num nomods) ;; undo

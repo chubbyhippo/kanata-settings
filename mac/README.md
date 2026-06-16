@@ -48,7 +48,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Select text | hold real Shift + NAV arrows |
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
-| Type a number / amount | `m`+`,`+`.` together → Num Word; Space types 0 and stays on |
+| Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the NAV thumb to exit |
 | Esc / Tab / Enter / Backspace | combos `q·w` / `a·s·d` / `l·;` / `o·p` |
 | F-keys | hold `z` / `/` or both Cmds: bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
@@ -110,7 +110,7 @@ osCmd  osOpt  osSft  osCtl  Bksp      -     4     5     6     /
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`), tapping the NAV thumb, or pressing `m`+`,`+`.` again.
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the NAV thumb (Left Cmd).
 
 ### FUN — hold both Cmds (or hold `z` / `/`)
 
@@ -140,7 +140,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `f g` / `h j` | Select word right / left (Shift+Opt+→ / ←) |
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Cmd+`X` / `C` / `V`) |
 | `s f` / `j l` | Undo / Redo (Cmd+Z / Cmd+Shift+Z) |
-| `m , .` | Num Word on/off |
+| `m ,` | Num Word on (tap the NAV thumb to cancel) |
 | `f` / `s` / `d` + right Cmd | `~` / `^` / `` ` `` |
 | `q w e r` | Muggle mode on/off |
 | `g h` (FUN layer only) | live-reload the config |
@@ -153,7 +153,7 @@ NUM, SYM (right hand), and FUN have the full `osCmd osOpt osSft osCtl` home row;
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`+`.`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the NAV thumb (or `m`+`,`+`.` again) to exit. The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the NAV thumb (Left Cmd) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
 
 ## Quick start
 

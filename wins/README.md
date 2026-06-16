@@ -41,7 +41,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Screenshot (Win+Shift+S) | NUM: tap `a`, tap `d`, release, press `s` |
 | Select text | hold real Shift + NAV arrows |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
-| Type a number / amount | `m`+`,`+`.` together → Num Word; Space types 0 and stays on |
+| Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
 | Esc / Tab / Enter / Backspace | combos `q·w` / `a·s·d` / `l·;` / `o·p` |
 | F-keys | hold `z` / `/` (FUN): bottom row = F1–F10 |
 | Caps Lock, actually | FUN layer + Space |
@@ -103,7 +103,7 @@ osWin  osAlt  osSft  osCtl  Bksp      -     4     5     6     /
 thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win), pressing `m`+`,`+`.` again, or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win) or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
 
 ### FUN — hold `z` / `/`
 
@@ -133,7 +133,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `f g` / `h j` | Select word right / left (Shift+Ctrl+→ / ←) |
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Ctrl+`X` / `C` / `V`) |
 | `s f` / `j l` | Undo / Redo (Ctrl+Z / Ctrl+Shift+Z) |
-| `m , .` | Num Word on/off |
+| `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
 | `f` / `s` / `d` + right Alt | `~` / `^` / `` ` `` |
 | `q w e r` | Muggle mode on/off |
 | `g h` (FUN layer only) | live-reload the config |
@@ -146,7 +146,7 @@ NUM, SYM (right hand), and FUN have the full `osWin osAlt osSft osCtl` home row;
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`+`.`): sticky NUM layer, no key held. Space types a **0** and stays on; press `m`+`,`+`.` again to exit (it's a toggle — no thumb needed). The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. The right-hand combos (`l·;` = Enter, `o·p` = Backspace) stay available.
 
 ## Quick start
 
