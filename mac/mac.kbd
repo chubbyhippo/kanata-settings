@@ -189,6 +189,9 @@
   ;; word jump: move the cursor one word left / right (hold to repeat) — [mac] Opt+arrows
   (d f)     A-right          $combo-timeout all-released  (    nav sym fun     nomods) ;; move word right (Opt+Right)
   (j k)     A-left           $combo-timeout all-released  (    nav sym fun     nomods) ;; move word left (Opt+Left)
+  ;; select word: extend selection one word left / right (hold to repeat) — [mac] Shift+Opt+arrows
+  (f g)     S-A-right        $combo-timeout all-released  (    nav sym fun     nomods) ;; select word right (Shift+Opt+Right)
+  (h j)     S-A-left         $combo-timeout all-released  (    nav sym fun     nomods) ;; select word left (Shift+Opt+Left)
   (m , .)   @toggle_num_word $combo-timeout all-released  (    nav sym fun     nomods)
 
   ;; [mac] cut / copy / paste on the bottom row (Cmd) — overlapping pairs share x and c
