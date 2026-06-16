@@ -33,7 +33,9 @@ Then test: hold left Cmd + `k` → ↑.
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Opt+← · `d`+`f` = Opt+→ |
 | Select word left / right | `h`+`j` = Shift+Opt+← · `f`+`g` = Shift+Opt+→ |
+| Delete word forward / back | `s`+`d` = Opt+Del · `k`+`l` = Opt+Bksp |
 | Undo / Redo | `s`+`f` = Cmd+Z · `j`+`l` = Cmd+Shift+Z |
+| Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Emacs-style arrows | hold left Cmd (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold left Cmd (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | NAV + `r` / hold Caps + Shift, tap Tab |
