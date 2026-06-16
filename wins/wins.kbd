@@ -185,10 +185,9 @@
 
   (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num       ) ;; caps_word on the home row, because why not
 
-  ;; held Ctrl+Alt for Emacs C-M- bindings: chord on one hand, letter on the other
-  ;; e.g. C-M-f = hold j+k, press f; C-M-u = hold d+f, press u; release to drop the mods
-  (d f)     @cm              $combo-timeout all-released  (    nav sym fun     nomods)
-  (j k)     @cm              $combo-timeout all-released  (    nav sym fun     nomods)
+  ;; word jump: move the cursor one word left / right (hold to repeat)
+  (d f)     C-right          $combo-timeout all-released  (    nav sym fun     nomods) ;; move word right
+  (j k)     C-left           $combo-timeout all-released  (    nav sym fun     nomods) ;; move word left
   (m , .)   @toggle_num_word $combo-timeout all-released  (    nav sym fun     nomods)
 
   ;; cut / copy / paste on the bottom row — overlapping pairs share x and c

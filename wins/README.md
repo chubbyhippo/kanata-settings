@@ -25,7 +25,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Alt+Tab | hold right Alt + Tab, release to switch (it's a real Alt now) |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `v` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold left Win): tap `f`, tap `d`, release, press `t` |
-| Ctrl+Alt+key (Emacs `C-M-…`) | hold `j`+`k` together + left-hand key, or `d`+`f` + right-hand key |
+| Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
@@ -125,7 +125,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `o p` | Backspace |
 | `s d` / `k l` | Delete word back (Ctrl+Backspace) |
 | `d k` | Caps Word on/off |
-| `d f` / `j k` (keep held) | Ctrl+Alt while held — for Emacs `C-M-…` |
+| `d f` / `j k` | Move word right / left (Ctrl+→ / Ctrl+←) |
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Ctrl+`X` / `C` / `V`) |
 | `m , .` | Num Word on/off |
 | `f` / `s` / `d` + right Alt | `~` / `^` / `` ` `` |
