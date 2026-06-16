@@ -173,12 +173,11 @@
 )
 
 (defchordsv2
-  (w e r)   esc              $combo-timeout all-released  (    nav sym fun     nomods)
+  (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods)
   (w   r)   tab              $combo-timeout all-released  (    nav sym fun     nomods)
   (s d f)   enter            $combo-timeout first-release (    nav sym fun     nomods)
   (s   f)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
 
-  (u i o)   esc              $combo-timeout all-released  (    nav sym fun     nomods) ;; esc on the right side, great for NUM
   (u   o)   tab              $combo-timeout all-released  (    nav sym fun     nomods) ;; tab on the right side, great for NUM
   (j k l)   enter            $combo-timeout first-release (    nav sym fun     nomods)
   (j   l)   bspc             $combo-timeout first-release (    nav sym fun     nomods)
