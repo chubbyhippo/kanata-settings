@@ -195,7 +195,7 @@ Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 
 - **"My Cmd keys don't work."** They're layer keys now: left = NAV, right = SYM, both = FUN. The Cmd *modifier* is on `a`/`;`; Cmd+Tab itself works normally.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
-- **"Left Opt is Ctrl now."** The left Option thumb is a plain Ctrl modifier (a tap just sends a quick Ctrl). NUM moved to hold `c`/`,`; Spotlight is hold `a` (Cmd) + Space. Accents still live on the untouched *right* Opt.
+- **"Left Opt sends Ctrl."** The left Option thumb is a plain Ctrl modifier (a tap just sends a quick Ctrl). Spotlight is hold `a` (Cmd) + Space. Accents live on the untouched *right* Opt.
 - **"kanata dies instantly (`filesystem_error`)."** In order of likelihood: not running as root, driver not installed/approved, or another process (e.g. Karabiner-Elements) is grabbing the keyboard.
 - **"`connect_failed asio.system:2` in a loop."** The VirtualHIDDevice daemon isn't running — bootstrap the `org.pqrs` LaunchDaemon from [Install](#install).
 - **"Keys remap but nothing types."** Give the kanata binary Input Monitoring permission; after replacing the binary, toggle the permission off and on.

@@ -79,7 +79,7 @@ Home   C-s      PgDn   →      ←Back       ←      ↓     ↑     →     E
 C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
 ```
 
-Reach NAV by holding `x` or `.` (the left-Alt thumb is plain Ctrl now). For Alt+Tab, hold the right-Alt thumb and tap Tab — it's a real Alt, so it works like stock Windows. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, on NAV instead of with Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
+Reach NAV by holding `x` or `.`. For Alt+Tab, hold the right-Alt thumb and tap Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e`. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
 
 ### SYM — hold `v` / `m`
 
@@ -91,7 +91,7 @@ Reach NAV by holding `x` or `.` (the left-Alt thumb is plain Ctrl now). For Alt+
                             Space = _
 ```
 
-Reach SYM by holding `v` or `m` (the right-Alt thumb is plain Alt now); `v` is the comfortable side for the right-hand symbols and one-shot mods.
+Reach SYM by holding `v` or `m`; `v` is the comfortable side for the right-hand symbols and one-shot mods.
 
 ### NUM — hold left Win (or hold `c` / `,`)
 
@@ -145,7 +145,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 
 ## One-shot mods
 
-NUM, SYM (right hand), and FUN have the full `osWin osAlt osSft osCtl` home row; NAV keeps only `osAlt` on `s` (its `a`/`d`/`f` are now Home/PgDn/→). **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `v`.
+NUM, SYM (right hand), and FUN have the full `osWin osAlt osSft osCtl` home row; NAV keeps only `osAlt` on `s`. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `v`.
 
 ## Caps Word and Num Word
 
@@ -167,7 +167,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 ## What's remapped
 
-Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere (the old NAV Alt-Tab swapper is gone — use the right-Alt thumb for Alt+Tab).
+Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere.
 
 | Physical key | Tap | Hold |
 |---|---|---|
@@ -185,7 +185,6 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 
 ## Troubleshooting
 
-- **"Where did the layers on my Alt keys go?"** The Alt thumbs are plain modifiers now — **left Alt = Ctrl, right Alt = Alt**. The layers moved to letter-holds: NAV = hold `x`/`.`, SYM = hold `v`/`m`, FUN = hold `z`/`/`. Alt+Tab = hold right Alt + Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
 - **"A weird Office thing opened."** Tapping `g`/`h`'s Hyper hold alone is Windows' "Office key". Harmless; change `@hyper` to `XX` if unused.
@@ -204,4 +203,4 @@ In the `defvar` block:
 
 ## Credits
 
-[urob's ZMK config](https://github.com/urob/zmk-config) (the timerless design), sgraar's [require-prior-idle workaround](https://www.reddit.com/r/ErgoMechKeyboards/comments/1qosvc0/comment/o7cmdzd/), the macOS kanata config this was ported from, and [jtroo/kanata](https://github.com/jtroo/kanata) itself.
+[urob's ZMK config](https://github.com/urob/zmk-config) (the timerless design), sgraar's [require-prior-idle workaround](https://www.reddit.com/r/ErgoMechKeyboards/comments/1qosvc0/comment/o7cmdzd/), and [jtroo/kanata](https://github.com/jtroo/kanata) itself.
