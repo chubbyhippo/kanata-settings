@@ -193,6 +193,10 @@
   (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun     nomods) ;; select word left
   (m , .)   @toggle_num_word $combo-timeout all-released  (    nav sym fun     nomods)
 
+  ;; undo / redo
+  (s f)     C-z              $combo-timeout all-released  (    nav sym fun num nomods) ;; undo
+  (j l)     S-C-z            $combo-timeout all-released  (    nav sym fun num nomods) ;; redo
+
   ;; cut / copy / paste on the bottom row — overlapping pairs share x and c
   (z x)     C-x              $combo-timeout all-released  (    nav sym fun num nomods) ;; cut
   (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods) ;; copy

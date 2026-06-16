@@ -33,6 +33,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Opt+← · `d`+`f` = Opt+→ |
 | Select word left / right | `h`+`j` = Shift+Opt+← · `f`+`g` = Shift+Opt+→ |
+| Undo / Redo | `s`+`f` = Cmd+Z · `j`+`l` = Cmd+Shift+Z |
 | Emacs-style arrows | hold left Cmd (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold left Cmd (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | NAV + `r` / hold Caps + Shift, tap Tab |
@@ -136,6 +137,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `d f` / `j k` | Move word right / left (Opt+→ / Opt+←) |
 | `f g` / `h j` | Select word right / left (Shift+Opt+→ / ←) |
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Cmd+`X` / `C` / `V`) |
+| `s f` / `j l` | Undo / Redo (Cmd+Z / Cmd+Shift+Z) |
 | `m , .` | Num Word on/off |
 | `f` / `s` / `d` + right Cmd | `~` / `^` / `` ` `` |
 | `q w e r` | Muggle mode on/off |
