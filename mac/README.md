@@ -60,30 +60,45 @@ Then test: hold left Cmd + `k` → ↑.
 
 ## Layer maps
 
-`os` = one-shot modifier (applies to the next key). `·` = nothing.
+`os` = one-shot modifier (applies to the next key). On every keycap below, **tap = top legend, hold = bottom legend**; a blank keycap does nothing on that layer.
 
 ### DEF — base layer
 
 ```
-tap:   q   w   e   r   t        y   u   i   o   p
-       a   s   d   f   g        h   j   k   l   ;
-       z   x   c   v   b        n   m   ,   .   /
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   Q   |   W   |   E   |   R   |   T   |    |   Y   |   U   |   I   |   O   |   P   |
+|       |       |       |       |       |    |       |       |       |       |       |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   A   |   S   |   D   |   F   |   G   |    |   H   |   J   |   K   |   L   |   ;   |
+|  Cmd  |  Opt  |  Sft  |  Ctl  |  Hyp  |    |  Hyp  |  Ctl  |  Sft  |  Opt  |  Cmd  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
+|  FUN  |  NAV  |  NUM  |  SYM  |       |    |       |  SYM  |  NUM  |  NAV  |  FUN  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+  tap = top legend     hold = bottom legend
 
-hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
-       Cmd Opt Sft Ctl Hyp      Hyp Ctl Sft Opt Cmd
-       FUN NAV NUM SYM ·        ·   SYM NUM NAV FUN
+Thumbs:
++-------+-------+-------+-------+-------+
+| Lang  |       |       | Space |       |
+|  Ctl  |  Ctl  |  NAV  |       |  SYM  |
++-------+-------+-------+-------+-------+
+  LCtrl   LOpt    LCmd    Space   RCmd  
 
-thumbs:  [Lang|Ctrl] [Ctrl] [NAV] [Space] [SYM]
-         (LCtrl)     (LOpt) (LCmd)        (RCmd)
-caps:    [Esc|Ctrl]
+Caps Lock  =  tap Esc  /  hold Ctrl
 ```
 
 ### NAV — hold left Cmd (or hold `x` / `.`)
 
 ```
-Esc    Swapper  End    Tab→   Fwd→        ⌘V     PgUp  Tab   Bksp  ↑
-Home   ⌘S       PgDn   →      ←Back       ←      ↓     ↑     →     Enter
-⌘Z     ⌘X       ⌘C     ⌘V     ←           ↓      Media Vol−  Vol+  Del
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|  Esc  | Swap  |  End  | Tab>  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| Home  | Save  | PgDn  | Right | Back  |    | Left  | Down  |  Up   | Right | Enter |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| Undo  |  Cut  | Copy  | Paste | Left  |    | Down  | Media | Vol-  | Vol+  |  Del  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+
+Space = Space
 ```
 
 Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Holding `x` or `.` reaches NAV without the thumb's extras (the Tab swapper and tri-layer FUN), so use the thumb for Cmd+Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
@@ -91,11 +106,15 @@ Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Hold
 ### SYM — hold right Cmd (or hold `v` / `m`)
 
 ```
-'      {      [      (      %         &     )     ]     }     "
--      ^      `      ~      $         #     osCtl osSft osOpt osCmd
-+      =      *      /      @         |     \     ?     !     :
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   '   |   {   |   [   |   (   |   %   |    |   &   |   )   |   ]   |   }   |   "   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   -   |   ^   |   `   |   ~   |   $   |    |   #   | osCtl | osSft | osOpt | osCmd |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   +   |   =   |   *   |   /   |   @   |    |   |   |   \   |   ?   |   !   |   :   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-                            Space = _
+Space = _  (underscore)
 ```
 
 Holding `v` or `m` reaches SYM without the thumb's tri-layer FUN; `v` is the comfortable side for the right-hand symbols and one-shot mods.
@@ -103,13 +122,15 @@ Holding `v` or `m` reaches SYM without the thumb's tri-layer FUN; `v` is the com
 ### NUM — hold `c` / `,`
 
 ```
-(      )      ·      R$     ·         +     7     8     9     *
-osCmd  osOpt  osSft  osCtl  Bksp      -     4     5     6     /
-·      osSft  ·      000    ,000      ,     1     2     3     .
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   (   |   )   |       |  R$   |       |    |   +   |   7   |   8   |   9   |   *   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| osCmd | osOpt | osSft | osCtl | Bksp  |    |   -   |   4   |   5   |   6   |   /   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|       | osSft |       |  000  | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-                            Space = 0
-
-thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
+Space = 0     left thumb:  tap = exit NUM  /  hold = NAV
 ```
 
 Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the NAV thumb (Left Cmd).
@@ -117,11 +138,15 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 ### FUN — hold both Cmds (or hold `z` / `/`)
 
 ```
-1      2      3      4      5         6     7     8     9     0
-osCmd  osOpt  osSft  osCtl  F11       F12   osCtl osSft osOpt osCmd
-F1     F2     F3     F4     F5        F6    F7    F8    F9    F10
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   1   |   2   |   3   |   4   |   5   |    |   6   |   7   |   8   |   9   |   0   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| osCmd | osOpt | osSft | osCtl |  F11  |    |  F12  | osCtl | osSft | osOpt | osCmd |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|  F1   |  F2   |  F3   |  F4   |  F5   |    |  F6   |  F7   |  F8   |  F9   |  F10  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-                        Space = Caps Lock
+Space = Caps Lock
 ```
 
 The config-reload combo `g`+`h` only works on this layer. The physical fn/Globe key is untouched, so fn-row media functions still work.

@@ -53,30 +53,45 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 
 ## Layer maps
 
-`os` = one-shot modifier (applies to the next key). `·` = nothing.
+`os` = one-shot modifier (applies to the next key). On every keycap below, **tap = top legend, hold = bottom legend**; a blank keycap does nothing on that layer.
 
 ### DEF — base layer
 
 ```
-tap:   q   w   e   r   t        y   u   i   o   p
-       a   s   d   f   g        h   j   k   l   ;
-       z   x   c   v   b        n   m   ,   .   /
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   Q   |   W   |   E   |   R   |   T   |    |   Y   |   U   |   I   |   O   |   P   |
+|       |       |       |       |       |    |       |       |       |       |       |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   A   |   S   |   D   |   F   |   G   |    |   H   |   J   |   K   |   L   |   ;   |
+|  Win  |  Alt  |  Sft  |  Ctl  |  Hyp  |    |  Hyp  |  Ctl  |  Sft  |  Alt  |  Win  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
+|  FUN  |  NAV  |  NUM  |  SYM  |       |    |       |  SYM  |  NUM  |  NAV  |  FUN  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+  tap = top legend     hold = bottom legend
 
-hold:  ·   ·   ·   ·   ·        ·   ·   ·   ·   ·
-       Win Alt Sft Ctl Hyp      Hyp Ctl Sft Alt Win
-       FUN NAV NUM SYM ·        ·   SYM NUM NAV FUN
+Thumbs:
++-------+-------+-------+-------+-------+
+| Lang  |  Win  |       | Space |       |
+|  Alt  |  NUM  |  Ctl  |       |  Alt  |
++-------+-------+-------+-------+-------+
+  LCtrl   LWin    LAlt    Space   RAlt  
 
-thumbs:  [Lang|Alt]  [Win|NUM] [Ctrl] [Space] [Alt]
-         (LCtrl)     (LWin)    (LAlt)         (RAlt)
-caps:    [Esc|Ctrl]
+Caps Lock  =  tap Esc  /  hold Ctrl
 ```
 
 ### NAV — hold `x` / `.`
 
 ```
-Esc    Tab      End    Tab→   Fwd→        C-v    PgUp  Tab   Bksp  ↑
-Home   C-s      PgDn   →      ←Back       ←      ↓     ↑     →     Enter
-C-z    C-x      C-c    C-v    ←           ↓      Media Vol−  Vol+  Del
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|  Esc  |  Tab  |  End  | Tab>  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| Home  | Save  | PgDn  | Right | Back  |    | Left  | Down  |  Up   | Right | Enter |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| Undo  |  Cut  | Copy  | Paste | Left  |    | Down  | Media | Vol-  | Vol+  |  Del  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+
+Space = Space
 ```
 
 Reach NAV by holding `x` or `.`. For Alt+Tab, hold the right-Alt thumb and tap Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e`. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
@@ -84,11 +99,15 @@ Reach NAV by holding `x` or `.`. For Alt+Tab, hold the right-Alt thumb and tap T
 ### SYM — hold `v` / `m`
 
 ```
-'      {      [      (      %         &     )     ]     }     "
--      ^      `      ~      $         #     osCtl osSft osAlt osWin
-+      =      *      /      @         |     \     ?     !     :
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   '   |   {   |   [   |   (   |   %   |    |   &   |   )   |   ]   |   }   |   "   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   -   |   ^   |   `   |   ~   |   $   |    |   #   | osCtl | osSft | osAlt | osWin |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   +   |   =   |   *   |   /   |   @   |    |   |   |   \   |   ?   |   !   |   :   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-                            Space = _
+Space = _  (underscore)
 ```
 
 Reach SYM by holding `v` or `m`; `v` is the comfortable side for the right-hand symbols and one-shot mods.
@@ -96,13 +115,15 @@ Reach SYM by holding `v` or `m`; `v` is the comfortable side for the right-hand 
 ### NUM — hold left Win (or hold `c` / `,`)
 
 ```
-(      )      ·      R$     ·         +     7     8     9     *
-osWin  osAlt  osSft  osCtl  Bksp      -     4     5     6     /
-·      osSft  ·      000    ,000      ,     1     2     3     .
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   (   |   )   |       |  R$   |       |    |   +   |   7   |   8   |   9   |   *   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| osWin | osAlt | osSft | osCtl | Bksp  |    |   -   |   4   |   5   |   6   |   /   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|       | osSft |       |  000  | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-                            Space = 0
-
-thumbs:  [·] [·] [tap: exit | hold: NAV] [Space: 0] [tap: 0 | hold: SYM]
+Space = 0     left thumb:  tap = exit NUM  /  hold = NAV
 ```
 
 Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win) or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
@@ -110,11 +131,15 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 ### FUN — hold `z` / `/`
 
 ```
-1      2      3      4      5         6     7     8     9     0
-osWin  osAlt  osSft  osCtl  F11       F12   osCtl osSft osAlt osWin
-F1     F2     F3     F4     F5        F6    F7    F8    F9    F10
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|   1   |   2   |   3   |   4   |   5   |    |   6   |   7   |   8   |   9   |   0   |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+| osWin | osAlt | osSft | osCtl |  F11  |    |  F12  | osCtl | osSft | osAlt | osWin |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
+|  F1   |  F2   |  F3   |  F4   |  F5   |    |  F6   |  F7   |  F8   |  F9   |  F10  |
++-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-                        Space = Caps Lock
+Space = Caps Lock
 ```
 
 The config-reload combo `g`+`h` only works on this layer.
