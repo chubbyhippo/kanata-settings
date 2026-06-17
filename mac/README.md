@@ -46,8 +46,6 @@ Then test: hold left Cmd + `k` → ↑.
 | Spotlight (Cmd+Space) | hold `a` (Cmd) + Space |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
 | Screenshot (Cmd+Shift+4) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, press `j` (= 4) |
-| Brightness | FUN (hold `/`): `v` / `b` = down / up |
-| Lock screen | FUN (hold `/`): `c` (Cmd+Ctrl+Q) |
 | Emoji picker | FUN (hold `/`): `z` (Cmd+Ctrl+Space) |
 | Select text | hold real Shift + NAV arrows |
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
@@ -147,13 +145,13 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osCmd | osOpt | osSft | osCtl | Mute  |    |       |  F4   |  F5   |  F6   |  F11  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Emoji | Shot  | Lock  | Bri-  | Bri+  |    |       |  F1   |  F2   |  F3   |  F12  |
+| Emoji | Shot  |       |       |       |    |       |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, brightness down/up on `v`/`b`, a region screenshot (Cmd+Shift+4) on `x`, lock screen (Cmd+Ctrl+Q) on `c`, and the emoji picker (Cmd+Ctrl+Space) on `z`. So hold FUN with `z` or both Cmds for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer. The physical fn/Globe key is untouched, so fn-row media functions still work.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Cmd+Shift+4) on `x`, and the emoji picker (Cmd+Ctrl+Space) on `z`. So hold FUN with `z` or both Cmds for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer. The physical fn/Globe key is untouched, so fn-row media functions still work.
 
 ## Combos
 
