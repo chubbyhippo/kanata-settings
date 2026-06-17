@@ -162,11 +162,11 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |       | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       |       |       |       |       |    |       |       | MClk  |       |       |
+|  Cmd  |  Alt  | Shift | Ctrl  |       |    |       |       | MClk  |       |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `b`+`n` to enter, tap **Caps** (or `b`+`n` again) to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Middle-click** is on `,`; **Space** is also left-click. The thumbs add modifiers — **left thumb (`LOpt`) = Ctrl, right thumb (`RCmd`) = Alt** — so you can Ctrl-click, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
+A sticky layer: press `b`+`n` to enter, tap **Caps** (or `b`+`n` again) to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Middle-click** is on `,`; **Space** is also left-click. The bottom-row keys **`z` `x` `c` `v` = Cmd, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LOpt`) / Alt (right `RCmd`)** — so you can Shift-click to extend a selection, Cmd-click to multi-select, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
 
 ## Combos
 
