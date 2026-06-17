@@ -172,7 +172,7 @@
   ,000     (macro , Digit0 Digit0 Digit0)
   000      (macro Digit0 Digit0 Digit0)
 
-  ;; ---- mouse layer (toggle with w+o, exit with Caps) ----
+  ;; ---- mouse layer (toggle with b+n, exit with Caps) ----
   msu (movemouse-accel-up    1 1000 1 5)
   msd (movemouse-accel-down  1 1000 1 5)
   msl (movemouse-accel-left  1 1000 1 5)
@@ -234,7 +234,7 @@
   (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods mouse) ;; reload config, only from FUN
 
   (q w e r) @toggle_muggle_mode $combo-timeout all-released (   nav sym fun num        mouse)
-  (w o)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods muggle)
+  (b n)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods muggle)
 )
 
 (defvirtualkeys
@@ -325,7 +325,7 @@
   lctl lalt lmet spc rmet
 )
 
-(deflayer mouse ;; toggle w+o, exit Caps. move h j k l, click f d s + Space, scroll e/c
+(deflayer mouse ;; toggle b+n, exit Caps. move h j k l, click f d s + Space, scroll e/c
   @toggle_mouse _
   XX   XX   @whu  XX   XX        XX   XX   XX   XX   XX
   XX   mmid mrgt mlft XX         @msl @msd @msu @msr XX
