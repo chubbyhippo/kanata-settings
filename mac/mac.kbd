@@ -298,9 +298,9 @@
 
 (deflayer fun
   _ _
-  1    2    3    4    5        6    7    8    9    0
-  @osm @osa @oss @osc f11      f12  @osc @oss @osa @osm
-  f1   f2   f3   f4   f5       f6   f7   f8   f9   f10
+  1    2    3    4    5        XX   f7   f8   f9   f10
+  @osm @osa @oss @osc XX       XX   f4   f5   f6   f11
+  XX   XX   XX   XX   XX       XX   f1   f2   f3   f12
   _ _ _ caps _
 )
 

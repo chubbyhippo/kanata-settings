@@ -23,7 +23,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Copy / Paste / Cut / Undo | hold left Alt (= Ctrl) + `c` / `v` / `x` / `z` |
 | …or classic style | hold Caps (= Ctrl) + `c`/`v`/`x`/`z`/`w`… |
 | Alt+Tab | hold right Alt + Tab, release to switch (it's a real Alt now) |
-| Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `v` (F4) |
+| Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold left Win): tap `f`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ |
 | Select word left / right | `h`+`j` = Shift+Ctrl+← · `f`+`g` = Shift+Ctrl+→ |
@@ -45,7 +45,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
 | Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `u·i` / `r·t` |
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
-| F-keys | hold `z` / `/` (FUN): bottom row = F1–F10 |
+| F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -132,17 +132,17 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   1   |   2   |   3   |   4   |   5   |    |   6   |   7   |   8   |   9   |   0   |
+|   1   |   2   |   3   |   4   |   5   |    |       |  F7   |  F8   |  F9   |  F10  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| osWin | osAlt | osSft | osCtl |  F11  |    |  F12  | osCtl | osSft | osAlt | osWin |
+| osWin | osAlt | osSft | osCtl |       |    |       |  F4   |  F5   |  F6   |  F11  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|  F1   |  F2   |  F3   |  F4   |  F5   |    |  F6   |  F7   |  F8   |  F9   |  F10  |
+|       |       |       |       |       |    |       |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Caps Lock
 ```
 
-The config-reload combo `g`+`h` only works on this layer.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). Hold FUN with `z` and tap them with the right. The config-reload combo `g`+`h` only works on this layer.
 
 ## Combos
 
@@ -170,7 +170,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 
 ## One-shot mods
 
-NUM, SYM (right hand), and FUN have the full `osWin osAlt osSft osCtl` home row; NAV keeps only `osAlt` on `s`. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `v`.
+NUM and FUN have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); SYM has them on the **right** (`j k l ;`); NAV keeps only `osAlt` on `s`. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
 
 ## Caps Word and Num Word
 
