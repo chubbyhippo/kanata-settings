@@ -297,8 +297,8 @@
 
 (deflayer fun
   _ _
-  1    2    3    4    5        XX   f7   f8   f9   f10
-  @osm @osa @oss @osc XX       XX   f4   f5   f6   f11
+  prev pp   next vold volu     XX   f7   f8   f9   f10
+  @osm @osa @oss @osc mute     XX   f4   f5   f6   f11
   XX   XX   XX   XX   XX       XX   f1   f2   f3   f12
   _ _ _ caps _
 )

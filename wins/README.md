@@ -45,6 +45,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
 | Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `u·i` / `r·t` |
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
+| Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
@@ -132,9 +133,9 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   1   |   2   |   3   |   4   |   5   |    |       |  F7   |  F8   |  F9   |  F10  |
+| Prev  | Play  | Next  | Vol-  | Vol+  |    |       |  F7   |  F8   |  F9   |  F10  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| osWin | osAlt | osSft | osCtl |       |    |       |  F4   |  F5   |  F6   |  F11  |
+| osWin | osAlt | osSft | osCtl | Mute  |    |       |  F4   |  F5   |  F6   |  F11  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |       |       |       |       |       |    |       |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -142,7 +143,7 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). Hold FUN with `z` and tap them with the right. The config-reload combo `g`+`h` only works on this layer.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer.
 
 ## Combos
 
