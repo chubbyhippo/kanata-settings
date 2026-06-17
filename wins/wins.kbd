@@ -170,57 +170,70 @@
   r$       (macro S-r S-4 spc)
   ,000     (macro , Digit0 Digit0 Digit0)
   000      (macro Digit0 Digit0 Digit0)
+
+  ;; ---- mouse layer (toggle with w+o, exit with Caps) ----
+  msu (movemouse-accel-up    1 1000 1 5)
+  msd (movemouse-accel-down  1 1000 1 5)
+  msl (movemouse-accel-left  1 1000 1 5)
+  msr (movemouse-accel-right 1 1000 1 5)
+  whu (mwheel-up   50 120)
+  whd (mwheel-down 50 120)
+  toggle_mouse (switch
+    ((layer def)) (layer-switch mouse) break
+    ((layer mouse)) (layer-switch def) break
+  )
 )
 
 (defchordsv2
-  (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods)
-  (a s d)   tab              $combo-timeout all-released  (    nav sym fun     nomods) ;; tab — 3 keys so the word "as" can't misfire
+  (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods mouse)
+  (a s d)   tab              $combo-timeout all-released  (    nav sym fun     nomods mouse) ;; tab — 3 keys so the word "as" can't misfire
 
-  (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods) ;; enter on the right home row
-  (u i)     bspc             $combo-timeout first-release (    nav sym fun     nomods) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
-  (r t)     del              $combo-timeout first-release (    nav sym fun     nomods) ;; forward delete — same-finger (left index) so "tr-" words can't misfire
+  (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods mouse) ;; enter on the right home row
+  (u i)     bspc             $combo-timeout first-release (    nav sym fun     nomods mouse) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
+  (r t)     del              $combo-timeout first-release (    nav sym fun     nomods mouse) ;; forward delete — same-finger (left index) so "tr-" words can't misfire
 
   ;; delete word: forward = s+d (Ctrl+Del), backward = k+l (Ctrl+Backspace)
-  (s d)     C-del            $combo-timeout first-release (    nav sym fun     nomods) ;; delete word forward
-  (k l)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods) ;; delete word backward
+  (s d)     C-del            $combo-timeout first-release (    nav sym fun     nomods mouse) ;; delete word forward
+  (k l)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods mouse) ;; delete word backward
 
-  (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num       ) ;; caps_word on the home row, because why not
+  (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num        mouse) ;; caps_word on the home row, because why not
 
   ;; word jump: move the cursor one word left / right (hold to repeat)
-  (d f)     C-right          $combo-timeout all-released  (    nav sym fun     nomods) ;; move word right
-  (j k)     C-left           $combo-timeout all-released  (    nav sym fun     nomods) ;; move word left
+  (d f)     C-right          $combo-timeout all-released  (    nav sym fun     nomods mouse) ;; move word right
+  (j k)     C-left           $combo-timeout all-released  (    nav sym fun     nomods mouse) ;; move word left
   ;; select word: extend selection one word left / right (hold to repeat)
-  (f g)     S-C-right        $combo-timeout all-released  (    nav sym fun     nomods) ;; select word right
-  (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun     nomods) ;; select word left
-  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods) ;; Num Word on; cancel with the Ctrl thumb (Left Alt = @num_nav). Disabled in NUM so "12" can't toggle it.
+  (f g)     S-C-right        $combo-timeout all-released  (    nav sym fun     nomods mouse) ;; select word right
+  (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun     nomods mouse) ;; select word left
+  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; Num Word on; cancel with the Ctrl thumb (Left Alt = @num_nav). Disabled in NUM so "12" can't toggle it.
 
   ;; undo / redo
-  (s f)     C-z              $combo-timeout all-released  (    nav sym fun num nomods) ;; undo
-  (j l)     S-C-z            $combo-timeout all-released  (    nav sym fun num nomods) ;; redo
+  (s f)     C-z              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; undo
+  (j l)     S-C-z            $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; redo
 
   ;; cut / copy / paste on the bottom row — overlapping pairs share x and c
-  (z x)     C-x              $combo-timeout all-released  (    nav sym fun num nomods) ;; cut
-  (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods) ;; copy
-  (c v)     C-v              $combo-timeout all-released  (    nav sym fun num nomods) ;; paste
+  (z x)     C-x              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; cut
+  (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; copy
+  (c v)     C-v              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; paste
 
   ;; vertical math operators — top + home, same finger column (misfire-proof: one finger can't hit both fast)
-  (u j)     S-=              $combo-timeout all-released  (    nav sym fun num nomods) ;; +
-  (i k)     -                $combo-timeout all-released  (    nav sym fun num nomods) ;; -
-  (o l)     S-8              $combo-timeout all-released  (    nav sym fun num nomods) ;; *
+  (u j)     S-=              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; +
+  (i k)     -                $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; -
+  (o l)     S-8              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; *
 
   ;; app commands — left-hand top+home verticals, same-finger (misfire-proof) like the math ops; home key = mnemonic
-  (w s)     C-s              $combo-timeout all-released  (    nav sym fun num nomods) ;; save
-  (q a)     C-a              $combo-timeout all-released  (    nav sym fun num nomods) ;; select all
-  (r f)     C-f              $combo-timeout all-released  (    nav sym fun num nomods) ;; find
+  (w s)     C-s              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; save
+  (q a)     C-a              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; select all
+  (r f)     C-f              $combo-timeout all-released  (    nav sym fun num nomods mouse) ;; find
 
   ;; [win] these used the right Cmd thumb on mac; now the Right Alt thumb
-  (f ralt)  S-grv            $combo-timeout all-released  (    nav sym fun num       ) ;; ~ even during caps_word
-  (s ralt)  S-6              $combo-timeout all-released  (    nav sym fun num       ) ;; ^ even during caps_word
-  (d ralt)  grv              $combo-timeout all-released  (    nav sym fun num       ) ;; ` even during caps_word (fixed: source sent ^ twice)
+  (f ralt)  S-grv            $combo-timeout all-released  (    nav sym fun num        mouse) ;; ~ even during caps_word
+  (s ralt)  S-6              $combo-timeout all-released  (    nav sym fun num        mouse) ;; ^ even during caps_word
+  (d ralt)  grv              $combo-timeout all-released  (    nav sym fun num        mouse) ;; ` even during caps_word (fixed: source sent ^ twice)
 
-  (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods) ;; reload config, only from FUN
+  (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods mouse) ;; reload config, only from FUN
 
-  (q w e r) @toggle_muggle_mode $combo-timeout all-released (   nav sym fun num       )
+  (q w e r) @toggle_muggle_mode $combo-timeout all-released (   nav sym fun num        mouse)
+  (w o)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods muggle)
 )
 
 (defvirtualkeys
@@ -309,4 +322,12 @@
   a s d f g      h j k l ;
   z x c v b      n m , . /
   lctl lmet lalt spc ralt
+)
+
+(deflayer mouse ;; toggle w+o, exit Caps. move h j k l, click f d s + Space, scroll e/c
+  @toggle_mouse _
+  XX   XX   @whu  XX   XX        XX   XX   XX   XX   XX
+  XX   mmid mrgt mlft XX         @msl @msd @msu @msr XX
+  XX   XX   @whd  XX   XX        XX   XX   XX   XX   XX
+  XX   XX   XX   mlft mrgt
 )
