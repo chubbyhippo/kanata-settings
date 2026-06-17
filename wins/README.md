@@ -39,7 +39,8 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Switch input language | tap left Ctrl |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
-| Screenshot (Win+Shift+S) | NUM: tap `a`, tap `d`, release, press `s` |
+| Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
+| Brightness (laptops) | FUN (hold `/`): `v` / `b` = down / up |
 | Select text | hold real Shift + NAV arrows |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
@@ -137,13 +138,13 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osWin | osAlt | osSft | osCtl | Mute  |    |       |  F4   |  F5   |  F6   |  F11  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       |       |       |       |       |    |       |  F1   |  F2   |  F3   |  F12  |
+|       | Shot  |       | Bri-  | Bri+  |    |       |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, brightness down/up on `v`/`b`, and a region screenshot (Win+Shift+S) on `x`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer.
 
 ## Combos
 
