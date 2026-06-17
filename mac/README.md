@@ -55,7 +55,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` or both Cmds: right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `b`+`n` toggles the mouse layer (Caps exits): move `h j k l`, click `f`/`d`/`s` or Space, scroll `e`/`c` |
+| Mouse | `b`+`n` toggles the mouse layer (Caps exits): move `e s d f`, click `j`/`l` or Space, scroll `i`/`k` |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -158,15 +158,15 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       |       | WhUp  |       |       |    |       |       |       |       |       |
+|       |       |  Up   |       |       |    |       |       | ScrUp |       |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       | MClk  | RClk  | LClk  |       |    | Left  | Down  |  Up   | Right |       |
+|       | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       |       | WhDn  |       |       |    |       |       |       |       |       |
+|       |       |       |       |       |    |       |       |       |       |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `b`+`n` to enter, tap **Caps** (or `b`+`n` again) to leave. Move the cursor with the right hand — `h j k l` = ← ↓ ↑ → (accelerates while held); click with the left hand — `f` left, `d` right, `s` middle — or use **Space** for left-click. Scroll with `e` (up) / `c` (down). Every combo is disabled inside this layer, so two-key presses (diagonal moves, double clicks) never misfire.
+A sticky layer: press `b`+`n` to enter, tap **Caps** (or `b`+`n` again) to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Space** is also left-click and the outer thumb is middle-click. Every combo is disabled inside this layer, so two-key presses never misfire.
 
 ## Combos
 

@@ -325,10 +325,10 @@
   lctl lalt lmet spc rmet
 )
 
-(deflayer mouse ;; toggle b+n, exit Caps. move h j k l, click f d s + Space, scroll e/c
+(deflayer mouse ;; toggle b+n, exit Caps. move e/s/d/f, click j=L l=R, scroll i=up k=dn, mid=thumb
   @toggle_mouse _
-  XX   XX   @whu  XX   XX        XX   XX   XX   XX   XX
-  XX   mmid mrgt mlft XX         @msl @msd @msu @msr XX
-  XX   XX   @whd  XX   XX        XX   XX   XX   XX   XX
-  XX   XX   XX   mlft mrgt
+  XX   XX   @msu XX   XX        XX   XX   @whu XX   XX
+  XX   @msl @msd @msr XX        XX   mlft @whd mrgt XX
+  XX   XX   XX   XX   XX        XX   XX   XX   XX   XX
+  XX   XX   XX   mlft mmid
 )
