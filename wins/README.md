@@ -159,7 +159,7 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `b`+`n` to enter, tap **Caps** (or `b`+`n` again) to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Middle-click** is on `,` (and the outer thumb); **Space** is also left-click. Every combo is disabled inside this layer, so two-key presses never misfire.
+A sticky layer: press `b`+`n` to enter, tap **Caps** (or `b`+`n` again) to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Middle-click** is on `,`; **Space** is also left-click. The thumbs add modifiers — **left thumb (`LAlt`) = Ctrl, right thumb (`RAlt`) = Alt** — so you can Ctrl-click, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
 
 ## Combos
 
