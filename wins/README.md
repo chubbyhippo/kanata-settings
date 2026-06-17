@@ -101,17 +101,17 @@ Reach NAV by holding `x` or `.`. For Alt+Tab, hold the right-Alt thumb and tap T
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   '   |   {   |   [   |   (   |   %   |    |   &   |   )   |   ]   |   }   |   "   |
+|   +   |   -   |   *   |   /   |   =   |    |   &   |   (   |   )   |   [   |   ]   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   -   |   ^   |   `   |   ~   |   $   |    |   #   | osCtl | osSft | osAlt | osWin |
+| osWin | osAlt | osSft | osCtl |   $   |    |   #   |   {   |   }   |   '   |   "   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   +   |   =   |   *   |   /   |   @   |    |   |   |   \   |   ?   |   !   |   :   |
+|   `   |   ^   |   ~   |   %   |   @   |    |   |   |   \   |   ?   |   !   |   :   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = _  (underscore)
 ```
 
-Reach SYM by holding `v` or `m`; `v` is the comfortable side for the right-hand symbols and one-shot mods.
+Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
 ### NUM — hold left Win (or hold `c` / `,`)
 
@@ -171,7 +171,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 
 ## One-shot mods
 
-NUM and FUN have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); SYM has them on the **right** (`j k l ;`); NAV keeps only `osAlt` on `s`. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
+NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); NAV keeps only `osAlt` on `s`. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
 
 ## Caps Word and Num Word
 

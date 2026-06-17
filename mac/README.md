@@ -108,17 +108,17 @@ Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Hold
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   '   |   {   |   [   |   (   |   %   |    |   &   |   )   |   ]   |   }   |   "   |
+|   +   |   -   |   *   |   /   |   =   |    |   &   |   (   |   )   |   [   |   ]   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   -   |   ^   |   `   |   ~   |   $   |    |   #   | osCtl | osSft | osOpt | osCmd |
+| osCmd | osOpt | osSft | osCtl |   $   |    |   #   |   {   |   }   |   '   |   "   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   +   |   =   |   *   |   /   |   @   |    |   |   |   \   |   ?   |   !   |   :   |
+|   `   |   ^   |   ~   |   %   |   @   |    |   |   |   \   |   ?   |   !   |   :   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = _  (underscore)
 ```
 
-Holding `v` or `m` reaches SYM without the thumb's tri-layer FUN; `v` is the comfortable side for the right-hand symbols and one-shot mods.
+Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` (or the right Cmd thumb) to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
 ### NUM — hold `c` / `,`
 
@@ -178,7 +178,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 
 ## One-shot mods
 
-NUM and FUN have `osCmd osOpt osSft osCtl` on the **left** home row (`a s d f`); SYM has them on the **right** (`j k l ;`); NAV doesn't (its home row is navigation). **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Cmd+Q = NUM → tap `a` → release → `q`. Cmd+Shift+4 = NUM → tap `a`, tap `d`, press `u`.
+NUM, SYM, and FUN all have `osCmd osOpt osSft osCtl` on the **left** home row (`a s d f`); NAV doesn't (its home row is navigation). **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Cmd+Q = NUM → tap `a` → release → `q`. Cmd+Shift+4 = NUM → tap `a`, tap `d`, press `u`.
 
 ## Caps Word and Num Word
 

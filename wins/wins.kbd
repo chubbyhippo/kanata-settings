@@ -289,9 +289,9 @@
 
 (deflayer sym
   _ _
-  '    S-lbrc lbrc S-9   S-5      S-7  S-0  rbrc S-rbrc S-'
-  -    S-6    grv  S-grv S-4      S-3  @osc @oss @osa   @osm
-  S-=  =      S-8  /     S-2      S-\  \    S-/  S-1    S-;
+  S-=  -     S-8    /      =        S-7    S-9    S-0    lbrc   rbrc
+  @osm @osa  @oss   @osc   S-4      S-3    S-lbrc S-rbrc '      S-'
+  grv  S-6   S-grv  S-5    S-2      S-\    \      S-/    S-1    S-;
   _ _ _ S-- _
 )
 
