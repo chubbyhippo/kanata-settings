@@ -55,7 +55,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` or both Cmds: right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `b`+`n` toggles the mouse layer (`b`+`n` again exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` |
+| Mouse | `b`+`n` toggles the mouse layer (`b`+`n` again exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` up/down · `u`/`o` or `m`/`.` left/right |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -158,15 +158,15 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       |       |  Up   |       |       |    |       |       | ScrUp |       |       |
+|       |       |  Up   |       |       |    |       | ScrLt | ScrUp | ScrRt |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |       | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|  Cmd  |  Alt  | Shift | Ctrl  |       |    |       |       | MClk  |       |       |
+|  Cmd  |  Alt  | Shift | Ctrl  |       |    |       | ScrLt | MClk  | ScrRt |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `b`+`n` to enter, `b`+`n` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Middle-click** is on `,`; **Space** is also left-click. The bottom-row keys **`z` `x` `c` `v` = Cmd, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LOpt`) / Alt (right `RCmd`)** — so you can Shift-click to extend a selection, Cmd-click to multi-select, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
+A sticky layer: press `b`+`n` to enter, `b`+`n` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u`/`m` scroll left, `o`/`.` scroll right. **Middle-click** is on `,`; **Space** is also left-click. The bottom-row keys **`z` `x` `c` `v` = Cmd, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LOpt`) / Alt (right `RCmd`)** — so you can Shift-click to extend a selection, Cmd-click to multi-select, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
 
 ## Combos
 

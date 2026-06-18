@@ -172,13 +172,15 @@
   ,000     (macro , Digit0 Digit0 Digit0)
   000      (macro Digit0 Digit0 Digit0)
 
-  ;; ---- mouse layer (toggle with b+n, exit with Caps) ----
+  ;; ---- mouse layer (toggle with b+n) ----
   msu (movemouse-accel-up    1 500 1 5)
   msd (movemouse-accel-down  1 500 1 5)
   msl (movemouse-accel-left  1 500 1 5)
   msr (movemouse-accel-right 1 500 1 5)
-  whu (mwheel-up   50 120)
-  whd (mwheel-down 50 120)
+  whu (mwheel-up    50 120)
+  whd (mwheel-down  50 120)
+  whl (mwheel-left  50 120)
+  whr (mwheel-right 50 120)
   toggle_mouse (switch
     ((layer def)) (layer-switch mouse) break
     ((layer mouse)) (layer-switch def) break
@@ -325,10 +327,10 @@
   lctl lalt lmet spc rmet
 )
 
-(deflayer mouse ;; toggle b+n (also exits). move e/s/d/f, click j=L l=R, scroll i=up k=dn, mid=, ; zxcv=G/A/S/C, thumbs Ctrl/Alt
+(deflayer mouse ;; toggle b+n (also exits). move e/s/d/f, click j=L l=R, scroll i=up k=dn, left=u/m right=o/., mid=, ; zxcv=G/A/S/C, thumbs Ctrl/Alt
   XX _
-  XX   XX   @msu XX   XX        XX   XX   @whu XX   XX
+  XX   XX   @msu XX   XX        XX   @whl @whu @whr XX
   XX   @msl @msd @msr XX        XX   mlft @whd mrgt XX
-  lmet lalt lsft lctl XX        XX   XX   mmid XX   XX
+  lmet lalt lsft lctl XX        XX   @whl mmid @whr XX
   XX   lctl XX   mlft lalt
 )
