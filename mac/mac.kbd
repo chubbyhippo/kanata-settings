@@ -327,10 +327,10 @@
   lctl lalt lmet spc rmet
 )
 
-(deflayer mouse ;; toggle b+n (also exits). move e/s/d/f, click j=L l=R, scroll i=up k=dn, left=u/m right=o/., mid=, ; zxcv=G/A/S/C, thumbs Ctrl/Alt
+(deflayer mouse ;; toggle b+n (also exits). move e/s/d/f, click j=L l=R, scroll i=up k=dn u=left o=right, mid=, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt
   XX _
   XX   XX   @msu XX   XX        XX   @whl @whu @whr XX
   XX   @msl @msd @msr XX        XX   mlft @whd mrgt XX
-  lmet lalt lsft lctl XX        XX   @whl mmid @whr XX
+  lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
   XX   lctl XX   mlft lalt
 )
