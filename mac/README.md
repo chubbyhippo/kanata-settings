@@ -55,7 +55,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` or both Cmds: right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `b`+`n` toggles the mouse layer (`b`+`n` again exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.` |
+| Mouse | `b`+`n` toggles the mouse layer (`b`+`n` again exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `;` = precision (slow) move |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -133,7 +133,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 |       | osSft |       |  000  | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-Space = 0     left thumb:  tap = exit NUM  /  hold = NAV
+Space = 0     Left-Cmd thumb (the NAV thumb):  tap = exit NUM  /  hold = NAV
 ```
 
 Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the NAV thumb (Left Cmd).
@@ -160,13 +160,13 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |       |       |  Up   |       |       |    |       | ScrLt | ScrUp | ScrRt |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  |       |
+|       | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  | Prec  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |  Cmd  |  Alt  | Shift | Ctrl  |       |    |       | Back  | MClk  | Fwd   |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `b`+`n` to enter, `b`+`n` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. The bottom-row keys **`z` `x` `c` `v` = Cmd, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LOpt`) / Alt (right `RCmd`)** — so you can Shift-click to extend a selection, Cmd-click to multi-select, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
+A sticky layer: press `b`+`n` to enter, `b`+`n` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. The bottom-row keys **`z` `x` `c` `v` = Cmd, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LOpt`) / Alt (right `RCmd`)** — so you can Shift-click to extend a selection, Cmd-click to multi-select, Alt-click, or Ctrl-scroll to zoom. **Hold `;`** (right pinky) for **precision mode**: the cursor crawls in 1px steps for fine positioning; release to restore normal speed. Every combo is disabled inside this layer (and in precision mode), so two-key presses never misfire.
 
 ## Combos
 
