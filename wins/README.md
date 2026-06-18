@@ -48,7 +48,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `b`+`n` toggles the mouse layer (Caps exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` |
+| Mouse | `b`+`n` toggles the mouse layer (`b`+`n` again exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
@@ -147,7 +147,7 @@ Space = Caps Lock
 
 F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer.
 
-### MOUSE — toggle with `b`+`n` (tap Caps to exit)
+### MOUSE — toggle with `b`+`n` (`b`+`n` again to exit)
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -159,7 +159,7 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `b`+`n` to enter, tap **Caps** (or `b`+`n` again) to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Middle-click** is on `,`; **Space** is also left-click. The bottom-row keys **`z` `x` `c` `v` = Win, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LAlt`) / Alt (right `RAlt`)** — so you can Shift-click to extend a selection, Ctrl-click to multi-select, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
+A sticky layer: press `b`+`n` to enter, `b`+`n` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down. **Middle-click** is on `,`; **Space** is also left-click. The bottom-row keys **`z` `x` `c` `v` = Win, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LAlt`) / Alt (right `RAlt`)** — so you can Shift-click to extend a selection, Ctrl-click to multi-select, Alt-click, or Ctrl-scroll to zoom. Every combo is disabled inside this layer, so two-key presses never misfire.
 
 ## Combos
 
