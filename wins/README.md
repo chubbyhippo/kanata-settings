@@ -229,7 +229,6 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
-- **"A weird Office thing opened."** Tapping `g`/`h`'s Hyper hold alone is Windows' "Office key". Harmless; change `@hyper` to `XX` if unused.
 - **"Remaps don't work in Task Manager / admin windows."** Run kanata as administrator.
 - **"Config won't load after an edit."** `--check` tells you the line. A broken live-reload keeps the previous working config.
 

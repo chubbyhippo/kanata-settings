@@ -43,8 +43,6 @@
 )
 
 (defalias
-  hyper (multi lctrl lalt lshift lmet) ;; shorthand for hyper key ([win] note: tapping this alone can trigger the Windows "Office key")
-
   ;; quasi-ZMK 'require-prior-idle' behavior
   tap (multi
     (layer-switch nomods)                                ;; temporarily switch to a layer with no home row mods
@@ -61,9 +59,9 @@
   s (t! lhrm   $tapping-term        s lalt   )
   d (t! lhrm   $tapping-term        d lsft   )
   f (t! lhrm   $tapping-term        f lctl   )
-  g (t! lhrm   $tapping-term        g @hyper )
+  g (t! nomod g)
 
-  h (t! rhrm   $tapping-term        h @hyper )
+  h (t! nomod h)
   j (t! rhrm   $tapping-term        j rctl   )
   k (t! rhrm   $tapping-term        k rsft   )
   l (t! rhrm   $tapping-term        l lalt   )
