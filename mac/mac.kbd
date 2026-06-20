@@ -172,7 +172,7 @@
   ,000     (macro , Digit0 Digit0 Digit0)
   000      (macro Digit0 Digit0 Digit0)
 
-  ;; ---- mouse layer (toggle with b+n) ----
+  ;; ---- mouse layer (toggle with z+b) ----
   msu (movemouse-accel-up    1 500 1 5)
   msd (movemouse-accel-down  1 500 1 5)
   msl (movemouse-accel-left  1 500 1 5)
@@ -242,7 +242,7 @@
   (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods mouse mouse-slow) ;; reload config, only from FUN
 
   (q w e r) @toggle_muggle_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow)
-  (b n)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods muggle)
+  (z b)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods muggle)
 )
 
 (defvirtualkeys
@@ -333,7 +333,7 @@
   lctl lalt lmet spc rmet
 )
 
-(deflayer mouse ;; toggle b+n (also exits). move e/s/d/f, click j=L l=R, scroll i=up k=dn u=left o=right, mid=, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ; = precision (slow) move
+(deflayer mouse ;; toggle z+b (also exits). move e/s/d/f, click j=L l=R, scroll i=up k=dn u=left o=right, mid=, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ; = precision (slow) move
   XX _
   XX   XX   @msu XX   XX        XX   @whl @whu @whr XX
   XX   @msl @msd @msr XX        XX   mlft @whd mrgt @msslow

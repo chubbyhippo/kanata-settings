@@ -48,7 +48,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `b`+`n` toggles the mouse layer (`b`+`n` again exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `;` = precision (slow) move |
+| Mouse | `z`+`b` toggles the mouse layer (`z`+`b` again exits): move `e s d f`, click `j`/`l` or Space, middle-click `,`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `;` = precision (slow) move |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
