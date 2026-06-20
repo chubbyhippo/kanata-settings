@@ -333,10 +333,10 @@
   lctl lalt lmet spc rmet
 )
 
-(deflayer mouse ;; toggle z+b (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ; = precision (slow) move
+(deflayer mouse ;; toggle z+b (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ;=precision (slow) or a=precision (left-hand-only)
   XX _
   XX   mlft @msu mrgt mmid      XX   @whl @whu @whr XX
-  XX   @msl @msd @msr XX        XX   mlft @whd mrgt @msslow
+  @msslow @msl @msd @msr XX        XX   mlft @whd mrgt @msslow
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
   XX   lctl XX   mlft lalt
 )
