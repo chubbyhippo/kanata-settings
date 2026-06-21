@@ -20,7 +20,7 @@
   tapping-term 300            ;; higher = one-handed mod chords work, fewer false-holds when typing fast
   quick-tap-ms 200            ;; same as ZMK ($tap-repress-timeout in kanata docs)
   require-prior-idle 250      ;; same as ZMK (emulated below via the nomods layer + on-idle)
-  combo-timeout 100           ;; ZMK default is 60
+  combo-timeout 60            ;; ZMK default is 60
 
   ;; keys for the tap-hold-release-tap-keys-release templates
   left-side-keys   (q w e r t x c v b)      ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
