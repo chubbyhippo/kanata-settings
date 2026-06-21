@@ -152,10 +152,10 @@
     )
 
   ;; to let other people use the keyboard without having to learn the layers and combos
-  toggle_muggle_mode
+  toggle_plain_mode
     (switch
-      ((layer def)) (layer-switch muggle) break
-      ((layer muggle)) (layer-switch def) break
+      ((layer def)) (layer-switch plain) break
+      ((layer plain)) (layer-switch def) break
     )
 
   ;; [mac] num thumb: tap = Spotlight (Cmd+Space), hold = numbers layer
@@ -241,8 +241,8 @@
 
   (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods mouse mouse-slow) ;; reload config, only from FUN
 
-  (q w e r) @toggle_muggle_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow)
-  (x v)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods muggle)
+  (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow)
+  (x v)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain)
 )
 
 (defvirtualkeys
@@ -325,7 +325,7 @@
   _ _ _ caps _
 )
 
-(deflayer muggle ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
+(deflayer plain ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
   caps tab
   q w e r t      y u i o p
   a s d f g      h j k l ;

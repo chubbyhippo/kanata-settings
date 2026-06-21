@@ -58,7 +58,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `;` or `a` = precision (slow) move |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
-| Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = muggle mode; same to come back |
+| Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
 | Kill kanata entirely | hold physical `LCtrl + Space + Esc` |
 
 ## Layer maps
