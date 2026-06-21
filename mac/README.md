@@ -51,7 +51,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the NAV thumb to exit |
-| Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `u·i` / `r·t` |
+| Esc / Tab / Enter / Backspace / Delete | combos `q·w` or `f·j` / `a·s·d` / `l·;` / `u·i` / `r·t` |
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` or both Cmds: right hand = F1–F12, in the same spots as NUM's digits |
@@ -174,7 +174,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 
 | Combo | Result |
 |---|---|
-| `q w` | Esc |
+| `q w` or `f j` | Esc |
 | `a s d` | Tab |
 | `l ;` | Enter |
 | `u i` | Backspace |
@@ -189,7 +189,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `m ,` | Num Word on (tap the NAV thumb to cancel) |
 | `u j` / `i k` / `o l` | `+` / `-` / `*` (vertical, same-finger) |
 | `f` / `s` / `d` + right Cmd | `~` / `^` / `` ` `` |
-| `q w e r` | Muggle mode on/off |
+| `q w e r` | Plain mode on/off |
 | `g h` (FUN layer only) | live-reload the config |
 
 ## One-shot mods
