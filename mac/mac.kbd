@@ -194,9 +194,8 @@
 )
 
 (defchordsv2
-  (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow)
-  (f j)     esc              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow)
-  (a s d)   tab              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow) ;; tab — 3 keys so the word "as" can't misfire
+  (a s d)   esc              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow) ;; 3 keys so the word "as" can't misfire
+  (q w)     tab              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow)
 
   (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow) ;; enter on the right home row
   (u i)     bspc             $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
