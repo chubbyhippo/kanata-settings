@@ -59,6 +59,7 @@ Then test: hold left Cmd + `k` → ↑.
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
+| Turn all combos off / on | `u`+`i`+`o`+`p` together = combos off (typing, mods, and layers still work); same to turn back on |
 | Kill kanata entirely | hold physical `LCtrl + Space + Esc` |
 
 ## Layer maps
@@ -190,7 +191,10 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `u j` / `i k` / `o l` | `+` / `-` / `*` (vertical, same-finger) |
 | `f` / `s` / `d` + right Cmd | `~` / `^` / `` ` `` |
 | `q w e r` | Plain mode on/off |
+| `u i o p` | All combos on/off |
 | `g h` (FUN layer only) | live-reload the config |
+
+**Master toggle:** `u`+`i`+`o`+`p` silences every combo above at once (press it again to bring them back) — handy for games or apps with their own chord shortcuts. Home row mods, layers, and one-shots keep working; only the two-key combos go quiet. It mirrors the `q`+`w`+`e`+`r` plain-mode toggle, and it's the one combo that stays live while combos are off, so you can always switch back. Under the hood it drops you into a `nocombo` layer (a clone of DEF that's listed in every combo's disabled-layers); a `cmboff` flag keeps the tri-layer Cmd thumbs returning there instead of to DEF while combos are off.
 
 ## One-shot mods
 

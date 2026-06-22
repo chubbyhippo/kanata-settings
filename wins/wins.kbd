@@ -155,6 +155,14 @@
       ((layer plain)) (layer-switch def) break
     )
 
+  ;; master switch for every combo: def <-> nocombo (a clone of def where all chords are disabled).
+  ;; The u+i+o+p chord that triggers this stays active in nocombo, so you can always turn combos back on.
+  toggle_combos
+    (switch
+      ((layer def)) (layer-switch nocombo) break
+      ((layer nocombo)) (layer-switch def) break
+    )
+
   ;; [win] num thumb: tap = Win (Start menu), hold = numbers layer
   num (tap-hold-release $quick-tap-ms $tapping-term lmet (layer-while-held num))
 
@@ -190,55 +198,59 @@
 )
 
 (defchordsv2
-  (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow)
-  (a s d)   tab              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow) ;; tab — 3 keys so the word "as" can't misfire
+  (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo)
+  (a s d)   tab              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; tab — 3 keys so the word "as" can't misfire
 
-  (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow) ;; enter on the right home row
-  (u i)     bspc             $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
-  (r t)     del              $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow) ;; forward delete — same-finger (left index) so "tr-" words can't misfire
+  (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; enter on the right home row
+  (u i)     bspc             $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
+  (r t)     del              $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; forward delete — same-finger (left index) so "tr-" words can't misfire
 
   ;; delete word: forward = s+d (Ctrl+Del), backward = k+l (Ctrl+Backspace)
-  (s d)     C-del            $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow) ;; delete word forward
-  (k l)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow) ;; delete word backward
+  (s d)     C-del            $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; delete word forward
+  (k l)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; delete word backward
 
-  (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow) ;; caps_word on the home row, because why not
+  (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; caps_word on the home row, because why not
 
   ;; word jump: move the cursor one word left / right (hold to repeat)
-  (d f)     C-right          $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow) ;; move word right
-  (j k)     C-left           $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow) ;; move word left
+  (d f)     C-right          $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; move word right
+  (j k)     C-left           $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; move word left
   ;; select word: extend selection one word left / right (hold to repeat)
-  (f g)     S-C-right        $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow) ;; select word right
-  (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow) ;; select word left
-  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; Num Word on; cancel with the Ctrl thumb (Left Alt = @num_nav). Disabled in NUM so "12" can't toggle it.
+  (f g)     S-C-right        $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; select word right
+  (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; select word left
+  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Num Word on; cancel with the Ctrl thumb (Left Alt = @num_nav). Disabled in NUM so "12" can't toggle it.
 
   ;; undo / redo
-  (s f)     C-z              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; undo
-  (j l)     S-C-z            $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; redo
+  (s f)     C-z              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; undo
+  (j l)     S-C-z            $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; redo
 
   ;; cut / copy / paste on the bottom row — overlapping pairs share x and c
-  (z x)     C-x              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; cut
-  (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; copy
-  (c v)     C-v              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; paste
+  (z x)     C-x              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; cut
+  (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; copy
+  (c v)     C-v              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; paste
 
   ;; vertical math operators — top + home, same finger column (misfire-proof: one finger can't hit both fast)
-  (u j)     S-=              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; +
-  (i k)     -                $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; -
-  (o l)     S-8              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; *
+  (u j)     S-=              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; +
+  (i k)     -                $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; -
+  (o l)     S-8              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; *
 
   ;; app commands — left-hand top+home verticals, same-finger (misfire-proof) like the math ops; home key = mnemonic
-  (w s)     C-s              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; save
-  (q a)     C-a              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; select all
-  (r f)     C-f              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow) ;; find
+  (w s)     C-s              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; save
+  (q a)     C-a              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; select all
+  (r f)     C-f              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; find
 
   ;; [win] these used the right Cmd thumb on mac; now the Right Alt thumb
-  (f ralt)  S-grv            $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow) ;; ~ even during caps_word
-  (s ralt)  S-6              $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow) ;; ^ even during caps_word
-  (d ralt)  grv              $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow) ;; ` even during caps_word (fixed: source sent ^ twice)
+  (f ralt)  S-grv            $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; ~ even during caps_word
+  (s ralt)  S-6              $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; ^ even during caps_word
+  (d ralt)  grv              $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; ` even during caps_word (fixed: source sent ^ twice)
 
-  (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods mouse mouse-slow) ;; reload config, only from FUN
+  (g h)     lrld             $combo-timeout all-released  (def nav sym     num nomods mouse mouse-slow nocombo) ;; reload config, only from FUN
 
-  (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow)
-  (x v)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain)
+  (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
+  (x v)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain nocombo)
+
+  ;; master combo toggle — turns ALL combos on/off. Active ONLY in def and nocombo (so it's the one
+  ;; combo that still works while combos are "off", letting you switch back). Mirrors q+w+e+r (plain).
+  (u i o p) @toggle_combos     $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow)
 )
 
 (defvirtualkeys
@@ -279,6 +291,14 @@
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
   @lang @num lctl  @spc lalt   ;; [win] LAlt thumb = Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
+)
+
+(deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
+  @cesc tab       ;; toggle on/off with u+i+o+p. Home row mods, layers and everything else still work normally.
+  @q   @w @e    @r  @t        @y  @u  @i  @o  @p
+  @a   @s @d    @f  @g        @h  @j  @k  @l  @;
+  @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
+  @lang @num lctl  @spc lalt
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
