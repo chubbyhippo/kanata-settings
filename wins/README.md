@@ -119,7 +119,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   (   |   )   |       |  R$   |       |    |   +   |   7   |   8   |   9   |   *   |
+|   (   |   )   |       |       |       |    |   +   |   7   |   8   |   9   |   *   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osWin | osAlt | osSft | osCtl | Bksp  |    |   -   |   4   |   5   |   6   |   /   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -129,7 +129,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 Space = 0     physical Left-Alt thumb (your Ctrl key):  tap = exit NUM  /  hold = NAV
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win) or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win) or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
 
 ### FUN — hold `z` / `/`
 
@@ -187,7 +187,7 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 
 ## One-shot mods
 
-NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); NAV keeps only `osAlt` on `s`. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
+NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); NAV has none — its home row is navigation. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
 
 ## Caps Word and Num Word
 

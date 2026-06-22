@@ -126,7 +126,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|   (   |   )   |       |  R$   |       |    |   +   |   7   |   8   |   9   |   *   |
+|   (   |   )   |       |       |       |    |   +   |   7   |   8   |   9   |   *   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osCmd | osOpt | osSft | osCtl | Bksp  |    |   -   |   4   |   5   |   6   |   /   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -136,7 +136,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 Space = 0     Left-Cmd thumb (the NAV thumb):  tap = exit NUM  /  hold = NAV
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros; `R$` types "R$ " — edit or delete in the config. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the NAV thumb (Left Cmd).
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the NAV thumb (Left Cmd).
 
 ### FUN — hold both Cmds (or hold `z` / `/`)
 
