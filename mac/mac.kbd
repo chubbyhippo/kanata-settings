@@ -1,5 +1,5 @@
 ;; kanata config — macOS "timerless" home row mods setup
-;; macOS-specific choices are marked with [mac].
+;; macOS-specific choices are marked with [mac]. Structurally mirrors wins/wins.kbd.
 ;;
 ;; Run:    sudo kanata --cfg mac.kbd          (needs the Karabiner VirtualHIDDevice driver, see README)
 ;; Check:  kanata --cfg mac.kbd --check       (validate after any edit)
@@ -44,8 +44,6 @@
 )
 
 (defalias
-  hyper (multi lctrl lalt lshift lmet) ;; shorthand for hyper key ([mac] the classic mac Hyper: Ctrl+Opt+Shift+Cmd)
-
   ;; quasi-ZMK 'require-prior-idle' behavior
   tap (multi
     (layer-switch nomods)                                ;; temporarily switch to a layer with no home row mods
@@ -56,15 +54,15 @@
   cesc (tap-hold-press $quick-tap-ms $tapping-term esc lctl)           ;; Caps: tap = Esc, hold = Ctrl
   lang (tap-hold-press $quick-tap-ms $tapping-term (macro C-spc) lctl) ;; [mac] LCtrl: tap = switch input source (Ctrl+Space), hold = Ctrl
 
-  ;; ---- home row mods, GASC like the Windows config — Ctrl on the index finger (Emacs-friendly) ----
-  ;; Left:  A=Cmd  S=Opt D=Shift F=Ctrl      Right: J=Ctrl K=Shift  L=Opt  ;=Cmd
+  ;; ---- home row mods, GASC — Ctrl on the index finger (Emacs-friendly) ----
+  ;; Left:  A=Cmd  S=Opt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Opt  ;=Cmd
   a (t! lhrm   $tapping-term        a lmet   )
   s (t! lhrm   $tapping-term        s lalt   )
   d (t! lhrm   $tapping-term        d lsft   )
   f (t! lhrm   $tapping-term        f lctl   )
-  g (t! lhrm   $tapping-term        g @hyper )
+  g (t! nomod g)
 
-  h (t! rhrm   $tapping-term        h @hyper )
+  h (t! nomod h)
   j (t! rhrm   $tapping-term        j rctl   )
   k (t! rhrm   $tapping-term        k rsft   )
   l (t! rhrm   $tapping-term        l lalt   )
@@ -117,33 +115,6 @@
   ;; media tap-dance on NAV: tap = play/pause, hold = mute, 2x = next, 3x = prev
   ppmnp (tap-dance 200 ((tap-hold $quick-tap-ms $tapping-term pp mute) next prev))
 
-  ;; layer keys with tri-layer logic (see defvirtualkeys below)
-  tlnav (multi
-    (on-press   press-virtualkey    lnav)
-    (on-press   tap-virtualkey      release_all_mods)
-    (on-press   tap-virtualkey      evaluate_tri_layer)
-    (on-release tap-virtualkey      ops)              ;; keeps sticky keys alive when returning to default layer
-    (on-release release-virtualkey  lnav)
-    (on-release release-virtualkey  swapperrcmd)      ;; kills the held swapper Cmd when released (see below)
-    (on-release tap-virtualkey      evaluate_tri_layer)
-  )
-
-  tlsym (multi
-    (on-press   press-virtualkey    lsym)
-    ;; (on-press   tap-virtualkey      release_all_mods)
-    (on-press   tap-virtualkey      evaluate_tri_layer)
-    (on-release tap-virtualkey      ops)              ;; keeps sticky keys alive when returning to default layer
-    (on-release release-virtualkey  lsym)
-    (on-release tap-virtualkey      evaluate_tri_layer)
-  )
-
-  ;; tri-state swapper: [mac] holds right Cmd and taps Tab = Cmd-Tab app switcher.
-  ;; Each press sends another Tab; releasing the NAV thumb releases Cmd and switches.
-  swapper (multi
-    (on-press   press-virtualkey    swapperrcmd)
-    (on-press   tap-virtualkey      swappertab)
-  )
-
   ;; num_word toggle
   toggle_num_word
     (switch
@@ -159,13 +130,11 @@
     )
 
   ;; master switch for every combo: def <-> nocombo (a clone of def where all chords are disabled).
-  ;; Also raises/lowers the @cmboff flag so the tri-layer thumbs idle back to nocombo (not def) while
-  ;; combos are off. The u+i+o+p chord that triggers this stays active in nocombo, so combos can always
-  ;; be turned back on.
+  ;; The u+i+o+p chord that triggers this stays active in nocombo, so you can always turn combos back on.
   toggle_combos
     (switch
-      ((layer def)) (multi (on-press press-virtualkey cmboff) (layer-switch nocombo)) break
-      ((layer nocombo)) (multi (on-press release-virtualkey cmboff) (layer-switch def)) break
+      ((layer def)) (layer-switch nocombo) break
+      ((layer nocombo)) (layer-switch def) break
     )
 
   ;; [mac] num thumb: tap = Spotlight (Cmd+Space), hold = numbers layer
@@ -175,7 +144,7 @@
 
   ;; num keys
   0_sym    (tap-hold-release $quick-tap-ms $tapping-term 0 (layer-while-held sym))             ;; symbols accessible from holding 0
-  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit via NAV-thumb tap or the m , . combo
+  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit with the m , . combo again, or a Left-Cmd thumb tap (@num_nav)
   num_nav  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
   ;; num typing macros
   ,000     (macro , Digit0 Digit0 Digit0)
@@ -222,7 +191,7 @@
   ;; select word: extend selection one word left / right (hold to repeat) — [mac] Shift+Opt+arrows
   (f g)     S-A-right        $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; select word right (Shift+Opt+Right)
   (h j)     S-A-left         $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; select word left (Shift+Opt+Left)
-  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Num Word on; cancel with the NAV thumb (Left Cmd = @num_nav). Disabled in NUM so "12" can't toggle it.
+  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Num Word on; cancel with the Left-Cmd thumb (@num_nav). Disabled in NUM so "12" can't toggle it.
 
   ;; undo / redo — [mac] Cmd-z / Cmd-Shift-z
   (s f)     M-z              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; undo
@@ -243,7 +212,7 @@
   (q a)     M-a              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; select all
   (r f)     M-f              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; find
 
-  ;; [mac] back on the right Cmd thumb (the SYM thumb), as in the original mac config
+  ;; [mac] backtick group on the right Cmd thumb (still the physical RCmd key, even though it now sends Opt)
   (f rmet)  S-grv            $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; ~ even during caps_word
   (s rmet)  S-6              $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; ^ even during caps_word
   (d rmet)  grv              $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; ` even during caps_word
@@ -260,26 +229,6 @@
 
 (defvirtualkeys
   to-base (layer-switch def)         ;; used by @tap to return to base after the idle period
-
-  ops (one-shot-pause-processing 10) ;; lets sticky keys stay triggered when moving back to the default layer
-
-  swapperrcmd rmet                   ;; [mac] swapper holds right Cmd → Cmd-Tab app switcher (the name fits again)
-  swappertab tab                     ;; sends Tab on every new press while the swapper is active
-
-  ;; tri-layer logic
-  lnav nop0                          ;; no-output key for tri-layer logic
-  lsym nop1                          ;; no-output key for tri-layer logic
-  cmboff nop8                        ;; flag: raised by @toggle_combos while all combos are off (see evaluate_tri_layer)
-
-  evaluate_tri_layer (switch         ;; switch layer based on which layer keys are pressed
-    ((and nop0 nop1)) (layer-switch fun) break
-    ((and nop0 (not nop1))) (layer-switch nav) break
-    ((and nop1 (not nop0))) (layer-switch sym) break
-    ((and nop8 (not nop0) (not nop1))) (layer-switch nocombo) break ;; combos-off mode: idle back to nocombo, not def
-    ((not (and nop0 nop1))) (layer-switch def) break
-  )
-
-  release_all_mods nop9              ;; absorbs all queued one-shot mods, cancelling them
 )
 
 ;; source keys — [mac] mac board: F-row and fn/Globe left untouched (pass through),
@@ -297,15 +246,15 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @lang lctl  @tlnav @spc @tlsym   ;; [mac] LOpt thumb = Ctrl (was @num; num still on hold-c/, ). Right Option key already passes through as Alt.
+  @lang @num lmet  @spc lalt   ;; [mac] LOpt thumb = Spotlight/NUM, LCmd thumb = Cmd, RCmd thumb = Opt (nav on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
   @cesc tab       ;; toggle on/off with u+i+o+p. Home row mods, layers and everything else still work normally.
-  @q   @w @e    @r  @t        @y  @u  @i  @o  @p   ;; (the @cmboff flag keeps the tri-layer thumbs returning here, not to def)
+  @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @lang lctl  @tlnav @spc @tlsym
+  @lang @num lmet  @spc lalt
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
@@ -325,8 +274,8 @@
 )
 
 (deflayer nav
-  _ @swapper ;; physical Tab on NAV = the swapper, so Cmd+Tab works like stock
-  esc  @swapper end     C-tab M-rbrc      M-v    pgup tab  bspc up
+  _ tab ;; [mac] physical Tab on NAV = plain Tab; Cmd+Tab = hold the LCmd thumb + Tab
+  esc  tab      end     C-tab M-rbrc      M-v    pgup tab  bspc up
   home M-s      pgdn    right M-lbrc      left   down up   right enter
   M-z  M-x      M-c     M-v   left        down   @ppmnp vold volu  del
   _ _ _ _ _
@@ -356,12 +305,12 @@
   lctl lalt lmet spc rmet
 )
 
-(deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ;=precision (slow) or a=precision (left-hand-only)
+(deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=Cmd/Opt/Shift/Ctrl, thumbs Ctrl/Opt, hold a=precision (slow)
   XX _
   XX   mlft @msu mrgt mmid      XX   @whl @whu @whr XX
-  @msslow @msl @msd @msr XX        XX   mlft @whd mrgt @msslow
+  @msslow @msl @msd @msr XX        XX   mlft @whd mrgt XX
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
-  XX   lctl XX   mlft lalt
+  XX   XX   lctl mlft lalt
 )
 
 (deflayer mouse-slow ;; same as mouse but ESDF crawl at 1px steps for fine positioning; combos disabled here too
@@ -369,5 +318,5 @@
   XX   XX   @smsu XX   XX        XX   @whl @whu @whr XX
   XX   @smsl @smsd @smsr XX      XX   mlft @whd mrgt XX
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
-  XX   lctl XX   mlft lalt
+  XX   XX   lctl mlft lalt
 )

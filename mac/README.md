@@ -20,15 +20,15 @@ Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases))
 
 3. **Permissions:** System Settings → Privacy & Security → add the kanata binary to **Input Monitoring** and **Accessibility**.
 
-Then test: hold left Cmd + `k` → ↑.
+Then test: hold `x` + `k` → ↑ (NAV).
 
 ## Keyboard shortcuts
 
 | You want | Do this |
 |---|---|
-| Copy / Paste / Cut / Undo | hold left Cmd (NAV) + `c` / `v` / `x` / `z` |
+| Copy / Paste / Cut / Undo | hold left Cmd (= Cmd) + `c` / `v` / `x` / `z` |
 | Ctrl chords (Emacs, terminal) | hold Caps (= Ctrl) + the key — or pause, hold `f`/`j` + a cross-hand key |
-| Cmd+Tab | works as always: hold left Cmd, tap Tab (or `w`), release to switch |
+| Cmd+Tab | hold left Cmd thumb (= Cmd), tap Tab, release to switch |
 | Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Opt+← · `d`+`f` = Opt+→ |
@@ -37,25 +37,25 @@ Then test: hold left Cmd + `k` → ↑.
 | Undo / Redo | `s`+`f` = Cmd+Z · `j`+`l` = Cmd+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type + - * | `u`+`j` = + · `i`+`k` = - · `o`+`l` = * |
-| Emacs-style arrows | hold left Cmd (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
-| Vim-style arrows | hold left Cmd (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
-| Next / previous browser tab | NAV + `r` / hold Caps + Shift, tap Tab |
-| Browser back / forward | NAV + `g` / NAV + `t` (Cmd+[ / Cmd+]) |
-| Arrows, PgUp/PgDn, Home/End | hold left Cmd (NAV), or hold `x` / `.` |
+| Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
+| Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
+| Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
+| Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` (Cmd+[ / Cmd+]) |
+| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
 | Switch input language | tap left Ctrl (Ctrl+Space) |
-| Spotlight (Cmd+Space) | hold `a` (Cmd) + Space |
+| Spotlight (Cmd+Space) | tap left Opt; or hold `a` (Cmd) + Space |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
 | Screenshot (Cmd+Shift+4) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, press `j` (= 4) |
 | Emoji picker | FUN (hold `/`): `z` (Cmd+Ctrl+Space) |
 | Select text | hold real Shift + NAV arrows |
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
-| Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the NAV thumb to exit |
+| Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Left-Cmd thumb to exit |
 | Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `u·i` / `r·t` |
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
-| F-keys | hold `z` or both Cmds: right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `;` or `a` = precision (slow) move |
+| F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
+| Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `a` = precision (slow) move |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
@@ -74,7 +74,7 @@ Then test: hold left Cmd + `k` → ↑.
 |       |       |       |       |       |    |       |       |       |       |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   A   |   S   |   D   |   F   |   G   |    |   H   |   J   |   K   |   L   |   ;   |
-|  Cmd  |  Opt  |  Sft  |  Ctl  |  Hyp  |    |  Hyp  |  Ctl  |  Sft  |  Opt  |  Cmd  |
+|  Cmd  |  Opt  |  Sft  |  Ctl  |       |    |       |  Ctl  |  Sft  |  Opt  |  Cmd  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
 |  FUN  |  NAV  |  NUM  |  SYM  |       |    |       |  SYM  |  NUM  |  NAV  |  FUN  |
@@ -83,19 +83,19 @@ Then test: hold left Cmd + `k` → ↑.
 
 Thumbs:
 +-------+-------+-------+-------+-------+
-| Lang  |       |       | Space |       |
-|  Ctl  |  Ctl  |  NAV  |       |  SYM  |
+| Lang  | Spot  |       | Space |       |
+|  Ctl  |  NUM  |  Cmd  |       |  Opt  |
 +-------+-------+-------+-------+-------+
   LCtrl   LOpt    LCmd    Space   RCmd  
 
 Caps Lock  =  tap Esc  /  hold Ctrl
 ```
 
-### NAV — hold left Cmd (or hold `x` / `.`)
+### NAV — hold `x` / `.`
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|  Esc  | Swap  |  End  | Tab>  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
+|  Esc  |  Tab  |  End  | Tab>  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Home  | Save  | PgDn  | Right | Back  |    | Left  | Down  |  Up   | Right | Enter |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -105,9 +105,9 @@ Caps Lock  =  tap Esc  /  hold Ctrl
 Space = Space
 ```
 
-Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Holding `x` or `.` reaches NAV without the thumb's extras (the Tab swapper and tri-layer FUN), so use the thumb for Cmd+Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
+Reach NAV by holding `x` or `.`. Physical Tab on NAV is plain Tab; for Cmd+Tab, hold the left Cmd thumb and tap Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
 
-### SYM — hold right Cmd (or hold `v` / `m`)
+### SYM — hold `v` / `m`
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -121,9 +121,9 @@ Physical Tab on NAV is also the swapper, so Cmd+Tab works like stock macOS. Hold
 Space = _  (underscore)
 ```
 
-Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` (or the right Cmd thumb) to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
+Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
-### NUM — hold `c` / `,`
+### NUM — hold left Opt (or hold `c` / `,`)
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -134,12 +134,12 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 |       | osSft |       |  000  | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-Space = 0     Left-Cmd thumb (the NAV thumb):  tap = exit NUM  /  hold = NAV
+Space = 0     Left-Cmd thumb:  tap = exit NUM  /  hold = NAV
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the NAV thumb (Left Cmd).
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Opt) or tapping the Left-Cmd thumb.
 
-### FUN — hold both Cmds (or hold `z` / `/`)
+### FUN — hold `z` / `/`
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -153,7 +153,7 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0**
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Cmd+Shift+4) on `x`, and the emoji picker (Cmd+Ctrl+Space) on `z`. So hold FUN with `z` or both Cmds for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer. The physical fn/Globe key is untouched, so fn-row media functions still work.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Cmd+Shift+4) on `x`, and the emoji picker (Cmd+Ctrl+Space) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer. The physical fn/Globe key is untouched, so fn-row media functions still work.
 
 ### MOUSE — toggle with `x`+`v` (`x`+`v` again to exit)
 
@@ -161,13 +161,13 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |       | LClk  |  Up   | RClk  | MClk  |    |       | ScrLt | ScrUp | ScrRt |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Prec  | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  | Prec  |
+| Prec  | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|  Cmd  |  Alt  | Shift | Ctrl  |       |    |       | Back  | MClk  | Fwd   |       |
+|  Cmd  |  Opt  | Shift | Ctrl  |       |    |       | Back  | MClk  | Fwd   |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. Additional click aliases on the top row: `w` = left-click, `r` = right-click, `t` = middle-click. The bottom-row keys **`z` `x` `c` `v` = Cmd, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LOpt`) / Alt (right `RCmd`)** — so you can Shift-click to extend a selection, Cmd-click to multi-select, Alt-click, or Ctrl-scroll to zoom. **Hold `;`** (right pinky) for **precision mode**: the cursor crawls in 1px steps for fine positioning; release to restore normal speed. **Hold `a`** (left pinky) for the same precision mode — useful when operating the layer with the left hand only. Every combo is disabled inside this layer (and in precision mode), so two-key presses never misfire.
+A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. Additional click aliases on the top row: `w` = left-click, `r` = right-click, `t` = middle-click. The bottom-row keys **`z` `x` `c` `v` = Cmd, Opt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LCmd`) / Opt (right `RCmd`)** — so you can Shift-click to extend a selection, Cmd-click to multi-select, Opt-click, or Ctrl-scroll to zoom. **Hold `a`** (left pinky) for **precision mode**: the cursor crawls in 1px steps for fine positioning; release to restore normal speed. Every combo is disabled inside this layer (and in precision mode), so two-key presses never misfire.
 
 ## Combos
 
@@ -187,24 +187,24 @@ Press together (within 60 ms). They only fire after ≥350 ms idle and are disab
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Cmd+`X` / `C` / `V`) |
 | `s f` / `j l` | Undo / Redo (Cmd+Z / Cmd+Shift+Z) |
 | `w s` / `q a` / `r f` | Save / Select all / Find (Cmd+S / A / F) |
-| `m ,` | Num Word on (tap the NAV thumb to cancel) |
+| `m ,` | Num Word on (tap the Left-Cmd thumb to cancel) |
 | `u j` / `i k` / `o l` | `+` / `-` / `*` (vertical, same-finger) |
 | `f` / `s` / `d` + right Cmd | `~` / `^` / `` ` `` |
 | `q w e r` | Plain mode on/off |
 | `u i o p` | All combos on/off |
 | `g h` (FUN layer only) | live-reload the config |
 
-**Master toggle:** `u`+`i`+`o`+`p` silences every combo above at once (press it again to bring them back) — handy for games or apps with their own chord shortcuts. Home row mods, layers, and one-shots keep working; only the two-key combos go quiet. It mirrors the `q`+`w`+`e`+`r` plain-mode toggle, and it's the one combo that stays live while combos are off, so you can always switch back. Under the hood it drops you into a `nocombo` layer (a clone of DEF that's listed in every combo's disabled-layers); a `cmboff` flag keeps the tri-layer Cmd thumbs returning there instead of to DEF while combos are off.
+**Master toggle:** `u`+`i`+`o`+`p` silences every combo above at once (press it again to bring them back) — handy for games or apps with their own chord shortcuts. Home row mods, layers, and one-shots keep working; only the two-key combos go quiet. It mirrors the `q`+`w`+`e`+`r` plain-mode toggle, and it's the one combo that stays live while combos are off, so you can always switch back. Under the hood it drops you into a `nocombo` layer (a clone of DEF that's listed in every combo's disabled-layers).
 
 ## One-shot mods
 
-NUM, SYM, and FUN all have `osCmd osOpt osSft osCtl` on the **left** home row (`a s d f`); NAV doesn't (its home row is navigation). **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Cmd+Q = NUM → tap `a` → release → `q`. Cmd+Shift+4 = NUM → tap `a`, tap `d`, press `u`.
+NUM, SYM, and FUN all have `osCmd osOpt osSft osCtl` on the **left** home row (`a s d f`); NAV doesn't (its home row is navigation). **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Cmd+Q = NUM → tap `a` → release → `q`. Cmd+Shift+4 = NUM → tap `a`, tap `d`, press `j` (= 4).
 
 ## Caps Word and Num Word
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the NAV thumb (Left Cmd) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. The right-hand combos (`l·;` = Enter, `u·i` = Backspace) stay available.
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the Left-Cmd thumb to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. The right-hand combos (`l·;` = Enter, `u·i` = Backspace) stay available.
 
 ## Quick start
 
@@ -212,26 +212,24 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 1. Validate: `kanata --cfg mac.kbd --check`
 2. Run: `sudo kanata --cfg mac.kbd` — kanata must run as root on macOS
-3. Test: hold left Cmd + `k` → ↑. Tap Caps Lock → Esc.
+3. Test: hold `x` + `k` → ↑ (NAV). Tap Caps Lock → Esc.
 
 **Autostart:** covered by the [Install](#install) section's LaunchDaemons. After changing the config there, reload with `sudo launchctl kickstart -k system/dev.kanata.kanata`.
 
-**After editing the config:** run `--check`, then restart kanata or live-reload: hold both Cmds (FUN) and press `g`+`h`. A failed reload keeps the previous good config running.
+**After editing the config:** run `--check`, then restart kanata or live-reload: hold `z` / `/` (FUN) and press `g`+`h`. A failed reload keeps the previous good config running.
 
 ## What's remapped
 
-Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere except on NAV, where it's the Cmd-Tab swapper.
+Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere.
 
 | Physical key | Tap | Hold |
 |---|---|---|
 | Caps Lock | Esc | Ctrl |
 | Left Ctrl | switch input source (Ctrl+Space) | Ctrl |
-| Left Opt | (quick Ctrl) | **Ctrl** |
-| Left Cmd | — | **NAV** |
-| Right Cmd | — | **SYM** |
-| Both Cmds | — | **FUN** |
+| Left Opt | Spotlight (Cmd+Space) | **NUM** |
+| Left Cmd | (quick Cmd) | **Cmd** |
+| Right Cmd | (quick Opt) | **Opt** |
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
-| `g` / `h` | the letter | Hyper (Ctrl+Opt+Shift+Cmd) |
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
 | `x` / `.` | the letter / symbol | **NAV** |
@@ -239,9 +237,9 @@ Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 
 ## Troubleshooting
 
-- **"My Cmd keys don't work."** They're layer keys now: left = NAV, right = SYM, both = FUN. The Cmd *modifier* is on `a`/`;`; Cmd+Tab itself works normally.
+- **"The right Cmd key sends Opt."** Intended: the left Cmd thumb stays Cmd, but the right Cmd thumb is remapped to Opt. Cmd is also on `a`/`;`; Cmd+Tab = hold the left Cmd thumb + Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
-- **"Left Opt sends Ctrl."** The left Option thumb is a plain Ctrl modifier (a tap just sends a quick Ctrl). Spotlight is hold `a` (Cmd) + Space. Accents live on the untouched *right* Opt.
+- **"Left Opt does something unexpected."** The left Option thumb is now the NUM thumb: tap = Spotlight (Cmd+Space), hold = NUM layer. Accents live on the untouched *right* Opt.
 - **"kanata dies instantly (`filesystem_error`)."** In order of likelihood: not running as root, driver not installed/approved, or another process (e.g. Karabiner-Elements) is grabbing the keyboard.
 - **"`connect_failed asio.system:2` in a loop."** The VirtualHIDDevice daemon isn't running — bootstrap the `org.pqrs` LaunchDaemon from [Install](#install).
 - **"Keys remap but nothing types."** Give the kanata binary Input Monitoring permission; after replacing the binary, toggle the permission off and on.

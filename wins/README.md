@@ -48,7 +48,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `;` or `a` = precision (slow) move |
+| Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `a` = precision (slow) move |
 | Caps Lock, actually | FUN layer + Space |
 | Esc | tap Caps Lock |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
@@ -67,7 +67,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 |       |       |       |       |       |    |       |       |       |       |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   A   |   S   |   D   |   F   |   G   |    |   H   |   J   |   K   |   L   |   ;   |
-|  Win  |  Alt  |  Sft  |  Ctl  |  Hyp  |    |  Hyp  |  Ctl  |  Sft  |  Alt  |  Win  |
+|  Win  |  Alt  |  Sft  |  Ctl  |       |    |       |  Ctl  |  Sft  |  Alt  |  Win  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
 |  FUN  |  NAV  |  NUM  |  SYM  |       |    |       |  SYM  |  NUM  |  NAV  |  FUN  |
@@ -154,13 +154,13 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |       | LClk  |  Up   | RClk  | MClk  |    |       | ScrLt | ScrUp | ScrRt |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Prec  | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  | Prec  |
+| Prec  | Left  | Down  | Right |       |    |       | LClk  | ScrDn | RClk  |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |  Win  |  Alt  | Shift | Ctrl  |       |    |       | Back  | MClk  | Fwd   |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. Additional click aliases on the top row: `w` = left-click, `r` = right-click, `t` = middle-click. The bottom-row keys **`z` `x` `c` `v` = Win, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LAlt`) / Alt (right `RAlt`)** — so you can Shift-click to extend a selection, Ctrl-click to multi-select, Alt-click, or Ctrl-scroll to zoom. **Hold `;`** (right pinky) for **precision mode**: the cursor crawls in 1px steps for fine positioning; release to restore normal speed. **Hold `a`** (left pinky) for the same precision mode — useful when operating the layer with the left hand only. Every combo is disabled inside this layer (and in precision mode), so two-key presses never misfire.
+A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. Additional click aliases on the top row: `w` = left-click, `r` = right-click, `t` = middle-click. The bottom-row keys **`z` `x` `c` `v` = Win, Alt, Shift, Ctrl**, and the thumbs add **Ctrl (left `LAlt`) / Alt (right `RAlt`)** — so you can Shift-click to extend a selection, Ctrl-click to multi-select, Alt-click, or Ctrl-scroll to zoom. **Hold `a`** (left pinky) for **precision mode**: the cursor crawls in 1px steps for fine positioning; release to restore normal speed. Every combo is disabled inside this layer (and in precision mode), so two-key presses never misfire.
 
 ## Combos
 
@@ -223,7 +223,6 @@ Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, r
 | Left Alt | (quick Ctrl) | **Ctrl** |
 | Right Alt | (quick Alt) | **Alt** |
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |
-| `g` / `h` | the letter | Hyper (Ctrl+Alt+Shift+Win) |
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
 | `x` / `.` | the letter / symbol | **NAV** |
