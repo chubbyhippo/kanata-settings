@@ -83,7 +83,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 Thumbs:
 +-------+-------+-------+-------+
 | Spot  |  Esc  | Space |       |
-|  NUM  |  Cmd  |       |  Opt  |
+|       |  Cmd  |       |  Opt  |
 +-------+-------+-------+-------+
   LOpt    LCmd    Space   RCmd  
 ```
@@ -120,7 +120,7 @@ Space = _  (underscore)
 
 Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
-### NUM — hold left Opt (or hold `c` / `,`)
+### NUM — hold `c` / `,`
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -134,7 +134,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 Space = 0     Left-Cmd thumb:  tap = exit NUM  /  hold = NAV
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Opt) or tapping the Left-Cmd thumb.
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the Left-Cmd thumb.
 
 ### FUN — hold `z` / `/`
 
@@ -221,7 +221,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 
 | Physical key | Tap | Hold |
 |---|---|---|
-| Left Opt | Spotlight (Cmd+Space) | **NUM** |
+| Left Opt | Spotlight (Cmd+Space) | (none) |
 | Left Cmd | **Esc** | **Cmd** |
 | Right Cmd | (quick Opt) | **Opt** |
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
@@ -234,7 +234,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 
 - **"The right Cmd key sends Opt."** Intended: the left Cmd thumb stays Cmd, but the right Cmd thumb is remapped to Opt. Cmd is also on `a`/`;`; Cmd+Tab = hold the left Cmd thumb + Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
-- **"Left Opt does something unexpected."** The left Option thumb is now the NUM thumb: tap = Spotlight (Cmd+Space), hold = NUM layer. Accents live on the untouched *right* Opt.
+- **"Left Opt does something unexpected."** The left Option thumb taps Spotlight (Cmd+Space); its hold does nothing now (NUM is on `c`/`,`). Accents live on the untouched *right* Opt.
 - **"kanata dies instantly (`filesystem_error`)."** In order of likelihood: not running as root, driver not installed/approved, or another process (e.g. Karabiner-Elements) is grabbing the keyboard.
 - **"`connect_failed asio.system:2` in a loop."** The VirtualHIDDevice daemon isn't running — bootstrap the `org.pqrs` LaunchDaemon from [Install](#install).
 - **"Keys remap but nothing types."** Give the kanata binary Input Monitoring permission; after replacing the binary, toggle the permission off and on.

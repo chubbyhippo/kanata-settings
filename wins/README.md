@@ -23,7 +23,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Copy / Paste / Cut / Undo | hold left Alt (= Ctrl) + `c` / `v` / `x` / `z` |
 | Alt+Tab | hold right Alt + Tab, release to switch (it's a real Alt now) |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
-| Reopen tab (Ctrl+Shift+T) | NUM (hold left Win): tap `f`, tap `d`, release, press `t` |
+| Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ |
 | Select word left / right | `h`+`j` = Shift+Ctrl+← · `f`+`g` = Shift+Ctrl+→ |
 | Delete word forward / back | `s`+`d` = Ctrl+Del · `k`+`l` = Ctrl+Bksp |
@@ -75,7 +75,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 Thumbs:
 +-------+-------+-------+-------+
 |  Win  |  Esc  | Space |       |
-|  NUM  |  Ctl  |       |  Alt  |
+|       |  Ctl  |       |  Alt  |
 +-------+-------+-------+-------+
   LWin    LAlt    Space   RAlt  
 ```
@@ -112,7 +112,7 @@ Space = _  (underscore)
 
 Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
-### NUM — hold left Win (or hold `c` / `,`)
+### NUM — hold `c` / `,`
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -126,7 +126,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 Space = 0     physical Left-Alt thumb (your Ctrl key):  tap = exit NUM  /  hold = NAV
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c`, `,`, or left Win) or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
+Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
 
 ### FUN — hold `z` / `/`
 
@@ -213,7 +213,7 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 
 | Physical key | Tap | Hold |
 |---|---|---|
-| Left Win | Win (Start menu) | **NUM** |
+| Left Win | Win (Start menu) | (none) |
 | Left Alt | **Esc** | **Ctrl** |
 | Right Alt | (quick Alt) | **Alt** |
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |

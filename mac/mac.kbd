@@ -136,8 +136,8 @@
       ((layer nocombo)) (layer-switch def) break
     )
 
-  ;; [mac] num thumb: tap = Spotlight (Cmd+Space), hold = numbers layer
-  num (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) (layer-while-held num))
+  ;; [mac] left Opt thumb: tap = Spotlight (Cmd+Space), hold = nothing (NUM is on c / ,)
+  spot (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) XX)
 
   capsword (caps-word-custom-toggle 5000 (a b c d e f g h i j k l m n o p q r s t u v w x y z) (lshift rshift grv apos 6 nop0 nop1 nop9 bspc))
 
@@ -243,14 +243,14 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @num @cmdesc  @spc lalt   ;; [mac] LOpt thumb = Spotlight/NUM, LCmd thumb = tap Esc / hold Cmd, RCmd thumb = Opt (nav on hold-x/. , sym on hold-v/m)
+  @spot @cmdesc  @spc lalt   ;; [mac] LOpt thumb = Spotlight tap, LCmd thumb = tap Esc / hold Cmd, RCmd thumb = Opt (nav on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @num @cmdesc  @spc lalt
+  @spot @cmdesc  @spc lalt
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering

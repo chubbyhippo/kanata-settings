@@ -162,8 +162,8 @@
       ((layer nocombo)) (layer-switch def) break
     )
 
-  ;; [win] num thumb: tap = Win (Start menu), hold = numbers layer
-  num (tap-hold-release $quick-tap-ms $tapping-term lmet (layer-while-held num))
+  ;; [win] left Win thumb: tap = Win (Start menu), hold = nothing (NUM is on c / ,)
+  lwin (tap-hold-release $quick-tap-ms $tapping-term lmet XX)
 
   capsword (caps-word-custom-toggle 5000 (a b c d e f g h i j k l m n o p q r s t u v w x y z) (lshift rshift grv apos 6 nop0 nop1 nop9 bspc))
 
@@ -287,14 +287,14 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @num @ctlesc  @spc lalt   ;; [win] LAlt thumb = tap Esc / hold Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
+  @lwin @ctlesc  @spc lalt   ;; [win] LAlt thumb = tap Esc / hold Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @num @ctlesc  @spc lalt
+  @lwin @ctlesc  @spc lalt
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
