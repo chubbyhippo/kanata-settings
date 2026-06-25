@@ -277,7 +277,6 @@
 ;; source keys — [win] standard ANSI board: F-row left untouched (passes through),
 ;; thumbs are LWin / LAlt / Space / RAlt
 (defsrc
-  tab
   q w e r t      y u i o p
   a s d f g      h j k l ;
   z x c v b      n m , . /
@@ -285,7 +284,6 @@
 )
 
 (deflayer def
-  tab
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
@@ -293,7 +291,6 @@
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
-  tab ;; toggle on/off with u+i+o+p. Home row mods, layers and everything else still work normally.
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
@@ -301,7 +298,6 @@
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
-  tab
   q  w  e  r  t      y  u  i  o  p
   a  s @d @f  g      h @j @k  l  ;  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
   z  x  c  v  b      n  m  ,  .  /
@@ -309,7 +305,6 @@
 )
 
 (deflayer num
-  _
   S-9  S-0  XX   XX   XX        S-=  7  8  9  S-8
   @osm @osa @oss @osc bspc      -    4  5  6  /
   XX   @oss XX   @000 @,000     ,    1  2  3  .
@@ -317,7 +312,6 @@
 )
 
 (deflayer nav
-  tab ;; [win] physical Tab on NAV = plain Tab now; Alt+Tab is the right-Alt thumb (left thumb is Ctrl)
   esc  tab      end     C-tab A-right     C-v    pgup tab  bspc up
   home C-s      pgdn    right A-left      left   down up   right enter
   C-z  C-x      C-c     C-v   left        down   @ppmnp vold volu  del
@@ -325,7 +319,6 @@
 )
 
 (deflayer sym
-  _
   S-=  -     S-8    /      =        S-7    S-9    S-0    lbrc   rbrc
   @osm @osa  @oss   @osc   S-4      S-3    S-lbrc S-rbrc '      S-'
   grv  S-6   S-grv  S-5    S-2      S-\    \      S-/    S-1    S-;
@@ -333,7 +326,6 @@
 )
 
 (deflayer fun
-  _
   prev pp   next vold volu     XX   f7   f8   f9   f10
   @osm @osa @oss @osc mute     XX   f4   f5   f6   f11
   M-.  M-S-s XX   XX   XX   XX   f1   f2   f3   f12
@@ -341,7 +333,6 @@
 )
 
 (deflayer plain ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
-  tab
   q w e r t      y u i o p
   a s d f g      h j k l ;
   z x c v b      n m , . /
@@ -349,7 +340,6 @@
 )
 
 (deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ;=precision (slow) or a=precision (left-hand-only)
-  _
   XX   mlft @msu mrgt mmid      XX   @whl @whu @whr XX
   @msslow @msl @msd @msr XX        XX   mlft @whd mrgt @msslow
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
@@ -357,7 +347,6 @@
 )
 
 (deflayer mouse-slow ;; same as mouse but ESDF crawl at 1px steps for fine positioning; combos disabled here too
-  _
   XX   XX   @smsu XX   XX        XX   @whl @whu @whr XX
   XX   @smsl @smsd @smsr XX      XX   mlft @whd mrgt XX
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX

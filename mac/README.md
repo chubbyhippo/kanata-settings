@@ -102,7 +102,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x` or `.`. Physical Tab on NAV is plain Tab; for Cmd+Tab, hold the left Cmd thumb and tap Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
+Reach NAV by holding `x` or `.`. For Cmd+Tab, hold the left Cmd thumb and tap Tab (Tab = the `a`+`s`+`d` combo, or a physical Tab key where the board has one). `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
 
 ### SYM — hold `v` / `m`
 
@@ -217,7 +217,7 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 ## What's remapped
 
-Only 35 keys. Number row, F-row, fn/Globe, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere.
+Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched.
 
 | Physical key | Tap | Hold |
 |---|---|---|

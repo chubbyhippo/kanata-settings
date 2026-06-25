@@ -94,7 +94,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x` or `.`. For Alt+Tab, hold the right-Alt thumb and tap Tab. `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e`. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
+Reach NAV by holding `x` or `.`. For Alt+Tab, hold the right-Alt thumb and tap Tab (Tab = the `a`+`s`+`d` combo, or a physical Tab key where the board has one). `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e`. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
 
 ### SYM — hold `v` / `m`
 
@@ -209,7 +209,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 ## What's remapped
 
-Only 35 keys. Number row, F-row, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere.
+Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched.
 
 | Physical key | Tap | Hold |
 |---|---|---|
