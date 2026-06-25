@@ -56,7 +56,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `a` = precision (slow) move |
 | Caps Lock, actually | FUN layer + Space |
-| Esc | tap Caps Lock |
+| Esc | tap Caps Lock, or tap the left Cmd thumb |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
 | Turn all combos off / on | `u`+`i`+`o`+`p` together = combos off (typing, mods, and layers still work); same to turn back on |
 | Kill kanata entirely | hold physical `LCtrl + Space + Esc` |
@@ -82,7 +82,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 
 Thumbs:
 +-------+-------+-------+-------+
-| Spot  |       | Space |       |
+| Spot  |  Esc  | Space |       |
 |  NUM  |  Cmd  |       |  Opt  |
 +-------+-------+-------+-------+
   LOpt    LCmd    Space   RCmd  
@@ -225,7 +225,7 @@ Only 36 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows,
 |---|---|---|
 | Caps Lock | Esc | Ctrl |
 | Left Opt | Spotlight (Cmd+Space) | **NUM** |
-| Left Cmd | (quick Cmd) | **Cmd** |
+| Left Cmd | **Esc** | **Cmd** |
 | Right Cmd | (quick Opt) | **Opt** |
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
 | `z` / `c` | the letter | **FUN** / **NUM** |

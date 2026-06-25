@@ -289,7 +289,7 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @num lctl  @spc lalt   ;; [win] LAlt thumb = Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
+  @num @cesc  @spc lalt   ;; [win] LAlt thumb = tap Esc / hold Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
@@ -297,7 +297,7 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @num lctl  @spc lalt
+  @num @cesc  @spc lalt
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
