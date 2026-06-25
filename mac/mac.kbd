@@ -50,8 +50,7 @@
     (on-idle $require-prior-idle tap-virtualkey to-base) ;; once typing pauses for $require-prior-idle, return to base
   )
 
-  ;; ---- from the old config: Caps Lock remap ----
-  cesc (tap-hold-press $quick-tap-ms $tapping-term esc lctl)           ;; Caps: tap = Esc, hold = Ctrl
+  ;; ---- LCmd thumb dual-role ----
   cmdesc (tap-hold-press $quick-tap-ms $tapping-term esc lmet)         ;; [mac] LCmd thumb: tap = Esc, hold = Cmd
 
   ;; ---- home row mods, GASC — Ctrl on the index finger (Emacs-friendly) ----
@@ -234,7 +233,7 @@
 ;; source keys — [mac] mac board: F-row and fn/Globe left untouched (pass through),
 ;; thumbs are LOpt / LCmd / Space / RCmd; right Opt stays a real Option for accents
 (defsrc
-  caps tab
+  tab
   q w e r t      y u i o p
   a s d f g      h j k l ;
   z x c v b      n m , . /
@@ -242,7 +241,7 @@
 )
 
 (deflayer def
-  @cesc tab
+  tab
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
@@ -250,7 +249,7 @@
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
-  @cesc tab       ;; toggle on/off with u+i+o+p. Home row mods, layers and everything else still work normally.
+  tab ;; toggle on/off with u+i+o+p. Home row mods, layers and everything else still work normally.
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
@@ -258,7 +257,7 @@
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
-  _ tab
+  tab
   q  w  e  r  t      y  u  i  o  p
   a  s @d @f  g      h @j @k  l  ;  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
   z  x  c  v  b      n  m  ,  .  /
@@ -266,7 +265,7 @@
 )
 
 (deflayer num
-  _ _
+  _
   S-9  S-0  XX   XX   XX        S-=  7  8  9  S-8
   @osm @osa @oss @osc bspc      -    4  5  6  /
   XX   @oss XX   @000 @,000     ,    1  2  3  .
@@ -274,7 +273,7 @@
 )
 
 (deflayer nav
-  _ tab ;; [mac] physical Tab on NAV = plain Tab; Cmd+Tab = hold the LCmd thumb + Tab
+  tab ;; [mac] physical Tab on NAV = plain Tab; Cmd+Tab = hold the LCmd thumb + Tab
   esc  tab      end     C-tab M-rbrc      M-v    pgup tab  bspc up
   home M-s      pgdn    right M-lbrc      left   down up   right enter
   M-z  M-x      M-c     M-v   left        down   @ppmnp vold volu  del
@@ -282,7 +281,7 @@
 )
 
 (deflayer sym
-  _ _
+  _
   S-=  -     S-8    /      =        S-7    S-9    S-0    lbrc   rbrc
   @osm @osa  @oss   @osc   S-4      S-3    S-lbrc S-rbrc '      S-'
   grv  S-6   S-grv  S-5    S-2      S-\    \      S-/    S-1    S-;
@@ -290,7 +289,7 @@
 )
 
 (deflayer fun
-  _ _
+  _
   prev pp   next vold volu     XX   f7   f8   f9   f10
   @osm @osa @oss @osc mute     XX   f4   f5   f6   f11
   M-C-spc M-S-4 XX   XX   XX   XX   f1   f2   f3   f12
@@ -298,7 +297,7 @@
 )
 
 (deflayer plain ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
-  caps tab
+  tab
   q w e r t      y u i o p
   a s d f g      h j k l ;
   z x c v b      n m , . /
@@ -306,7 +305,7 @@
 )
 
 (deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=Cmd/Opt/Shift/Ctrl, thumbs Ctrl/Opt, hold a=precision (slow)
-  XX _
+  _
   XX   mlft @msu mrgt mmid      XX   @whl @whu @whr XX
   @msslow @msl @msd @msr XX        XX   mlft @whd mrgt XX
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
@@ -314,7 +313,7 @@
 )
 
 (deflayer mouse-slow ;; same as mouse but ESDF crawl at 1px steps for fine positioning; combos disabled here too
-  XX _
+  _
   XX   XX   @smsu XX   XX        XX   @whl @whu @whr XX
   XX   @smsl @smsd @smsr XX      XX   mlft @whd mrgt XX
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX

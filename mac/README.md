@@ -27,7 +27,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | You want | Do this |
 |---|---|
 | Copy / Paste / Cut / Undo | hold left Cmd (= Cmd) + `c` / `v` / `x` / `z` |
-| Ctrl chords (Emacs, terminal) | hold Caps (= Ctrl) + the key — or pause, hold `f`/`j` + a cross-hand key |
+| Ctrl chords (Emacs, terminal) | pause, then hold `f`/`j` (Ctrl) + a cross-hand key |
 | Cmd+Tab | hold left Cmd thumb (= Cmd), tap Tab, release to switch |
 | Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
@@ -39,7 +39,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Type + - * | `u`+`j` = + · `i`+`k` = - · `o`+`l` = * |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
-| Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
+| Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
 | Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` (Cmd+[ / Cmd+]) |
 | Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
 | Spotlight (Cmd+Space) | tap left Opt; or hold `a` (Cmd) + Space |
@@ -55,8 +55,8 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `a` = precision (slow) move |
-| Caps Lock, actually | FUN layer + Space |
-| Esc | tap Caps Lock, or tap the left Cmd thumb |
+| Caps Lock | the physical Caps Lock key, or FUN layer + Space |
+| Esc | tap the left Cmd thumb (or the `q`+`w` combo) |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
 | Turn all combos off / on | `u`+`i`+`o`+`p` together = combos off (typing, mods, and layers still work); same to turn back on |
 | Kill kanata entirely | hold physical `LCtrl + Space + Esc` |
@@ -86,8 +86,6 @@ Thumbs:
 |  NUM  |  Cmd  |       |  Opt  |
 +-------+-------+-------+-------+
   LOpt    LCmd    Space   RCmd  
-
-Caps Lock  =  tap Esc  /  hold Ctrl
 ```
 
 ### NAV — hold `x` / `.`
@@ -211,7 +209,7 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 1. Validate: `kanata --cfg mac.kbd --check`
 2. Run: `sudo kanata --cfg mac.kbd` — kanata must run as root on macOS
-3. Test: hold `x` + `k` → ↑ (NAV). Tap Caps Lock → Esc.
+3. Test: hold `x` + `k` → ↑ (NAV). Tap the left Cmd thumb → Esc.
 
 **Autostart:** covered by the [Install](#install) section's LaunchDaemons. After changing the config there, reload with `sudo launchctl kickstart -k system/dev.kanata.kanata`.
 
@@ -219,11 +217,10 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 ## What's remapped
 
-Only 36 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere.
+Only 35 keys. Number row, F-row, fn/Globe, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere.
 
 | Physical key | Tap | Hold |
 |---|---|---|
-| Caps Lock | Esc | Ctrl |
 | Left Opt | Spotlight (Cmd+Space) | **NUM** |
 | Left Cmd | **Esc** | **Cmd** |
 | Right Cmd | (quick Opt) | **Opt** |

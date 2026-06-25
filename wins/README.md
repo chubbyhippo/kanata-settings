@@ -21,7 +21,6 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | You want | Do this |
 |---|---|
 | Copy / Paste / Cut / Undo | hold left Alt (= Ctrl) + `c` / `v` / `x` / `z` |
-| …or classic style | hold Caps (= Ctrl) + `c`/`v`/`x`/`z`/`w`… |
 | Alt+Tab | hold right Alt + Tab, release to switch (it's a real Alt now) |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold left Win): tap `f`, tap `d`, release, press `t` |
@@ -33,7 +32,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Type + - * | `u`+`j` = + · `i`+`k` = - · `o`+`l` = * |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
-| Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
+| Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
 | Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` |
 | Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
 | Start menu | tap left Win |
@@ -48,8 +47,8 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; hold `a` = precision (slow) move |
-| Caps Lock, actually | FUN layer + Space |
-| Esc | tap Caps Lock, or tap the left Alt thumb |
+| Caps Lock | the physical Caps Lock key, or FUN layer + Space |
+| Esc | tap the left Alt thumb (or the `q`+`w` combo) |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
 | Turn all combos off / on | `u`+`i`+`o`+`p` together = combos off (typing, mods, and layers still work); same to turn back on |
 | Kill kanata entirely | hold physical `LCtrl + Space + Esc` |
@@ -79,8 +78,6 @@ Thumbs:
 |  NUM  |  Ctl  |       |  Alt  |
 +-------+-------+-------+-------+
   LWin    LAlt    Space   RAlt  
-
-Caps Lock  =  tap Esc  /  hold Ctrl
 ```
 
 ### NAV — hold `x` / `.`
@@ -204,7 +201,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 1. Validate: `kanata.exe --cfg wins.kbd --check`
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
-3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `k` → ↑ (NAV); tap Caps Lock → Esc.
+3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `k` → ↑ (NAV); tap the left Alt thumb → Esc.
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 
@@ -212,11 +209,10 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 ## What's remapped
 
-Only 36 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere.
+Only 35 keys. Number row, F-row, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere.
 
 | Physical key | Tap | Hold |
 |---|---|---|
-| Caps Lock | Esc | Ctrl |
 | Left Win | Win (Start menu) | **NUM** |
 | Left Alt | **Esc** | **Ctrl** |
 | Right Alt | (quick Alt) | **Alt** |
