@@ -49,9 +49,8 @@
     (on-idle $require-prior-idle tap-virtualkey to-base) ;; once typing pauses for $require-prior-idle, return to base
   )
 
-  ;; ---- from the old config: Caps Lock and Left Ctrl remaps ----
+  ;; ---- from the old config: Caps Lock remap ----
   cesc (tap-hold-press $quick-tap-ms $tapping-term esc lctl)           ;; Caps: tap = Esc, hold = Ctrl
-  lang (tap-hold-press $quick-tap-ms $tapping-term (macro M-spc) lalt) ;; LCtrl: tap = switch language (Win+Space), hold = Alt
 
   ;; ---- home row mods, GASC like your old config (not the mac CASG of the source) ----
   ;; Left:  A=Win  S=Alt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Alt  ;=Win
@@ -276,13 +275,13 @@
 )
 
 ;; source keys — [win] standard ANSI board: F-row left untouched (passes through),
-;; thumbs are LCtrl / LWin / LAlt / Space / RAlt
+;; thumbs are LWin / LAlt / Space / RAlt
 (defsrc
   caps tab
   q w e r t      y u i o p
   a s d f g      h j k l ;
   z x c v b      n m , . /
-  lctl lmet lalt spc ralt
+  lmet lalt spc ralt
 )
 
 (deflayer def
@@ -290,7 +289,7 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @lang @num lctl  @spc lalt   ;; [win] LAlt thumb = Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
+  @num lctl  @spc lalt   ;; [win] LAlt thumb = Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
@@ -298,7 +297,7 @@
   @q   @w @e    @r  @t        @y  @u  @i  @o  @p
   @a   @s @d    @f  @g        @h  @j  @k  @l  @;
   @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @lang @num lctl  @spc lalt
+  @num lctl  @spc lalt
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
@@ -306,7 +305,7 @@
   q  w  e  r  t      y  u  i  o  p
   a  s @d @f  g      h @j @k  l  ;  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
   z  x  c  v  b      n  m  ,  .  /
-  _ _ _ _ _
+  _ _ _ _
 )
 
 (deflayer num
@@ -314,7 +313,7 @@
   S-9  S-0  XX   XX   XX        S-=  7  8  9  S-8
   @osm @osa @oss @osc bspc      -    4  5  6  /
   XX   @oss XX   @000 @,000     ,    1  2  3  .
-  _ XX @num_nav @num_spc @0_sym
+  XX @num_nav @num_spc @0_sym
 )
 
 (deflayer nav
@@ -322,7 +321,7 @@
   esc  tab      end     C-tab A-right     C-v    pgup tab  bspc up
   home C-s      pgdn    right A-left      left   down up   right enter
   C-z  C-x      C-c     C-v   left        down   @ppmnp vold volu  del
-  _ _ _ _ _
+  _ _ _ _
 )
 
 (deflayer sym
@@ -330,7 +329,7 @@
   S-=  -     S-8    /      =        S-7    S-9    S-0    lbrc   rbrc
   @osm @osa  @oss   @osc   S-4      S-3    S-lbrc S-rbrc '      S-'
   grv  S-6   S-grv  S-5    S-2      S-\    \      S-/    S-1    S-;
-  _ _ _ S-- _
+  _ _ S-- _
 )
 
 (deflayer fun
@@ -338,7 +337,7 @@
   prev pp   next vold volu     XX   f7   f8   f9   f10
   @osm @osa @oss @osc mute     XX   f4   f5   f6   f11
   M-.  M-S-s XX   XX   XX   XX   f1   f2   f3   f12
-  _ _ _ caps _
+  _ _ caps _
 )
 
 (deflayer plain ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
@@ -346,7 +345,7 @@
   q w e r t      y u i o p
   a s d f g      h j k l ;
   z x c v b      n m , . /
-  lctl lmet lalt spc ralt
+  lmet lalt spc ralt
 )
 
 (deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ;=precision (slow) or a=precision (left-hand-only)
@@ -354,7 +353,7 @@
   XX   mlft @msu mrgt mmid      XX   @whl @whu @whr XX
   @msslow @msl @msd @msr XX        XX   mlft @whd mrgt @msslow
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
-  XX   XX   lctl mlft lalt
+  XX   lctl mlft lalt
 )
 
 (deflayer mouse-slow ;; same as mouse but ESDF crawl at 1px steps for fine positioning; combos disabled here too
@@ -362,5 +361,5 @@
   XX   XX   @smsu XX   XX        XX   @whl @whu @whr XX
   XX   @smsl @smsd @smsr XX      XX   mlft @whd mrgt XX
   lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
-  XX   XX   lctl mlft lalt
+  XX   lctl mlft lalt
 )

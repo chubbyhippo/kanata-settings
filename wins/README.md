@@ -36,7 +36,6 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
 | Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` |
 | Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
-| Switch input language | tap left Ctrl |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
@@ -75,11 +74,11 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
   tap = top legend     hold = bottom legend
 
 Thumbs:
-+-------+-------+-------+-------+-------+
-| Lang  |  Win  |       | Space |       |
-|  Alt  |  NUM  |  Ctl  |       |  Alt  |
-+-------+-------+-------+-------+-------+
-  LCtrl   LWin    LAlt    Space   RAlt  
++-------+-------+-------+-------+
+|  Win  |       | Space |       |
+|  NUM  |  Ctl  |       |  Alt  |
++-------+-------+-------+-------+
+  LWin    LAlt    Space   RAlt  
 
 Caps Lock  =  tap Esc  /  hold Ctrl
 ```
@@ -213,12 +212,11 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 ## What's remapped
 
-Only 37 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere.
+Only 36 keys. Number row, F-row, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, and Fn are untouched. Tab is plain Tab everywhere.
 
 | Physical key | Tap | Hold |
 |---|---|---|
 | Caps Lock | Esc | Ctrl |
-| Left Ctrl | switch language (Win+Space) | **Alt** |
 | Left Win | Win (Start menu) | **NUM** |
 | Left Alt | (quick Ctrl) | **Ctrl** |
 | Right Alt | (quick Alt) | **Alt** |

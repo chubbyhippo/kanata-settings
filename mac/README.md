@@ -42,7 +42,6 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold Caps + Shift, tap Tab |
 | Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` (Cmd+[ / Cmd+]) |
 | Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
-| Switch input language | tap left Ctrl (Ctrl+Space) |
 | Spotlight (Cmd+Space) | tap left Opt; or hold `a` (Cmd) + Space |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
 | Screenshot (Cmd+Shift+4) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, press `j` (= 4) |
@@ -82,11 +81,11 @@ Then test: hold `x` + `k` → ↑ (NAV).
   tap = top legend     hold = bottom legend
 
 Thumbs:
-+-------+-------+-------+-------+-------+
-| Lang  | Spot  |       | Space |       |
-|  Ctl  |  NUM  |  Cmd  |       |  Opt  |
-+-------+-------+-------+-------+-------+
-  LCtrl   LOpt    LCmd    Space   RCmd  
++-------+-------+-------+-------+
+| Spot  |       | Space |       |
+|  NUM  |  Cmd  |       |  Opt  |
++-------+-------+-------+-------+
+  LOpt    LCmd    Space   RCmd  
 
 Caps Lock  =  tap Esc  /  hold Ctrl
 ```
@@ -220,12 +219,11 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 ## What's remapped
 
-Only 37 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere.
+Only 36 keys. Number row, F-row, fn/Globe, Esc, Enter, Backspace, Shift, arrows, Delete, and right Opt are untouched. Tab is plain Tab everywhere.
 
 | Physical key | Tap | Hold |
 |---|---|---|
 | Caps Lock | Esc | Ctrl |
-| Left Ctrl | switch input source (Ctrl+Space) | Ctrl |
 | Left Opt | Spotlight (Cmd+Space) | **NUM** |
 | Left Cmd | (quick Cmd) | **Cmd** |
 | Right Cmd | (quick Opt) | **Opt** |
