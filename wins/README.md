@@ -184,7 +184,7 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
    Z     X     C     V     B             N     M     ,     .     /
    └─Cut─┘     └─Pst─┘                         └─Num─┘
          └Copy─┘
-         └───Mous────┘
+         └───Mouse───┘
 
 
 COLUMN COMBOS  —  press a key together with the one below it
@@ -202,7 +202,7 @@ CROSS-HAND / THUMB
 
 A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Tab` = A·S·D), whereas a plain span skips its middle (`Undo` = S·F, not D).
 
-`dlw` delete word · `wrd` move word · `sel` select word · `→`/`←` right / left · `Bsp` Backspace · `Ent` Enter · `Pst` Paste · `Num` Num Word · `Mous` Mouse toggle · `SelA` Select All · `Plain` plain mode · `NoCmb` all-combos toggle.
+`dlw` delete word · `wrd` move word · `sel` select word · `→`/`←` right / left · `Bsp` Backspace · `Ent` Enter · `Pst` Paste · `Num` Num Word · `SelA` Select All · `Plain` plain mode · `NoCmb` all-combos toggle.
 
 | Combo | Result |
 |---|---|
