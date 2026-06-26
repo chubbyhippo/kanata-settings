@@ -170,6 +170,42 @@ A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor 
 
 Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing.
 
+Each combo lives where your fingers already are — a pair (or row) of **touching keys**:
+
+```
+NEIGHBOUR COMBOS  —  press two (or more) touching keys
+
+   Q     W     E     R     T             Y     U     I     O     P
+   └─Esc─┘           └─Del─┘                   └─Bsp─┘
+   └──────Plain──────┘                         └──────NoCmb──────┘
+
+   A     S     D     F     G             H     J     K     L     ;
+   └────Tab────┘     └sel→─┘             └sel←─┘     └dlw←─┘
+         └dlw→─┘                               └wrd←─┘     └─Ent─┘
+         └───Undo────┘                         └───Redo────┘
+               └wrd→─┘
+
+   Z     X     C     V     B             N     M     ,     .     /
+   └─Cut─┘     └─Pst─┘                         └─Num─┘
+         └Copy─┘
+         └───Mous────┘
+
+
+COLUMN COMBOS  —  press a key together with the one below it
+
+   Q     W     E     R     T             Y     U     I     O     P
+   │ SelA│ Save      │ Find                    │ +   │ -   │ *
+   A     S     D     F     G             H     J     K     L     ;
+
+
+CROSS-HAND / THUMB
+
+   D + K  =  Caps Word          G + H  =  reload (FUN layer)
+   F / S / D  +  Right-thumb  =  ~ / ^ / `
+```
+
+`dlw` delete word · `wrd` move word · `sel` select word · `→`/`←` right / left · `Bsp` Backspace · `Ent` Enter · `Pst` Paste · `Num` Num Word · `Mous` Mouse toggle · `SelA` Select All · `Plain` plain mode · `NoCmb` all-combos toggle.
+
 | Combo | Result |
 |---|---|
 | `q w` | Esc |
