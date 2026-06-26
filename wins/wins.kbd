@@ -339,16 +339,16 @@
   lmet lalt spc ralt
 )
 
-(deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; zxcv=G/A/S/C, thumbs Ctrl/Alt, hold ;=precision (slow) or a=precision (left-hand-only)
-  XX   mlft @msu mrgt mmid      XX   @whl @whu @whr XX
-  @msslow @msl @msd @msr XX        XX   mlft @whd mrgt @msslow
-  lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
+(deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; mods y=Ctrl h=Shift n=Alt (right column, pair with Space=click); zxcv=Win/Alt/Shift/Ctrl too, thumbs Ctrl/Alt; hold ;=precision (slow) or a=precision (left-hand-only)
+  XX   mlft @msu mrgt mmid      lctl @whl @whu @whr XX
+  @msslow @msl @msd @msr XX        lsft mlft @whd mrgt @msslow
+  lmet lalt lsft lctl XX        lalt mbck mmid mfwd XX
   XX   lctl mlft lalt
 )
 
 (deflayer mouse-slow ;; same as mouse but ESDF crawl at 1px steps for fine positioning; combos disabled here too
-  XX   XX   @smsu XX   XX        XX   @whl @whu @whr XX
-  XX   @smsl @smsd @smsr XX      XX   mlft @whd mrgt XX
-  lmet lalt lsft lctl XX        XX   mbck mmid mfwd XX
+  XX   XX   @smsu XX   XX        lctl @whl @whu @whr XX
+  XX   @smsl @smsd @smsr XX      lsft mlft @whd mrgt XX
+  lmet lalt lsft lctl XX        lalt mbck mmid mfwd XX
   XX   lctl mlft lalt
 )
