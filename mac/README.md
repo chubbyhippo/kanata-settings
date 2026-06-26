@@ -36,7 +36,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Delete word forward / back | `s`+`d` = Opt+Del · `k`+`l` = Opt+Bksp |
 | Undo / Redo | `s`+`f` = Cmd+Z · `j`+`l` = Cmd+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
-| Type + - * | `u`+`j` = + · `i`+`k` = - · `o`+`l` = * |
+| Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
@@ -194,7 +194,7 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
 COLUMN COMBOS  —  press a key together with the one below it
 
    Q     W     E     R     T             Y     U     I     O     P
-   │ SelA│ Save      │ Find                    │ +   │ -   │ *
+   │ SelA│ Save      │ Find                    │ (   │ )   │ [   │ ]
    A     S     D     F     G             H     J     K     L     ;
 
 
@@ -223,7 +223,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `s f` / `j l` | Undo / Redo (Cmd+Z / Cmd+Shift+Z) |
 | `w s` / `q a` / `r f` | Save / Select all / Find (Cmd+S / A / F) |
 | `m ,` | Num Word on (tap the Left-Cmd thumb to cancel) |
-| `u j` / `i k` / `o l` | `+` / `-` / `*` (vertical, same-finger) |
+| `u j` / `i k` / `o l` / `p ;` | `(` / `)` / `[` / `]` (vertical, same-finger) |
 | `f` / `s` / `d` + right Cmd | `~` / `^` / `` ` `` |
 | `q w e r` | Plain mode on/off |
 | `u i o p` | All combos on/off |

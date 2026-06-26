@@ -230,10 +230,11 @@
   (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; copy
   (c v)     C-v              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; paste
 
-  ;; vertical math operators — top + home, same finger column (misfire-proof: one finger can't hit both fast)
-  (u j)     S-=              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; +
-  (i k)     -                $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; -
-  (o l)     S-8              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; *
+  ;; vertical brackets — top + home, same finger column (misfire-proof: one finger can't hit both fast)
+  (u j)     S-9              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; (
+  (i k)     S-0              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; )
+  (o l)     lbrc             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; [
+  (p ;)     rbrc             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; ]
 
   ;; app commands — left-hand top+home verticals, same-finger (misfire-proof) like the math ops; home key = mnemonic
   (w s)     C-s              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; save
