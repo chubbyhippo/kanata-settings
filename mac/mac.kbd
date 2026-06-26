@@ -236,78 +236,78 @@
 ;; source keys — [mac] mac board: F-row and fn/Globe left untouched (pass through),
 ;; thumbs are LOpt / LCmd / Space / RCmd; right Opt stays a real Option for accents
 (defsrc
-  q w e r t      y u i o p
-  a s d f g      h j k l ;
-  z x c v b      n m , . /
-  lalt lmet spc rmet
+  q w e r t    y u i o p
+  a s d f g    h j k l ;
+  z x c v b    n m , . /
+  lalt lmet spc  rmet
 )
 
 (deflayer def
-  @q   @w @e    @r  @t        @y  @u  @i  @o  @p
-  @a   @s @d    @f  @g        @h  @j  @k  @l  @;
-  @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @spot @cmdesc  @spc lalt   ;; [mac] LOpt thumb = Spotlight tap, LCmd thumb = tap Esc / hold Cmd, RCmd thumb = Opt (nav on hold-x/. , sym on hold-v/m)
+  @q   @w    @e    @r    @t    @y @u    @i        @o      @p
+  @a   @s    @d    @f    @g    @h @j    @k        @l      @;
+  @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
+                   @spot   @cmdesc @spc    lalt  ;; [mac] LOpt thumb = Spotlight tap, LCmd thumb = tap Esc / hold Cmd, RCmd thumb = Opt (nav on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
-  @q   @w @e    @r  @t        @y  @u  @i  @o  @p
-  @a   @s @d    @f  @g        @h  @j  @k  @l  @;
-  @zfn @xnav @cnum @vsym  @b        @n  @msym  @commanum  @dotnav  @slashfn
-  @spot @cmdesc  @spc lalt
+  @q   @w    @e    @r    @t    @y @u    @i        @o      @p
+  @a   @s    @d    @f    @g    @h @j    @k        @l      @;
+  @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
+                   @spot   @cmdesc @spc    lalt
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
-  q  w  e  r  t      y  u  i  o  p
-  a  s @d @f  g      h @j @k  l  ;  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
-  z  x  c  v  b      n  m  ,  .  /
-  _ _ _ _
+  q w e  r  t    y u  i  o p
+  a s @d @f g    h @j @k l ;  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
+  z x c  v  b    n m  ,  . /
+          _ _ _ _
 )
 
 (deflayer num
-  S-9  S-0  XX   XX   XX        S-=  7  8  9  S-8
-  @osm @osa @oss @osc bspc      -    4  5  6  /
-  XX   @oss XX   @000 @,000     ,    1  2  3  .
-  XX @num_nav @num_spc @0_sym
+  S-9  S-0  XX   XX   XX       S-= 7 8 9 S-8
+  @osm @osa @oss @osc bspc     -   4 5 6 /
+  XX   @oss XX   @000 @,000    ,   1 2 3 .
+     XX       @num_nav @num_spc @0_sym
 )
 
 (deflayer nav
-  esc  tab      end     C-tab M-rbrc      M-v    pgup tab  bspc up
-  home M-s      pgdn    right M-lbrc      left   down up   right enter
-  M-z  M-x      M-c     M-v   left        down   @ppmnp vold volu  del
-  _ _ _ _
+  esc  tab end  C-tab M-rbrc    M-v  pgup   tab  bspc  up
+  home M-s pgdn right M-lbrc    left down   up   right enter
+  M-z  M-x M-c  M-v   left      down @ppmnp vold volu  del
+                          _ _ _ _
 )
 
 (deflayer sym
-  S-=  -     S-8    /      =        S-7    S-9    S-0    lbrc   rbrc
-  @osm @osa  @oss   @osc   S-4      S-3    S-lbrc S-rbrc '      S-'
-  grv  S-6   S-grv  S-5    S-2      S-\    \      S-/    S-1    S-;
-  _ _ S-- _
+  S-=  -    S-8   /    =      S-7 S-9    S-0    lbrc rbrc
+  @osm @osa @oss  @osc S-4    S-3 S-lbrc S-rbrc '    S-'
+  grv  S-6  S-grv S-5  S-2    S-\ \      S-/    S-1  S-;
+                      _   _   S-- _
 )
 
 (deflayer fun
-  prev pp   next vold volu     XX   f7   f8   f9   f10
-  @osm @osa @oss @osc mute     XX   f4   f5   f6   f11
-  M-C-spc M-S-4 XX   XX   XX   XX   f1   f2   f3   f12
-  _ _ caps _
+  prev    pp    next vold volu    XX f7 f8 f9 f10
+  @osm    @osa  @oss @osc mute    XX f4 f5 f6 f11
+  M-C-spc M-S-4 XX   XX   XX      XX f1 f2 f3 f12
+                _    _    caps _
 )
 
 (deflayer plain ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)
-  q w e r t      y u i o p
-  a s d f g      h j k l ;
-  z x c v b      n m , . /
-  lalt lmet spc rmet
+  q w e r t    y u i o p
+  a s d f g    h j k l ;
+  z x c v b    n m , . /
+  lalt lmet spc  rmet
 )
 
 (deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; mods y=Ctrl h=Shift n=Opt (right column, pair with Space=click); zxcv=Cmd/Opt/Shift/Ctrl too, thumbs Ctrl/Opt; hold ;=precision (slow) or a=precision (left-hand-only); p=double-click /=triple-click; q=exit (single-key, same as x+v)
-  @toggle_mouse mlft @msu mrgt mmid      lctl @whl @whu @whr @dclk
-  @msslow @msl @msd @msr XX        lsft mlft @whd mrgt @msslow
-  lmet lalt lsft lctl XX        lalt mbck mmid mfwd @tclk
-  XX   lctl mlft lalt
+  @toggle_mouse mlft @msu mrgt mmid    lctl @whl @whu @whr @dclk
+  @msslow       @msl @msd @msr XX      lsft mlft @whd mrgt @msslow
+  lmet          lalt lsft lctl XX      lalt mbck mmid mfwd @tclk
+                       XX   lctl mlft lalt
 )
 
 (deflayer mouse-slow ;; same as mouse but ESDF crawl at 1px steps for fine positioning; combos disabled here too
-  XX   XX   @smsu XX   XX        lctl @whl @whu @whr @dclk
-  XX   @smsl @smsd @smsr XX      lsft mlft @whd mrgt XX
-  lmet lalt lsft lctl XX        lalt mbck mmid mfwd @tclk
-  XX   lctl mlft lalt
+  XX   XX    @smsu XX    XX    lctl @whl @whu @whr @dclk
+  XX   @smsl @smsd @smsr XX    lsft mlft @whd mrgt XX
+  lmet lalt  lsft  lctl  XX    lalt mbck mmid mfwd @tclk
+                  XX   lctl mlft lalt
 )
