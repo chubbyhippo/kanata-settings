@@ -52,7 +52,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Left-Cmd thumb to exit |
 | Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `u·i` / `r·t` |
-| Save / Select all / Find | combos `w·s` / `q·a` / `r·f` |
+| Save / Select all / Find / Duplicate | combos `w·s` / `q·a` / `r·f` / `e·d` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again or `q` exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Opt; hold `a`/`;` = precision (slow) move |
@@ -195,7 +195,7 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
 COLUMN COMBOS  —  press a key together with the one below it
 
    Q     W     E     R     T             Y     U     I     O     P
-   │ SelA│ Save      │ Find│ Home        │ End │ (   │ )   │ [   │ ]
+   │ SelA│ Save│ Dup │ Find│ Home        │ End │ (   │ )   │ [   │ ]
    A     S     D     F     G             H     J     K     L     ;
 
 
@@ -222,7 +222,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `f g` / `h j` | Select word right / left (Shift+Opt+→ / ←) |
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Cmd+`X` / `C` / `V`) |
 | `s f` / `j l` | Undo / Redo (Cmd+Z / Cmd+Shift+Z) |
-| `w s` / `q a` / `r f` | Save / Select all / Find (Cmd+S / A / F) |
+| `w s` / `q a` / `r f` / `e d` | Save / Select all / Find / Duplicate (Cmd+S / A / F / D) |
 | `m ,` | Num Word on (tap the Left-Cmd thumb to cancel) |
 | `u j` / `i k` / `o l` / `p ;` | `(` / `)` / `[` / `]` (vertical, same-finger) |
 | `t g` / `y h` | Home / End (vertical, same-finger) |

@@ -218,6 +218,7 @@
   (w s)     M-s              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; save
   (q a)     M-a              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; select all
   (r f)     M-f              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; find
+  (e d)     M-d              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; duplicate
 
   ;; [mac] backtick group on the right Cmd thumb (still the physical RCmd key, even though it now sends Opt)
   (f rmet)  S-grv            $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; ~ even during caps_word
