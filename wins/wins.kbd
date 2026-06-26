@@ -342,8 +342,8 @@
   lmet lalt spc ralt
 )
 
-(deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; mods y=Ctrl h=Shift n=Alt (right column, pair with Space=click); zxcv=Win/Alt/Shift/Ctrl too, thumbs Ctrl/Alt; hold ;=precision (slow) or a=precision (left-hand-only); p=double-click /=triple-click
-  XX   mlft @msu mrgt mmid      lctl @whl @whu @whr @dclk
+(deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; mods y=Ctrl h=Shift n=Alt (right column, pair with Space=click); zxcv=Win/Alt/Shift/Ctrl too, thumbs Ctrl/Alt; hold ;=precision (slow) or a=precision (left-hand-only); p=double-click /=triple-click; q=exit (single-key, same as x+v)
+  @toggle_mouse mlft @msu mrgt mmid      lctl @whl @whu @whr @dclk
   @msslow @msl @msd @msr XX        lsft mlft @whd mrgt @msslow
   lmet lalt lsft lctl XX        lalt mbck mmid mfwd @tclk
   XX   lctl mlft lalt
