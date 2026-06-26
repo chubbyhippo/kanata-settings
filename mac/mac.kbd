@@ -210,6 +210,10 @@
   (o l)     lbrc             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; [
   (p ;)     rbrc             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; ]
 
+  ;; vertical nav — index-column top+home, same-finger (misfire-proof): Home / End
+  (t g)     home             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Home
+  (y h)     end              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; End
+
   ;; app commands — left-hand top+home verticals, same-finger (misfire-proof) like the math ops; home key = mnemonic
   (w s)     M-s              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; save
   (q a)     M-a              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; select all
