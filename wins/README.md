@@ -9,8 +9,12 @@ A [kanata](https://github.com/jtroo/kanata) config for Windows with "timerless" 
 Needs `kanata.exe` (v1.10.1+, [releases](https://github.com/jtroo/kanata/releases)) on your PATH. Then:
 
 ```powershell
-# config → %USERPROFILE%, launcher → Startup folder (starts kanata silently at every login)
+# config → %USERPROFILE%
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/wins.kbd" -OutFile "$Home\wins.kbd"
+```
+
+```powershell
+# launcher → Startup folder (starts kanata silently at every login)
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/katana.bat" -OutFile "$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\kanata.bat"
 ```
 
