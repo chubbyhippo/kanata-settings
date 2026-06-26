@@ -177,10 +177,10 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
 
    Q     W     E     R     T             Y     U     I     O     P
    └─Esc─┘           └─Del─┘                   └─Bsp─┘
-   └──────Plain──────┘                         └──────NoCmb──────┘
+   └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
    A     S     D     F     G             H     J     K     L     ;
-   └────Tab────┘     └sel→─┘             └sel←─┘     └dlw←─┘
+   └─Tab─┴─────┘     └sel→─┘             └sel←─┘     └dlw←─┘
          └dlw→─┘                               └wrd←─┘     └─Ent─┘
          └───Undo────┘                         └───Redo────┘
                └wrd→─┘
@@ -203,6 +203,8 @@ CROSS-HAND / THUMB
    D + K  =  Caps Word          G + H  =  reload (FUN layer)
    F / S / D  +  Right-thumb  =  ~ / ^ / `
 ```
+
+A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Tab` = A·S·D), whereas a plain span skips its middle (`Undo` = S·F, not D).
 
 `dlw` delete word · `wrd` move word · `sel` select word · `→`/`←` right / left · `Bsp` Backspace · `Ent` Enter · `Pst` Paste · `Num` Num Word · `Mous` Mouse toggle · `SelA` Select All · `Plain` plain mode · `NoCmb` all-combos toggle.
 
