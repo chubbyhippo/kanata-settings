@@ -200,26 +200,26 @@
 )
 
 (defchordsv2
-  (q w)     esc              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo)
-  (a s d)   tab              $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; tab — 3 keys so the word "as" can't misfire
+  (q w)     esc              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo)
+  (a s d)   tab              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; tab — 3 keys so the word "as" can't misfire
 
   (l ;)     enter            $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; enter on the right home row
-  (u i)     bspc             $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
+  (u i)     bspc             $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; backspace — index+middle roll, no word starts "ui"/"iu" so it won't misfire while typing
   (r t)     home             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Home — same-finger (left index); also on the t g column combo
   (y u)     end              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; End  — same-finger (right index); also on the y h column combo
 
   ;; delete word: forward = s+d (Ctrl+Del), backward = k+l (Ctrl+Backspace)
-  (s d)     C-del            $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; delete word forward
-  (k l)     C-bspc           $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; delete word backward
+  (s d)     C-del            $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word forward
+  (k l)     C-bspc           $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word backward
 
   (d k)     @capsword        $combo-timeout all-released  (    nav sym fun num        mouse mouse-slow nocombo) ;; caps_word on the home row, because why not
 
   ;; word jump: move the cursor one word left / right (hold to repeat)
-  (d f)     C-right          $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; move word right
-  (j k)     C-left           $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; move word left
+  (d f)     C-right          $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; move word right
+  (j k)     C-left           $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; move word left
   ;; select word: extend selection one word left / right (hold to repeat)
-  (f g)     S-C-right        $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; select word right
-  (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun     nomods mouse mouse-slow nocombo) ;; select word left
+  (f g)     S-C-right        $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; select word right
+  (h j)     S-C-left         $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; select word left
   (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Num Word on; cancel with the Ctrl thumb (Left Alt = @num_nav). Disabled in NUM so "12" can't toggle it.
 
   ;; undo / redo

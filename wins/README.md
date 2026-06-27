@@ -166,7 +166,7 @@ A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor 
 
 ## Combos
 
-Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing.
+Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing. Inside the NUM layer every combo is off except `l·;` = Enter, so typing numbers never misfires.
 
 Each combo lives where your fingers already are — a pair (or row) of **touching keys**:
 
@@ -239,7 +239,7 @@ NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. The right-hand combos (`l·;` = Enter, `u·i` = Backspace) stay available.
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. Inside NUM, every combo is disabled **except `l·;` = Enter**, so number entry never trips a combo (Backspace is on the `g` key).
 
 ## Quick start
 
