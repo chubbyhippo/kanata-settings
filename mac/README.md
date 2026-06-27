@@ -37,7 +37,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Undo / Redo | `s`+`f` = Cmd+Z · `j`+`l` = Cmd+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
-| Home / End | `t`+`g` = Home · `y`+`h` = End |
+| Home / End | `t`+`g` or `r`+`t` = Home · `y`+`h` or `y`+`u` = End |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
@@ -51,7 +51,8 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Left-Cmd thumb to exit |
-| Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `u·i` / `r·t` |
+| Esc / Tab / Enter / Backspace | combos `q·w` / `a·s·d` / `l·;` / `u·i` |
+| Forward delete | hold `x` / `.` (NAV) + `/` |
 | Save / Select all / Find / Duplicate | combos `w·s` / `q·a` / `r·f` / `e·d` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
@@ -177,7 +178,8 @@ Each combo lives where your fingers already are — a pair (or row) of **touchin
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
 
    Q     W     E     R     T             Y     U     I     O     P
-   └─Esc─┘           └─Del─┘                   └─Bsp─┘
+   └─Esc─┘           └Home─┘             └─End─┘
+                                               └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
    A     S     D     F     G             H     J     K     L     ;
@@ -215,7 +217,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `a s d` | Tab |
 | `l ;` | Enter |
 | `u i` | Backspace |
-| `r t` | Forward delete |
+| `r t` / `y u` | Home / End (top row, same-finger) |
 | `s d` / `k l` | Delete word forward / back (Opt+Del / Opt+Bksp) |
 | `d k` | Caps Word on/off |
 | `d f` / `j k` | Move word right / left (Opt+→ / Opt+←) |
