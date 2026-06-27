@@ -34,7 +34,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Undo / Redo | `s`+`f` = Ctrl+Z · `j`+`l` = Ctrl+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
-| Home / End | `t`+`g` or `r`+`t` = Home · `y`+`h` or `y`+`u` = End |
+| Home / End | `t`+`g` = Home · `y`+`h` = End |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
@@ -47,8 +47,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Select text | hold real Shift + NAV arrows |
 | Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
-| Esc / Tab / Enter / Backspace | combos `q·w` / `a·s·d` / `l·;` / `u·i` |
-| Forward delete | hold `x` / `.` (NAV) + `/` |
+| Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `y·u` / `r·t` |
 | Save / Select all / Find / Duplicate | combos `w·s` / `q·a` / `r·f` / `e·d` |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
@@ -166,7 +165,7 @@ A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor 
 
 ## Combos
 
-Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing. Inside the NUM layer every combo is off except `l·;` = Enter, so typing numbers never misfires.
+Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing. Inside the NUM layer every combo is off except `l·;` = Enter and `y·u` = Backspace, so typing numbers never misfires.
 
 Each combo lives where your fingers already are — a pair (or row) of **touching keys**:
 
@@ -174,8 +173,7 @@ Each combo lives where your fingers already are — a pair (or row) of **touchin
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
 
    Q     W     E     R     T             Y     U     I     O     P
-   └─Esc─┘           └Home─┘             └─End─┘
-                                               └─Bsp─┘
+   └─Esc─┘           └─Del─┘             └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
    A     S     D     F     G             H     J     K     L     ;
@@ -212,8 +210,8 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `q w` | Esc |
 | `a s d` | Tab |
 | `l ;` | Enter |
-| `u i` | Backspace |
-| `r t` / `y u` | Home / End (top row, same-finger) |
+| `r t` | Forward delete (same-finger) |
+| `y u` | Backspace (same-finger; also active in NUM) |
 | `s d` / `k l` | Delete word forward / back (Ctrl+Del / Ctrl+Bksp) |
 | `d k` | Caps Word on/off |
 | `d f` / `j k` | Move word right / left (Ctrl+→ / Ctrl+←) |
@@ -239,7 +237,7 @@ NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`
 
 **Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
 
-**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. Inside NUM, every combo is disabled **except `l·;` = Enter**, so number entry never trips a combo (Backspace is on the `g` key).
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. Inside NUM, every combo is disabled **except `l·;` = Enter and `y·u` = Backspace**, so you can submit and fix typos while entering numbers.
 
 ## Quick start
 
