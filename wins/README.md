@@ -24,7 +24,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 
 | You want | Do this |
 |---|---|
-| Copy / Paste / Cut / Undo | hold left Alt (= Ctrl) + `c` / `v` / `x` / `z` |
+| Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `x` / `v` / `c` / `z` · or combos `x·c` / `c·v` / `z·x` / `s·f` |
 | Alt+Tab | hold right Alt + Tab, release to switch (it's a real Alt now) |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
@@ -80,7 +80,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 Thumbs:
 +-------+-------+-------+-------+
 |  Win  |  Esc  | Space |       |
-|       |  Ctl  |       |  Alt  |
+|       |  NUM  |       |  Alt  |
 +-------+-------+-------+-------+
   LWin    LAlt    Space   RAlt  
 ```
@@ -125,13 +125,13 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osWin | osAlt | osSft | osCtl | Bksp  |    |   -   |   4   |   5   |   6   |   /   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       | osSft |       |  000  | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
+| Undo  |  Cut  | Copy  | Paste | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = 0     physical Left-Alt thumb (your Ctrl key):  tap = exit NUM  /  hold = NAV
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the left-Alt thumb (your Ctrl thumb; it's the "tap: exit" key in the map above).
+Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Ctrl+Z/X/C/V). In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` / `,` / Left-Alt thumb) or tapping the Left-Alt thumb.
 
 ### FUN — hold `z` / `/`
 
@@ -259,7 +259,7 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 | Physical key | Tap | Hold |
 |---|---|---|
 | Left Win | Win (Start menu) | (none) |
-| Left Alt | **Esc** | **Ctrl** |
+| Left Alt | **Esc** | **NUM** |
 | Right Alt | (quick Alt) | **Alt** |
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |
 | `z` / `c` | the letter | **FUN** / **NUM** |

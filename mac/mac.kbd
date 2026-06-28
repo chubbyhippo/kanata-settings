@@ -51,7 +51,7 @@
   )
 
   ;; ---- LCmd thumb dual-role ----
-  cmdesc (tap-hold-press $quick-tap-ms $tapping-term esc lmet)         ;; [mac] LCmd thumb: tap = Esc, hold = Cmd
+  cmdesc (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))  ;; [mac] LCmd thumb: tap = Esc, hold = NUM
 
   ;; ---- home row mods, GASC — Ctrl on the index finger (Emacs-friendly) ----
   ;; Left:  A=Cmd  S=Opt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Opt  ;=Cmd
@@ -274,7 +274,7 @@
 (deflayer num
   S-9  S-0  XX   XX   XX       S-= 7 8 9 S-8
   @osm @osa @oss @osc bspc     -   4 5 6 /
-  XX   @oss XX   @000 @,000    ,   1 2 3 .
+  M-z  M-x  M-c  M-v  @,000    ,   1 2 3 .
      XX       @num_nav @num_spc @0_sym
 )
 

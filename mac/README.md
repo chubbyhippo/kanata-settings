@@ -52,9 +52,9 @@ Then test: hold `x` + `k` → ↑ (NAV).
 
 | You want | Do this |
 |---|---|
-| Copy / Paste / Cut / Undo | hold left Cmd (= Cmd) + `c` / `v` / `x` / `z` |
+| Copy / Paste / Cut / Undo | hold LCmd thumb (NUM) + `x` / `v` / `c` / `z` · or combos `x·c` / `c·v` / `z·x` / `s·f` |
 | Ctrl chords (Emacs, terminal) | pause, then hold `f`/`j` (Ctrl) + a cross-hand key |
-| Cmd+Tab | hold left Cmd thumb (= Cmd), tap Tab, release to switch |
+| Cmd+Tab | hold `a` (Cmd) + Tab |
 | Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Opt+← · `d`+`f` = Opt+→ |
@@ -111,7 +111,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 Thumbs:
 +-------+-------+-------+-------+
 | Spot  |  Esc  | Space |       |
-|       |  Cmd  |       |  Opt  |
+|       |  NUM  |       |  Opt  |
 +-------+-------+-------+-------+
   LOpt    LCmd    Space   RCmd  
 ```
@@ -156,13 +156,13 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osCmd | osOpt | osSft | osCtl | Bksp  |    |   -   |   4   |   5   |   6   |   /   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|       | osSft |       |  000  | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
+| Undo  |  Cut  | Copy  | Paste | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = 0     Left-Cmd thumb:  tap = exit NUM  /  hold = NAV
 ```
 
-Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` or `,`) or tapping the Left-Cmd thumb.
+Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Cmd+Z/X/C/V). In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` / `,` / Left-Cmd thumb) or tapping the Left-Cmd thumb.
 
 ### FUN — hold `z` / `/`
 
@@ -290,7 +290,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 | Physical key | Tap | Hold |
 |---|---|---|
 | Left Opt | Spotlight (Cmd+Space) | (none) |
-| Left Cmd | **Esc** | **Cmd** |
+| Left Cmd | **Esc** | **NUM** |
 | Right Cmd | (quick Opt) | **Opt** |
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
 | `z` / `c` | the letter | **FUN** / **NUM** |
@@ -300,7 +300,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 
 ## Troubleshooting
 
-- **"The right Cmd key sends Opt."** Intended: the left Cmd thumb stays Cmd, but the right Cmd thumb is remapped to Opt. Cmd is also on `a`/`;`; Cmd+Tab = hold the left Cmd thumb + Tab.
+- **"The right Cmd key sends Opt."** Intended: the left Cmd thumb is remapped to NUM, the right Cmd thumb to Opt. Cmd is on `a`/`;`; Cmd+Tab = hold `a` (Cmd) + Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Left Opt does something unexpected."** The left Option thumb taps Spotlight (Cmd+Space); its hold does nothing now (NUM is on `c`/`,`). Accents live on the untouched *right* Opt.
 - **"Mouse layer enters but cursor doesn't move / clicks don't register."** Keyboard remapping goes through the Karabiner driver; mouse simulation uses the macOS CoreGraphics API and requires **Accessibility** permission for the kanata binary — Input Monitoring alone isn't enough. See step 3 of [Install](#install) for how to find and add the binary in the macOS file picker.
