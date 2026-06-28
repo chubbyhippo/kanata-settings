@@ -18,7 +18,33 @@ Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases))
 
    [`install.sh`](install.sh) downloads the [Karabiner driver **v6.2.0**](https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/tag/v6.2.0) (the exact version kanata is built against), checksum-verifies and installs it, and activates the extension. Approving it is the one step Apple keeps manual: the script stops and points you to System Settings → General → Login Items & Extensions → Driver Extensions. Approve, re-run the same command, and it finishes — config at `/etc/kanata/mac.kbd` (validated first), both LaunchDaemons installed and pointed at your kanata binary, the `org.pqrs` daemon skipped if Karabiner-Elements already manages it. Idempotent — re-run any time.
 
-3. **Permissions:** System Settings → Privacy & Security → add the kanata binary to **Input Monitoring** and **Accessibility**.
+3. **Permissions:** System Settings → Privacy & Security → add the kanata binary to **Input Monitoring** and **Accessibility**. Both are required: the Karabiner driver handles keyboard events, but mouse simulation (`movemouse-*`, clicks, scroll) goes through the macOS CoreGraphics API which needs Accessibility separately.
+
+   **Finding the binary in the file picker** — the kanata binary lives in a system path that the macOS file picker hides by default. First, confirm the exact path your install uses:
+
+   ```sh
+   grep -A2 ProgramArguments /Library/LaunchDaemons/dev.kanata.kanata.plist
+   ```
+
+   It will be one of:
+   - `/opt/homebrew/bin/kanata` — Apple Silicon (M1/M2/M3/M4)
+   - `/usr/local/bin/kanata` — Intel
+
+   Then add it to both **Input Monitoring** and **Accessibility**:
+
+   1. System Settings → Privacy & Security → **Accessibility** (repeat for **Input Monitoring**)
+   2. Click the lock icon and enter your password
+   3. Click **+**
+   4. In the file picker, press **Cmd+Shift+G** to open the "Go to Folder" dialog
+   5. Paste `/opt/homebrew/bin` (Apple Silicon) or `/usr/local/bin` (Intel) and press **Enter**
+   6. Select `kanata` and click **Open**
+
+   If kanata is already listed but the mouse layer still doesn't work, **toggle the switch off then on** — macOS sometimes silently breaks the permission after a binary update.
+
+   7. Restart kanata to pick up the new permissions:
+      ```sh
+      sudo launchctl kickstart -k system/dev.kanata.kanata
+      ```
 
 Then test: hold `x` + `k` → ↑ (NAV).
 
@@ -277,6 +303,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 - **"The right Cmd key sends Opt."** Intended: the left Cmd thumb stays Cmd, but the right Cmd thumb is remapped to Opt. Cmd is also on `a`/`;`; Cmd+Tab = hold the left Cmd thumb + Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Left Opt does something unexpected."** The left Option thumb taps Spotlight (Cmd+Space); its hold does nothing now (NUM is on `c`/`,`). Accents live on the untouched *right* Opt.
+- **"Mouse layer enters but cursor doesn't move / clicks don't register."** Keyboard remapping goes through the Karabiner driver; mouse simulation uses the macOS CoreGraphics API and requires **Accessibility** permission for the kanata binary — Input Monitoring alone isn't enough. See step 3 of [Install](#install) for how to find and add the binary in the macOS file picker.
 - **"kanata dies instantly (`filesystem_error`)."** In order of likelihood: not running as root, driver not installed/approved, or another process (e.g. Karabiner-Elements) is grabbing the keyboard.
 - **"`connect_failed asio.system:2` in a loop."** The VirtualHIDDevice daemon isn't running — bootstrap the `org.pqrs` LaunchDaemon from [Install](#install).
 - **"Keys remap but nothing types."** Give the kanata binary Input Monitoring permission; after replacing the binary, toggle the permission off and on.
