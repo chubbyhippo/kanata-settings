@@ -272,7 +272,7 @@
 )
 
 (deflayer num
-  S-9  S-0  XX   XX   XX       S-= 7 8 9 S-8
+  S-9  S-0  S-5  =    S-6      S-= 7 8 9 S-8
   @osm @osa @oss @osc bspc     -   4 5 6 /
   M-z  M-x  M-c  M-v  @,000    ,   1 2 3 .
      XX       @num_nav @num_spc @0_sym
