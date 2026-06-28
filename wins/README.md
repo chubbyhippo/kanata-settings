@@ -34,7 +34,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Undo / Redo | `s`+`f` = Ctrl+Z · `j`+`l` = Ctrl+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
-| Home / End | `t`+`g` or `v`+`b` = Home · `y`+`h` or `m`+`n` = End |
+| Home / End | `t`+`g` or `v`+`b` = Home · `y`+`h` or `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
@@ -137,9 +137,9 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0**
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Prev  | Play  | Next  | Vol-  | Vol+  |    |       |  F7   |  F8   |  F9   |  F10  |
+| Prev  | Play  | Next  | Vol-  | Vol+  |    | Home  |  F7   |  F8   |  F9   |  F10  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| osWin | osAlt | osSft | osCtl | Mute  |    |       |  F4   |  F5   |  F6   |  F11  |
+| osWin | osAlt | osSft | osCtl | Mute  |    |  End  |  F4   |  F5   |  F6   |  F11  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Emoji | Shot  |       |       |       |    |       |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -147,7 +147,7 @@ Ctrl+5 = `f` then `5`. `000`/`,000` are typing macros. In NUM, Space types **0**
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer.
 
 ### MOUSE — toggle with `x`+`v` (`x`+`v` again to exit)
 
