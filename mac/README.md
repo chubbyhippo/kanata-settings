@@ -37,7 +37,8 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Undo / Redo | `s`+`f` = Cmd+Z · `j`+`l` = Cmd+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
-| Home / End | `t`+`g` or `v`+`b` = Home · `y`+`h` or `m`+`n` = End |
+| Home / End | `t`+`g` = Home · `y`+`h` = End |
+| Line start / end | `v`+`b` = Cmd+← · `m`+`n` = Cmd+→ |
 | Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
@@ -188,7 +189,7 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
 
    Z     X     C     V     B             N     M     ,     .     /
    └─Cut─┘     └─Pst─┘                         └─Num─┘
-         └Copy─┘     └Home─┘             └─End─┘
+         └Copy─┘     └⌘←───┘             └──⌘→─┘
          └───Mouse───┘
 
 
@@ -226,7 +227,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `m ,` | Num Word on (tap the Left-Cmd thumb to cancel) |
 | `u j` / `i k` / `o l` / `p ;` | `(` / `)` / `[` / `]` (vertical, same-finger) |
 | `t g` / `y h` | Home / End (vertical, same-finger) |
-| `v b` / `m n` | Home / End (bottom row, same-finger) |
+| `v b` / `m n` | Cmd+← / Cmd+→ — line start / end (bottom row, same-finger) |
 | `f` / `s` / `d` + right Cmd | `~` / `^` / `` ` `` |
 | `q w e r` | Plain mode on/off |
 | `u i o p` | All combos on/off |

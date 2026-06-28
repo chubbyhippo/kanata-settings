@@ -213,8 +213,8 @@
   ;; vertical nav — index-column top+home, same-finger (misfire-proof): Home / End
   (t g)     home             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Home
   (y h)     end              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; End
-  (v b)     home             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Home — same-finger (left index); bottom-row twin of t g
-  (m n)     end              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; End  — same-finger (right index); bottom-row twin of y h
+  (v b)     M-left           $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Cmd+Left — same-finger (left index); bottom-row twin of t g
+  (m n)     M-right          $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Cmd+Right — same-finger (right index); bottom-row twin of y h
 
   ;; app commands — left-hand top+home verticals, same-finger (misfire-proof) like the math ops; home key = mnemonic
   (w s)     M-s              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; save
