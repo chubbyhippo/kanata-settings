@@ -30,9 +30,9 @@ Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases))
    - `/opt/homebrew/bin/kanata` — Apple Silicon (M1/M2/M3/M4)
    - `/usr/local/bin/kanata` — Intel
 
-   Then add it to both **Input Monitoring** and **Accessibility**:
+   Then add it to both **Input Monitoring** and **Accessibility** — do the following steps twice, once for each:
 
-   1. System Settings → Privacy & Security → **Accessibility** (repeat for **Input Monitoring**)
+   1. System Settings → Privacy & Security → **Input Monitoring** (first pass) / **Accessibility** (second pass)
    2. Click the lock icon and enter your password
    3. Click **+**
    4. In the file picker, press **Cmd+Shift+G** to open the "Go to Folder" dialog
