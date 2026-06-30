@@ -177,7 +177,6 @@
 )
 
 (defchordsv2
-  (q w)     esc              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo)
   (r t)     del              $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; forward delete — same-finger (left index) so "tr-" words can't misfire
   (y u)     bspc             $combo-timeout first-release (    nav sym fun     nomods mouse mouse-slow nocombo) ;; backspace — same-finger (right index)
 
@@ -188,7 +187,7 @@
   (m n)     M-right          $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Cmd+Right — same-finger (right index)
 
   (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
-  (x v)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain nocombo)
+  (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; enter MOUSE; exit with single-key q
 
   ;; master combo toggle — turns ALL combos on/off. Active ONLY in def and nocombo (so it's the one
   ;; combo that still works while combos are "off", letting you switch back). Mirrors q+w+e+r (plain).

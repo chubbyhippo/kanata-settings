@@ -48,9 +48,9 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Esc / Backspace / Delete | combos `q·w` / `y·u` / `r·t` (Tab and Enter are physical keys) |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again or `q` exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
+| Mouse | `q`+`w` toggles the mouse layer (tap `q` to exit): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
 | Caps Lock | the physical Caps Lock key, or FUN layer + Space |
-| Esc | tap the left Alt thumb (or the `q`+`w` combo) |
+| Esc | tap the left Alt thumb |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
 | Turn all combos off / on | `u`+`i`+`o`+`p` together = combos off (typing, mods, and layers still work); same to turn back on |
 | Kill kanata entirely | hold physical `LCtrl + Space + Esc` |
@@ -146,7 +146,7 @@ Space = Caps Lock
 
 F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media.
 
-### MOUSE — toggle with `x`+`v` (`x`+`v` again to exit)
+### MOUSE — toggle with `q`+`w` (tap `q` to exit)
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -158,7 +158,7 @@ F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — 
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. Additional click aliases on the top row: `w` = left-click, `r` = right-click, `t` = middle-click. The right pinky has **`p` = double-click** and **`/` = triple-click** (each fires as one macro, so the OS always registers a real multi-click). The right-hand inner column **`y` `h` `n` = Ctrl, Shift, Alt** — hold one with the right hand while the left hand keeps moving on ESDF, then click with **Space** (right thumb) for modifier+drag, e.g. Shift-drag to select. The bottom-row keys **`z` `x` `c` `v` = Win, Alt, Shift, Ctrl** mirror the same modifiers on the left hand, and the thumbs add **Ctrl (left `LAlt`) / Alt (right `RAlt`)** — so you can Shift-click to extend a selection, Ctrl-click to multi-select, Alt-click, or Ctrl-scroll to zoom. **Hold `a`** (left pinky) or **`;`** (right pinky) for **precision mode**: the cursor crawls in 1px steps for fine positioning; release to restore normal speed. Tap **`q`** to exit the layer in one key (same as the `x`+`v` toggle). Every combo is disabled inside this layer (and in precision mode), so two-key presses never misfire.
+A sticky layer: press `q`+`w` to enter; tap `q` to leave. Move the cursor with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right — accelerates while held. The **right hand** clicks and scrolls: `j` left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll left, `o` scroll right. **Middle-click** is on `,`, with **browser back/forward** on `m`/`.`; **Space** is also left-click. Additional click aliases on the top row: `w` = left-click, `r` = right-click, `t` = middle-click. The right pinky has **`p` = double-click** and **`/` = triple-click** (each fires as one macro, so the OS always registers a real multi-click). The right-hand inner column **`y` `h` `n` = Ctrl, Shift, Alt** — hold one with the right hand while the left hand keeps moving on ESDF, then click with **Space** (right thumb) for modifier+drag, e.g. Shift-drag to select. The bottom-row keys **`z` `x` `c` `v` = Win, Alt, Shift, Ctrl** mirror the same modifiers on the left hand, and the thumbs add **Ctrl (left `LAlt`) / Alt (right `RAlt`)** — so you can Shift-click to extend a selection, Ctrl-click to multi-select, Alt-click, or Ctrl-scroll to zoom. **Hold `a`** (left pinky) or **`;`** (right pinky) for **precision mode**: the cursor crawls in 1px steps for fine positioning; release to restore normal speed. Tap **`q`** to exit the layer in one key. Every combo is disabled inside this layer (and in precision mode), so two-key presses never misfire.
 
 ## Combos
 
@@ -170,12 +170,12 @@ The home row (`a`–`;`) no longer carries any combo — those keys are mods onl
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
 
    Q     W     E     R     T             Y     U     I     O     P
-   └─Esc─┘           └─Del─┘             └─Bsp─┘
+   └Mouse┘           └─Del─┘             └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
    Z     X     C     V     B             N     M     ,     .     /
-         └───Mouse───┘                   └─End─┘
-                     └Home─┘                   └─Num─┘
+                     └Home─┘             └─End─┘
+                                               └─Num─┘
 ```
 
 A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R), whereas a plain span skips its middle (`Mouse` = X·V, not C).
@@ -184,7 +184,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 
 | Combo | Result |
 |---|---|
-| `q w` | Esc |
+| `q w` | Mouse layer on/off (tap `q` to exit) |
 | `r t` | Forward delete (same-finger) |
 | `y u` | Backspace (same-finger; also active in NUM) |
 | `v b` / `m n` | Home / End (bottom row, same-finger) |
