@@ -18,14 +18,15 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-set
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/katana.bat" -OutFile "$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\kanata.bat"
 ```
 
-Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `c` → Ctrl+C (left Alt is Ctrl now), and hold `x` + `k` → ↑ (NAV).
+Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `c` → Ctrl+C, hold `x` + `k` → ↑ (NAV), and hold the **right thumb** + `k` → ↑ (its tap = Enter, hold = NAV).
 
 ## Keyboard shortcuts
 
 | You want | Do this |
 |---|---|
 | Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `x` / `v` / `c` / `z` · or combos `x·c` / `c·v` / `z·x` / `s·f` |
-| Alt+Tab | hold right Alt + Tab, release to switch (it's a real Alt now) |
+| Alt+Tab | hold `s` (Alt) + a physical Tab, release `s` to switch (see Troubleshooting) |
+| Enter | tap the right thumb · or the `l`+`;` combo |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ |
@@ -39,7 +40,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
 | Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` |
-| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
+| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
@@ -79,8 +80,8 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 
 Thumbs:
 +-------+-------+-------+-------+
-|  Win  |  Esc  | Space |       |
-|       |  NUM  |       |  Alt  |
+|  Win  |  Esc  | Space | Enter |
+|       |  NUM  |       |  NAV  |
 +-------+-------+-------+-------+
   LWin    LAlt    Space   RAlt  
 ```
@@ -99,7 +100,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x` or `.`. For Alt+Tab, hold the right-Alt thumb and tap Tab (Tab = the `a`+`s`+`d` combo, or a physical Tab key where the board has one). `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e`. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
+Reach NAV by holding `x`, `.`, or the **right thumb** — its tap is Enter, its hold is NAV. For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e`. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
 
 ### SYM — hold `v` / `m`
 
@@ -246,7 +247,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 1. Validate: `kanata.exe --cfg wins.kbd --check`
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
-3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `k` → ↑ (NAV); tap the left Alt thumb → Esc.
+3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `k` → ↑ (NAV), or hold the **right thumb** + `k` → ↑; tap the left Alt thumb → Esc, the right thumb → Enter.
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 
@@ -260,7 +261,7 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 |---|---|---|
 | Left Win | Win (Start menu) | (none) |
 | Left Alt | **Esc** | **NUM** |
-| Right Alt | (quick Alt) | **Alt** |
+| Right Alt | **Enter** | **NAV** |
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
@@ -271,6 +272,7 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
+- **"Alt+Tab no longer works from the right thumb."** The right-Alt thumb is now a layer thumb (**tap = Enter, hold = NAV**), so it no longer sends Alt. For the app switcher, hold `s` (Alt) + a physical Tab key; release `s` to commit. (Alt is also on the `@osa` one-shot, but a one-shot releases after a single Tab.)
 - **"Remaps don't work in Task Manager / admin windows."** Run kanata as administrator.
 - **"Config won't load after an edit."** `--check` tells you the line. A broken live-reload keeps the previous working config.
 

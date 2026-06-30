@@ -52,6 +52,9 @@
   ;; ---- LAlt thumb dual-role ----
   ctlesc (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))  ;; [win] LAlt thumb: tap = Esc, hold = NUM
 
+  ;; ---- RAlt thumb dual-role ----
+  nave (tap-hold-release $quick-tap-ms $tapping-term enter (layer-while-held nav))  ;; [win] RAlt thumb: tap = Enter, hold = NAV
+
   ;; ---- home row mods, GASC like your old config (not the mac CASG of the source) ----
   ;; Left:  A=Win  S=Alt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Alt  ;=Win
   a (t! lhrm   $tapping-term        a lmet   )
@@ -298,14 +301,14 @@
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
   @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
-                   @lwin   @ctlesc @spc    lalt  ;; [win] LAlt thumb = tap Esc / hold Ctrl, RAlt thumb = Alt (was @tlnav / @tlsym; nav now on hold-x/. , sym on hold-v/m)
+                   @lwin   @ctlesc @spc    @nave  ;; [win] LAlt thumb = tap Esc / hold NUM, RAlt thumb = tap Enter / hold NAV (nav also on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
   @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
-                   @lwin   @ctlesc @spc    lalt
+                   @lwin   @ctlesc @spc    @nave
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering

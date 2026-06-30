@@ -46,7 +46,7 @@ Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases))
       sudo launchctl kickstart -k system/dev.kanata.kanata
       ```
 
-Then test: hold `x` + `k` → ↑ (NAV).
+Then test: hold `x` + `k` → ↑ (NAV), or hold the **right thumb** + `k` → ↑ (its tap = Enter, hold = NAV).
 
 ## Keyboard shortcuts
 
@@ -54,7 +54,8 @@ Then test: hold `x` + `k` → ↑ (NAV).
 |---|---|
 | Copy / Paste / Cut / Undo | hold LCmd thumb (NUM) + `x` / `v` / `c` / `z` · or combos `x·c` / `c·v` / `z·x` / `s·f` |
 | Ctrl chords (Emacs, terminal) | pause, then hold `f`/`j` (Ctrl) + a cross-hand key |
-| Cmd+Tab | hold `a` (Cmd) + Tab |
+| Cmd+Tab | hold `a` (Cmd) + Tab (the `a`+`s`+`d` combo or a physical Tab key) |
+| Enter | tap the right thumb · or the `l`+`;` combo |
 | Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Opt+← · `d`+`f` = Opt+→ |
@@ -69,7 +70,7 @@ Then test: hold `x` + `k` → ↑ (NAV).
 | Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
 | Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
 | Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` (Cmd+[ / Cmd+]) |
-| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` (NAV) |
+| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
 | Spotlight (Cmd+Space) | tap left Opt; or hold `a` (Cmd) + Space |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
 | Screenshot (Cmd+Shift+4) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, press `j` (= 4) |
@@ -110,8 +111,8 @@ Then test: hold `x` + `k` → ↑ (NAV).
 
 Thumbs:
 +-------+-------+-------+-------+
-| Spot  |  Esc  | Space |       |
-|       |  NUM  |       |  Opt  |
+| Spot  |  Esc  | Space | Enter |
+|       |  NUM  |       |  NAV  |
 +-------+-------+-------+-------+
   LOpt    LCmd    Space   RCmd  
 ```
@@ -130,7 +131,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x` or `.`. For Cmd+Tab, hold the left Cmd thumb and tap Tab (Tab = the `a`+`s`+`d` combo, or a physical Tab key where the board has one). `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
+Reach NAV by holding `x`, `.`, or the **right thumb** — its tap is Enter, its hold is NAV. For Cmd+Tab, hold `a` (Cmd) + Tab (the `a`+`s`+`d` combo, or a physical Tab key where the board has one). `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e` — same keys, left Cmd instead of Ctrl. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`). Back/forward = Cmd+[ / Cmd+].
 
 ### SYM — hold `v` / `m`
 
@@ -277,7 +278,7 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 1. Validate: `kanata --cfg mac.kbd --check`
 2. Run: `sudo kanata --cfg mac.kbd` — kanata must run as root on macOS
-3. Test: hold `x` + `k` → ↑ (NAV). Tap the left Cmd thumb → Esc.
+3. Test: hold `x` + `k` → ↑ (NAV), or hold the **right thumb** + `k` → ↑. Tap the left Cmd thumb → Esc; tap the right thumb → Enter.
 
 **Autostart:** covered by the [Install](#install) section's LaunchDaemons. After changing the config there, reload with `sudo launchctl kickstart -k system/dev.kanata.kanata`.
 
@@ -291,7 +292,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 |---|---|---|
 | Left Opt | Spotlight (Cmd+Space) | (none) |
 | Left Cmd | **Esc** | **NUM** |
-| Right Cmd | (quick Opt) | **Opt** |
+| Right Cmd | **Enter** | **NAV** |
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
 | `z` / `c` | the letter | **FUN** / **NUM** |
 | `/` / `,` | the symbol | **FUN** / **NUM** |
@@ -300,7 +301,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 
 ## Troubleshooting
 
-- **"The right Cmd key sends Opt."** Intended: the left Cmd thumb is remapped to NUM, the right Cmd thumb to Opt. Cmd is on `a`/`;`; Cmd+Tab = hold `a` (Cmd) + Tab.
+- **"The right Cmd thumb doesn't send Opt anymore."** Intended — it's now a layer thumb: **tap = Enter, hold = NAV**. Opt still lives on `s` (hold) and the `@osa` one-shot, and the physical *right Option* key is untouched for accents. Cmd is on `a`/`;`; Cmd+Tab = hold `a` (Cmd) + Tab (the `a`+`s`+`d` combo).
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Left Opt does something unexpected."** The left Option thumb taps Spotlight (Cmd+Space); its hold does nothing now (NUM is on `c`/`,`). Accents live on the untouched *right* Opt.
 - **"Mouse layer enters but cursor doesn't move / clicks don't register."** Keyboard remapping goes through the Karabiner driver; mouse simulation uses the macOS CoreGraphics API and requires **Accessibility** permission for the kanata binary — Input Monitoring alone isn't enough. See step 3 of [Install](#install) for how to find and add the binary in the macOS file picker.

@@ -53,6 +53,9 @@
   ;; ---- LCmd thumb dual-role ----
   cmdesc (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))  ;; [mac] LCmd thumb: tap = Esc, hold = NUM
 
+  ;; ---- RCmd thumb dual-role ----
+  nave (tap-hold-release $quick-tap-ms $tapping-term enter (layer-while-held nav))  ;; [mac] RCmd thumb: tap = Enter, hold = NAV
+
   ;; ---- home row mods, GASC — Ctrl on the index finger (Emacs-friendly) ----
   ;; Left:  A=Cmd  S=Opt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Opt  ;=Cmd
   a (t! lhrm   $tapping-term        a lmet   )
@@ -254,14 +257,14 @@
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
   @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
-                   @spot   @cmdesc @spc    lalt  ;; [mac] LOpt thumb = Spotlight tap, LCmd thumb = tap Esc / hold Cmd, RCmd thumb = Opt (nav on hold-x/. , sym on hold-v/m)
+                   @spot   @cmdesc @spc    @nave  ;; [mac] LOpt thumb = Spotlight tap, LCmd thumb = tap Esc / hold NUM, RCmd thumb = tap Enter / hold NAV (nav also on hold-x/. , sym on hold-v/m)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
   @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
-                   @spot   @cmdesc @spc    lalt
+                   @spot   @cmdesc @spc    @nave
 )
 
 (deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
