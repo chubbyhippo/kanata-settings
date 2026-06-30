@@ -37,10 +37,10 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
 | Home / End | `t`+`g` or `v`+`b` = Home · `y`+`h` or `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
 | Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
-| Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Win, then an arrow (stacks); `h` = Left, `u` = PgUp |
+| Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Win, then an arrow (stacks); `y` = PgUp, `h` = PgDn |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
 | Tab / Backspace | hold NAV: `t` / `i` = Tab · `b` / `o` = Backspace |
-| Arrows, PgUp, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
+| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
@@ -90,9 +90,9 @@ Thumbs:
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|  Esc  | Home  |  Up   |  End  |  Tab  |    | Paste | PgUp  |  Tab  | Bksp  |  Del  |
+|  Esc  | Home  |  Up   |  End  |  Tab  |    | PgUp  | Paste |  Tab  | Bksp  |  Del  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Wrd←  | Left  | Down  | Right | Wrd→  |    | Left  | osCtl | osSft | osAlt | osWin |
+| Wrd←  | Left  | Down  | Right | Wrd→  |    | PgDn  | osCtl | osSft | osAlt | osWin |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Undo  |  M-x  | Copy  |  M-v  | Bksp  |    | Down  |  M-m  | Vol-  | Vol+  |  M-/  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -100,7 +100,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `h` = Left, `u` = PgUp, `i` = Tab, `o` = Bksp, `p` = Del; Enter is on the right thumb. `z` / `c` = Undo / Copy (Paste is on `y`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `t` = Tab and `b` = Backspace (left index). `x` / `m` / `v` / `/` send Emacs **M-x** / **M-m** / **M-v** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+v / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `y` = PgUp, `h` = PgDn, `u` = Paste, `i` = Tab, `o` = Bksp, `p` = Del; Enter is on the right thumb. `z` / `c` = Undo / Copy (Paste is on `u`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `t` = Tab and `b` = Backspace (left index). `x` / `m` / `v` / `/` send Emacs **M-x** / **M-m** / **M-v** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+v / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
 
 ### SYM — hold `v` / `m`
 
