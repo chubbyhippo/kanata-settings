@@ -31,7 +31,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
 | Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ · NAV `a`/`g` |
 | Select word left / right | `h`+`j` = Shift+Ctrl+← · `f`+`g` = Shift+Ctrl+→ |
-| Delete word forward / back | `s`+`d` = Ctrl+Del · `k`+`l` = Ctrl+Bksp |
+| Delete word forward / back | `s`+`d` = Ctrl+Del · `k`+`l` = Ctrl+Bksp · NAV `v`/`z` |
 | Undo / Redo | `s`+`f` = Ctrl+Z · `j`+`l` = Ctrl+Shift+Z |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
@@ -94,13 +94,13 @@ Thumbs:
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Wrd←  | Left  | Down  | Right | Wrd→  |    | PgDn  | osCtl | osSft | osAlt | osWin |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Undo  |  M-x  | Copy  |  M-v  | Bksp  |    | Down  |  M-m  | Vol-  | Vol+  |  M-/  |
+| Dlw←  |  M-x  | Copy  | Dlw→  | Bksp  |    | Down  |  M-m  | Vol-  | Vol+  |  M-/  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `y` = PgUp, `h` = PgDn, `u` = Paste, `i` = Tab, `o` = Bksp, `p` = Del; Enter is on the right thumb. `z` / `c` = Undo / Copy (Paste is on `u`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `t` = Tab and `b` = Backspace (left index). `x` / `m` / `v` / `/` send Emacs **M-x** / **M-m** / **M-v** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+v / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `y` = PgUp, `h` = PgDn, `u` = Paste, `i` = Tab, `o` = Bksp, `p` = Del; Enter is on the right thumb. `c` = Copy, `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u`; `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `t` = Tab and `b` = Backspace (left index). `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
 
 ### SYM — hold `v` / `m`
 
