@@ -94,13 +94,13 @@ Thumbs:
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Wrd←  | Left  | Down  | Right | Wrd→  |    | Left  | osCtl | osSft | osAlt | osWin |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Undo  |  M-x  | Copy  | Paste | Bksp  |    | Down  |  M-m  | Vol-  | Vol+  |  Del  |
+| Undo  |  M-x  | Copy  |  M-v  | Bksp  |    | Down  |  M-m  | Vol-  | Vol+  |  Del  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `h` = Left, `u` = PgUp, `i` = Tab, `o` = Bksp, `/` = Del; Enter is on the right thumb. `z` / `c` / `v` = Undo / Copy / Paste; `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `t` = Tab and `b` = Backspace (left index). `x` sends Emacs **M-x** and `m` sends **M-m** — i.e. Alt+x / Alt+m (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `h` = Left, `u` = PgUp, `i` = Tab, `o` = Bksp, `/` = Del; Enter is on the right thumb. `z` / `c` = Undo / Copy (Paste is on `y`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `t` = Tab and `b` = Backspace (left index). `x` / `m` / `v` send Emacs **M-x** / **M-m** / **M-v** — i.e. Alt+x / Alt+m / Alt+v (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
 
 ### SYM — hold `v` / `m`
 
