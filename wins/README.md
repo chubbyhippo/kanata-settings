@@ -36,11 +36,11 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
 | Home / End | `t`+`g` or `v`+`b` = Home · `y`+`h` or `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
-| Emacs-style arrows | hold `x` / `.` (NAV): `n`/`p`/`f`/`b` = ↓/↑/→/← · `a`/`e` = Home/End |
-| Vim-style arrows | hold `x` / `.` (NAV): `h`/`j`/`k`/`l` = ←/↓/↑/→ · `d`/`u` = PgDn/PgUp |
-| Next / previous browser tab | hold `x` / `.` (NAV) + `r` / hold `f` (Ctrl) + Shift, tap Tab |
+| Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
+| Arrows (right, vim) | hold NAV: `h`/`j`/`k`/`l` = ←/↓/↑/→ · `u` = PgUp |
+| Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
 | Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` |
-| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
+| Arrows, PgUp, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
@@ -90,9 +90,9 @@ Thumbs:
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|  Esc  |  Tab  |  End  | Tab>  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
+|  Esc  | Home  |  Up   |  End  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Home  | Save  | PgDn  | Right | Back  |    | Left  | Down  |  Up   | Right | Enter |
+| Home  | Left  | Down  | Right | Back  |    | Left  | Down  |  Up   | Right | Enter |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Undo  |  Cut  | Copy  | Paste | Left  |    | Down  | Media | Vol-  | Vol+  |  Del  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -100,7 +100,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** — its tap is Enter, its hold is NAV. For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `Media` tap-dance: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous. Emacs-style nav: `n p f b a e` = ↓ ↑ → ← Home End, mirroring `C-n/p/f/b/a/e`. Vim-style too: `h j k l` = ← ↓ ↑ →, with `d`/`u` = PgDn/PgUp (like `C-d`/`C-u`).
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right hand keeps vim arrows** `h j k l` = ← ↓ ↑ →, plus `u` = PgUp, `i` = Tab, `o` = Bksp, `;` = Enter, `/` = Del; `a` also = Home and `b` also = Left. `z x c v` = Undo / Cut / Copy / Paste, and `g` / `t` = browser Back / Forward (Alt+← / Alt+→). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `Media` tap-dance on `m`: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous; `,` / `.` = volume down / up.
 
 ### SYM — hold `v` / `m`
 
