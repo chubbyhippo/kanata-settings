@@ -125,13 +125,13 @@ Thumbs:
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Home  | Left  | Down  | Right | Back  |    | Left  | Down  |  Up   | Right | Enter |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Undo  |  Cut  | Copy  | Paste | Left  |    | Down  | Media | Vol-  | Vol+  |  Del  |
+| Undo  |  M-x  | Copy  | Paste | Left  |    | Down  |  M-m  | Vol-  | Vol+  |  Del  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right hand keeps vim arrows** `h j k l` = ← ↓ ↑ →, plus `u` = PgUp, `i` = Tab, `o` = Bksp, `;` = Enter, `/` = Del; `a` also = Home and `b` also = Left. `z x c v` = Undo / Cut / Copy / Paste, and `g` / `t` = browser Back / Forward (Cmd+[ / Cmd+]). For Cmd+Tab, hold `a` (Cmd) + Tab (the `a`+`s`+`d` combo, or a physical Tab key). `Media` tap-dance on `m`: 1 tap = play/pause, hold = mute, 2 taps = next, 3 = previous; `,` / `.` = volume down / up.
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right hand keeps vim arrows** `h j k l` = ← ↓ ↑ →, plus `u` = PgUp, `i` = Tab, `o` = Bksp, `;` = Enter, `/` = Del; `a` also = Home and `b` also = Left. `z` / `c` / `v` = Undo / Copy / Paste, and `g` / `t` = browser Back / Forward (Cmd+[ / Cmd+]). `x` sends Emacs **M-x** and `m` sends **M-m** — i.e. Alt+x / Alt+m (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). For Cmd+Tab, hold `a` (Cmd) + Tab (the `a`+`s`+`d` combo, or a physical Tab key). `,` / `.` = volume down / up.
 
 ### SYM — hold `v` / `m`
 

@@ -284,7 +284,7 @@
 (deflayer nav
   esc  home up   end  M-rbrc    M-v  pgup   tab  bspc  up
   home left down right M-lbrc    left down   up   right enter
-  M-z  M-x M-c  M-v   left      down @ppmnp vold volu  del
+  M-z  A-x M-c  M-v   left      down A-m    vold volu  del
                           _ _ _ _
 )
 
