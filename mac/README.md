@@ -69,7 +69,7 @@ Then test: hold `x` + `k` → ↑ (NAV), or hold the **right thumb** + `k` → �
 | Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Opt/Cmd, then an arrow (stacks); `h` = Left, `u` = PgUp |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
-| Browser forward | hold `x` / `.` (NAV) + `t` (Cmd+]) |
+| Tab / Backspace | hold NAV: `t` / `i` = Tab · `b` / `o` = Backspace |
 | Arrows, PgUp, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
 | Spotlight (Cmd+Space) | tap left Opt; or hold `a` (Cmd) + Space |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
@@ -121,17 +121,17 @@ Thumbs:
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-|  Esc  | Home  |  Up   |  End  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
+|  Esc  | Home  |  Up   |  End  |  Tab  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Wrd←  | Left  | Down  | Right | Wrd→  |    | Left  | osCtl | osSft | osOpt | osCmd |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Undo  |  M-x  | Copy  | Paste | Left  |    | Down  |  M-m  | Vol-  | Vol+  |  Del  |
+| Undo  |  M-x  | Copy  | Paste | Bksp  |    | Down  |  M-m  | Vol-  | Vol+  |  Del  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `h` = Left, `u` = PgUp, `i` = Tab, `o` = Bksp, `/` = Del; Enter is on the right thumb. `z` / `c` / `v` = Undo / Copy / Paste; `a` / `g` = move word left / right (Opt+← / Opt+→); `t` = browser Forward (Cmd+]). `x` sends Emacs **M-x** and `m` sends **M-m** — i.e. Alt+x / Alt+m (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). For Cmd+Tab, hold `a` (Cmd) + Tab (the `a`+`s`+`d` combo, or a physical Tab key). `,` / `.` = volume down / up.
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `h` = Left, `u` = PgUp, `i` = Tab, `o` = Bksp, `/` = Del; Enter is on the right thumb. `z` / `c` / `v` = Undo / Copy / Paste; `a` / `g` = move word left / right (Opt+← / Opt+→); `t` = Tab and `b` = Backspace (left index). `x` sends Emacs **M-x** and `m` sends **M-m** — i.e. Alt+x / Alt+m (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). For Cmd+Tab, hold `a` (Cmd) + Tab (the `a`+`s`+`d` combo, or a physical Tab key). `,` / `.` = volume down / up.
 
 ### SYM — hold `v` / `m`
 
