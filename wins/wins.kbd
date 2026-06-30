@@ -209,11 +209,6 @@
 
   (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Num Word on; cancel with the Ctrl thumb (Left Alt = @num_nav). Disabled in NUM so "12" can't toggle it.
 
-  ;; cut / copy / paste on the bottom row — overlapping pairs share x and c
-  (z x)     C-x              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; cut
-  (x c)     C-c              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; copy
-  (c v)     C-v              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; paste
-
   ;; Home / End on the bottom row — same-finger (misfire-proof)
   (v b)     home             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Home — same-finger (left index)
   (m n)     end              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; End  — same-finger (right index)

@@ -24,7 +24,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 
 | You want | Do this |
 |---|---|
-| Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `x` / `v` / `c` / `z` · or combos `x·c` / `c·v` / `z·x` |
+| Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `x` / `v` / `c` / `z` |
 | Alt+Tab | hold `s` (Alt) + a physical Tab, release `s` to switch (see Troubleshooting) |
 | Enter | tap the right thumb · or a physical Enter key |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
@@ -32,7 +32,6 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Move word left / right | NAV (hold `x`/`.`): `a` = ← · `g` = → (Ctrl+←/→) |
 | Delete word forward / back | NAV (hold `x`/`.`): `v` = forward · `z` = back (Ctrl+Del / Ctrl+Bksp) |
 | Select word left / right | NAV: tap `j`+`k` (Ctrl+Shift), then `s`/`f` (←/→) |
-| Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
 | Type ( ) [ ] | SYM (hold `v`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
 | Home / End | `v`+`b` = Home · `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
 | Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
@@ -175,21 +174,19 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
    Z     X     C     V     B             N     M     ,     .     /
-   └─Cut─┘     └─Pst─┘                         └─Num─┘
-         └Copy─┘     └Home─┘             └─End─┘
-         └───Mouse───┘
+         └───Mouse───┘                   └─End─┘
+                     └Home─┘                   └─Num─┘
 ```
 
 A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R), whereas a plain span skips its middle (`Mouse` = X·V, not C).
 
-`Bsp` Backspace · `Pst` Paste · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
+`Bsp` Backspace · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
 
 | Combo | Result |
 |---|---|
 | `q w` | Esc |
 | `r t` | Forward delete (same-finger) |
 | `y u` | Backspace (same-finger; also active in NUM) |
-| `z x` / `x c` / `c v` | Cut / Copy / Paste (Ctrl+`X` / `C` / `V`) |
 | `v b` / `m n` | Home / End (bottom row, same-finger) |
 | `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
 | `q w e r` | Plain mode on/off |
