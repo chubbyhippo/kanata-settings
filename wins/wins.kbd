@@ -326,9 +326,9 @@
 )
 
 (deflayer nav
-  esc  home up   end  tab        C-v  pgup   tab  bspc  up
+  esc  home up   end  tab        C-v  pgup   tab  bspc  del
   C-left left down right C-right    left @osc @oss @osa @osm
-  C-z  A-x C-c  A-v   bspc       down A-m    vold volu  del
+  C-z  A-x C-c  A-v   bspc       down A-m    vold volu  A-/
                            _ _ _ _
 )
 
