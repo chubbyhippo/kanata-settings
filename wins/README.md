@@ -24,18 +24,17 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 
 | You want | Do this |
 |---|---|
-| Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `x` / `v` / `c` / `z` · or combos `x·c` / `c·v` / `z·x` / `s·f` |
+| Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `x` / `v` / `c` / `z` · or combos `x·c` / `c·v` / `z·x` |
 | Alt+Tab | hold `s` (Alt) + a physical Tab, release `s` to switch (see Troubleshooting) |
-| Enter | tap the right thumb · or the `l`+`;` combo |
+| Enter | tap the right thumb · or a physical Enter key |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
-| Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ · NAV `a`/`g` |
-| Select word left / right | `h`+`j` = Shift+Ctrl+← · `f`+`g` = Shift+Ctrl+→ |
-| Delete word forward / back | `s`+`d` = Ctrl+Del · `k`+`l` = Ctrl+Bksp · NAV `v`/`z` |
-| Undo / Redo | `s`+`f` = Ctrl+Z · `j`+`l` = Ctrl+Shift+Z |
+| Move word left / right | NAV (hold `x`/`.`): `a` = ← · `g` = → (Ctrl+←/→) |
+| Delete word forward / back | NAV (hold `x`/`.`): `v` = forward · `z` = back (Ctrl+Del / Ctrl+Bksp) |
+| Select word left / right | NAV: tap `j`+`k` (Ctrl+Shift), then `s`/`f` (←/→) |
 | Cut / Copy / Paste (combo) | `z`+`x` = Cut · `x`+`c` = Copy · `c`+`v` = Paste |
-| Type ( ) [ ] | `u`+`j` = ( · `i`+`k` = ) · `o`+`l` = [ · `p`+`;` = ] |
-| Home / End | `t`+`g` or `v`+`b` = Home · `y`+`h` or `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
+| Type ( ) [ ] | SYM (hold `v`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
+| Home / End | `v`+`b` = Home · `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
 | Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Win, then an arrow (stacks); `i` = PgDn, `o` = PgUp |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
@@ -46,10 +45,8 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
 | Emoji picker | FUN (hold `/`): `z` (Win+.) |
 | Select text | hold real Shift + NAV arrows |
-| Type ALL_CAPS | `d`+`k` together → Caps Word; Space or a digit ends it |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
-| Esc / Tab / Enter / Backspace / Delete | combos `q·w` / `a·s·d` / `l·;` / `y·u` / `r·t` |
-| Save / Select all / Find / Duplicate | combos `w·s` / `q·a` / `r·f` / `e·d` |
+| Esc / Backspace / Delete | combos `q·w` / `y·u` / `r·t` (Tab and Enter are physical keys) |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Mouse | `x`+`v` toggles the mouse layer (`x`+`v` again or `q` exits): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
@@ -148,7 +145,7 @@ Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy /
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The config-reload combo `g`+`h` only works on this layer.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media.
 
 ### MOUSE — toggle with `x`+`v` (`x`+`v` again to exit)
 
@@ -166,9 +163,9 @@ A sticky layer: press `x`+`v` to enter, `x`+`v` again to leave. Move the cursor 
 
 ## Combos
 
-Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing. Inside the NUM layer every combo is off except `l·;` = Enter and `y·u` = Backspace, so typing numbers never misfires.
+Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing. Inside the NUM layer every combo is off except `y·u` = Backspace, so typing numbers never misfires.
 
-Each combo lives where your fingers already are — a pair (or row) of **touching keys**:
+The home row (`a`–`;`) no longer carries any combo — those keys are mods only. The combos that remain live on the top and bottom rows, where your fingers already are:
 
 ```
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
@@ -177,57 +174,26 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
    └─Esc─┘           └─Del─┘             └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
-   A     S     D     F     G             H     J     K     L     ;
-   └─Tab─┴─────┘     └sel→─┘             └sel←─┘     └dlw←─┘
-         └dlw→─┘                               └wrd←─┘     └─Ent─┘
-         └───Undo────┘                         └───Redo────┘
-               └wrd→─┘
-
    Z     X     C     V     B             N     M     ,     .     /
    └─Cut─┘     └─Pst─┘                         └─Num─┘
          └Copy─┘     └Home─┘             └─End─┘
          └───Mouse───┘
-
-
-COLUMN COMBOS  —  press a key together with the one below it
-
-   Q     W     E     R     T             Y     U     I     O     P
-   │ SelA│ Save│ Dup │ Find│ Home        │ End │ (   │ )   │ [   │ ]
-   A     S     D     F     G             H     J     K     L     ;
-
-
-CROSS-HAND / THUMB
-
-   D + K  =  Caps Word          G + H  =  reload (FUN layer)
-   F / S / D  +  Right-thumb  =  ~ / ^ / `
 ```
 
-A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Tab` = A·S·D), whereas a plain span skips its middle (`Undo` = S·F, not D).
+A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R), whereas a plain span skips its middle (`Mouse` = X·V, not C).
 
-`dlw` delete word · `wrd` move word · `sel` select word · `→`/`←` right / left · `Bsp` Backspace · `Ent` Enter · `Pst` Paste · `Num` Num Word · `SelA` Select All · `Plain` plain mode · `NoCmb` all-combos toggle.
+`Bsp` Backspace · `Pst` Paste · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
 
 | Combo | Result |
 |---|---|
 | `q w` | Esc |
-| `a s d` | Tab |
-| `l ;` | Enter |
 | `r t` | Forward delete (same-finger) |
 | `y u` | Backspace (same-finger; also active in NUM) |
-| `s d` / `k l` | Delete word forward / back (Ctrl+Del / Ctrl+Bksp) |
-| `d k` | Caps Word on/off |
-| `d f` / `j k` | Move word right / left (Ctrl+→ / Ctrl+←) |
-| `f g` / `h j` | Select word right / left (Shift+Ctrl+→ / ←) |
 | `z x` / `x c` / `c v` | Cut / Copy / Paste (Ctrl+`X` / `C` / `V`) |
-| `s f` / `j l` | Undo / Redo (Ctrl+Z / Ctrl+Shift+Z) |
-| `w s` / `q a` / `r f` / `e d` | Save / Select all / Find / Duplicate (Ctrl+S / A / F / D) |
-| `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
-| `u j` / `i k` / `o l` / `p ;` | `(` / `)` / `[` / `]` (vertical, same-finger) |
-| `t g` / `y h` | Home / End (vertical, same-finger) |
 | `v b` / `m n` | Home / End (bottom row, same-finger) |
-| `f` / `s` / `d` + right Alt | `~` / `^` / `` ` `` |
+| `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
 | `q w e r` | Plain mode on/off |
 | `u i o p` | All combos on/off |
-| `g h` (FUN layer only) | live-reload the config |
 
 **Master toggle:** `u`+`i`+`o`+`p` silences every combo above at once (press it again to bring them back) — handy for games or apps with their own chord shortcuts. Home row mods, layers, and one-shots keep working; only the two-key combos go quiet. It mirrors the `q`+`w`+`e`+`r` plain-mode toggle, and it's the one combo that stays live while combos are off, so you can always switch back. Under the hood it drops you into a `nocombo` layer (a clone of DEF that's listed in every combo's disabled-layers).
 
@@ -235,11 +201,9 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 
 NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); NAV has none — its home row is navigation. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
 
-## Caps Word and Num Word
+## Num Word
 
-**Caps Word** (`d`+`k`): next letters come out capitalized, no Shift held. Ends on Space, Enter, a digit, or 5 s idle; survives apostrophes, Backspace, and the `~ ^ ` `` combos — for underscores, hold `d`/`k` instead.
-
-**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. Inside NUM, every combo is disabled **except `l·;` = Enter and `y·u` = Backspace**, so you can submit and fix typos while entering numbers.
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. Inside NUM, every combo is disabled **except `y·u` = Backspace**, so you can fix typos while entering numbers.
 
 ## Quick start
 
@@ -251,7 +215,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 
-**After editing the config:** run `--check`, then restart kanata or live-reload: hold `z`/`/` (FUN) and press `g`+`h`. A failed reload keeps the previous good config running.
+**After editing the config:** run `--check`, then restart kanata to apply (stop it and re-run `kanata.bat`, or end the process and relaunch). A config that fails `--check` won't load, so the previous good one keeps running.
 
 ## What's remapped
 
@@ -274,7 +238,7 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
 - **"Alt+Tab no longer works from the right thumb."** The right-Alt thumb is now a layer thumb (**tap = Enter, hold = NAV**), so it no longer sends Alt. For the app switcher, hold `s` (Alt) + a physical Tab key; release `s` to commit. (Alt is also on the `@osa` one-shot, but a one-shot releases after a single Tab.)
 - **"Remaps don't work in Task Manager / admin windows."** Run kanata as administrator.
-- **"Config won't load after an edit."** `--check` tells you the line. A broken live-reload keeps the previous working config.
+- **"Config won't load after an edit."** `--check` tells you the line. A config that fails the check won't start, so the previously running instance keeps working until you restart.
 
 ## Tuning knobs
 
