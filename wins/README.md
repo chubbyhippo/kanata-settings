@@ -29,7 +29,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Enter | tap the right thumb · or the `l`+`;` combo |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
-| Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ |
+| Move word left / right | `j`+`k` = Ctrl+← · `d`+`f` = Ctrl+→ · NAV `a`/`g` |
 | Select word left / right | `h`+`j` = Shift+Ctrl+← · `f`+`g` = Shift+Ctrl+→ |
 | Delete word forward / back | `s`+`d` = Ctrl+Del · `k`+`l` = Ctrl+Bksp |
 | Undo / Redo | `s`+`f` = Ctrl+Z · `j`+`l` = Ctrl+Shift+Z |
@@ -39,7 +39,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Win, then an arrow (stacks); `h` = Left, `u` = PgUp |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
-| Browser back / forward | hold `x` / `.` (NAV) + `g` / `t` |
+| Browser forward | hold `x` / `.` (NAV) + `t` (Alt+→) |
 | Arrows, PgUp, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
@@ -92,7 +92,7 @@ Thumbs:
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |  Esc  | Home  |  Up   |  End  | Fwd>  |    | Paste | PgUp  |  Tab  | Bksp  |  Up   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Home  | Left  | Down  | Right | Back  |    | Left  | osCtl | osSft | osAlt | osWin |
+| Wrd←  | Left  | Down  | Right | Wrd→  |    | Left  | osCtl | osSft | osAlt | osWin |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Undo  |  M-x  | Copy  | Paste | Left  |    | Down  |  M-m  | Vol-  | Vol+  |  Del  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -100,7 +100,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `h` = Left, `u` = PgUp, `i` = Tab, `o` = Bksp, `/` = Del; Enter is on the right thumb. `z` / `c` / `v` = Undo / Copy / Paste, and `g` / `t` = browser Back / Forward (Alt+← / Alt+→). `x` sends Emacs **M-x** and `m` sends **M-m** — i.e. Alt+x / Alt+m (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `h` = Left, `u` = PgUp, `i` = Tab, `o` = Bksp, `/` = Del; Enter is on the right thumb. `z` / `c` / `v` = Undo / Copy / Paste; `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `t` = browser Forward (Alt+→). `x` sends Emacs **M-x** and `m` sends **M-m** — i.e. Alt+x / Alt+m (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up.
 
 ### SYM — hold `v` / `m`
 

@@ -283,7 +283,7 @@
 
 (deflayer nav
   esc  home up   end  M-rbrc    M-v  pgup   tab  bspc  up
-  home left down right M-lbrc    left @osc @oss @osa @osm
+  A-left left down right A-right    left @osc @oss @osa @osm
   M-z  A-x M-c  M-v   left      down A-m    vold volu  del
                           _ _ _ _
 )
