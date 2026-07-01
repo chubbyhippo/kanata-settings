@@ -30,7 +30,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
 | Move word left / right | NAV (hold `x`/`.`): `a` = ← · `g` = → (Ctrl+←/→) |
-| Delete word forward / back | NAV (hold `x`/`.`): `v` = forward · `z` = back (Ctrl+Del / Ctrl+Bksp) |
+| Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Ctrl+Del / Ctrl+Bksp); or NAV (hold `x`/`.`): `v` / `z` |
 | Select word left / right | NAV: tap `j`+`k` (Ctrl+Shift), then `s`/`f` (←/→) |
 | Type ( ) [ ] | SYM (hold `v`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
 | Home / End | `v`+`b` = Home · `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
@@ -164,7 +164,7 @@ A sticky layer: press `q`+`w` to enter; tap `q` to leave. Move the cursor with t
 
 Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing. Inside the NUM layer every combo is off except `y·u` = Backspace, so typing numbers never misfires.
 
-The home row (`a`–`;`) no longer carries any combo — those keys are mods only. The combos that remain live on the top and bottom rows, where your fingers already are:
+The home row (`a`–`;`) is otherwise mods-only, but its two index-finger pairs now carry the delete-word combos — `f`+`g` and `h`+`j` (same-finger, so misfire-proof). The rest live on the top and bottom rows, where your fingers already are:
 
 ```
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
@@ -173,6 +173,9 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
    └Mouse┘           └─Del─┘             └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
+   A     S     D     F     G             H     J     K     L     ;
+                     └DelF─┘             └DelB─┘
+
    Z     X     C     V     B             N     M     ,     .     /
                      └Home─┘             └─End─┘
                                                └─Num─┘
@@ -180,13 +183,14 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
 
 A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R), whereas a plain span skips its middle (`Mouse` = X·V, not C).
 
-`Bsp` Backspace · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
+`Bsp` Backspace · `DelF`/`DelB` delete word forward / back · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
 
 | Combo | Result |
 |---|---|
 | `q w` | Mouse layer on/off (tap `q` to exit) |
 | `r t` | Forward delete (same-finger) |
 | `y u` | Backspace (same-finger; also active in NUM) |
+| `f g` / `h j` | Delete word forward / back — Ctrl+Del / Ctrl+Bksp (home row, same-finger) |
 | `v b` / `m n` | Home / End (bottom row, same-finger) |
 | `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
 | `q w e r` | Plain mode on/off |

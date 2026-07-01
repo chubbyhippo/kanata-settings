@@ -212,6 +212,10 @@
   (v b)     home             $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; Home — same-finger (left index)
   (m n)     end              $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; End  — same-finger (right index)
 
+  ;; Delete word on the home row — same-finger index pairs, so misfire-proof
+  (h j)     C-bspc           $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word back — Ctrl+Bksp (right index: h+j)
+  (f g)     C-del            $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word forward — Ctrl+Del (left index: f+g)
+
   (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
   (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; enter MOUSE; exit with single-key q
 
