@@ -285,7 +285,7 @@
 
 (deflayer nav
   tab  home up   end  S-tab      XX   C-v    pgdn pgup  del
-  C-left left down right C-right    XX   @osc @oss @osa @osm
+  C-left left down right C-right   enter @osc @oss @osa @osm
   C-bspc A-x C-c C-del bspc       menu A-m    vold volu  A-/
                            _ _ _ _
 )

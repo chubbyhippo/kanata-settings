@@ -55,7 +55,7 @@ Then test: hold `x` + `k` → ↑ (NAV), or hold the **right thumb** + `k` → �
 | Copy / Paste / Cut / Undo | hold LCmd thumb (NUM) + `x` / `v` / `c` / `z` |
 | Ctrl chords (Emacs, terminal) | pause, then hold `f`/`j` (Ctrl) + a cross-hand key |
 | Cmd+Tab | hold `a` (Cmd) + a physical Tab key |
-| Enter | tap the right thumb · or a physical Enter key |
+| Enter | tap the right thumb · NAV `h` · or a physical Enter key |
 | Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
 | Move word left / right | NAV (hold `x`/`.`): `a` = ← · `g` = → (Opt+←/→) |
@@ -119,7 +119,7 @@ Thumbs:
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |  Tab  | Home  |  Up   |  End  | S-Tab |    |       | Paste | PgDn  | PgUp  |  Del  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Wrd←  | Left  | Down  | Right | Wrd→  |    |       | osCtl | osSft | osOpt | osCmd |
+| Wrd←  | Left  | Down  | Right | Wrd→  |    | Enter | osCtl | osSft | osOpt | osCmd |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Dlw←  |  M-x  | Copy  | Dlw→  | Bksp  |    | Menu  |  M-m  | Vol-  | Vol+  |  M-/  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -127,7 +127,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del (`y`/`h` now unused); Enter is on the right thumb. `c` = Copy, `z` / `v` = delete word back / forward (Opt+Bksp / Opt+Del), Paste is on `u`; `a` / `g` = move word left / right (Opt+← / Opt+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). For Cmd+Tab, hold `a` (Cmd) + a physical Tab key. `,` / `.` = volume down / up. `n` = Menu (the PC context-menu / Application key — largely inert on stock macOS, kept for parity with the Windows config).
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del (`y` unused); `h` = Enter (also on the right thumb). `c` = Copy, `z` / `v` = delete word back / forward (Opt+Bksp / Opt+Del), Paste is on `u`; `a` / `g` = move word left / right (Opt+← / Opt+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). For Cmd+Tab, hold `a` (Cmd) + a physical Tab key. `,` / `.` = volume down / up. `n` = Menu (the PC context-menu / Application key — largely inert on stock macOS, kept for parity with the Windows config).
 
 ### SYM — hold `v` / `m`
 
