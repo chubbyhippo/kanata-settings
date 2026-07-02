@@ -54,7 +54,7 @@ Then test: hold `x` + `e` → ↑ (NAV), or hold the **right thumb** + `e` → �
 |---|---|
 | Copy / Paste / Cut / Undo | hold LCmd thumb (NUM) + `c` / `v` / `x` / `z` |
 | Ctrl chords (Emacs, terminal) | pause, then hold `f`/`j` (Ctrl) + a cross-hand key |
-| Cmd+Tab | hold `a` (Cmd) + a physical Tab key |
+| Cmd+Tab | hold NAV (`x` / right thumb), tap `.` — keep tapping to cycle, `,` steps back — release NAV to switch |
 | Enter | tap the right thumb · NAV `h` · or a physical Enter key |
 | Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
@@ -121,13 +121,13 @@ Thumbs:
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Wrd←  | Left  | Down  | Right | Wrd→  |    | Enter | osCtl | osSft | osOpt | osCmd |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Dlw←  |  M-x  | Copy  | Dlw→  | Bksp  |    | Menu  |  M-m  | Vol-  | Vol+  |  M-/  |
+| Dlw←  |  M-x  | Copy  | Dlw→  | Bksp  |    | Menu  |  M-m  | App←  | App→  |  M-/  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del (`y` unused); `h` = Enter (also on the right thumb). `c` = Copy, `z` / `v` = delete word back / forward (Opt+Bksp / Opt+Del), Paste is on `u`; `a` / `g` = move word left / right (Opt+← / Opt+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). For Cmd+Tab, hold `a` (Cmd) + a physical Tab key. `,` / `.` = volume down / up. `n` = Menu (the PC context-menu / Application key — largely inert on stock macOS, kept for parity with the Windows config).
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del (`y` unused); `h` = Enter (also on the right thumb). `c` = Copy, `z` / `v` = delete word back / forward (Opt+Bksp / Opt+Del), Paste is on `u`; `a` / `g` = move word left / right (Opt+← / Opt+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). `.` is the app swapper: kanata holds Cmd for you and taps Tab, so keep tapping `.` to walk the Cmd-Tab switcher, tap `,` to step back (Cmd+Shift+Tab), and release NAV to drop Cmd and land in the chosen app. (Holding `.` itself for NAV keeps that key busy — drive the swapper from the thumb or `x`.) Volume is on FUN (`r` / `t`). `n` = Menu (the PC context-menu / Application key — largely inert on stock macOS, kept for parity with the Windows config).
 
 ### SYM — hold `v` / `m`
 
@@ -266,7 +266,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 
 ## Troubleshooting
 
-- **"The right Cmd thumb doesn't send Opt anymore."** Intended — it's now a layer thumb: **tap = Enter, hold = NAV**. Opt still lives on `s` (hold) and the `@osa` one-shot, and the physical *right Option* key is untouched for accents. Cmd is on `a`/`;`; Cmd+Tab = hold `a` (Cmd) + a physical Tab key.
+- **"The right Cmd thumb doesn't send Opt anymore."** Intended — it's now a layer thumb: **tap = Enter, hold = NAV**. Opt still lives on `s` (hold) and the `@osa` one-shot, and the physical *right Option* key is untouched for accents. Cmd is on `a`/`;`; for Cmd+Tab hold NAV and tap `.` (the swapper), or hold `a` (Cmd) + a physical Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Left Opt does something unexpected."** The left Option thumb taps Spotlight (Cmd+Space); its hold does nothing now (NUM is on `c`/`,`). Accents live on the untouched *right* Opt.
 - **"Mouse layer enters but cursor doesn't move / clicks don't register."** Keyboard remapping goes through the Karabiner driver; mouse simulation uses the macOS CoreGraphics API and requires **Accessibility** permission for the kanata binary — Input Monitoring alone isn't enough. See step 3 of [Install](#install) for how to find and add the binary in the macOS file picker.

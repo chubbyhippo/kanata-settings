@@ -52,8 +52,17 @@
   ;; ---- LAlt thumb dual-role ----
   numesc (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))  ;; [win] LAlt thumb: tap = Esc, hold = NUM
 
+  ;; ---- NAV hold, shared by x / . / the right thumb ----
+  ;; the layer plus two chores on release: tap ops so armed one-shots survive
+  ;; leaving the layer, and let go of the swapper's Alt so an Alt-Tab run commits
+  navhold (multi
+    (layer-while-held nav)
+    (on-release tap-virtualkey     ops)
+    (on-release release-virtualkey swapperrcmd)
+  )
+
   ;; ---- RAlt thumb dual-role ----
-  naventer (tap-hold-release $quick-tap-ms $tapping-term enter (layer-while-held nav))  ;; [win] RAlt thumb: tap = Enter, hold = NAV
+  naventer (tap-hold-release $quick-tap-ms $tapping-term enter @navhold)  ;; [win] RAlt thumb: tap = Enter, hold = NAV
 
   ;; ---- home row mods, GASC like your old config (not the mac CASG of the source) ----
   ;; Left:  A=Win  S=Alt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Alt  ;=Win
@@ -99,8 +108,8 @@
   cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
   slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun)) ;; / : tap = '/', hold = function layer
   commanum (tap-hold-release $quick-tap-ms $tapping-term @, (layer-while-held num)) ;; , : tap = ',', hold = numbers layer
-  xnav     (tap-hold-release $quick-tap-ms $tapping-term @x (layer-while-held nav)) ;; x : tap = x, hold = nav layer
-  dotnav   (tap-hold-release $quick-tap-ms $tapping-term @. (layer-while-held nav)) ;; . : tap = ., hold = nav layer
+  xnav     (tap-hold-release $quick-tap-ms $tapping-term @x @navhold) ;; x : tap = x, hold = nav layer
+  dotnav   (tap-hold-release $quick-tap-ms $tapping-term @. @navhold) ;; . : tap = ., hold = nav layer
   vsym     (tap-hold-release $quick-tap-ms $tapping-term @v (layer-while-held sym)) ;; v : tap = v, hold = sym layer
   msym     (tap-hold-release $quick-tap-ms $tapping-term @m (layer-while-held sym)) ;; m : tap = m, hold = sym layer
 
@@ -136,11 +145,18 @@
     (on-release tap-virtualkey      evaluate_tri_layer)
   )
 
-  ;; tri-state swapper: [win] holds Alt and taps Tab = Alt-Tab window switcher.
-  ;; Each press sends another Tab; releasing the NAV thumb releases Alt and switches.
+  ;; window swapper (NAV . and ,): [win] holds Alt and taps Tab = Alt-Tab switcher.
+  ;; Each press sends another Tab; releasing NAV (x / . / the right thumb) releases
+  ;; Alt and lands in the chosen window.
   swapper (multi
     (on-press   press-virtualkey    swapperrcmd)
     (on-press   tap-virtualkey      swappertab)
+  )
+
+  ;; the same swapper stepping backwards: Alt stays held, each press taps Shift+Tab
+  swapperback (multi
+    (on-press   press-virtualkey    swapperrcmd)
+    (on-press   tap-virtualkey      swapperstab)
   )
 
   ;; num_word toggle
@@ -230,6 +246,7 @@
 
   swapperrcmd lalt                   ;; [win] swapper holds Alt (was right Cmd on mac)
   swappertab tab                     ;; sends Tab on every new press while the swapper is active
+  swapperstab S-tab                  ;; Shift+Tab — the swapper's backwards step
 
   ;; tri-layer logic
   lnav nop0                          ;; no-output key for tri-layer logic
@@ -285,7 +302,7 @@
 (deflayer nav
   tab  home up   end  S-tab      XX   C-v    pgdn pgup  del
   C-left left down right C-right   enter @osc @oss @osa @osm
-  C-bspc A-x C-c C-del bspc       menu A-m    vold volu  A-/
+  C-bspc A-x C-c C-del bspc       menu A-m    @swapperback @swapper A-/
                            _ _ _ _
 )
 

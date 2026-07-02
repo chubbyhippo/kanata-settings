@@ -53,8 +53,17 @@
   ;; ---- LCmd thumb dual-role ----
   cmdesc (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))  ;; [mac] LCmd thumb: tap = Esc, hold = NUM
 
+  ;; ---- NAV hold, shared by x / . / the right thumb ----
+  ;; the layer plus two chores on release: tap ops so armed one-shots survive
+  ;; leaving the layer, and let go of the swapper's Cmd so a Cmd-Tab run commits
+  navhold (multi
+    (layer-while-held nav)
+    (on-release tap-virtualkey     ops)
+    (on-release release-virtualkey swapperrcmd)
+  )
+
   ;; ---- RCmd thumb dual-role ----
-  naventer (tap-hold-release $quick-tap-ms $tapping-term enter (layer-while-held nav))  ;; [mac] RCmd thumb: tap = Enter, hold = NAV
+  naventer (tap-hold-release $quick-tap-ms $tapping-term enter @navhold)  ;; [mac] RCmd thumb: tap = Enter, hold = NAV
 
   ;; ---- home row mods, GASC — Ctrl on the index finger (Emacs-friendly) ----
   ;; Left:  A=Cmd  S=Opt  D=Shift  F=Ctrl       Right: J=Ctrl  K=Shift  L=Opt  ;=Cmd
@@ -100,8 +109,8 @@
   cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
   slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun)) ;; / : tap = '/', hold = function layer
   commanum (tap-hold-release $quick-tap-ms $tapping-term @, (layer-while-held num)) ;; , : tap = ',', hold = numbers layer
-  xnav     (tap-hold-release $quick-tap-ms $tapping-term @x (layer-while-held nav)) ;; x : tap = x, hold = nav layer
-  dotnav   (tap-hold-release $quick-tap-ms $tapping-term @. (layer-while-held nav)) ;; . : tap = ., hold = nav layer
+  xnav     (tap-hold-release $quick-tap-ms $tapping-term @x @navhold) ;; x : tap = x, hold = nav layer
+  dotnav   (tap-hold-release $quick-tap-ms $tapping-term @. @navhold) ;; . : tap = ., hold = nav layer
   vsym     (tap-hold-release $quick-tap-ms $tapping-term @v (layer-while-held sym)) ;; v : tap = v, hold = sym layer
   msym     (tap-hold-release $quick-tap-ms $tapping-term @m (layer-while-held sym)) ;; m : tap = m, hold = sym layer
 
@@ -116,6 +125,20 @@
 
   ;; media tap-dance on NAV: tap = play/pause, hold = mute, 2x = next, 3x = prev
   ppmnp (tap-dance 200 ((tap-hold $quick-tap-ms $tapping-term pp mute) next prev))
+
+  ;; app swapper (NAV . and ,): [mac] holds Cmd and taps Tab = Cmd-Tab switcher.
+  ;; Each press sends another Tab; releasing NAV (x / . / the right thumb) releases
+  ;; Cmd and lands in the chosen app.
+  swapper (multi
+    (on-press   press-virtualkey    swapperrcmd)
+    (on-press   tap-virtualkey      swappertab)
+  )
+
+  ;; the same swapper stepping backwards: Cmd stays held, each press taps Shift+Tab
+  swapperback (multi
+    (on-press   press-virtualkey    swapperrcmd)
+    (on-press   tap-virtualkey      swapperstab)
+  )
 
   ;; num_word toggle
   toggle_num_word
@@ -199,6 +222,12 @@
 
 (defvirtualkeys
   to-base (layer-switch def)         ;; used by @tap to return to base after the idle period
+
+  ops (one-shot-pause-processing 10) ;; lets sticky keys stay triggered when moving back to the default layer
+
+  swapperrcmd rmet                   ;; [mac] the swapper holds right Cmd
+  swappertab tab                     ;; sends Tab on every new press while the swapper is active
+  swapperstab S-tab                  ;; Shift+Tab — the swapper's backwards step
 )
 
 ;; source keys — [mac] mac board: F-row and fn/Globe left untouched (pass through),
@@ -241,7 +270,7 @@
 (deflayer nav
   tab  home up   end  S-tab     XX   M-v    pgdn pgup  del
   A-left left down right A-right   enter @osc @oss @osa @osm
-  A-bspc A-x M-c A-del bspc      menu A-m    vold volu  A-/
+  A-bspc A-x M-c A-del bspc      menu A-m    @swapperback @swapper A-/
                           _ _ _ _
 )
 

@@ -25,7 +25,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | You want | Do this |
 |---|---|
 | Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `c` / `v` / `x` / `z` |
-| Alt+Tab | hold `s` (Alt) + a physical Tab, release `s` to switch (see Troubleshooting) |
+| Alt+Tab | hold NAV (`x` / right thumb), tap `.` — keep tapping to cycle, `,` steps back — release NAV to switch |
 | Enter | tap the right thumb · NAV `h` · or a physical Enter key |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
 | Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
@@ -90,13 +90,13 @@ Thumbs:
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | Wrd←  | Left  | Down  | Right | Wrd→  |    | Enter | osCtl | osSft | osAlt | osWin |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Dlw←  |  M-x  | Copy  | Dlw→  | Bksp  |    | Menu  |  M-m  | Vol-  | Vol+  |  M-/  |
+| Dlw←  |  M-x  | Copy  | Dlw→  | Bksp  |    | Menu  |  M-m  | Win←  | Win→  |  M-/  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del (`y` unused); `h` = Enter (also on the right thumb). `c` = Copy, `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u`; `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). For Alt+Tab, hold `s` (Alt) + a physical Tab — the right thumb no longer sends Alt (see Troubleshooting). `,` / `.` = volume down / up. `n` = Menu (the context-menu / Application key — same as Shift+F10).
+Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del (`y` unused); `h` = Enter (also on the right thumb). `c` = Copy, `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u`; `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). `.` is the window swapper: kanata holds Alt for you and taps Tab, so keep tapping `.` to walk the Alt-Tab switcher, tap `,` to step back (Alt+Shift+Tab), and release NAV to drop Alt and land in the chosen window. (Holding `.` itself for NAV keeps that key busy — drive the swapper from the thumb or `x`.) Volume is on FUN (`r` / `t`). `n` = Menu (the context-menu / Application key — same as Shift+F10).
 
 ### SYM — hold `v` / `m`
 
@@ -237,7 +237,7 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
-- **"Alt+Tab no longer works from the right thumb."** The right-Alt thumb is now a layer thumb (**tap = Enter, hold = NAV**), so it no longer sends Alt. For the app switcher, hold `s` (Alt) + a physical Tab key; release `s` to commit. (Alt is also on the `@osa` one-shot, but a one-shot releases after a single Tab.)
+- **"How do I Alt+Tab?"** Hold NAV (right thumb or `x`) and tap `.` — kanata holds Alt for you, every tap is another Tab, `,` steps back, and releasing NAV commits. Holding `s` (Alt) + a physical Tab still works too.
 - **"Remaps don't work in Task Manager / admin windows."** Run kanata as administrator.
 - **"Config won't load after an edit."** `--check` tells you the line. A config that fails the check won't start, so the previously running instance keeps working until you restart.
 
