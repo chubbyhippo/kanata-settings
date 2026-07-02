@@ -45,6 +45,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
 | Emoji picker | FUN (hold `/`): `z` (Win+.) |
+| Switch input language (Thai ⇄ English) | combo `t`+`g` — one flat left-index press (Win+Space) |
 | Select text | hold real Shift + NAV arrows |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the left Alt thumb to exit |
 | Backspace / Delete | combos `y·u` / `r·t` (Tab and Enter are physical keys) |
@@ -166,7 +167,7 @@ A sticky layer: press `q`+`w` to enter; tap `q` to leave. Move the cursor with t
 
 Press together (within 60 ms). They only fire after ≥350 ms idle and are disabled during fast typing. Inside the NUM layer every combo is off except `y·u` = Backspace, so typing numbers never misfires.
 
-The home row (`a`–`;`) is otherwise mods-only, but its two index-finger pairs now carry the delete-word combos — `f`+`g` and `h`+`j` (same-finger, so misfire-proof). The rest live on the top and bottom rows, where your fingers already are:
+The home row (`a`–`;`) is otherwise mods-only, but its two index-finger pairs now carry the delete-word combos — `f`+`g` and `h`+`j` (same-finger, so misfire-proof). The rest live on the top and bottom rows — plus one *vertical* pair, `t`+`g` (top+home, one flat left-index press), for switching the input language:
 
 ```
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
@@ -174,7 +175,7 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
    Q     W     E     R     T             Y     U     I     O     P
    └Mouse┘           └─Del─┘             └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
-
+                           │Lang
    A     S     D     F     G             H     J     K     L     ;
                      └DelF─┘             └DelB─┘
 
@@ -183,9 +184,9 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
                                                └─Num─┘
 ```
 
-A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R and `NoCmb` = U·I·O·P); every other span is just its two neighbouring keys.
+A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R and `NoCmb` = U·I·O·P); every other span is just its two neighbouring keys. The `│` between T and G marks the one vertical pair — both keys under the same finger, pressed together flat.
 
-`Mouse` mouse layer · `Del` forward delete · `Bsp` Backspace · `DelF`/`DelB` delete word forward / back · `Home`/`End` Home / End · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
+`Mouse` mouse layer · `Del` forward delete · `Bsp` Backspace · `Lang` switch input language (Win+Space) · `DelF`/`DelB` delete word forward / back · `Home`/`End` Home / End · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
 
 | Combo | Result |
 |---|---|
@@ -193,6 +194,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `r t` | Forward delete (same-finger) |
 | `y u` | Backspace (same-finger; also active in NUM) |
 | `f g` / `h j` | Delete word forward / back — Ctrl+Del / Ctrl+Bksp (home row, same-finger) |
+| `t g` | Switch input language — Win+Space (vertical same-finger pair, left index) |
 | `v b` / `m n` | Home / End (bottom row, same-finger) |
 | `m ,` | Num Word on (tap the left Alt thumb to cancel) |
 | `q w e r` | Plain mode on/off |

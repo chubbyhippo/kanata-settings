@@ -231,6 +231,11 @@
   (h j)     C-bspc           $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word back — Ctrl+Bksp (right index: h+j)
   (f g)     C-del            $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word forward — Ctrl+Del (left index: f+g)
 
+  ;; Switch input language — Win+Space. t+g is a VERTICAL same-finger pair (left index,
+  ;; its own column, pressed flat), so it can't be rolled while typing — and on Kedmanee
+  ;; t/g are the spacing vowels ะ/เ, never a flat-press pair in Thai either.
+  (t g)     M-spc            $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; language toggle (Thai <-> English with two languages installed)
+
   (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
   (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; enter MOUSE; exit with single-key q
 

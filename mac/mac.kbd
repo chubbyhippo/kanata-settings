@@ -212,6 +212,11 @@
   (h j)     A-bspc           $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word back — Opt+Bksp (right index: h+j)
   (f g)     A-del            $combo-timeout first-release (    nav sym fun num nomods mouse mouse-slow nocombo) ;; delete word forward — Opt+Del (left index: f+g)
 
+  ;; Switch input source — Ctrl+Space (macOS default "Select previous input source").
+  ;; t+g is a VERTICAL same-finger pair (left index, its own column, pressed flat), so it
+  ;; can't be rolled while typing — and on Kedmanee t/g are the spacing vowels ะ/เ.
+  (t g)     C-spc            $combo-timeout all-released  (    nav sym fun num nomods mouse mouse-slow nocombo) ;; input-source toggle (Thai <-> English with two sources enabled)
+
   (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
   (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; enter MOUSE; exit with single-key q
 
