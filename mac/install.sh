@@ -75,7 +75,7 @@ main() {
     launchctl bootout system/dev.kanata.kanata 2>/dev/null || true          # unload any previous install; '|| true' = fine if none was loaded
     launchctl bootstrap system "$daemons/$kanata_plist"                     # load + start kanata now (and at every boot)
 
-    echo "done — test: hold left Cmd + k -> up arrow   (logs: /var/log/kanata.log)"
+    echo "done — test: hold x + e -> up arrow (NAV)   (logs: /var/log/kanata.log)"
 }
 
 main "$@"   # everything above only *defines* main; calling it on the last line means a half-downloaded script executes nothing

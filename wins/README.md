@@ -18,13 +18,13 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-set
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/katana.bat" -OutFile "$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\kanata.bat"
 ```
 
-Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `c` → Ctrl+C, hold `x` + `k` → ↑ (NAV), and hold the **right thumb** + `k` → ↑ (its tap = Enter, hold = NAV).
+Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `c` → Ctrl+C, hold `x` + `e` → ↑ (NAV), and hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
 
 ## Keyboard shortcuts
 
 | You want | Do this |
 |---|---|
-| Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `x` / `v` / `c` / `z` |
+| Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `c` / `v` / `x` / `z` |
 | Alt+Tab | hold `s` (Alt) + a physical Tab, release `s` to switch (see Troubleshooting) |
 | Enter | tap the right thumb · NAV `h` · or a physical Enter key |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
@@ -44,8 +44,8 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
 | Emoji picker | FUN (hold `/`): `z` (Win+.) |
 | Select text | hold real Shift + NAV arrows |
-| Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the Ctrl thumb to exit |
-| Esc / Backspace / Delete | combos `q·w` / `y·u` / `r·t` (Tab and Enter are physical keys) |
+| Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the left Alt thumb to exit |
+| Backspace / Delete | combos `y·u` / `r·t` (Tab and Enter are physical keys) |
 | Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Mouse | `q`+`w` toggles the mouse layer (tap `q` to exit): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
@@ -125,10 +125,10 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 | Undo  |  Cut  | Copy  | Paste | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-Space = 0     physical Left-Alt thumb (your Ctrl key):  tap = exit NUM  /  hold = NAV
+Space = 0     thumbs WHILE NUM is active:  left Alt thumb  tap = exit NUM / hold = NAV   ·   right thumb  tap = 0 / hold = SYM
 ```
 
-Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Ctrl+Z/X/C/V). In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` / `,` / Left-Alt thumb) or tapping the Left-Alt thumb.
+Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Ctrl+Z/X/C/V). In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` / `,` / left Alt thumb) or tapping the left Alt thumb. Each layer remaps its own thumbs: from the *base* layer the left thumb's hold **enters** NUM, but *inside* NUM the same position becomes exit-tap / NAV-hold. If you entered NUM by holding that thumb it's busy and those roles can't fire (just let go) — they matter when NUM came from `c` / `,` or from Num Word.
 
 ### FUN — hold `z` / `/`
 
@@ -181,9 +181,9 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
                                                └─Num─┘
 ```
 
-A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R), whereas a plain span skips its middle (`Mouse` = X·V, not C).
+A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key that's *also* part of the combo (so `Plain` = Q·W·E·R and `NoCmb` = U·I·O·P); every other span is just its two neighbouring keys.
 
-`Bsp` Backspace · `DelF`/`DelB` delete word forward / back · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
+`Mouse` mouse layer · `Del` forward delete · `Bsp` Backspace · `DelF`/`DelB` delete word forward / back · `Home`/`End` Home / End · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos toggle.
 
 | Combo | Result |
 |---|---|
@@ -192,7 +192,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `y u` | Backspace (same-finger; also active in NUM) |
 | `f g` / `h j` | Delete word forward / back — Ctrl+Del / Ctrl+Bksp (home row, same-finger) |
 | `v b` / `m n` | Home / End (bottom row, same-finger) |
-| `m ,` | Num Word on (tap the Ctrl thumb to cancel) |
+| `m ,` | Num Word on (tap the left Alt thumb to cancel) |
 | `q w e r` | Plain mode on/off |
 | `u i o p` | All combos on/off |
 
@@ -200,11 +200,11 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 
 ## One-shot mods
 
-NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); NAV has none — its home row is navigation. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
+NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`a s d f`); NAV mirrors them on the **right** home row instead (`j k l ;` = Ctrl Shift Alt Win), since its left hand is the arrow cluster. **Tap** one → applies to your next keypress only; tap several to stack; hold to use as a normal mod. Armed up to 60 s, and they survive releasing the layer key. This is the answer to every "mod + same-hand key": Win+E = NUM → tap `a` → release → `e`. Alt+F4 = hold `z` → tap `s` → tap `j`.
 
 ## Num Word
 
-**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left-Alt thumb (your Ctrl thumb) to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. Inside NUM, every combo is disabled **except `y·u` = Backspace**, so you can fix typos while entering numbers.
+**Num Word** (`m`+`,`): sticky NUM layer, no key held. Space types a **0** and stays on; tap the left Alt thumb to cancel. The combo only turns it on (it's disabled inside NUM), so typing digits like 12 can't trip it. Inside NUM, every combo is disabled **except `y·u` = Backspace**, so you can fix typos while entering numbers.
 
 ## Quick start
 
@@ -212,7 +212,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 1. Validate: `kanata.exe --cfg wins.kbd --check`
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
-3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `k` → ↑ (NAV), or hold the **right thumb** + `k` → ↑; tap the left Alt thumb → Esc, the right thumb → Enter.
+3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `e` → ↑ (NAV), or hold the **right thumb** + `e` → ↑; tap the left Alt thumb → Esc, the right thumb → Enter.
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 

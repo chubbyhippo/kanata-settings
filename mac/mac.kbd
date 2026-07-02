@@ -146,13 +146,13 @@
 
   ;; num keys
   0_sym    (tap-hold-release $quick-tap-ms $tapping-term 0 (layer-while-held sym))             ;; symbols accessible from holding 0
-  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit with the m , . combo again, or a Left-Cmd thumb tap (@num_nav)
+  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit with a Left-Cmd thumb tap (@num_nav)
   num_nav  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held nav)) ;; tap cancels num_word, hold = nav
   ;; num typing macros
   ,000     (macro , Digit0 Digit0 Digit0)
   000      (macro Digit0 Digit0 Digit0)
 
-  ;; ---- mouse layer (toggle with x+v) ----
+  ;; ---- mouse layer (enter with q+w, exit with single-key q) ----
   msu (movemouse-accel-up    1 500 1 5)
   msd (movemouse-accel-down  1 500 1 5)
   msl (movemouse-accel-left  1 500 1 5)
@@ -161,7 +161,7 @@
   whd (mwheel-down  50 120)
   whl (mwheel-left  50 120)
   whr (mwheel-right 50 120)
-  ;; precision movement: slow constant 1px steps (hold leftmost thumb -> mouse-slow layer)
+  ;; precision movement: slow constant 1px steps (hold a or ; -> mouse-slow layer)
   smsu (movemouse-up    8 1)
   smsd (movemouse-down  8 1)
   smsl (movemouse-left  8 1)
@@ -267,7 +267,7 @@
   lalt lmet spc  rmet
 )
 
-(deflayer mouse ;; toggle x+v (also exits). move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; mods y=Ctrl h=Shift n=Opt (right column, pair with Space=click); zxcv=Cmd/Opt/Shift/Ctrl too, thumbs Ctrl/Opt; hold ;=precision (slow) or a=precision (left-hand-only); p=double-click /=triple-click; q=exit (single-key, same as x+v)
+(deflayer mouse ;; enter with q+w. move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; mods y=Ctrl h=Shift n=Opt (right column, pair with Space=click); zxcv=Cmd/Opt/Shift/Ctrl too, thumbs Ctrl/Opt; hold ;=precision (slow) or a=precision (left-hand-only); p=double-click /=triple-click; q=exit (single-key; the q+w combo is disabled in here)
   @toggle_mouse mlft @msu mrgt mmid    lctl @whl @whu @whr @dclk
   @msslow       @msl @msd @msr XX      lsft mlft @whd mrgt @msslow
   lmet          lalt lsft lctl XX      lalt mbck mmid mfwd @tclk
