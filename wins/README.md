@@ -34,7 +34,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Move word left / right | NAV (hold the right thumb): `a` = ← · `g` = → (Ctrl+←/→) |
 | Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Ctrl+Del / Ctrl+Bksp); or NAV: `v` / `z` |
 | Select word left / right | NAV: tap `j`+`k` (Ctrl+Shift), then `s`/`f` (←/→) |
-| Type ( ) [ ] | SYM (hold `v`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
+| Type ( ) [ ] | SYM (hold `x`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
 | Home / End | `v`+`b` = Home · `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
 | Arrows (left, ESDF) | hold NAV (right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Win, then an arrow (stacks); `i` = PgDn, `o` = PgUp |
@@ -73,7 +73,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 |  Win  |  Alt  |  Sft  |  Ctl  |       |    |       |  Ctl  |  Sft  |  Alt  |  Win  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
-|  FUN  |       |       |  SYM  |       |    |       |  SYM  |       |       |  FUN  |
+|  FUN  |  SYM  |       |       |       |    |       |       |       |  SYM  |  FUN  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
   tap = top legend     hold = bottom legend
 
@@ -101,7 +101,7 @@ Space = Space
 
 Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Task View (Win+Tab) — the all-windows overview, and since NAV stays held you can walk it with the ESDF arrows and land with `h` (Enter); `h` = Enter (the thumb that usually taps Enter is busy holding NAV). `c` = minimize the window (Win+Down — a maximized window restores on the first tap, so tap twice), `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u` (for copy use NUM `c`, or the `j` one-shot then `c`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). `.` is the window swapper: kanata holds Alt for you and taps Tab, so keep tapping `.` to walk the Alt-Tab switcher, tap `,` to step back (Alt+Shift+Tab), and release NAV to drop Alt and land in the chosen window. Volume is on FUN (`r` / `t`). `n` = Menu (the context-menu / Application key — same as Shift+F10).
 
-### SYM — hold `v` / `m`
+### SYM — hold `x` / `.`
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -115,7 +115,7 @@ Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left h
 Space = _  (underscore)
 ```
 
-Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
+Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `.` to type operators with the left hand, or with `x` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
 ### NUM — hold the left Alt thumb
 
@@ -233,7 +233,7 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 | Right Alt | **Enter** | **NAV** |
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |
 | `z` / `/` | the letter / symbol | **FUN** |
-| `v` / `m` | the letter | **SYM** |
+| `x` / `.` | the letter / symbol | **SYM** |
 
 ## Troubleshooting
 

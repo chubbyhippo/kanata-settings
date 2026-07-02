@@ -106,8 +106,8 @@
   ;; other hold-taps on the bottom row
   zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; [win] no macOS fn/globe key: hold z = function layer instead
   slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun)) ;; / : tap = '/', hold = function layer
-  vsym     (tap-hold-release $quick-tap-ms $tapping-term @v (layer-while-held sym)) ;; v : tap = v, hold = sym layer
-  msym     (tap-hold-release $quick-tap-ms $tapping-term @m (layer-while-held sym)) ;; m : tap = m, hold = sym layer
+  xsym     (tap-hold-release $quick-tap-ms $tapping-term @x (layer-while-held sym)) ;; x : tap = x, hold = sym layer
+  dotsym   (tap-hold-release $quick-tap-ms $tapping-term @. (layer-while-held sym)) ;; . : tap = '.', hold = sym layer
 
   ;; one-shot mods for Callum-style modding (mirrors the GASC order above)
   osm (one-shot $one-shot-timeout lmet)
@@ -236,14 +236,14 @@
 (deflayer def
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
-  @zfn @x    @c    @vsym @b    @n @msym @,        @.      @slashfn
-                   @lwin   @numesc @spc    @naventer  ;; [win] LAlt thumb = tap Esc / hold NUM, RAlt thumb = tap Enter / hold NAV (sym on hold-v/m, fun on hold-z//)
+  @zfn @xsym @c    @v    @b    @n @m    @,        @dotsym @slashfn
+                   @lwin   @numesc @spc    @naventer  ;; [win] LAlt thumb = tap Esc / hold NUM, RAlt thumb = tap Enter / hold NAV (sym on hold-x/., fun on hold-z//)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
-  @zfn @x    @c    @vsym @b    @n @msym @,        @.      @slashfn
+  @zfn @xsym @c    @v    @b    @n @m    @,        @dotsym @slashfn
                    @lwin   @numesc @spc    @naventer
 )
 

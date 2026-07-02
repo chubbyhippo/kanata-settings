@@ -63,7 +63,7 @@ Then test: hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
 | Move word left / right | NAV (hold the right thumb): `a` = ← · `g` = → (Opt+←/→) |
 | Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Opt+Del / Opt+Bksp); or NAV: `v` / `z` |
 | Select word left / right | NAV: tap `k`+`l` (Shift+Opt), then `s`/`f` (←/→) |
-| Type ( ) [ ] | SYM (hold `v`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
+| Type ( ) [ ] | SYM (hold `x`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
 | Home / End | FUN (hold `z`/`/`): `y` = Home · `h` = End |
 | Line start / end | `v`+`b` = Cmd+← · `m`+`n` = Cmd+→ |
 | Arrows (left, ESDF) | hold NAV (right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
@@ -104,7 +104,7 @@ Then test: hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
 |  Cmd  |  Opt  |  Sft  |  Ctl  |       |    |       |  Ctl  |  Sft  |  Opt  |  Cmd  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
-|  FUN  |       |       |  SYM  |       |    |       |  SYM  |       |       |  FUN  |
+|  FUN  |  SYM  |       |       |       |    |       |       |       |  SYM  |  FUN  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
   tap = top legend     hold = bottom legend
 
@@ -132,7 +132,7 @@ Space = Space
 
 Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Mission Control (Ctrl+↑) — the all-windows overview (macOS gives it little keyboard control, so pick with the pointer or a swipe); `h` = Enter (the thumb that usually taps Enter is busy holding NAV). `c` = minimize the window (Cmd+M), `z` / `v` = delete word back / forward (Opt+Bksp / Opt+Del), Paste is on `u` (for copy use NUM `c`, or the `;` one-shot then `c`); `a` / `g` = move word left / right (Opt+← / Opt+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). `.` is the app swapper: kanata holds Cmd for you and taps Tab, so keep tapping `.` to walk the Cmd-Tab switcher, tap `,` to step back (Cmd+Shift+Tab), and release NAV to drop Cmd and land in the chosen app. Volume is on FUN (`r` / `t`). `n` = Menu (the PC context-menu / Application key — largely inert on stock macOS, kept for parity with the Windows config).
 
-### SYM — hold `v` / `m`
+### SYM — hold `x` / `.`
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -146,7 +146,7 @@ Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left h
 Space = _  (underscore)
 ```
 
-Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
+Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `.` to type operators with the left hand, or with `x` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
 ### NUM — hold the left Cmd thumb
 
@@ -264,7 +264,7 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 | Right Cmd | **Enter** | **NAV** |
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
 | `z` / `/` | the letter / symbol | **FUN** |
-| `v` / `m` | the letter | **SYM** |
+| `x` / `.` | the letter / symbol | **SYM** |
 
 ## Troubleshooting
 
