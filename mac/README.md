@@ -6,7 +6,7 @@ A [kanata](https://github.com/jtroo/kanata) config for macOS with "timerless" ho
 
 ## Install
 
-Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases)). One-time setup:
+Needs **kanata v1.11.0+** ([releases](https://github.com/jtroo/kanata/releases)). One-time setup:
 
 1. **kanata binary:** `brew install kanata`, or put the release binary at `/usr/local/bin/kanata` (`chmod +x` it).
 
@@ -243,7 +243,7 @@ NUM, SYM, and FUN all have `osCmd osOpt osSft osCtl` on the **left** home row (`
 
 ## Quick start
 
-Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#install).
+Needs macOS 11+, **kanata v1.11.0+**, and the Karabiner driver from [Install](#install).
 
 1. Validate: `kanata --cfg mac.kbd --check`
 2. Run: `sudo kanata --cfg mac.kbd` — kanata must run as root on macOS

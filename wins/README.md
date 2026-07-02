@@ -6,7 +6,7 @@ A [kanata](https://github.com/jtroo/kanata) config for Windows with "timerless" 
 
 ## Install
 
-Needs `kanata.exe` (v1.10.1+, [releases](https://github.com/jtroo/kanata/releases)) on your PATH. Then:
+Needs `kanata.exe` (v1.11.0+, [releases](https://github.com/jtroo/kanata/releases)) on your PATH. Then:
 
 ```powershell
 # config → %USERPROFILE%
@@ -212,7 +212,7 @@ NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`
 
 ## Quick start
 
-Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases)).
+Needs Windows 10/11 and **kanata v1.11.0+** ([releases](https://github.com/jtroo/kanata/releases)).
 
 1. Validate: `kanata.exe --cfg wins.kbd --check`
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
