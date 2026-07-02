@@ -156,10 +156,10 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 | Undo  |  Cut  | Copy  | Paste | ,000  |    |   ,   |   1   |   2   |   3   |   .   |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-Space = 0     thumbs WHILE NUM is active:  Left-Cmd thumb  tap = exit NUM / hold = NAV   ·   right thumb  tap = 0 / hold = SYM
+Space = 0     Left-Cmd thumb:  tap = exit NUM  /  hold = SYM     right thumb:  tap = Enter  /  hold = NAV, as always
 ```
 
-Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Cmd+Z/X/C/V). In NUM, Space types **0** and never exits — leave NUM by releasing the hold (`c` / `,` / Left-Cmd thumb) or tapping the Left-Cmd thumb. Each layer remaps its own thumbs: from the *base* layer the Left-Cmd thumb's hold **enters** NUM, but *inside* NUM the same position becomes exit-tap / NAV-hold. If you entered NUM by holding that thumb it's busy and those roles can't fire (just let go) — they matter when NUM came from `c` / `,` or from Num Word.
+Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Cmd+Z/X/C/V). Space types **0** and never exits. The right thumb keeps its everyday job — tap Enter, hold NAV — so you can type an amount, hit Enter, and arrow to the next field without ever leaving NUM. The Left-Cmd thumb turns into the way out: tap to leave NUM, or hold it for a stray symbol (SYM). Those left-thumb roles matter when NUM came from `c` / `,` or Num Word — if you're holding that thumb *for* NUM, it's busy; just let go.
 
 ### FUN — hold `z` / `/`
 
