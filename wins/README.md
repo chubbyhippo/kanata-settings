@@ -18,29 +18,29 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-set
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/katana.bat" -OutFile "$Home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\kanata.bat"
 ```
 
-Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `c` → Ctrl+C, hold `x` + `e` → ↑ (NAV), and hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
+Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt + `c` → Ctrl+C (NUM), and hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
 
 ## Keyboard shortcuts
 
 | You want | Do this |
 |---|---|
 | Copy / Paste / Cut / Undo | hold LAlt thumb (NUM) + `c` / `v` / `x` / `z` |
-| Alt+Tab | hold NAV (`x` / right thumb), tap `.` — keep tapping to cycle, `,` steps back — release NAV to switch |
+| Alt+Tab | hold NAV (right thumb), tap `.` — keep tapping to cycle, `,` steps back — release NAV to switch |
 | Minimize window | hold NAV: `c` (Win+Down — a maximized window restores first, tap twice) |
 | Task View (all windows) | hold NAV: `y` (Win+Tab), then arrows + `h` to pick |
 | Enter | tap the right thumb · NAV `h` · or a physical Enter key |
 | Close window (Alt+F4) | hold `z` (FUN), tap `s` (one-shot Alt), tap `j` (F4) |
-| Reopen tab (Ctrl+Shift+T) | NUM (hold `c`/`,`): tap `f`, tap `d`, release, press `t` |
-| Move word left / right | NAV (hold `x`/`.`): `a` = ← · `g` = → (Ctrl+←/→) |
-| Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Ctrl+Del / Ctrl+Bksp); or NAV (hold `x`/`.`): `v` / `z` |
+| Reopen tab (Ctrl+Shift+T) | NUM (hold the left Alt thumb): tap `f`, tap `d`, release, press `t` |
+| Move word left / right | NAV (hold the right thumb): `a` = ← · `g` = → (Ctrl+←/→) |
+| Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Ctrl+Del / Ctrl+Bksp); or NAV: `v` / `z` |
 | Select word left / right | NAV: tap `j`+`k` (Ctrl+Shift), then `s`/`f` (←/→) |
 | Type ( ) [ ] | SYM (hold `v`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
 | Home / End | `v`+`b` = Home · `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
-| Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
+| Arrows (left, ESDF) | hold NAV (right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Win, then an arrow (stacks); `i` = PgDn, `o` = PgUp |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
 | Tab / Backspace | hold NAV: `q` = Tab · `t` = Shift+Tab · `b` = Backspace |
-| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
+| Arrows, PgUp/PgDn, Home/End | hold the **right thumb** (NAV) |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
@@ -73,7 +73,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 |  Win  |  Alt  |  Sft  |  Ctl  |       |    |       |  Ctl  |  Sft  |  Alt  |  Win  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
-|  FUN  |  NAV  |  NUM  |  SYM  |       |    |       |  SYM  |  NUM  |  NAV  |  FUN  |
+|  FUN  |       |       |  SYM  |       |    |       |  SYM  |       |       |  FUN  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
   tap = top legend     hold = bottom legend
 
@@ -85,7 +85,7 @@ Thumbs:
   LWin    LAlt    Space   RAlt  
 ```
 
-### NAV — hold `x` / `.`
+### NAV — hold the right thumb
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -99,7 +99,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Task View (Win+Tab) — the all-windows overview, and since NAV stays held you can walk it with the ESDF arrows and land with `h` (Enter); `h` = Enter (also on the right thumb). `c` = minimize the window (Win+Down — a maximized window restores on the first tap, so tap twice), `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u` (for copy use NUM `c`, or the `j` one-shot then `c`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). `.` is the window swapper: kanata holds Alt for you and taps Tab, so keep tapping `.` to walk the Alt-Tab switcher, tap `,` to step back (Alt+Shift+Tab), and release NAV to drop Alt and land in the chosen window. (Holding `.` itself for NAV keeps that key busy — drive the swapper from the thumb or `x`.) Volume is on FUN (`r` / `t`). `n` = Menu (the context-menu / Application key — same as Shift+F10).
+Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Task View (Win+Tab) — the all-windows overview, and since NAV stays held you can walk it with the ESDF arrows and land with `h` (Enter); `h` = Enter (the thumb that usually taps Enter is busy holding NAV). `c` = minimize the window (Win+Down — a maximized window restores on the first tap, so tap twice), `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u` (for copy use NUM `c`, or the `j` one-shot then `c`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). `.` is the window swapper: kanata holds Alt for you and taps Tab, so keep tapping `.` to walk the Alt-Tab switcher, tap `,` to step back (Alt+Shift+Tab), and release NAV to drop Alt and land in the chosen window. Volume is on FUN (`r` / `t`). `n` = Menu (the context-menu / Application key — same as Shift+F10).
 
 ### SYM — hold `v` / `m`
 
@@ -117,7 +117,7 @@ Space = _  (underscore)
 
 Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
-### NUM — hold `c` / `,`
+### NUM — hold the left Alt thumb
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -131,7 +131,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 Space = 0     left Alt thumb:  tap = exit NUM  /  hold = SYM     right thumb:  tap = Enter  /  hold = NAV, as always
 ```
 
-Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Ctrl+Z/X/C/V). Space types **0** and never exits. The right thumb keeps its everyday job — tap Enter, hold NAV — so you can type an amount, hit Enter, and arrow to the next field without ever leaving NUM. The left Alt thumb turns into the way out: tap to leave NUM, or hold it for a stray symbol (SYM). Those left-thumb roles matter when NUM came from `c` / `,` or Num Word — if you're holding that thumb *for* NUM, it's busy; just let go.
+Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Ctrl+Z/X/C/V). Space types **0** and never exits. The right thumb keeps its everyday job — tap Enter, hold NAV — so you can type an amount, hit Enter, and arrow to the next field without ever leaving NUM. The left Alt thumb turns into the way out: tap to leave NUM, or hold it for a stray symbol (SYM). Those left-thumb roles matter when NUM is sticky from Num Word — if you're holding that thumb *for* NUM, it's busy; just let go.
 
 ### FUN — hold `z` / `/`
 
@@ -216,7 +216,7 @@ Needs Windows 10/11 and **kanata v1.10.1+** ([releases](https://github.com/jtroo
 
 1. Validate: `kanata.exe --cfg wins.kbd --check`
 2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
-3. Test: hold left Alt + `c` → Ctrl+C; hold `x` + `e` → ↑ (NAV), or hold the **right thumb** + `e` → ↑; tap the left Alt thumb → Esc, the right thumb → Enter.
+3. Test: hold left Alt + `c` → Ctrl+C; hold the **right thumb** + `e` → ↑ (NAV); tap the left Alt thumb → Esc, the right thumb → Enter.
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".
 
@@ -232,16 +232,14 @@ Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, a
 | Left Alt | **Esc** | **NUM** |
 | Right Alt | **Enter** | **NAV** |
 | `a s d f` / `j k l ;` | the letter | Win Alt Shift Ctrl / Ctrl Shift Alt Win |
-| `z` / `c` | the letter | **FUN** / **NUM** |
-| `/` / `,` | the symbol | **FUN** / **NUM** |
-| `x` / `.` | the letter / symbol | **NAV** |
+| `z` / `/` | the letter / symbol | **FUN** |
 | `v` / `m` | the letter | **SYM** |
 
 ## Troubleshooting
 
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
 - **"Start menu pops up randomly."** You held `a` and released it with no other key — that's a Win tap. Press Esc.
-- **"How do I Alt+Tab?"** Hold NAV (right thumb or `x`) and tap `.` — kanata holds Alt for you, every tap is another Tab, `,` steps back, and releasing NAV commits. Holding `s` (Alt) + a physical Tab still works too.
+- **"How do I Alt+Tab?"** Hold NAV (the right thumb) and tap `.` — kanata holds Alt for you, every tap is another Tab, `,` steps back, and releasing NAV commits. Holding `s` (Alt) + a physical Tab still works too.
 - **"Remaps don't work in Task Manager / admin windows."** Run kanata as administrator.
 - **"Config won't load after an edit."** `--check` tells you the line. A config that fails the check won't start, so the previously running instance keeps working until you restart.
 

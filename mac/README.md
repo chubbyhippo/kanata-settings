@@ -46,7 +46,7 @@ Needs **kanata v1.10.1+** ([releases](https://github.com/jtroo/kanata/releases))
       sudo launchctl kickstart -k system/dev.kanata.kanata
       ```
 
-Then test: hold `x` + `e` → ↑ (NAV), or hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
+Then test: hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
 
 ## Keyboard shortcuts
 
@@ -54,23 +54,23 @@ Then test: hold `x` + `e` → ↑ (NAV), or hold the **right thumb** + `e` → �
 |---|---|
 | Copy / Paste / Cut / Undo | hold LCmd thumb (NUM) + `c` / `v` / `x` / `z` |
 | Ctrl chords (Emacs, terminal) | pause, then hold `f`/`j` (Ctrl) + a cross-hand key |
-| Cmd+Tab | hold NAV (`x` / right thumb), tap `.` — keep tapping to cycle, `,` steps back — release NAV to switch |
+| Cmd+Tab | hold NAV (right thumb), tap `.` — keep tapping to cycle, `,` steps back — release NAV to switch |
 | Minimize window (Cmd+M) | hold NAV: `c` |
 | Mission Control (all windows) | hold NAV: `y` (Ctrl+↑) |
 | Enter | tap the right thumb · NAV `h` · or a physical Enter key |
-| Quit / close (Cmd+Q / Cmd+W) | NUM (hold `c` / `,`): tap `a` (one-shot Cmd), release, press `q` / `w` |
+| Quit / close (Cmd+Q / Cmd+W) | NUM (hold the left Cmd thumb): tap `a` (one-shot Cmd), release, press `q` / `w` |
 | Reopen tab (Cmd+Shift+T) | NUM: tap `a`, tap `d`, release, press `t` |
-| Move word left / right | NAV (hold `x`/`.`): `a` = ← · `g` = → (Opt+←/→) |
-| Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Opt+Del / Opt+Bksp); or NAV (hold `x`/`.`): `v` / `z` |
+| Move word left / right | NAV (hold the right thumb): `a` = ← · `g` = → (Opt+←/→) |
+| Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Opt+Del / Opt+Bksp); or NAV: `v` / `z` |
 | Select word left / right | NAV: tap `k`+`l` (Shift+Opt), then `s`/`f` (←/→) |
 | Type ( ) [ ] | SYM (hold `v`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
 | Home / End | FUN (hold `z`/`/`): `y` = Home · `h` = End |
 | Line start / end | `v`+`b` = Cmd+← · `m`+`n` = Cmd+→ |
-| Arrows (left, ESDF) | hold NAV (`x`/`.`/right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
+| Arrows (left, ESDF) | hold NAV (right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Opt/Cmd, then an arrow (stacks); `i` = PgDn, `o` = PgUp |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
 | Tab / Backspace | hold NAV: `q` = Tab · `t` = Shift+Tab · `b` = Backspace |
-| Arrows, PgUp/PgDn, Home/End | hold `x` / `.` / the **right thumb** (NAV) |
+| Arrows, PgUp/PgDn, Home/End | hold the **right thumb** (NAV) |
 | Spotlight (Cmd+Space) | tap left Opt; or hold `a` (Cmd) + Space |
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
 | Screenshot (Cmd+Shift+4) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, press `j` (= 4) |
@@ -104,7 +104,7 @@ Then test: hold `x` + `e` → ↑ (NAV), or hold the **right thumb** + `e` → �
 |  Cmd  |  Opt  |  Sft  |  Ctl  |       |    |       |  Ctl  |  Sft  |  Opt  |  Cmd  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 |   Z   |   X   |   C   |   V   |   B   |    |   N   |   M   |   ,   |   .   |   /   |
-|  FUN  |  NAV  |  NUM  |  SYM  |       |    |       |  SYM  |  NUM  |  NAV  |  FUN  |
+|  FUN  |       |       |  SYM  |       |    |       |  SYM  |       |       |  FUN  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
   tap = top legend     hold = bottom legend
 
@@ -116,7 +116,7 @@ Thumbs:
   LOpt    LCmd    Space   RCmd  
 ```
 
-### NAV — hold `x` / `.`
+### NAV — hold the right thumb
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -130,7 +130,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding `x`, `.`, or the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Mission Control (Ctrl+↑) — the all-windows overview (macOS gives it little keyboard control, so pick with the pointer or a swipe); `h` = Enter (also on the right thumb). `c` = minimize the window (Cmd+M), `z` / `v` = delete word back / forward (Opt+Bksp / Opt+Del), Paste is on `u` (for copy use NUM `c`, or the `;` one-shot then `c`); `a` / `g` = move word left / right (Opt+← / Opt+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). `.` is the app swapper: kanata holds Cmd for you and taps Tab, so keep tapping `.` to walk the Cmd-Tab switcher, tap `,` to step back (Cmd+Shift+Tab), and release NAV to drop Cmd and land in the chosen app. (Holding `.` itself for NAV keeps that key busy — drive the swapper from the thumb or `x`.) Volume is on FUN (`r` / `t`). `n` = Menu (the PC context-menu / Application key — largely inert on stock macOS, kept for parity with the Windows config).
+Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Opt / Cmd; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `l` then `s` = Opt+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Mission Control (Ctrl+↑) — the all-windows overview (macOS gives it little keyboard control, so pick with the pointer or a swipe); `h` = Enter (the thumb that usually taps Enter is busy holding NAV). `c` = minimize the window (Cmd+M), `z` / `v` = delete word back / forward (Opt+Bksp / Opt+Del), Paste is on `u` (for copy use NUM `c`, or the `;` one-shot then `c`); `a` / `g` = move word left / right (Opt+← / Opt+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Cmd in this config, so Emacs Meta uses `A-`). `.` is the app swapper: kanata holds Cmd for you and taps Tab, so keep tapping `.` to walk the Cmd-Tab switcher, tap `,` to step back (Cmd+Shift+Tab), and release NAV to drop Cmd and land in the chosen app. Volume is on FUN (`r` / `t`). `n` = Menu (the PC context-menu / Application key — largely inert on stock macOS, kept for parity with the Windows config).
 
 ### SYM — hold `v` / `m`
 
@@ -148,7 +148,7 @@ Space = _  (underscore)
 
 Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ ] { }`) on the right hand, so each group is one-handed: hold SYM with `m` to type operators with the left hand, or with `v` to type brackets with the right. One-shot mods are on the left home row (`a s d f`), matching NUM and FUN.
 
-### NUM — hold `c` / `,`
+### NUM — hold the left Cmd thumb
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -162,7 +162,7 @@ Every operator (`+ - * / =`) sits on the left top row and every bracket (`( ) [ 
 Space = 0     Left-Cmd thumb:  tap = exit NUM  /  hold = SYM     right thumb:  tap = Enter  /  hold = NAV, as always
 ```
 
-Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Cmd+Z/X/C/V). Space types **0** and never exits. The right thumb keeps its everyday job — tap Enter, hold NAV — so you can type an amount, hit Enter, and arrow to the next field without ever leaving NUM. The Left-Cmd thumb turns into the way out: tap to leave NUM, or hold it for a stray symbol (SYM). Those left-thumb roles matter when NUM came from `c` / `,` or Num Word — if you're holding that thumb *for* NUM, it's busy; just let go.
+Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy / Paste (Cmd+Z/X/C/V). Space types **0** and never exits. The right thumb keeps its everyday job — tap Enter, hold NAV — so you can type an amount, hit Enter, and arrow to the next field without ever leaving NUM. The Left-Cmd thumb turns into the way out: tap to leave NUM, or hold it for a stray symbol (SYM). Those left-thumb roles matter when NUM is sticky from Num Word — if you're holding that thumb *for* NUM, it's busy; just let go.
 
 ### FUN — hold `z` / `/`
 
@@ -247,7 +247,7 @@ Needs macOS 11+, **kanata v1.10.1+**, and the Karabiner driver from [Install](#i
 
 1. Validate: `kanata --cfg mac.kbd --check`
 2. Run: `sudo kanata --cfg mac.kbd` — kanata must run as root on macOS
-3. Test: hold `x` + `e` → ↑ (NAV), or hold the **right thumb** + `e` → ↑. Tap the left Cmd thumb → Esc; tap the right thumb → Enter.
+3. Test: hold the **right thumb** + `e` → ↑ (NAV). Tap the left Cmd thumb → Esc; tap the right thumb → Enter.
 
 **Autostart:** covered by the [Install](#install) section's LaunchDaemons. After changing the config there, reload with `sudo launchctl kickstart -k system/dev.kanata.kanata`.
 
@@ -263,16 +263,14 @@ Only 34 keys. Number row, F-row, fn/Globe, Tab, Caps Lock, Esc, Enter, Backspace
 | Left Cmd | **Esc** | **NUM** |
 | Right Cmd | **Enter** | **NAV** |
 | `a s d f` / `j k l ;` | the letter | Cmd Opt Shift Ctrl / Ctrl Shift Opt Cmd |
-| `z` / `c` | the letter | **FUN** / **NUM** |
-| `/` / `,` | the symbol | **FUN** / **NUM** |
-| `x` / `.` | the letter / symbol | **NAV** |
+| `z` / `/` | the letter / symbol | **FUN** |
 | `v` / `m` | the letter | **SYM** |
 
 ## Troubleshooting
 
 - **"The right Cmd thumb doesn't send Opt anymore."** Intended — it's now a layer thumb: **tap = Enter, hold = NAV**. Opt still lives on `s` (hold) and the `@osa` one-shot, and the physical *right Option* key is untouched for accents. Cmd is on `a`/`;`; for Cmd+Tab hold NAV and tap `.` (the swapper), or hold `a` (Cmd) + a physical Tab.
 - **"Mods don't trigger / I get letters."** Pause 250 ms first, then hold. Same-hand mod+letter never chords — use a one-shot. (Shift on `d`/`k` and Ctrl on `f`/`j` work even without the pause.)
-- **"Left Opt does something unexpected."** The left Option thumb taps Spotlight (Cmd+Space); its hold does nothing now (NUM is on `c`/`,`). Accents live on the untouched *right* Opt.
+- **"Left Opt does something unexpected."** The left Option thumb taps Spotlight (Cmd+Space); its hold does nothing now (NUM is on the left Cmd thumb). Accents live on the untouched *right* Opt.
 - **"Mouse layer enters but cursor doesn't move / clicks don't register."** Keyboard remapping goes through the Karabiner driver; mouse simulation uses the macOS CoreGraphics API and requires **Accessibility** permission for the kanata binary — Input Monitoring alone isn't enough. See step 3 of [Install](#install) for how to find and add the binary in the macOS file picker.
 - **"kanata dies instantly (`filesystem_error`)."** In order of likelihood: not running as root, driver not installed/approved, or another process (e.g. Karabiner-Elements) is grabbing the keyboard.
 - **"`connect_failed asio.system:2` in a loop."** The VirtualHIDDevice daemon isn't running — bootstrap the `org.pqrs` LaunchDaemon from [Install](#install).

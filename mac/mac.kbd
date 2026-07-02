@@ -53,7 +53,7 @@
   ;; ---- LCmd thumb dual-role ----
   cmdesc (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))  ;; [mac] LCmd thumb: tap = Esc, hold = NUM
 
-  ;; ---- NAV hold, shared by x / . / the right thumb ----
+  ;; ---- NAV hold on the right thumb ----
   ;; the layer plus two chores on release: tap ops so armed one-shots survive
   ;; leaving the layer, and let go of the swapper's Cmd so a Cmd-Tab run commits
   navhold (multi
@@ -106,16 +106,9 @@
 
   ;; other hold-taps on the bottom row
   zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; [mac] fn/Globe stays untouched; hold z = function layer
-  cnum (tap-hold-release $quick-tap-ms $tapping-term @c (layer-while-held num))
   slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun)) ;; / : tap = '/', hold = function layer
-  commanum (tap-hold-release $quick-tap-ms $tapping-term @, (layer-while-held num)) ;; , : tap = ',', hold = numbers layer
-  xnav     (tap-hold-release $quick-tap-ms $tapping-term @x @navhold) ;; x : tap = x, hold = nav layer
-  dotnav   (tap-hold-release $quick-tap-ms $tapping-term @. @navhold) ;; . : tap = ., hold = nav layer
   vsym     (tap-hold-release $quick-tap-ms $tapping-term @v (layer-while-held sym)) ;; v : tap = v, hold = sym layer
   msym     (tap-hold-release $quick-tap-ms $tapping-term @m (layer-while-held sym)) ;; m : tap = m, hold = sym layer
-
-  ;; held Ctrl+Opt for Emacs-style C-M- chords (currently unused)
-  cm (multi lctl lalt)
 
   ;; one-shot mods for Callum-style modding (mirrors the GASC order above)
   osm (one-shot $one-shot-timeout lmet)
@@ -123,11 +116,8 @@
   osa (one-shot $one-shot-timeout lalt)
   osc (one-shot $one-shot-timeout lctrl)
 
-  ;; media tap-dance on NAV: tap = play/pause, hold = mute, 2x = next, 3x = prev
-  ppmnp (tap-dance 200 ((tap-hold $quick-tap-ms $tapping-term pp mute) next prev))
-
   ;; app swapper (NAV . and ,): [mac] holds Cmd and taps Tab = Cmd-Tab switcher.
-  ;; Each press sends another Tab; releasing NAV (x / . / the right thumb) releases
+  ;; Each press sends another Tab; releasing NAV (the right thumb) releases
   ;; Cmd and lands in the chosen app.
   swapper (multi
     (on-press   press-virtualkey    swapperrcmd)
@@ -162,10 +152,10 @@
       ((layer nocombo)) (layer-switch def) break
     )
 
-  ;; [mac] left Opt thumb: tap = Spotlight (Cmd+Space), hold = nothing (NUM is on c / ,)
+  ;; [mac] left Opt thumb: tap = Spotlight (Cmd+Space), hold = nothing (NUM is on the LCmd thumb)
   spot (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) XX)
 
-  capsword (caps-word-custom-toggle 5000 (a b c d e f g h i j k l m n o p q r s t u v w x y z) (lshift rshift grv apos 6 nop0 nop1 nop9 bspc))
+  capsword (caps-word-custom-toggle 5000 (a b c d e f g h i j k l m n o p q r s t u v w x y z) (lshift rshift grv apos 6 bspc))
 
   ;; num keys
   num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit with a Left-Cmd thumb tap (@num_sym)
@@ -247,14 +237,14 @@
 (deflayer def
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
-  @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
-                   @spot   @cmdesc @spc    @naventer  ;; [mac] LOpt thumb = Spotlight tap, LCmd thumb = tap Esc / hold NUM, RCmd thumb = tap Enter / hold NAV (nav also on hold-x/. , sym on hold-v/m)
+  @zfn @x    @c    @vsym @b    @n @msym @,        @.      @slashfn
+                   @spot   @cmdesc @spc    @naventer  ;; [mac] LOpt thumb = Spotlight tap, LCmd thumb = tap Esc / hold NUM, RCmd thumb = tap Enter / hold NAV (sym on hold-v/m, fun on hold-z//)
 )
 
 (deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
-  @zfn @xnav @cnum @vsym @b    @n @msym @commanum @dotnav @slashfn
+  @zfn @x    @c    @vsym @b    @n @msym @,        @.      @slashfn
                    @spot   @cmdesc @spc    @naventer
 )
 
