@@ -270,7 +270,7 @@
 (deflayer nav
   tab  home up   end  S-tab     XX   M-v    pgdn pgup  del
   A-left left down right A-right   enter @osc @oss @osa @osm
-  A-bspc A-x M-c A-del bspc      menu A-m    @swapperback @swapper A-/
+  A-bspc A-x M-m A-del bspc      menu A-m    @swapperback @swapper A-/  ;; c = minimize (Cmd+M)
                           _ _ _ _
 )
 
