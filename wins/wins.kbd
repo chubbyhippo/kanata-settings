@@ -300,7 +300,7 @@
 )
 
 (deflayer nav
-  tab  home up   end  S-tab      XX   C-v    pgdn pgup  del
+  tab  home up   end  S-tab      M-tab C-v   pgdn pgup  del  ;; y = Task View (Win+Tab); the ESDF arrows + h (Enter) then drive it
   C-left left down right C-right   enter @osc @oss @osa @osm
   C-bspc A-x M-down C-del bspc    menu A-m    @swapperback @swapper A-/  ;; c = minimize (Win+Down; a maximized window restores first, tap twice)
                            _ _ _ _
