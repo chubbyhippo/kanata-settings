@@ -75,6 +75,7 @@ Then test: hold the **right thumb** + `e` → ↑ (its tap = Enter, hold = NAV).
 | Cmd + any left-hand key | NUM: tap `a` (one-shot Cmd), release, press the letter |
 | Screenshot (Cmd+Shift+4) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, press `j` (= 4) |
 | Emoji picker | FUN (hold `/`): `z` (Cmd+Ctrl+Space) |
+| Search Everywhere / Run Anything (IntelliJ) | FUN (hold `/`): `c` = double Shift · `v` = double Ctrl |
 | Switch input source (Thai ⇄ English) | combo `t`+`g` — one flat left-index press (Ctrl+Space) |
 | Select text | hold real Shift + NAV arrows |
 | Accents (é, ü, ñ…) | right Opt is untouched — use it as stock |
@@ -172,13 +173,13 @@ Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy /
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osCmd | osOpt | osSft | osCtl | Mute  |    |  End  |  F4   |  F5   |  F6   |  F11  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Emoji | Shot  |       |       |       |    |       |  F1   |  F2   |  F3   |  F12  |
+| Emoji | Shot  | 2×Sft | 2×Ctl |       |    |       |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Cmd+Shift+4) on `x`, and the emoji picker (Cmd+Ctrl+Space) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The physical fn/Globe key is untouched, so fn-row media functions still work.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Cmd+Shift+4) on `x`, and the emoji picker (Cmd+Ctrl+Space) on `z`. `c` / `v` tap Shift / Ctrl twice for you — IntelliJ's Search Everywhere and Run Anything. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media. The physical fn/Globe key is untouched, so fn-row media functions still work.
 
 ### MOUSE — toggle with `q`+`w` (tap `q` to exit)
 

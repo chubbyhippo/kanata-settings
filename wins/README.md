@@ -45,6 +45,7 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
 | Screenshot (Win+Shift+S) | FUN (hold `/`): `x`; or NUM: tap `a`, tap `d`, release, press `s` |
 | Emoji picker | FUN (hold `/`): `z` (Win+.) |
+| Search Everywhere / Run Anything (IntelliJ) | FUN (hold `/`): `c` = double Shift · `v` = double Ctrl |
 | Switch input language (Thai ⇄ English) | combo `t`+`g` — one flat left-index press (Win+Space) |
 | Select text | hold real Shift + NAV arrows |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the left Alt thumb to exit |
@@ -141,13 +142,13 @@ Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy /
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 | osWin | osAlt | osSft | osCtl | Mute  |    |  End  |  F4   |  F5   |  F6   |  F11  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Emoji | Shot  |       |       |       |    |       |  F1   |  F2   |  F3   |  F12  |
+| Emoji | Shot  | 2×Sft | 2×Ctl |       |    |       |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
 Space = Caps Lock
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media.
+F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. `c` / `v` tap Shift / Ctrl twice for you — IntelliJ's Search Everywhere and Run Anything. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media.
 
 ### MOUSE — toggle with `q`+`w` (tap `q` to exit)
 

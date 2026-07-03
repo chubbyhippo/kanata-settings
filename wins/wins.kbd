@@ -163,6 +163,10 @@
   ,000     (macro , Digit0 Digit0 Digit0)
   000      (macro Digit0 Digit0 Digit0)
 
+  ;; FUN-layer IDE double-taps — c = 2×Shift (Search Everywhere), v = 2×Ctrl (Run Anything); 50ms gap is tunable
+  dsft (macro lsft 50 lsft)
+  dctl (macro lctl 50 lctl)
+
   ;; ---- mouse layer (enter with q+w, exit with single-key q) ----
   msu (movemouse-accel-up    1 500 1 5)
   msd (movemouse-accel-down  1 500 1 5)
@@ -278,7 +282,7 @@
 (deflayer fun
   prev pp    next vold volu    home f7 f8 f9 f10
   @osm @osa  @oss @osc mute    end  f4 f5 f6 f11
-  M-.  M-S-s XX   XX   XX      XX f1 f2 f3 f12
+  M-.  M-S-s @dsft @dctl XX     XX f1 f2 f3 f12
                _    _    caps _
 )
 
