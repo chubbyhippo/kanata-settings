@@ -279,11 +279,11 @@
                       _   _   S-- _
 )
 
-(deflayer fun
-  prev pp    next vold volu    home f7 f8 f9 f10
-  @osm @osa  @oss @osc mute    end  f4 f5 f6 f11
-  M-.  M-S-s @dsft @dctl tab     XX f1 f2 f3 f12
-               _    _    caps _
+(deflayer fun ;; mnemonic: q=Quiet(mute) w=reWind(prev) e=End r=Return t=Tab g=Go(play/pause) b=Bksp · y=shoutY(caps) h=Home n=Next · left thumbs = vol-/vol+
+  mute prev  end   enter tab     caps f7 f8 f9 f10
+  @osm @osa  @oss  @osc  pp      home f4 f5 f6 f11
+  M-.  M-S-s @dsft @dctl bspc    next f1 f2 f3 f12
+               _    vold volu _
 )
 
 (deflayer plain ;; plain keyboard for other people: no mods, no layers (exit: q+w+e+r together)

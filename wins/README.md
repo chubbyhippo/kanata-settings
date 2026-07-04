@@ -35,11 +35,11 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Delete word forward / back | combo `f`+`g` = forward · `h`+`j` = back (Ctrl+Del / Ctrl+Bksp); or NAV: `v` / `z` |
 | Select word left / right | NAV: tap `j`+`k` (Ctrl+Shift), then `s`/`f` (←/→) |
 | Type ( ) [ ] | SYM (hold `x`): `u`/`i`/`o`/`p` = `(` `)` `[` `]` |
-| Home / End | `v`+`b` = Home · `m`+`n` = End · FUN (hold `z`/`/`): `y` = Home, `h` = End |
+| Home / End | `v`+`b` = Home · `m`+`n` = End · FUN (hold `z`/`/`): `h` = Home, `e` = End |
 | Arrows (left, ESDF) | hold NAV (right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Win, then an arrow (stacks); `i` = PgDn, `o` = PgUp |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
-| Tab / Backspace | hold NAV: `q` = Tab · `t` = Shift+Tab · `b` = Backspace; FUN (hold `/`): `b` = Tab |
+| Tab / Backspace | hold NAV: `q` = Tab · `t` = Shift+Tab · `b` = Backspace; FUN (hold `/`): `t` = Tab · `b` = Backspace |
 | Arrows, PgUp/PgDn, Home/End | hold the **right thumb** (NAV) |
 | Start menu | tap left Win |
 | Win+E, Win+R, Win+D… | NUM: tap `a` (one-shot Win), release, press the letter |
@@ -49,11 +49,11 @@ Run the downloaded `kanata.bat` once (or log off/on), then test: hold left Alt +
 | Switch input language (Thai ⇄ English) | combo `t`+`g` — one flat left-index press (Win+Space) |
 | Select text | hold real Shift + NAV arrows |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the left Alt thumb to exit |
-| Backspace / Delete | combos `y·u` / `r·t` (Tab and Enter are physical keys) |
-| Media (audio) | FUN (hold `/`): `q` `w` `e` = prev · play/pause · next; `r` `t` = vol down · up; mute on `g` |
+| Backspace / Delete | combos `y·u` / `r·t`, or FUN `b` (Tab and Enter are physical keys) |
+| Media (audio) | FUN (hold `/`): `w` = reWind (prev) · `g` = Go (play/pause) · `n` = Next · `q` = Quiet (mute); vol down / up on the left thumbs |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
 | Mouse | `q`+`w` toggles the mouse layer (tap `q` to exit): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
-| Caps Lock | the physical Caps Lock key, or FUN layer + Space |
+| Caps Lock | the physical Caps Lock key, or FUN `y` (shoutY) |
 | Esc | tap the left Alt thumb |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
 | Turn all combos off / on | `u`+`i`+`o`+`p` together = combos off (typing, mods, and layers still work); same to turn back on |
@@ -100,7 +100,7 @@ Thumbs:
 Space = Space
 ```
 
-Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Task View (Win+Tab) — the all-windows overview, and since NAV stays held you can walk it with the ESDF arrows and land with `h` (Enter); `h` = Enter (the thumb that usually taps Enter is busy holding NAV). `c` = minimize the window (Win+Down — a maximized window restores on the first tap, so tap twice), `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u` (for copy use NUM `c`, or the `j` one-shot then `c`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). `.` is the window swapper: kanata holds Alt for you and taps Tab, so keep tapping `.` to walk the Alt-Tab switcher, tap `,` to step back (Alt+Shift+Tab), and release NAV to drop Alt and land in the chosen window. Volume is on FUN (`r` / `t`). `n` = Menu (the context-menu / Application key — same as Shift+F10).
+Reach NAV by holding the **right thumb** (tap = Enter, hold = NAV). The **left hand is an ESDF arrow cluster** — `e`/`s`/`d`/`f` = ↑ ← ↓ →, with `w` = Home and `r` = End. The **right home row is one-shot mods** — `j`/`k`/`l`/`;` = Ctrl / Shift / Alt / Win; tap one (they stack), then an ESDF arrow — e.g. `k` then `f` = Shift+→ to select, `j` then `s` = Ctrl+← to jump a word left. `i` = PgDn, `o` = PgUp, `u` = Paste, `p` = Del; `y` = Task View (Win+Tab) — the all-windows overview, and since NAV stays held you can walk it with the ESDF arrows and land with `h` (Enter); `h` = Enter (the thumb that usually taps Enter is busy holding NAV). `c` = minimize the window (Win+Down — a maximized window restores on the first tap, so tap twice), `z` / `v` = delete word back / forward (Ctrl+Bksp / Ctrl+Del), Paste is on `u` (for copy use NUM `c`, or the `j` one-shot then `c`); `a` / `g` = move word left / right (Ctrl+← / Ctrl+→); `q` = Tab, `t` = Shift+Tab, `b` = Backspace (left side); Esc is on the left thumb. `x` / `m` / `/` send Emacs **M-x** / **M-m** / **M-/** (dabbrev autocomplete) — i.e. Alt+x / Alt+m / Alt+`/` (kanata's `M-` is Win in this config, so Emacs Meta uses `A-`). `.` is the window swapper: kanata holds Alt for you and taps Tab, so keep tapping `.` to walk the Alt-Tab switcher, tap `,` to step back (Alt+Shift+Tab), and release NAV to drop Alt and land in the chosen window. Volume is on FUN (the two left thumbs). `n` = Menu (the context-menu / Application key — same as Shift+F10).
 
 ### SYM — hold `x` / `.`
 
@@ -138,17 +138,19 @@ Ctrl+5 = `f` then `5`. `,000` is a typing macro. `z x c v` = Undo / Cut / Copy /
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Prev  | Play  | Next  | Vol-  | Vol+  |    | Home  |  F7   |  F8   |  F9   |  F10  |
+| Quiet | reWind|  End  | Return|  Tab  |    | shoutY|  F7   |  F8   |  F9   |  F10  |
+| mute  | prev  |       | enter |       |    |  Caps |       |       |       |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| osWin | osAlt | osSft | osCtl | Mute  |    |  End  |  F4   |  F5   |  F6   |  F11  |
+| osWin | osAlt | osSft | osCtl |  Go   |    |  Home |  F4   |  F5   |  F6   |  F11  |
+|       |       |       |       |  play |    |       |       |       |       |       |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
-| Emoji | Shot  | 2×Sft | 2×Ctl |  Tab  |    |       |  F1   |  F2   |  F3   |  F12  |
+| Emoji | Shot  | 2×Sft | 2×Ctl |  Bksp |    |  Next |  F1   |  F2   |  F3   |  F12  |
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 
-Space = Caps Lock
+Left thumbs = Vol− / Vol+   (Esc thumb / Space)
 ```
 
-F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). `y` = Home, `h` = End. The left hand is a media + system cluster — `q w e r t` = previous, play/pause, next, volume down, volume up, with mute on `g`, a region screenshot (Win+Shift+S) on `x`, and the emoji picker (Win+.) on `z`. `c` / `v` tap Shift / Ctrl twice for you — IntelliJ's Search Everywhere and Run Anything. `b` = Tab. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for left-hand media.
+The left hand is the mnemonic cluster — `q` = **Q**uiet (mute), `w` = re**W**ind (previous track), `e` = **E**nd, `r` = **R**eturn (Enter), `t` = **T**ab, `g` = **G**o (play/pause), `b` = **B**ackspace — with volume down / up on the two left thumbs (the Esc thumb and Space). The free right-hand keys join in: `y` = shout**Y** (Caps Lock), `h` = **H**ome, `n` = **N**ext track. F1–F12 sit on the right hand, on the same keys their digits occupy in NUM — F1 on `m`, F5 on `k`, F9 on `o`, with F10–F12 down the pinky column (`p` `;` `/`). A region screenshot (Win+Shift+S) is on `x`, the emoji picker (Win+.) on `z`, and `c` / `v` tap Shift / Ctrl twice for you — IntelliJ's Search Everywhere and Run Anything. So hold FUN with `z` for the right-hand F-keys, or with the right pinky (`/`) for the left-hand mnemonics.
 
 ### MOUSE — toggle with `q`+`w` (tap `q` to exit)
 
