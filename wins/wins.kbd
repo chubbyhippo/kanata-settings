@@ -282,7 +282,7 @@
 (deflayer fun
   prev pp    next vold volu    home f7 f8 f9 f10
   @osm @osa  @oss @osc mute    end  f4 f5 f6 f11
-  M-.  M-S-s @dsft @dctl XX     XX f1 f2 f3 f12
+  M-.  M-S-s @dsft @dctl tab     XX f1 f2 f3 f12
                _    _    caps _
 )
 
