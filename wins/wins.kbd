@@ -154,8 +154,6 @@
   ;; [win] left Win thumb: tap = Win (Start menu), hold = nothing (NUM is on the LAlt thumb)
   lwin (tap-hold-release $quick-tap-ms $tapping-term lmet XX)
 
-  capsword (caps-word-custom-toggle 5000 (a b c d e f g h i j k l m n o p q r s t u v w x y z) (lshift rshift grv apos 6 bspc))
-
   ;; num keys
   num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit with a left-Alt thumb tap (@num_sym)
   num_sym  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held sym)) ;; NUM's left thumb: tap leaves NUM (cancels num_word), hold = sym
