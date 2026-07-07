@@ -200,7 +200,7 @@ A `└─┘` spans the keys you press; an interior `┴` tick marks a middle ke
 | `t g` | Switch input language — Win+Space (vertical same-finger pair, left index) |
 | `v b` / `m n` | Home / End (bottom row, same-finger) |
 | `m ,` | Num Word on (tap the left Alt thumb to cancel) |
-| `q w e r` | Plain mode on/off |
+| `q w e r` | Plain mode on/off (the one combo still live in plain) |
 | `u i o p` | All combos on/off |
 
 **Master toggle:** `u`+`i`+`o`+`p` silences every combo above at once (press it again to bring them back) — handy for games or apps with their own chord shortcuts. Home row mods, layers, and one-shots keep working; only the two-key combos go quiet. It mirrors the `q`+`w`+`e`+`r` plain-mode toggle, and it's the one combo that stays live while combos are off, so you can always switch back. Under the hood it drops you into a `nocombo` layer (a clone of DEF that's listed in every combo's disabled-layers).
