@@ -1,4 +1,4 @@
-# mac.kbd — macOS kanata config
+# kanata — macOS setup (config: ../kanata.kbd, shared with Windows)
 
 A [kanata](https://github.com/jtroo/kanata) config for macOS with "timerless" home row mods: type as fast as you want with zero misfires and zero letter reordering, while keeping all four modifiers plus navigation, symbol, number, and function layers on the home position. Mod order is GASC — Ctrl on the index finger, Cmd on `a`/`;` — so Emacs muscle memory carries over.
 
@@ -248,8 +248,8 @@ NUM, SYM, and FUN all have `osCmd osOpt osSft osCtl` on the **left** home row (`
 
 Needs macOS 11+, **kanata v1.11.0+**, and the Karabiner driver from [Install](#install).
 
-1. Validate: `kanata --cfg mac.kbd --check`
-2. Run: `sudo kanata --cfg mac.kbd` — kanata must run as root on macOS
+1. Validate: `kanata --cfg kanata.kbd --check`
+2. Run: `sudo kanata --cfg kanata.kbd` — kanata must run as root on macOS
 3. Test: hold the **right thumb** + `e` → ↑ (NAV). Tap the left Cmd thumb → Esc; tap the right thumb → Enter.
 
 **Autostart:** covered by the [Install](#install) section's LaunchDaemons. After changing the config there, reload with `sudo launchctl kickstart -k system/dev.kanata.kanata`.

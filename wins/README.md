@@ -1,4 +1,4 @@
-# wins.kbd — Windows kanata config
+# kanata — Windows setup (config: ../kanata.kbd, shared with macOS)
 
 A [kanata](https://github.com/jtroo/kanata) config for Windows with "timerless" home row mods: type as fast as you want with zero misfires and zero letter reordering, while keeping all four modifiers plus navigation, symbol, number, and function layers on the home position.
 
@@ -10,7 +10,7 @@ Needs `kanata.exe` (v1.11.0+, [releases](https://github.com/jtroo/kanata/release
 
 ```powershell
 # config → %USERPROFILE%
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/wins.kbd" -OutFile "$Home\wins.kbd"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/kanata.kbd" -OutFile "$Home\kanata.kbd"
 ```
 
 ```powershell
@@ -217,8 +217,8 @@ NUM, SYM, and FUN all have `osWin osAlt osSft osCtl` on the **left** home row (`
 
 Needs Windows 10/11 and **kanata v1.11.0+** ([releases](https://github.com/jtroo/kanata/releases)).
 
-1. Validate: `kanata.exe --cfg wins.kbd --check`
-2. Run: `kanata.exe --cfg wins.kbd` — **as administrator** if you want remaps inside elevated apps
+1. Validate: `kanata.exe --cfg kanata.kbd --check`
+2. Run: `kanata.exe --cfg kanata.kbd` — **as administrator** if you want remaps inside elevated apps
 3. Test: hold left Alt + `c` → Ctrl+C; hold the **right thumb** + `e` → ↑ (NAV); tap the left Alt thumb → Esc, the right thumb → Enter.
 
 **Autostart:** covered by the [Install](#install) section's `kanata.bat`. If you want it elevated (remaps in admin apps) without a UAC prompt, use Task Scheduler instead: trigger "At log on", check "Run with highest privileges".

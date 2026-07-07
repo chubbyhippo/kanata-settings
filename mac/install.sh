@@ -54,7 +54,7 @@ main() {
 
     # ---- config: download, then validate before anything autostarts ----
     mkdir -p /etc/kanata                      # create the config dir; -p = no error if it already exists
-    curl -fsSL "$base/mac.kbd" -o /etc/kanata/mac.kbd   # -f fail on HTTP errors, -sS quiet but show errors, -L follow redirects
+    curl -fsSL "${base%/mac}/kanata.kbd" -o /etc/kanata/mac.kbd   # -f fail on HTTP errors, -sS quiet but show errors, -L follow redirects
     "$kanata_bin" --cfg /etc/kanata/mac.kbd --check     # parse-check the config; a broken config aborts the install right here
     echo "installed /etc/kanata/mac.kbd"
 
