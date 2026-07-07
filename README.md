@@ -20,3 +20,7 @@ its folder:
 
 Each README documents its platform's install steps, layer maps, combos, and
 troubleshooting.
+
+## License
+
+GPL-3.0-or-later. See [LICENSE](LICENSE) for the full text.
