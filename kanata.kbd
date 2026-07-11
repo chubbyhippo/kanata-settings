@@ -93,7 +93,9 @@
     z x c v b    n m , . /
     lmet lalt spc  ralt
   )
+)
 
+(platform (win winiov2 wintercept)
   (defalias
     thumbout (tap-hold-release $quick-tap-ms $tapping-term lmet XX) ;; outer thumb: tap = Win (Start menu), hold = nothing (NUM is on the inner thumb)
 
@@ -114,7 +116,9 @@
     emoji M-.
     screenshot M-S-s
   )
+)
 
+(platform (win winiov2 wintercept)
   (defvirtualkeys
     to-base (layer-switch def)         ;; used by @tap to return to base after the idle period
     ops (one-shot-pause-processing 10) ;; lets sticky keys stay triggered when moving back to the default layer
@@ -134,7 +138,9 @@
     z x c v b    n m , . /
     lalt lmet spc  rmet
   )
+)
 
+(platform (macos)
   (defalias
     thumbout (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) XX) ;; outer thumb: tap = Spotlight (Cmd+Space), hold = nothing (NUM is on the inner thumb)
 
@@ -154,7 +160,9 @@
     emoji M-C-spc
     screenshot M-S-4
   )
+)
 
+(platform (macos)
   (defvirtualkeys
     to-base (layer-switch def)         ;; used by @tap to return to base after the idle period
     ops (one-shot-pause-processing 10) ;; lets sticky keys stay triggered when moving back to the default layer
