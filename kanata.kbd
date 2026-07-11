@@ -15,62 +15,44 @@
 ;;
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
-;; kanata config — "timerless" home row mods, ONE file for both platforms.
-;; Everything Windows/macOS-specific lives in the (platform ...) blocks
-;; below — kanata activates the right block at load (requires kanata
-;; >= 1.11.0). Anything outside a platform block is shared: edit it once,
-;; both OSes get it. The blocks define the same alias names with platform
-;; values (@undo, @wordleft, @langtoggle, ...), and the shared layers and
-;; combos speak only that vocabulary.
-;;
-;; Run:    [win] kanata.exe --cfg kanata.kbd    (as admin for elevated apps)
-;;         [mac] sudo kanata --cfg kanata.kbd   (Karabiner driver — see mac/README.md)
-;; Check:  kanata --cfg kanata.kbd --check      (validate after any edit)
-
 (defcfg
-  process-unmapped-keys yes   ;; THE fix for swapped letters: every key goes through kanata's queue, so output order is always preserved
-  block-unmapped-keys no      ;; do NOT turn unmapped keys into no-ops
-  log-layer-changes no        ;; no logging
-  concurrent-tap-hold yes     ;; required to allow combos and tap-hold features to coexist
-  delegate-to-first-layer yes ;; transparent keys (_) fall back to the first layer (def), not defsrc
-  chords-v2-min-idle 350      ;; like ZMK's require-prior-idle, but for combos
-  ;; [mac] to remap only specific keyboards, uncomment and edit:
-  ;; macos-dev-names-include ("Apple Internal Keyboard / Trackpad")
+  process-unmapped-keys yes
+  block-unmapped-keys no
+  log-layer-changes no
+  concurrent-tap-hold yes
+  delegate-to-first-layer yes
+  chords-v2-min-idle 350
 )
 
 (defvar
-  ;; timings in ms using ZMK-like names
-  one-shot-timeout 60000      ;; 60 seconds.
-  tapping-term 300            ;; higher = one-handed mod chords work, fewer false-holds when typing fast
-  quick-tap-ms 200            ;; same as ZMK ($tap-repress-timeout in kanata docs)
-  require-prior-idle 250      ;; same as ZMK (emulated below via the nomods layer + on-idle)
-  combo-timeout 60            ;; ZMK default is 60
+  one-shot-timeout 60000
+  tapping-term 300
+  quick-tap-ms 200
+  require-prior-idle 250
+  combo-timeout 60
 
-  ;; keys for the tap-hold-release-tap-keys-release templates
-  left-side-keys   (q w e r t x c v b)      ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
-  right-side-keys  (y u i o p n m , . /)  ;; same-hand non-mod keys: force the pending mod key to resolve as TAP
-  home-row-left-keys  (a s d f g z)         ;; home row mods (+ z) - output tap if released after the first key
-  home-row-right-keys (h j k l ;)           ;; home row mods       - output tap if released after the first key
+  left-side-keys   (q w e r t x c v b)
+  right-side-keys  (y u i o p n m , . /)
+  home-row-left-keys  (a s d f g z)
+  home-row-right-keys (h j k l ;)
 
-  ;; tunables that used to be magic numbers scattered through the aliases
-  mouse-interval 1            ;; accelerated mouse: ms between steps
-  mouse-accel-time 500        ;; accelerated mouse: ms to reach full speed
-  mouse-move-min 1            ;; accelerated mouse: px per step at the start
-  mouse-move-max 5            ;; accelerated mouse: px per step at full speed
-  wheel-interval 50           ;; scroll: ms between notches
-  wheel-distance 120          ;; scroll: one OS notch per event
-  slow-interval 8             ;; precision mouse layer: ms between steps
-  slow-step 1                 ;; precision mouse layer: px per step
-  double-tap-gap 50           ;; FUN's double-Shift/double-Ctrl macro gap
-  multi-click-gap 20          ;; mouse double/triple-click macro gap
+  mouse-interval 1
+  mouse-accel-time 500
+  mouse-move-min 1
+  mouse-move-max 5
+  wheel-interval 50
+  wheel-distance 120
+  slow-interval 8
+  slow-step 1
+  double-tap-gap 50
+  multi-click-gap 20
 )
 
-;; home row mod templates implementing the timerless behavior
-(deftemplate lhrm (tappingterm tap-key hold-key)  ;; left hand mods
+(deftemplate lhrm (tappingterm tap-key hold-key)
   (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $left-side-keys $home-row-left-keys)
 )
 
-(deftemplate rhrm (tappingterm tap-key hold-key)  ;; right hand mods
+(deftemplate rhrm (tappingterm tap-key hold-key)
   (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $right-side-keys $home-row-right-keys)
 )
 
@@ -78,15 +60,7 @@
   (multi $tap-key @tap)
 )
 
-;; ============================================================================
-;; Platform blocks — the ONLY places the two OSes differ. Same alias and
-;; virtualkey names, platform values. Thumb positions are role-identical by
-;; construction: outer thumb, Esc/NUM thumb, space, NAV thumb.
-;; ============================================================================
-
 (platform (win winiov2 wintercept)
-  ;; source keys — standard ANSI board: F-row left untouched (passes
-  ;; through), thumbs are LWin / LAlt / Space / RAlt
   (defsrc
     q w e r t    y u i o p
     a s d f g    h j k l ;
@@ -97,22 +71,21 @@
 
 (platform (win winiov2 wintercept)
   (defalias
-    thumbout (tap-hold-release $quick-tap-ms $tapping-term lmet XX) ;; outer thumb: tap = Win (Start menu), hold = nothing (NUM is on the inner thumb)
+    thumbout (tap-hold-release $quick-tap-ms $tapping-term lmet XX)
 
-    ;; the platform vocabulary the shared layers and combos speak
     undo C-z
     cut  C-x
     copy C-c
     paste C-v
-    overview M-tab      ;; Task View; the ESDF arrows + h (Enter) then drive it
+    overview M-tab
     wordleft C-left
     wordright C-right
     delwordback C-bspc
     delwordfwd  C-del
-    minimize M-down     ;; a maximized window restores first, tap twice
+    minimize M-down
     linestart home
     lineend  end
-    langtoggle M-spc    ;; Win+Space input-language switcher
+    langtoggle M-spc
     emoji M-.
     screenshot M-S-s
   )
@@ -120,18 +93,15 @@
 
 (platform (win winiov2 wintercept)
   (defvirtualkeys
-    to-base (layer-switch def)         ;; used by @tap to return to base after the idle period
-    ops (one-shot-pause-processing 10) ;; lets sticky keys stay triggered when moving back to the default layer
-    swapperrcmd lalt                   ;; the swapper holds Alt (Alt-Tab)
-    swappertab tab                     ;; sends Tab on every new press while the swapper is active
-    swapperstab S-tab                  ;; Shift+Tab — the swapper's backwards step
+    to-base (layer-switch def)
+    ops (one-shot-pause-processing 10)
+    swapperrcmd lalt
+    swappertab tab
+    swapperstab S-tab
   )
 )
 
 (platform (macos)
-  ;; source keys — mac board: F-row and fn/Globe left untouched (pass
-  ;; through), thumbs are LOpt / LCmd / Space / RCmd; right Opt stays a
-  ;; real Option for accents
   (defsrc
     q w e r t    y u i o p
     a s d f g    h j k l ;
@@ -142,13 +112,13 @@
 
 (platform (macos)
   (defalias
-    thumbout (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) XX) ;; outer thumb: tap = Spotlight (Cmd+Space), hold = nothing (NUM is on the inner thumb)
+    thumbout (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) XX)
 
     undo M-z
     cut  M-x
     copy M-c
     paste M-v
-    overview C-up       ;; Mission Control; the ESDF arrows + h (Enter) then drive it
+    overview C-up
     wordleft A-left
     wordright A-right
     delwordback A-bspc
@@ -156,7 +126,7 @@
     minimize M-m
     linestart M-left
     lineend  M-right
-    langtoggle C-spc    ;; macOS "Select previous input source"
+    langtoggle C-spc
     emoji M-C-spc
     screenshot M-S-4
   )
@@ -164,43 +134,30 @@
 
 (platform (macos)
   (defvirtualkeys
-    to-base (layer-switch def)         ;; used by @tap to return to base after the idle period
-    ops (one-shot-pause-processing 10) ;; lets sticky keys stay triggered when moving back to the default layer
-    swapperrcmd rmet                   ;; the swapper holds right Cmd (Cmd-Tab)
-    swappertab tab                     ;; sends Tab on every new press while the swapper is active
-    swapperstab S-tab                  ;; Shift+Tab — the swapper's backwards step
+    to-base (layer-switch def)
+    ops (one-shot-pause-processing 10)
+    swapperrcmd rmet
+    swappertab tab
+    swapperstab S-tab
   )
 )
 
-;; ============================================================================
-;; Everything below is shared verbatim by both platforms.
-;; ============================================================================
-
 (defalias
-  ;; quasi-ZMK 'require-prior-idle' behavior
   tap (multi
-    (layer-switch nomods)                                ;; temporarily switch to a layer with no home row mods
-    (on-idle $require-prior-idle tap-virtualkey to-base) ;; once typing pauses for $require-prior-idle, return to base
+    (layer-switch nomods)
+    (on-idle $require-prior-idle tap-virtualkey to-base)
   )
 
-  ;; ---- inner-left thumb dual-role (LAlt win / LCmd mac) ----
-  escnum (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))  ;; tap = Esc, hold = NUM
+  escnum (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))
 
-  ;; ---- NAV hold on the right thumb ----
-  ;; the layer plus two chores on release: tap ops so armed one-shots survive
-  ;; leaving the layer, and let go of the swapper's held mod so an
-  ;; Alt-Tab / Cmd-Tab run commits
   navhold (multi
     (layer-while-held nav)
     (on-release tap-virtualkey     ops)
     (on-release release-virtualkey swapperrcmd)
   )
 
-  ;; ---- right thumb dual-role (RAlt win / RCmd mac) ----
-  naventer (tap-hold-release $quick-tap-ms $tapping-term enter @navhold)  ;; tap = Enter, hold = NAV
+  naventer (tap-hold-release $quick-tap-ms $tapping-term enter @navhold)
 
-  ;; ---- home row mods, GASC — Ctrl on the index finger (Emacs-friendly) ----
-  ;; Left:  A=Win/Cmd  S=Alt/Opt  D=Shift  F=Ctrl    Right: J=Ctrl  K=Shift  L=Alt/Opt  ;=Win/Cmd
   a (t! lhrm   $tapping-term        a lmet   )
   s (t! lhrm   $tapping-term        s lalt   )
   d (t! lhrm   $tapping-term        d lsft   )
@@ -210,13 +167,9 @@
   h (t! nomod h)
   j (t! rhrm   $tapping-term        j rctl   )
   k (t! rhrm   $tapping-term        k rsft   )
-  ;; l holds LEFT alt on both platforms, breaking the right hand's r-mod
-  ;; pattern deliberately: win ralt is AltGr (shifts the layout on many
-  ;; keyboards) and mac right Opt is kept real for accents
   l (t! rhrm   $tapping-term        l lalt   )
   ; (t! rhrm   $tapping-term        ; rmet   )
 
-  ;; all other typing keys get the require-prior-idle-like behavior
   q (t! nomod q)
   w (t! nomod w)
   e (t! nomod e)
@@ -241,67 +194,51 @@
   / (t! nomod /)
   spc (t! nomod spc)
 
-  ;; other hold-taps on the bottom row (win has no Globe key, so hold-z is
-  ;; the function layer everywhere; on mac fn/Globe stays untouched anyway)
-  zfn  (t! lhrm $tapping-term z (layer-while-held fun))                      ;; z : tap = z,   hold = function layer
-  slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun)) ;; / : tap = '/', hold = function layer
-  xsym     (tap-hold-release $quick-tap-ms $tapping-term @x (layer-while-held sym)) ;; x : tap = x,   hold = sym layer
-  dotsym   (tap-hold-release $quick-tap-ms $tapping-term @. (layer-while-held sym)) ;; . : tap = '.', hold = sym layer
+  zfn  (t! lhrm $tapping-term z (layer-while-held fun))
+  slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun))
+  xsym     (tap-hold-release $quick-tap-ms $tapping-term @x (layer-while-held sym))
+  dotsym   (tap-hold-release $quick-tap-ms $tapping-term @. (layer-while-held sym))
 
-  ;; one-shot mods for Callum-style modding (mirrors the GASC order above)
   osm (one-shot $one-shot-timeout lmet)
   oss (one-shot $one-shot-timeout lshift)
   osa (one-shot $one-shot-timeout lalt)
   osc (one-shot $one-shot-timeout lctrl)
 
-  ;; window/app swapper (NAV . and ,): holds Alt (win) / right Cmd (mac) and
-  ;; taps Tab = the Alt-Tab / Cmd-Tab switcher. Each press sends another
-  ;; Tab; releasing NAV (the right thumb) releases the mod and lands in the
-  ;; chosen window.
   swapper (multi
     (on-press   press-virtualkey    swapperrcmd)
     (on-press   tap-virtualkey      swappertab)
   )
 
-  ;; the same swapper stepping backwards: the mod stays held, each press taps Shift+Tab
   swapperback (multi
     (on-press   press-virtualkey    swapperrcmd)
     (on-press   tap-virtualkey      swapperstab)
   )
 
-  ;; num_word toggle
   toggle_num_word
     (switch
       ((layer def)) (layer-switch num) break
       ((layer num)) (layer-switch def) break
     )
 
-  ;; to let other people use the keyboard without having to learn the layers and combos
   toggle_plain_mode
     (switch
       ((layer def)) (layer-switch plain) break
       ((layer plain)) (layer-switch def) break
     )
 
-  ;; master switch for every combo: def <-> nocombo (a clone of def where all chords are disabled).
-  ;; The u+i+o+p chord that triggers this stays active in nocombo, so you can always turn combos back on.
   toggle_combos
     (switch
       ((layer def)) (layer-switch nocombo) break
       ((layer nocombo)) (layer-switch def) break
     )
 
-  ;; num keys
-  num_spc  0                                                                                   ;; space = 0 in NUM and never cancels num_word; exit with an inner-left-thumb tap (@num_sym)
-  num_sym  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held sym)) ;; NUM's inner-left thumb: tap leaves NUM (cancels num_word), hold = sym
-  ;; num typing macro
+  num_spc  0
+  num_sym  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held sym))
   ,000     (macro , Digit0 Digit0 Digit0)
 
-  ;; FUN-layer IDE double-taps — c = 2×Shift (Search Everywhere), v = 2×Ctrl (Run Anything)
   dsft (macro lsft $double-tap-gap lsft)
   dctl (macro lctl $double-tap-gap lctl)
 
-  ;; ---- mouse layer (enter with q+w, exit with single-key q) ----
   msu (movemouse-accel-up    $mouse-interval $mouse-accel-time $mouse-move-min $mouse-move-max)
   msd (movemouse-accel-down  $mouse-interval $mouse-accel-time $mouse-move-min $mouse-move-max)
   msl (movemouse-accel-left  $mouse-interval $mouse-accel-time $mouse-move-min $mouse-move-max)
@@ -310,13 +247,11 @@
   whd (mwheel-down  $wheel-interval $wheel-distance)
   whl (mwheel-left  $wheel-interval $wheel-distance)
   whr (mwheel-right $wheel-interval $wheel-distance)
-  ;; precision movement: slow constant steps (hold a or ; -> mouse-slow layer)
   smsu (movemouse-up    $slow-interval $slow-step)
   smsd (movemouse-down  $slow-interval $slow-step)
   smsl (movemouse-left  $slow-interval $slow-step)
   smsr (movemouse-right $slow-interval $slow-step)
   msslow (layer-while-held mouse-slow)
-  ;; multi-click on the right pinky — one macro so the OS registers a real double/triple click
   dclk (macro mlft $multi-click-gap mlft)
   tclk (macro mlft $multi-click-gap mlft $multi-click-gap mlft)
   toggle_mouse (switch
@@ -326,31 +261,22 @@
 )
 
 (defchordsv2
-  (r t)     del              $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; forward delete — same-finger (left index) so "tr-" words can't misfire
-  (y u)     bspc             $combo-timeout first-release (    nav sym fun     nomods plain mouse mouse-slow nocombo) ;; backspace — same-finger (right index)
+  (r t)     del              $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (y u)     bspc             $combo-timeout first-release (    nav sym fun     nomods plain mouse mouse-slow nocombo)
 
-  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; Num Word on; an inner-left-thumb tap cancels it (@num_sym). Disabled in NUM so "12" can't toggle it.
+  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
-  ;; Line start / end on the bottom row — Home/End (win), Cmd+arrows (mac);
-  ;; same-finger (misfire-proof)
-  (v b)     @linestart       $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; line start — same-finger (left index)
-  (m n)     @lineend         $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; line end  — same-finger (right index)
+  (v b)     @linestart       $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (m n)     @lineend         $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
-  ;; Delete word on the home row — same-finger index pairs, so misfire-proof
-  (h j)     @delwordback     $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; delete word back  (right index: h+j)
-  (f g)     @delwordfwd      $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; delete word forward (left index: f+g)
+  (h j)     @delwordback     $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (f g)     @delwordfwd      $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
-  ;; Switch input language — Win+Space (win) / Ctrl+Space (mac). t+g is a
-  ;; VERTICAL same-finger pair (left index, its own column, pressed flat), so
-  ;; it can't be rolled while typing — and on Kedmanee t/g are the spacing
-  ;; vowels ะ/เ, never a flat-press pair in Thai either.
-  (t g)     @langtoggle      $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; language toggle (Thai <-> English with two languages installed)
+  (t g)     @langtoggle      $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
   (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
-  (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo) ;; enter MOUSE; exit with single-key q
+  (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
-  ;; master combo toggle — turns ALL combos on/off. Active ONLY in def and nocombo (so it's the one
-  ;; combo that still works while combos are "off", letting you switch back). Mirrors q+w+e+r (plain).
   (u i o p) @toggle_combos     $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow)
 )
 
@@ -358,19 +284,19 @@
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
   @zfn @xsym @c    @v    @b    @n @m    @,        @dotsym @slashfn
-                   @thumbout   @escnum @spc    @naventer  ;; outer thumb = Win tap (win) / Spotlight tap (mac); inner = tap Esc / hold NUM; right = tap Enter / hold NAV (sym on hold-x/., fun on hold-z//)
+                   @thumbout   @escnum @spc    @naventer
 )
 
-(deflayer nocombo ;; identical to def, but it's in every chord's disabled-layers list, so NO combo fires here.
+(deflayer nocombo
   @q   @w    @e    @r    @t    @y @u    @i        @o      @p
   @a   @s    @d    @f    @g    @h @j    @k        @l      @;
   @zfn @xsym @c    @v    @b    @n @m    @,        @dotsym @slashfn
                    @thumbout   @escnum @spc    @naventer
 )
 
-(deflayer nomods ;; active briefly while typing fast: almost no hold-taps = no misfires, no reordering
+(deflayer nomods
   q w e  r  t    y u  i  o p
-  a s @d @f g    h @j @k l ;  ;; shift AND ctrl stay home row mods even mid-burst (ctrl: Emacs chords right after typing)
+  a s @d @f g    h @j @k l ;
   z x c  v  b    n m  ,  . /
           _ _ _ _
 )
@@ -379,13 +305,13 @@
   S-9  S-0  S-5  =    S-6      S-= 7 8 9 S-8
   @osm @osa @oss @osc bspc     -   4 5 6 /
   @undo @cut @copy @paste @,000    ,   1 2 3 .
-     XX       @num_sym @num_spc @naventer  ;; inner-left thumb: tap = exit NUM, hold = SYM; right thumb keeps its usual tap = Enter, hold = NAV
+     XX       @num_sym @num_spc @naventer
 )
 
 (deflayer nav
-  tab  home up   end  S-tab      @overview @paste   pgdn pgup  del  ;; y = Task View (win) / Mission Control (mac); the ESDF arrows + h (Enter) then drive it
+  tab  home up   end  S-tab      @overview @paste   pgdn pgup  del
   @wordleft left down right @wordright   enter @osc @oss @osa @osm
-  @delwordback A-x @minimize @delwordfwd bspc    menu A-m    @swapperback @swapper A-/  ;; c = minimize
+  @delwordback A-x @minimize @delwordfwd bspc    menu A-m    @swapperback @swapper A-/
                            _ _ _ _
 )
 
@@ -396,16 +322,13 @@
                       _   _   S-- _
 )
 
-(deflayer fun ;; mnemonic: q=Quiet(mute) w=reWind(prev) e=End r=Return t=Tab g=Go(play/pause) b=Bksp · y=shoutY(caps) h=Home n=Next · left thumbs = vol-/vol+
+(deflayer fun
   mute prev  end   enter tab     caps f7 f8 f9 f10
   @osm @osa  @oss  @osc  pp      home f4 f5 f6 f11
   @emoji @screenshot @dsft @dctl bspc    next f1 f2 f3 f12
                _    vold volu _
 )
 
-;; plain keyboard for other people: no mods, no layers, no chords (exit:
-;; q+w+e+r together — the one chord still live here). Thumbs pass through
-;; as the physical keys, so it sits in the platform blocks.
 (platform (win winiov2 wintercept)
   (deflayer plain
     q w e r t    y u i o p
@@ -424,14 +347,14 @@
   )
 )
 
-(deflayer mouse ;; enter with q+w. move e/s/d/f, click j=L w=L l=R r=R mid=, t=mid, back=m fwd=. ; mods y=Ctrl h=Shift n=Alt/Opt (right column, pair with Space=click); zxcv=Win/Alt/Shift/Ctrl too, thumbs Ctrl/Alt; hold ;=precision (slow) or a=precision (left-hand-only); p=double-click /=triple-click; q=exit
+(deflayer mouse
   @toggle_mouse mlft @msu mrgt mmid    lctl @whl @whu @whr @dclk
   @msslow       @msl @msd @msr XX      lsft mlft @whd mrgt @msslow
   lmet          lalt lsft lctl XX      lalt mbck mmid mfwd @tclk
                        XX   lctl mlft lalt
 )
 
-(deflayer mouse-slow ;; same as mouse but ESDF crawl at slow constant steps for fine positioning; combos disabled here too
+(deflayer mouse-slow
   XX   XX    @smsu XX    XX    lctl @whl @whu @whr @dclk
   XX   @smsl @smsd @smsr XX    lsft mlft @whd mrgt XX
   lmet lalt  lsft  lctl  XX    lalt mbck mmid mfwd @tclk

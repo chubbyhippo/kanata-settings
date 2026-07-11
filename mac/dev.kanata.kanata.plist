@@ -24,7 +24,6 @@
     <string>dev.kanata.kanata</string>
     <key>ProgramArguments</key>
     <array>
-        <!-- Homebrew on Apple Silicon: /opt/homebrew/bin/kanata -->
         <string>/usr/local/bin/kanata</string>
         <string>--cfg</string>
         <string>/etc/kanata/mac.kbd</string>
