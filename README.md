@@ -60,7 +60,7 @@ Where a shortcut's underlying chord differs per OS it's written `win / mac`.
 | Screenshot (Win+Shift+S / Cmd+Shift+4) | FUN (hold `/`): `x` |
 | Emoji picker (Win+. / Cmd+Ctrl+Space) | FUN (hold `/`): `z` |
 | Search Everywhere / Run Anything (IntelliJ) | FUN (hold `/`): `c` = double Shift · `v` = double Ctrl |
-| Switch input language (Thai ⇄ English) | combo `t`+`g` — one flat left-index press (Win+Space / Ctrl+Space) |
+| Switch input language (Thai ⇄ English) | combo `b`+`n` — both index fingers together (Win+Space / Ctrl+Space) |
 | Select text | hold real Shift + NAV arrows |
 | Accents (é, ü, ñ…) — mac | right Opt is untouched — use it as stock |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the inner-left thumb to exit |
@@ -258,9 +258,9 @@ disabled during fast typing. Inside the NUM layer every combo is off except
 
 The home row (`a`–`;`) is otherwise mods-only, but its two index-finger
 pairs carry the delete-word combos — `f`+`g` and `h`+`j` (same-finger, so
-misfire-proof). The rest live on the top and bottom rows — plus one
-*vertical* pair, `t`+`g` (top+home, one flat left-index press), for
-switching the input language:
+misfire-proof). The rest live on the top and bottom rows — including the
+one *cross-hand* pair, `b`+`n` (the two center bottom-row keys, one index
+finger each), for switching the input language:
 
 ```
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
@@ -268,20 +268,20 @@ NEIGHBOUR COMBOS  —  press two (or more) touching keys
    Q     W     E     R     T             Y     U     I     O     P
    └Mouse┘           └─Del─┘             └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
-                           │Lang
+
    A     S     D     F     G             H     J     K     L     ;
                      └DelF─┘             └DelB─┘
 
    Z     X     C     V     B             N     M     ,     .     /
                      └Line←┘             └Line→┘
-                                               └─Num─┘
+                           └────Lang─────┘     └─Num─┘
 ```
 
 A `└─┘` spans the keys you press; an interior `┴` tick marks a middle key
 that's *also* part of the combo (so `Plain` = Q·W·E·R and `NoCmb` =
-U·I·O·P); every other span is just its two neighbouring keys. The `│`
-between T and G marks the one vertical pair — both keys under the same
-finger, pressed together flat.
+U·I·O·P); every other span is just its two neighbouring keys. `Lang`
+bridges the hand gap in the picture, but `b` and `n` are physical
+neighbours — one index finger each, pressed together.
 
 `Mouse` mouse layer · `Del` forward delete · `Bsp` Backspace · `Lang`
 switch input language (Win+Space / Ctrl+Space) · `Line←`/`Line→` line
@@ -295,8 +295,8 @@ toggle.
 | `r t` | Forward delete (same-finger) |
 | `y u` | Backspace (same-finger; also active in NUM) |
 | `f g` / `h j` | Delete word forward / back — Ctrl+Del / Ctrl+Bksp (win), Opt+Del / Opt+Bksp (mac) |
-| `t g` | Switch input language — Win+Space / Ctrl+Space (vertical same-finger pair, left index) |
 | `v b` / `m n` | Line start / end — Home / End (win), ⌘← / ⌘→ (mac) |
+| `b n` | Switch input language — Win+Space / Ctrl+Space (cross-hand pair, one index finger each) |
 | `m ,` | Num Word on (tap the inner-left thumb to cancel) |
 | `q w e r` | Plain mode on/off (the one combo still live in plain) |
 | `u i o p` | All combos on/off |

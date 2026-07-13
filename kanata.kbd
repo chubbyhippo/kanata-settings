@@ -272,7 +272,7 @@
   (h j)     @delwordback     $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
   (f g)     @delwordfwd      $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
-  (t g)     @langtoggle      $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (b n)     @langtoggle      $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
   (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
   (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
