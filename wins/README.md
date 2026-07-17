@@ -37,8 +37,10 @@ thumb (LAlt) + `c` → Ctrl+C (NUM), and hold the **right thumb** (RAlt) +
 you want remaps in admin apps without a UAC prompt, use Task Scheduler
 instead: trigger "At log on", check "Run with highest privileges".
 
-**After editing the config:** run `--check`, then restart kanata to apply
-(stop it and re-run `kanata.bat`, or end the process and relaunch).
+**After editing the config:** run `--check`, put the edited file at
+`%USERPROFILE%\kanata.kbd` (the copy `kanata.bat` launches), then restart
+kanata to apply (stop it and re-run `kanata.bat`, or end the process and
+relaunch).
 
 ## Windows-specific troubleshooting
 

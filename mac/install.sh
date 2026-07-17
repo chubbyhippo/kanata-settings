@@ -60,8 +60,11 @@ main() {
     }
 
     mkdir -p /etc/kanata
-    curl -fsSL "${base%/mac}/kanata.kbd" -o /etc/kanata/mac.kbd
-    "$kanata_bin" --cfg /etc/kanata/mac.kbd --check
+    tmp_kbd="$(mktemp /tmp/mac.kbd.XXXXXX)"
+    curl -fsSL "${base%/mac}/kanata.kbd" -o "$tmp_kbd"
+    "$kanata_bin" --cfg "$tmp_kbd" --check
+    chmod 644 "$tmp_kbd"
+    mv "$tmp_kbd" /etc/kanata/mac.kbd
     echo "installed /etc/kanata/mac.kbd"
 
     if launchctl print system 2>/dev/null | grep -q "Karabiner-VirtualHIDDevice-Daemon"; then
@@ -79,7 +82,7 @@ main() {
     launchctl bootout system/dev.kanata.kanata 2>/dev/null || true
     launchctl bootstrap system "$daemons/$kanata_plist"
 
-    echo "done — test: hold x + e -> up arrow (NAV)   (logs: /var/log/kanata.log)"
+    echo "done — test: hold the right thumb (RCmd) + e -> up arrow (NAV)   (logs: /var/log/kanata.log)"
 }
 
 main "$@"

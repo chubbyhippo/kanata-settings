@@ -347,8 +347,10 @@ fn/Globe and right Opt (accents) on mac.
 ## After editing the config
 
 Run `kanata --cfg kanata.kbd --check` first — a config that fails the check
-won't load, so the running instance keeps working. Then restart kanata to
-apply: re-run `kanata.bat` (win) or
+won't load, so the running instance keeps working. Then copy the file to
+where the launcher reads it — `%USERPROFILE%\kanata.kbd` (win) or
+`/etc/kanata/mac.kbd` (mac) — and restart kanata to apply: re-run
+`kanata.bat` (win) or
 `sudo launchctl kickstart -k system/dev.kanata.kanata` (mac). The platform
 blocks mean each OS only validates its own branch — check on the machine
 you're editing for.
