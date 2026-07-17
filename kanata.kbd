@@ -261,6 +261,7 @@
 )
 
 (defchordsv2
+  (q w)     tab              $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
   (r t)     del              $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
   (y u)     bspc             $combo-timeout first-release (    nav sym fun     nomods plain mouse mouse-slow nocombo)
 
@@ -275,7 +276,7 @@
   (b n)     @langtoggle      $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
   (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
-  (q w)     @toggle_mouse        $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (z x)     @toggle_mouse    $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
 
   (u i o p) @toggle_combos     $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow)
 )

@@ -54,7 +54,7 @@ Where a shortcut's underlying chord differs per OS it's written `win / mac`.
 | Arrows (left, ESDF) | hold NAV (right thumb): `e`/`s`/`d`/`f` = ↑/←/↓/→ · `w`/`r` = Home/End |
 | Mods + arrow (select / word-jump) | hold NAV, tap `j`/`k`/`l`/`;` = Ctrl/Shift/Alt/Gui, then an arrow (stacks); `i` = PgDn, `o` = PgUp |
 | Next / previous tab | hold `f` (Ctrl), tap Tab — add Shift for previous |
-| Tab / Backspace | hold NAV: `q` = Tab · `t` = Shift+Tab · `b` = Backspace; FUN (hold `/`): `t` = Tab · `b` = Backspace |
+| Tab / Backspace | combo `q`+`w` = Tab; hold NAV: `q` = Tab · `t` = Shift+Tab · `b` = Backspace; FUN (hold `/`): `t` = Tab · `b` = Backspace |
 | Start menu / Spotlight | tap the outer-left thumb |
 | Gui + any left-hand key (Win+E, Cmd+Q, …) | NUM: tap `a` (one-shot Gui), release, press the letter |
 | Screenshot (Win+Shift+S / Cmd+Shift+4) | FUN (hold `/`): `x` |
@@ -64,10 +64,10 @@ Where a shortcut's underlying chord differs per OS it's written `win / mac`.
 | Select text | hold real Shift + NAV arrows |
 | Accents (é, ü, ñ…) — mac | right Opt is untouched — use it as stock |
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the inner-left thumb to exit |
-| Backspace / Delete | combos `y·u` / `r·t`, or FUN `b` (Tab and Enter are physical keys) |
+| Backspace / Delete | combos `y·u` / `r·t`, or FUN `b` (Enter stays a physical key; Tab has `q·w`) |
 | Media (audio) | FUN (hold `/`): `w` = reWind (prev) · `g` = Go (play/pause) · `n` = Next · `q` = Quiet (mute); vol down / up on the left thumbs |
 | F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
-| Mouse | `q`+`w` toggles the mouse layer (tap `q` to exit): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
+| Mouse | `z`+`x` toggles the mouse layer (tap `q` to exit): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
 | Caps Lock | the physical Caps Lock key, or FUN `y` (shoutY) |
 | Esc | tap the inner-left thumb |
 | Normal keyboard (lend laptop, games) | `q`+`w`+`e`+`r` together = plain mode; same to come back |
@@ -216,7 +216,7 @@ and Run Anything. So hold FUN with `z` for the right-hand F-keys, or with
 the right pinky (`/`) for the left-hand mnemonics. (mac: the physical
 fn/Globe key is untouched, so fn-row media functions still work.)
 
-### MOUSE — toggle with `q`+`w` (tap `q` to exit)
+### MOUSE — toggle with `z`+`x` (tap `q` to exit)
 
 ```
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
@@ -228,7 +228,7 @@ fn/Globe key is untouched, so fn-row media functions still work.)
 +-------+-------+-------+-------+-------+    +-------+-------+-------+-------+-------+
 ```
 
-A sticky layer: press `q`+`w` to enter; tap `q` to leave. Move the cursor
+A sticky layer: press `z`+`x` to enter; tap `q` to leave. Move the cursor
 with the **left hand** (ESDF): `e` up, `s` left, `d` down, `f` right —
 accelerates while held. The **right hand** clicks and scrolls: `j`
 left-click, `l` right-click, `i` scroll up, `k` scroll down, `u` scroll
@@ -266,14 +266,14 @@ finger each), for switching the input language:
 NEIGHBOUR COMBOS  —  press two (or more) touching keys
 
    Q     W     E     R     T             Y     U     I     O     P
-   └Mouse┘           └─Del─┘             └─Bsp─┘
+   └─Tab─┘           └─Del─┘             └─Bsp─┘
    └─────┴Plain┴─────┘                         └─────┴NoCmb┴─────┘
 
    A     S     D     F     G             H     J     K     L     ;
                      └DelF─┘             └DelB─┘
 
    Z     X     C     V     B             N     M     ,     .     /
-                     └Line←┘             └Line→┘
+   └Mouse┘           └Line←┘             └Line→┘
                            └────Lang─────┘     └─Num─┘
 ```
 
@@ -283,21 +283,22 @@ U·I·O·P); every other span is just its two neighbouring keys. `Lang`
 bridges the hand gap in the picture, but `b` and `n` are physical
 neighbours — one index finger each, pressed together.
 
-`Mouse` mouse layer · `Del` forward delete · `Bsp` Backspace · `Lang`
-switch input language (Win+Space / Ctrl+Space) · `Line←`/`Line→` line
-start / end (Home/End win, ⌘←/⌘→ mac) · `DelF`/`DelB` delete word
+`Tab` Tab · `Del` forward delete · `Bsp` Backspace · `Mouse` mouse layer ·
+`Lang` switch input language (Win+Space / Ctrl+Space) · `Line←`/`Line→`
+line start / end (Home/End win, ⌘←/⌘→ mac) · `DelF`/`DelB` delete word
 forward / back · `Num` Num Word · `Plain` plain mode · `NoCmb` all-combos
 toggle.
 
 | Combo | Result |
 |---|---|
-| `q w` | Mouse layer on/off (tap `q` to exit) |
+| `q w` | Tab |
 | `r t` | Forward delete (same-finger) |
 | `y u` | Backspace (same-finger; also active in NUM) |
 | `f g` / `h j` | Delete word forward / back — Ctrl+Del / Ctrl+Bksp (win), Opt+Del / Opt+Bksp (mac) |
 | `v b` / `m n` | Line start / end — Home / End (win), ⌘← / ⌘→ (mac) |
 | `b n` | Switch input language — Win+Space / Ctrl+Space (cross-hand pair, one index finger each) |
 | `m ,` | Num Word on (tap the inner-left thumb to cancel) |
+| `z x` | Mouse layer on/off (tap `q` to exit) |
 | `q w e r` | Plain mode on/off (the one combo still live in plain) |
 | `u i o p` | All combos on/off |
 
