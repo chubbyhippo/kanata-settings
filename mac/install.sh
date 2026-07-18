@@ -61,7 +61,7 @@ main() {
 
     mkdir -p /etc/kanata
     tmp_kbd="$(mktemp /tmp/mac.kbd.XXXXXX)"
-    curl -fsSL "${base%/mac}/kanata.kbd" -o "$tmp_kbd"
+    curl -fsSL "$base/kanata.kbd" -o "$tmp_kbd"
     "$kanata_bin" --cfg "$tmp_kbd" --check
     chmod 644 "$tmp_kbd"
     mv "$tmp_kbd" /etc/kanata/mac.kbd
