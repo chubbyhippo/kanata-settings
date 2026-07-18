@@ -1,0 +1,329 @@
+;; Copyright (C) 2026 Chubby Hippo
+;;
+;; This program is free software: you can redistribute it and/or modify it
+;; under the terms of the GNU General Public License as published by the Free
+;; Software Foundation, either version 3 of the License, or (at your option)
+;; any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but WITHOUT
+;; ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+;; FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+;; more details.
+;;
+;; You should have received a copy of the GNU General Public License along
+;; with this program. If not, see <https://www.gnu.org/licenses/>.
+;;
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
+(defcfg
+  process-unmapped-keys yes
+  block-unmapped-keys no
+  log-layer-changes no
+  concurrent-tap-hold yes
+  delegate-to-first-layer yes
+  chords-v2-min-idle 350
+)
+
+(defvar
+  one-shot-timeout 60000
+  tapping-term 300
+  quick-tap-ms 200
+  require-prior-idle 250
+  combo-timeout 60
+
+  left-side-keys   (q w e r t x c v b)
+  right-side-keys  (y u i o p n m , . /)
+  home-row-left-keys  (a s d f g z)
+  home-row-right-keys (h j k l ;)
+
+  mouse-interval 1
+  mouse-accel-time 500
+  mouse-move-min 1
+  mouse-move-max 5
+  wheel-interval 50
+  wheel-distance 120
+  slow-interval 8
+  slow-step 1
+  double-tap-gap 50
+  multi-click-gap 20
+)
+
+(deftemplate lhrm (tappingterm tap-key hold-key)
+  (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $left-side-keys $home-row-left-keys)
+)
+
+(deftemplate rhrm (tappingterm tap-key hold-key)
+  (tap-hold-release-tap-keys-release $quick-tap-ms $tappingterm (multi $tap-key @tap) $hold-key $right-side-keys $home-row-right-keys)
+)
+
+(deftemplate nomod (tap-key)
+  (multi $tap-key @tap)
+)
+
+(defsrc
+  f1 f2 f3 f4 f5 f6    f7 f8 f9 f10 f11 f12
+  q w e r t    y u i o p
+  a s d f g    h j k l ;
+  z x c v b    n m , . /
+  lalt lmet spc  rmet
+)
+
+(defalias
+  thumbout (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) XX)
+
+  undo M-z
+  cut  M-x
+  copy M-c
+  paste M-v
+  overview C-up
+  wordleft A-left
+  wordright A-right
+  delwordback A-bspc
+  delwordfwd  A-del
+  minimize M-m
+  linestart M-left
+  lineend  M-right
+  langtoggle C-spc
+  emoji M-C-spc
+  screenshot M-S-4
+
+  fk1  brdn
+  fk2  brup
+  fk3  mctl
+  fk4  lpad
+  fk5  bldn
+  fk6  blup
+  fk7  prev
+  fk8  pp
+  fk9  next
+  fk10 mute
+  fk11 vold
+  fk12 volu
+)
+
+(defvirtualkeys
+  to-base (layer-switch def)
+  ops (one-shot-pause-processing 10)
+  swapperrcmd rmet
+  swappertab tab
+  swapperstab S-tab
+)
+
+(defalias
+  tap (multi
+    (layer-switch nomods)
+    (on-idle $require-prior-idle tap-virtualkey to-base)
+  )
+
+  escnum (tap-hold-release $quick-tap-ms $tapping-term esc (layer-while-held num))
+
+  navhold (multi
+    (layer-while-held nav)
+    (on-release tap-virtualkey     ops)
+    (on-release release-virtualkey swapperrcmd)
+  )
+
+  naventer (tap-hold-release $quick-tap-ms $tapping-term enter @navhold)
+
+  a (t! lhrm   $tapping-term        a lmet   )
+  s (t! lhrm   $tapping-term        s lalt   )
+  d (t! lhrm   $tapping-term        d lsft   )
+  f (t! lhrm   $tapping-term        f lctl   )
+  g (t! nomod g)
+
+  h (t! nomod h)
+  j (t! rhrm   $tapping-term        j rctl   )
+  k (t! rhrm   $tapping-term        k rsft   )
+  l (t! rhrm   $tapping-term        l lalt   )
+  ; (t! rhrm   $tapping-term        ; rmet   )
+
+  q (t! nomod q)
+  w (t! nomod w)
+  e (t! nomod e)
+  r (t! nomod r)
+  t (t! nomod t)
+
+  y (t! nomod y)
+  u (t! nomod u)
+  i (t! nomod i)
+  o (t! nomod o)
+  p (t! nomod p)
+
+  x (t! nomod x)
+  c (t! nomod c)
+  v (t! nomod v)
+  b (t! nomod b)
+
+  n (t! nomod n)
+  m (t! nomod m)
+  , (t! nomod ,)
+  . (t! nomod .)
+  / (t! nomod /)
+  spc (t! nomod spc)
+
+  zfn  (t! lhrm $tapping-term z (layer-while-held fun))
+  slashfn  (tap-hold-release $quick-tap-ms $tapping-term @/ (layer-while-held fun))
+  xsym     (tap-hold-release $quick-tap-ms $tapping-term @x (layer-while-held sym))
+  dotsym   (tap-hold-release $quick-tap-ms $tapping-term @. (layer-while-held sym))
+
+  osm (one-shot $one-shot-timeout lmet)
+  oss (one-shot $one-shot-timeout lshift)
+  osa (one-shot $one-shot-timeout lalt)
+  osc (one-shot $one-shot-timeout lctrl)
+
+  swapper (multi
+    (on-press   press-virtualkey    swapperrcmd)
+    (on-press   tap-virtualkey      swappertab)
+  )
+
+  swapperback (multi
+    (on-press   press-virtualkey    swapperrcmd)
+    (on-press   tap-virtualkey      swapperstab)
+  )
+
+  toggle_num_word
+    (switch
+      ((layer def)) (layer-switch num) break
+      ((layer num)) (layer-switch def) break
+    )
+
+  toggle_plain_mode
+    (switch
+      ((layer def)) (layer-switch plain) break
+      ((layer plain)) (layer-switch def) break
+    )
+
+  toggle_combos
+    (switch
+      ((layer def)) (layer-switch nocombo) break
+      ((layer nocombo)) (layer-switch def) break
+    )
+
+  num_spc  0
+  num_sym  (tap-hold-release $quick-tap-ms $tapping-term (layer-switch def) (layer-while-held sym))
+  ,000     (macro , Digit0 Digit0 Digit0)
+
+  dsft (macro lsft $double-tap-gap lsft)
+  dctl (macro lctl $double-tap-gap lctl)
+
+  msu (movemouse-accel-up    $mouse-interval $mouse-accel-time $mouse-move-min $mouse-move-max)
+  msd (movemouse-accel-down  $mouse-interval $mouse-accel-time $mouse-move-min $mouse-move-max)
+  msl (movemouse-accel-left  $mouse-interval $mouse-accel-time $mouse-move-min $mouse-move-max)
+  msr (movemouse-accel-right $mouse-interval $mouse-accel-time $mouse-move-min $mouse-move-max)
+  whu (mwheel-up    $wheel-interval $wheel-distance)
+  whd (mwheel-down  $wheel-interval $wheel-distance)
+  whl (mwheel-left  $wheel-interval $wheel-distance)
+  whr (mwheel-right $wheel-interval $wheel-distance)
+  smsu (movemouse-up    $slow-interval $slow-step)
+  smsd (movemouse-down  $slow-interval $slow-step)
+  smsl (movemouse-left  $slow-interval $slow-step)
+  smsr (movemouse-right $slow-interval $slow-step)
+  msslow (layer-while-held mouse-slow)
+  dclk (macro mlft $multi-click-gap mlft)
+  tclk (macro mlft $multi-click-gap mlft $multi-click-gap mlft)
+  toggle_mouse (switch
+    ((layer def)) (layer-switch mouse) break
+    ((layer mouse)) (layer-switch def) break
+  )
+)
+
+(defchordsv2
+  (q w)     tab              $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (r t)     del              $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (y u)     bspc             $combo-timeout first-release (    nav sym fun     nomods plain mouse mouse-slow nocombo)
+
+  (m ,)     @toggle_num_word $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+
+  (v b)     @linestart       $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (m n)     @lineend         $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+
+  (h j)     @delwordback     $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+  (f g)     @delwordfwd      $combo-timeout first-release (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+
+  (b n)     @langtoggle      $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+
+  (q w e r) @toggle_plain_mode $combo-timeout all-released (   nav sym fun num        mouse mouse-slow nocombo)
+  (z x)     @toggle_mouse    $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow nocombo)
+
+  (u i o p) @toggle_combos     $combo-timeout all-released  (    nav sym fun num nomods plain mouse mouse-slow)
+)
+
+(deflayer def
+  @fk1 @fk2 @fk3 @fk4 @fk5 @fk6    @fk7 @fk8 @fk9 @fk10 @fk11 @fk12
+  @q   @w    @e    @r    @t    @y @u    @i        @o      @p
+  @a   @s    @d    @f    @g    @h @j    @k        @l      @;
+  @zfn @xsym @c    @v    @b    @n @m    @,        @dotsym @slashfn
+                   @thumbout   @escnum @spc    @naventer
+)
+
+(deflayer nocombo
+  @fk1 @fk2 @fk3 @fk4 @fk5 @fk6    @fk7 @fk8 @fk9 @fk10 @fk11 @fk12
+  @q   @w    @e    @r    @t    @y @u    @i        @o      @p
+  @a   @s    @d    @f    @g    @h @j    @k        @l      @;
+  @zfn @xsym @c    @v    @b    @n @m    @,        @dotsym @slashfn
+                   @thumbout   @escnum @spc    @naventer
+)
+
+(deflayer nomods
+  _ _ _ _ _ _    _ _ _ _ _ _
+  q w e  r  t    y u  i  o p
+  a s @d @f g    h @j @k l ;
+  z x c  v  b    n m  ,  . /
+          _ _ _ _
+)
+
+(deflayer num
+  _ _ _ _ _ _    _ _ _ _ _ _
+  S-9  S-0  S-5  =    S-6      S-= 7 8 9 S-8
+  @osm @osa @oss @osc bspc     -   4 5 6 /
+  @undo @cut @copy @paste @,000    ,   1 2 3 .
+     XX       @num_sym @num_spc @naventer
+)
+
+(deflayer nav
+  _ _ _ _ _ _    _ _ _ _ _ _
+  tab  home up   end  S-tab      @overview @paste   pgdn pgup  del
+  @wordleft left down right @wordright   enter @osc @oss @osa @osm
+  @delwordback A-x @minimize @delwordfwd bspc    menu A-m    @swapperback @swapper A-/
+                           _ _ _ _
+)
+
+(deflayer sym
+  _ _ _ _ _ _    _ _ _ _ _ _
+  S-=  -    S-8   /    =      S-7 S-9    S-0    lbrc rbrc
+  @osm @osa @oss  @osc S-4    S-3 S-lbrc S-rbrc '    S-'
+  grv  S-6  S-grv S-5  S-2    S-\ \      S-/    S-1  S-;
+                      _   _   S-- _
+)
+
+(deflayer fun
+  f1 f2 f3 f4 f5 f6    f7 f8 f9 f10 f11 f12
+  mute prev  end   enter tab     caps f7 f8 f9 f10
+  @osm @osa  @oss  @osc  pp      home f4 f5 f6 f11
+  @emoji @screenshot @dsft @dctl bspc    next f1 f2 f3 f12
+               _    vold volu _
+)
+
+(deflayer plain
+  @fk1 @fk2 @fk3 @fk4 @fk5 @fk6    @fk7 @fk8 @fk9 @fk10 @fk11 @fk12
+  q w e r t    y u i o p
+  a s d f g    h j k l ;
+  z x c v b    n m , . /
+  lalt lmet spc  rmet
+)
+
+(deflayer mouse
+  _ _ _ _ _ _    _ _ _ _ _ _
+  @toggle_mouse mlft @msu mrgt mmid    lctl @whl @whu @whr @dclk
+  @msslow       @msl @msd @msr XX      lsft mlft @whd mrgt @msslow
+  lmet          lalt lsft lctl XX      lalt mbck mmid mfwd @tclk
+                       XX   lctl mlft lalt
+)
+
+(deflayer mouse-slow
+  _ _ _ _ _ _    _ _ _ _ _ _
+  XX   XX    @smsu XX    XX    lctl @whl @whu @whr @dclk
+  XX   @smsl @smsd @smsr XX    lsft mlft @whd mrgt XX
+  lmet lalt  lsft  lctl  XX    lalt mbck mmid mfwd @tclk
+                  XX   lctl mlft lalt
+)
