@@ -2,8 +2,9 @@
 
 Everything about the layout — shortcuts, layer maps, combos, tuning — lives
 in the [main README](../README.md). This page is only how to get it running
-on macOS. The config itself is the shared [`kanata.kbd`](../kanata.kbd);
-`install.sh` deploys it to `/etc/kanata/mac.kbd`.
+on macOS. The config is this folder's [`kanata.kbd`](kanata.kbd) — the
+macOS build of the shared design (46 remapped keys; the F-row carries the
+printed Apple media row); `install.sh` deploys it to `/etc/kanata/mac.kbd`.
 
 ## Install
 
