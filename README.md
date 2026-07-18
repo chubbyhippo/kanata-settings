@@ -3,9 +3,12 @@
 A [kanata](https://github.com/jtroo/kanata) config with "timerless" home row
 mods: type as fast as you want with zero misfires and zero letter reordering,
 while keeping all four modifiers plus navigation, symbol, number, and
-function layers on the home position. **One config for Windows and macOS** —
-[`kanata.kbd`](kanata.kbd) — with the platform differences in
-`(platform ...)` blocks that kanata resolves at load.
+function layers on the home position. **One design, two configs** —
+[`wins/kanata.kbd`](wins/kanata.kbd) for Windows (34 remapped keys) and
+[`mac/kanata.kbd`](mac/kanata.kbd) for macOS (46 — its F-row carries the
+printed Apple media functions). The layers, combos, and timings are
+identical twins across the two files; this README documents the layout
+once, with divergent cells annotated `win / mac`.
 
 **The one rule:** while you're typing, the home row is just letters — mods
 only arm after a 250 ms pause. Rhythm for any shortcut: **tiny pause → hold
@@ -66,7 +69,8 @@ Where a shortcut's underlying chord differs per OS it's written `win / mac`.
 | Type a number / amount | `m`+`,` → Num Word on; Space types 0; tap the inner-left thumb to exit |
 | Backspace / Delete | combos `y·u` / `r·t`, or FUN `b` (Enter stays a physical key; Tab has `q·w`) |
 | Media (audio) | FUN (hold `/`): `w` = reWind (prev) · `g` = Go (play/pause) · `n` = Next · `q` = Quiet (mute); vol down / up on the left thumbs |
-| F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits |
+| F-row media — brightness, Mission Control, keyboard backlight, volume (mac) | just press the printed key: the F-row keeps its Apple meanings (the config re-emits them — see the DEF map) |
+| F-keys | hold `z` (FUN): right hand = F1–F12, in the same spots as NUM's digits — or the physical F-row, which types plain F1–F12 while FUN is held (on win it does bare, too) |
 | Mouse | `z`+`x` toggles the mouse layer (tap `q` to exit): move `e s d f`, click `j`/`w`/`l`/`r` or Space, middle-click `,`/`t`, scroll `i`/`k` up/down · `u`/`o` left/right, back/forward `m`/`.`; double-click `p`, triple-click `/`; modifiers `y`/`h`/`n` = Ctrl/Shift/Alt; hold `a`/`;` = precision (slow) move |
 | Caps Lock | the physical Caps Lock key, or FUN `y` (shoutY) |
 | Esc | tap the inner-left thumb |
@@ -105,6 +109,18 @@ Thumbs:
 
 `★` = Start menu (win) / Spotlight (mac). Physical thumbs: win
 LWin·LAlt·Space·RAlt, mac LOpt·LCmd·Space·RCmd.
+
+**F-row.** On win the F-row types F1–F12, exactly as stock. On mac it
+carries its printed Apple functions — `F1`/`F2` brightness, `F3` Mission
+Control, `F4` Launchpad, `F5`/`F6` keyboard backlight, `F7`–`F9`
+previous / play-pause / next, `F10`–`F12` mute / vol− / vol+. kanata has to
+re-emit these itself: its exclusive device grab sits below Apple's fn
+translation, so an unmapped F-row would reach macOS as bare F1–F12 and the
+media functions would be lost — this also means fn+F can't swap meanings
+while kanata runs; hold FUN for plain F-keys instead. On a newer Mac whose
+F4–F6 keycaps read Spotlight / Dictation / Do Not Disturb, swap
+`lpad bldn blup` for `sls dtn dnd` in `mac/kanata.kbd`'s `fk4`–`fk6`
+alias lines.
 
 ### NAV — hold the right thumb
 
@@ -213,8 +229,11 @@ the pinky column (`p` `;` `/`). A region screenshot (Win+Shift+S /
 Cmd+Shift+4) is on `x`, the emoji picker (Win+. / Cmd+Ctrl+Space) on `z`,
 and `c` / `v` tap Shift / Ctrl twice for you — IntelliJ's Search Everywhere
 and Run Anything. So hold FUN with `z` for the right-hand F-keys, or with
-the right pinky (`/`) for the left-hand mnemonics. (mac: the physical
-fn/Globe key is untouched, so fn-row media functions still work.)
+the right pinky (`/`) for the left-hand mnemonics. While FUN is held, the
+physical F-row also types plain F1–F12 — on mac that's the way to reach
+real F-keys, since the bare F-row carries the Apple media functions (see
+the DEF map) and fn+F can't swap meanings under kanata (the fn/Globe key
+itself stays untouched).
 
 ### MOUSE — toggle with `z`+`x` (tap `q` to exit)
 
@@ -331,9 +350,25 @@ can fix typos while entering numbers.
 
 ## What's remapped
 
-Only 34 keys. Number row, F-row, Tab, Caps Lock, Esc, Enter, Backspace,
-Shift, arrows, and Delete are untouched — plus right Ctrl and Fn on win,
-fn/Globe and right Opt (accents) on mac.
+win remaps **34 keys**, mac **46** — the same 34 plus the F-row.
+
+### win — 34 keys
+
+The F-row, number row, Tab, Caps Lock, Esc, Enter, Backspace, Shift,
+arrows, and Delete are untouched — plus right Ctrl and Fn. The F-row
+types F1–F12 exactly as stock (it's mapped straight through), and the
+laptop's own Fn media combos keep working — they're handled below the
+keyboard stream kanata hooks.
+
+### mac — 46 keys
+
+The 34 shared keys plus the twelve F-row keys, remapped to their printed
+Apple functions — brightness, Mission Control, Launchpad, keyboard
+backlight, transport, mute/volume (see the DEF map; hold FUN for plain
+F1–F12). Number row, Tab, Caps Lock, Esc, Enter, Backspace, Shift,
+arrows, and Delete are untouched — plus fn/Globe and right Opt (accents).
+
+The 34 shared keys, identical on both platforms:
 
 | Physical key (win / mac) | Tap | Hold |
 |---|---|---|
@@ -346,14 +381,16 @@ fn/Globe and right Opt (accents) on mac.
 
 ## After editing the config
 
-Run `kanata --cfg kanata.kbd --check` first — a config that fails the check
-won't load, so the running instance keeps working. Then copy the file to
-where the launcher reads it — `%USERPROFILE%\kanata.kbd` (win) or
+Edit the platform's file — `wins/kanata.kbd` or `mac/kanata.kbd` — and run
+`kanata --cfg <file> --check` first: a config that fails the check won't
+load, so the running instance keeps working. Then copy the file to where
+the launcher reads it — `%USERPROFILE%\kanata.kbd` (win) or
 `/etc/kanata/mac.kbd` (mac) — and restart kanata to apply: re-run
 `kanata.bat` (win) or
-`sudo launchctl kickstart -k system/dev.kanata.kanata` (mac). The platform
-blocks mean each OS only validates its own branch — check on the machine
-you're editing for.
+`sudo launchctl kickstart -k system/dev.kanata.kanata` (mac). The two files
+share one design — a change to the layers, combos, templates, or timings
+lands in BOTH, kept line-comparable on purpose; only the alias values, the
+`defsrc`/`plain` rows, and the mac F-row differ.
 
 ## Troubleshooting
 
@@ -374,7 +411,8 @@ you're editing for.
 
 ## Tuning knobs
 
-Everything tunable is a named `defvar` at the top of `kanata.kbd`:
+Everything tunable is a named `defvar` at the top of each config
+(`wins/kanata.kbd`, `mac/kanata.kbd` — keep the two in step):
 
 - `tapping-term 300` — lower = mods trigger faster when held, slightly
   higher misfire risk
@@ -385,8 +423,8 @@ Everything tunable is a named `defvar` at the top of `kanata.kbd`:
   `multi-click-gap` — the FUN double-mods and mouse multi-click macros
 - Mod order: edit the ten `a`–`;` alias lines (and the `@osm @osa @oss
   @osc` rows in each layer)
-- mac: remap only specific keyboards by uncommenting
-  `macos-dev-names-include` in `defcfg`
+- mac: remap only specific keyboards by adding
+  `macos-dev-names-include` to `mac/kanata.kbd`'s `defcfg`
 
 ## Credits
 
