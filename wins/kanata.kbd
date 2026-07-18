@@ -60,86 +60,39 @@
   (multi $tap-key @tap)
 )
 
-(platform (win winiov2 wintercept)
-  (defsrc
-    q w e r t    y u i o p
-    a s d f g    h j k l ;
-    z x c v b    n m , . /
-    lmet lalt spc  ralt
-  )
+(defsrc
+  q w e r t    y u i o p
+  a s d f g    h j k l ;
+  z x c v b    n m , . /
+  lmet lalt spc  ralt
 )
 
-(platform (win winiov2 wintercept)
-  (defalias
-    thumbout (tap-hold-release $quick-tap-ms $tapping-term lmet XX)
+(defalias
+  thumbout (tap-hold-release $quick-tap-ms $tapping-term lmet XX)
 
-    undo C-z
-    cut  C-x
-    copy C-c
-    paste C-v
-    overview M-tab
-    wordleft C-left
-    wordright C-right
-    delwordback C-bspc
-    delwordfwd  C-del
-    minimize M-down
-    linestart home
-    lineend  end
-    langtoggle M-spc
-    emoji M-.
-    screenshot M-S-s
-  )
+  undo C-z
+  cut  C-x
+  copy C-c
+  paste C-v
+  overview M-tab
+  wordleft C-left
+  wordright C-right
+  delwordback C-bspc
+  delwordfwd  C-del
+  minimize M-down
+  linestart home
+  lineend  end
+  langtoggle M-spc
+  emoji M-.
+  screenshot M-S-s
 )
 
-(platform (win winiov2 wintercept)
-  (defvirtualkeys
-    to-base (layer-switch def)
-    ops (one-shot-pause-processing 10)
-    swapperrcmd lalt
-    swappertab tab
-    swapperstab S-tab
-  )
-)
-
-(platform (macos)
-  (defsrc
-    q w e r t    y u i o p
-    a s d f g    h j k l ;
-    z x c v b    n m , . /
-    lalt lmet spc  rmet
-  )
-)
-
-(platform (macos)
-  (defalias
-    thumbout (tap-hold-release $quick-tap-ms $tapping-term (macro M-spc) XX)
-
-    undo M-z
-    cut  M-x
-    copy M-c
-    paste M-v
-    overview C-up
-    wordleft A-left
-    wordright A-right
-    delwordback A-bspc
-    delwordfwd  A-del
-    minimize M-m
-    linestart M-left
-    lineend  M-right
-    langtoggle C-spc
-    emoji M-C-spc
-    screenshot M-S-4
-  )
-)
-
-(platform (macos)
-  (defvirtualkeys
-    to-base (layer-switch def)
-    ops (one-shot-pause-processing 10)
-    swapperrcmd rmet
-    swappertab tab
-    swapperstab S-tab
-  )
+(defvirtualkeys
+  to-base (layer-switch def)
+  ops (one-shot-pause-processing 10)
+  swapperrcmd lalt
+  swappertab tab
+  swapperstab S-tab
 )
 
 (defalias
@@ -330,22 +283,11 @@
                _    vold volu _
 )
 
-(platform (win winiov2 wintercept)
-  (deflayer plain
-    q w e r t    y u i o p
-    a s d f g    h j k l ;
-    z x c v b    n m , . /
-    lmet lalt spc  ralt
-  )
-)
-
-(platform (macos)
-  (deflayer plain
-    q w e r t    y u i o p
-    a s d f g    h j k l ;
-    z x c v b    n m , . /
-    lalt lmet spc  rmet
-  )
+(deflayer plain
+  q w e r t    y u i o p
+  a s d f g    h j k l ;
+  z x c v b    n m , . /
+  lmet lalt spc  ralt
 )
 
 (deflayer mouse
