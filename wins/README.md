@@ -2,7 +2,9 @@
 
 Everything about the layout — shortcuts, layer maps, combos, tuning — lives
 in the [main README](../README.md). This page is only how to get it running
-on Windows. The config itself is the shared [`kanata.kbd`](../kanata.kbd).
+on Windows. The config is this folder's [`kanata.kbd`](kanata.kbd) — the
+Windows build of the shared design (34 remapped keys; the F-row stays
+stock).
 
 ## Install
 
@@ -11,7 +13,7 @@ Needs Windows 10/11 and `kanata.exe` (**v1.11.0+**,
 
 ```powershell
 # config → %USERPROFILE%
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/kanata.kbd" -OutFile "$Home\kanata.kbd"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/kanata.kbd" -OutFile "$Home\kanata.kbd"
 ```
 
 ```powershell
