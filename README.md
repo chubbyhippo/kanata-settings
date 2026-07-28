@@ -1,12 +1,20 @@
 # kanata-settings
 
 [kanata](https://github.com/jtroo/kanata) timerless home-row-mods layout —
-one design, two configs. Requires kanata v1.11.0+.
+one design, six configs. Requires kanata v1.11.0+.
 
 | Config | Platform | Remapped keys | F-row |
 |---|---|---|---|
 | [`wins/kanata.kbd`](wins/kanata.kbd) | Windows | 34 | stock F1–F12 |
 | [`mac/kanata.kbd`](mac/kanata.kbd) | macOS | 46 | printed Apple media functions |
+| [`debian/kanata.kbd`](debian/kanata.kbd) | Debian family — incl. Ubuntu, Mint | 34 | stock F1–F12 |
+| [`fedora/kanata.kbd`](fedora/kanata.kbd) | Fedora | 34 | stock F1–F12 |
+| [`arch/kanata.kbd`](arch/kanata.kbd) | Arch | 34 | stock F1–F12 |
+| [`guix/kanata.kbd`](guix/kanata.kbd) | Guix | 34 | stock F1–F12 |
+
+The four Linux configs are byte-identical; only the install machinery beside
+them differs. They assume GNOME — see
+[DE-specific aliases](#de-specific-aliases).
 
 ## Install
 
@@ -14,23 +22,28 @@ one design, two configs. Requires kanata v1.11.0+.
 |---|---|
 | Windows | [wins/README.md](wins/README.md) |
 | macOS | [mac/README.md](mac/README.md) |
+| Debian, Ubuntu, Mint, derivatives | [debian/README.md](debian/README.md) |
+| Fedora | [fedora/README.md](fedora/README.md) |
+| Arch | [arch/README.md](arch/README.md) |
+| Guix | [guix/README.md](guix/README.md) |
 
 ## Notation
 
 | Token | Meaning |
 |---|---|
-| Gui | Win (win) / Cmd (mac) |
-| Alt | Alt (win) / Opt (mac) |
+| Gui | Win (win) / Cmd (mac) / Super (linux) |
+| Alt | Alt (win) / Opt (mac) / Alt (linux) |
 | `win / mac` | the Windows value, then the macOS one |
+| `linux:` | shown only where Linux differs from Windows; otherwise Linux matches the Windows value |
 | `os…` | one-shot modifier — applies to the next keypress |
 | `LAYER + key` | hold that layer's key (see its heading), then press `key` |
 | keycap | tap = top legend, hold = bottom legend; blank = no-op |
 
 ## Thumbs
 
-| Thumb | Physical key (win / mac) | Tap | Hold |
+| Thumb | Physical key (win, linux / mac) | Tap | Hold |
 |---|---|---|---|
-| outer-left | LWin / LOpt | Start menu / Spotlight | — |
+| outer-left | LWin / LOpt | Start menu / Spotlight · linux: Activities overview | — |
 | inner-left | LAlt / LCmd | Esc | NUM |
 | Space | Space | Space | — |
 | right | RAlt / RCmd | Enter | NAV |
@@ -55,8 +68,8 @@ one design, two configs. Requires kanata v1.11.0+.
 | Undo / Cut / Copy / Paste | NUM + `z` / `x` / `c` / `v` |
 | Ctrl chord (Emacs, terminal) | pause, hold `f`/`j`, press a cross-hand key |
 | App switcher (Alt-Tab / Cmd-Tab) | NAV + `.` to cycle, `,` steps back; release NAV to commit |
-| Minimize window | NAV + `c` — Win+Down / Cmd+M |
-| Windows overview | NAV + `y` — Task View / Mission Control |
+| Minimize window | NAV + `c` — Win+Down / Cmd+M · linux: Super+H |
+| Windows overview | NAV + `y` — Task View / Mission Control · linux: Activities overview |
 | Enter | tap the right thumb · NAV + `h` · physical Enter |
 | Close window | win: FUN + `s` then `j` (Alt+F4) · mac: NUM + `a`, release, `q` (Cmd+Q) |
 | Reopen tab (Ctrl/Cmd+Shift+T) | NUM: tap `f` win / `a` mac, tap `d`, release, press `t` |
@@ -76,8 +89,8 @@ one design, two configs. Requires kanata v1.11.0+.
 | Forward delete | combo `r`+`t` · NAV + `p` |
 | Start menu / Spotlight | tap the outer-left thumb |
 | Gui + a left-hand key (Win+E, Cmd+Q) | NUM: tap `a`, release, press the letter |
-| Screenshot | FUN + `x` — Win+Shift+S / Cmd+Shift+4 |
-| Emoji picker | FUN + `z` — Win+. / Cmd+Ctrl+Space |
+| Screenshot | FUN + `x` — Win+Shift+S / Cmd+Shift+4 · linux: Print |
+| Emoji picker | FUN + `z` — Win+. / Cmd+Ctrl+Space · linux: Ctrl+. |
 | Search Everywhere / Run Anything (IntelliJ) | FUN + `c` (2×Shift) / `v` (2×Ctrl) |
 | Switch input language | combo `b`+`n` — Win+Space / Ctrl+Space |
 | Select text | hold physical Shift + NAV arrows |
@@ -117,14 +130,14 @@ Thumbs:
  outer   inner   Space   right
 ```
 
-`★` = Start menu (win) / Spotlight (mac).
+`★` = Start menu (win) / Spotlight (mac) / Activities overview (linux).
 
 F-row:
 
 | | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 | F10 | F11 | F12 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **mac, bare** | Bright− | Bright+ | Mission Control | Launchpad | Backlight− | Backlight+ | Prev | Play/Pause | Next | Mute | Vol− | Vol+ |
-| **win, or FUN held** | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 | F10 | F11 | F12 |
+| **win & linux, or FUN held** | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 | F10 | F11 | F12 |
 
 ### NAV — hold the right thumb
 
@@ -142,10 +155,10 @@ Space = Space; the other thumbs keep their DEF roles
 
 | Label | Meaning |
 |---|---|
-| `Ovrvw` | Task View (Win+Tab) / Mission Control (Ctrl+↑) |
+| `Ovrvw` | Task View (Win+Tab) / Mission Control (Ctrl+↑) · linux: Activities overview (a bare Super tap) |
 | `Wrd←` `Wrd→` | move word — Ctrl+arrow / Opt+arrow |
 | `Dlw←` `Dlw→` | delete word — Ctrl+Bksp/Del / Opt+Bksp/Del |
-| `Min` | minimize — Win+Down / Cmd+M |
+| `Min` | minimize — Win+Down / Cmd+M · linux: Super+H |
 | `Swp←` `Swp→` | app switcher — holds Alt / Cmd and taps (S-)Tab; releasing NAV commits |
 | `Menu` | context-menu key (Shift+F10 win) |
 | `M-x` `M-m` `M-/` | Alt+x / Alt+m / Alt+`/` (Emacs; kanata's `M-` here is Gui, so Meta is spelled `A-`) |
@@ -200,8 +213,8 @@ Left thumbs = Vol− (inner-left) / Vol+ (Space) · physical F-row = plain F1–
 
 | Label | Meaning |
 |---|---|
-| `Shot` | region screenshot — Win+Shift+S / Cmd+Shift+4 |
-| `Emoji` | emoji picker — Win+. / Cmd+Ctrl+Space |
+| `Shot` | region screenshot — Win+Shift+S / Cmd+Shift+4 · linux: Print |
+| `Emoji` | emoji picker — Win+. / Cmd+Ctrl+Space · linux: Ctrl+. |
 | `2×Sft` `2×Ctl` | double-tap Shift / Ctrl — IntelliJ Search Everywhere / Run Anything |
 
 ### MOUSE — toggle with combo `z`+`x`
@@ -290,35 +303,69 @@ normal mod.
 |---|---|---|
 | win | 34 | F-row, number row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl, Fn |
 | mac | 46 — the 34 plus the F-row | number row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, fn/Globe, right Opt |
+| linux | 34 — the same set as win | F-row, number row, Tab, Caps Lock, Esc, Enter, Backspace, Shift, arrows, Delete, right Ctrl |
 
-The 34 shared keys, identical on both platforms:
+The 34 shared keys, identical on every platform:
 
-| Physical key (win / mac) | Tap | Hold |
+| Physical key (win, linux / mac) | Tap | Hold |
 |---|---|---|
-| LWin / LOpt | Start menu / Spotlight | — |
+| LWin / LOpt | Start menu / Spotlight · linux: Activities overview | — |
 | LAlt / LCmd | Esc | NUM |
 | RAlt / RCmd | Enter | NAV |
 | `a s d f` / `j k l ;` | the letter | Gui Alt Shift Ctrl / Ctrl Shift Alt Gui |
 | `z` / `/` | the letter / symbol | FUN |
 | `x` / `.` | the letter / symbol | SYM |
 
+## DE-specific aliases
+
+The Linux configs assume **GNOME**. Four aliases are the only DE-dependent
+lines — on another desktop, edit them in each distro's `kanata.kbd`.
+
+| Alias | win | mac | linux (GNOME) | GNOME source |
+|---|---|---|---|---|
+| `overview` | `M-tab` | `C-up` | `lmet` — a bare Super tap opens the Activities overview | mutter `overlay-key` = `'Super'` |
+| `minimize` | `M-down` | `M-m` | `M-h` | `org.gnome.desktop.wm.keybindings minimize` = `['<Super>h']` |
+| `emoji` | `M-.` | `M-C-spc` | `C-.` | GTK `misc.insert-emoji` = Ctrl+period / Ctrl+semicolon |
+| `screenshot` | `M-S-s` | `M-S-4` | `prnt` | `org.gnome.shell show-screenshot-ui` = `["Print"]` |
+
+Every other alias matches the Windows file: `langtoggle` is `M-spc` on both
+(GNOME `switch-input-source` = `['<Super>space']`), the swapper holds Alt
+(GNOME `switch-applications` = `['<Super>Tab','<Alt>Tab']`), and the
+Ctrl-based editing, word motion, and Home/End values are toolkit-level.
+
+On **Cinnamon** (Linux Mint's default, and available on any of the four
+distros) two of the four are unbound upstream — bind them yourself in
+Keyboard settings, then point the alias at what you chose:
+
+| Alias | GNOME | Cinnamon | Cinnamon source |
+|---|---|---|---|
+| `overview` | `lmet` | **unbound** — bind Expo or Scale | muffin `overlay-key` default `''` |
+| `minimize` | `M-h` | **unbound** | cinnamon-desktop `minimize` default `[]` |
+| `emoji` | `C-.` | `C-.` — works | GTK-level, not desktop-level |
+| `screenshot` | `prnt` | `prnt` — works | cinnamon-desktop media-keys `screenshot` = `['Print']` |
+
+Cinnamon's `switch-input-source` is also `['<Super>space']`, so `langtoggle`
+needs no change.
+
 ## After editing the config
 
-Shared parts — layers, combos, templates, timings — change in BOTH files;
+Shared parts — layers, combos, templates, timings — change in ALL SIX files;
 only the alias values, the `defsrc`/`plain` rows, and the mac F-row differ.
+The four Linux files stay byte-identical to one another.
 
-| Step | win | mac |
-|---|---|---|
-| Validate | `kanata.exe --cfg wins\kanata.kbd --check` | `kanata --cfg mac/kanata.kbd --check` |
-| Deploy to | `%USERPROFILE%\kanata.kbd` | `/etc/kanata/mac.kbd`, or re-run `mac/install.sh` |
-| Reload | re-run `kanata.bat` | `sudo launchctl kickstart -k system/dev.kanata.kanata` |
+| Platform | Validate | Deploy to | Reload |
+|---|---|---|---|
+| win | `kanata.exe --cfg wins\kanata.kbd --check` | `%USERPROFILE%\kanata.kbd` | re-run `kanata.bat` |
+| mac | `kanata --cfg mac/kanata.kbd --check` | `/etc/kanata/mac.kbd`, or re-run `mac/install.sh` | `sudo launchctl kickstart -k system/dev.kanata.kanata` |
+| debian, fedora, arch | `kanata --cfg <distro>/kanata.kbd --check` | `~/.config/kanata/kanata.kbd`, or re-run that folder's `install.sh` | `systemctl --user restart kanata.service` |
+| guix | `guix shell kanata -- kanata --cfg guix/kanata.kbd --check` | `sudo guix system reconfigure` | `sudo herd restart kanata-0` |
 
 A config that fails `--check` never loads, so the running instance keeps
 working.
 
 ## Tuning knobs
 
-Named `defvar`s at the top of each config — keep the two files in step.
+Named `defvar`s at the top of each config — keep all six files in step.
 
 | Knob | Controls |
 |---|---|
@@ -332,6 +379,7 @@ Named `defvar`s at the top of each config — keep the two files in step.
 | `double-tap-gap`, `multi-click-gap` | FUN double-mod and mouse multi-click macros |
 | the ten `a`–`;` alias lines | mod order (plus each layer's `@osm @osa @oss @osc` row) |
 | `macos-dev-names-include` (mac `defcfg`) | remap only specific keyboards |
+| `linux-dev-names-include` (linux `defcfg`) | the same, on Linux — see also `linux-dev`, `linux-dev-names-exclude`, `linux-continue-if-no-devs-found` |
 
 ## Credits
 
