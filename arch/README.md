@@ -13,7 +13,7 @@ design, 34 remapped keys, F-row stock — to `~/.config/kanata/kanata.kbd`.
 | Install it with | `paru -S kanata-bin`, or `cargo install kanata` |
 | Desktop | GNOME defaults — see [DE-specific aliases](../README.md#de-specific-aliases) |
 | Derivatives | See [Manjaro and other Arch derivatives](#manjaro-and-other-arch-derivatives) |
-| Service | systemd user unit. On **Artix** or any other OpenRC host, use [`debian/install-openrc.sh`](../debian/README.md#openrc) with this folder's `kanata.kbd` — the init script is tied to OpenRC, not to a distro |
+| Service | systemd user unit. On **Artix** or any other OpenRC host, use [`openrc/`](../openrc/README.md) — that folder is keyed to the init system, not the distro |
 
 ## Install
 
@@ -62,7 +62,7 @@ things differ.
 | Arch | `paru -S kanata-bin` | none by default — check your own |
 | **Manjaro** | AUR support is **off by default** in `pamac`, and no `yay`/`paru` is preinstalled. Manjaro Stable also lags Arch by a week or two, so the source-built `kanata` AUR package can fail against an older Rust — prefer `kanata-bin`, or `cargo install kanata` | **KDE Plasma** is the flagship edition |
 | EndeavourOS, Garuda, CachyOS | `paru -S kanata-bin` as on Arch | varies by edition |
-| Artix | as Arch, but OpenRC/runit/s6 — see [`debian/install-openrc.sh`](../debian/README.md#openrc) | varies |
+| Artix | as Arch, but OpenRC/runit/s6 — see [`openrc/`](../openrc/README.md) | varies |
 
 kanata is not in Manjaro's repos, because it is not in Arch's official
 repos either — Manjaro's are built from Arch's. The installer's version gate

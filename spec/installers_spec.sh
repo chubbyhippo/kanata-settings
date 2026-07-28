@@ -22,7 +22,7 @@ Describe 'behaviour shared by every installer'
       setup.sh                 1.12.0
       setup.sh                 2.0.0
       debian/install.sh        1.11.0
-      debian/install-openrc.sh 1.11.0
+      openrc/install.sh       1.11.0
       fedora/install.sh        1.12.3
       arch/install.sh          1.12.0
     End
@@ -39,7 +39,7 @@ Describe 'behaviour shared by every installer'
     Parameters
       setup.sh                 1.9.0
       debian/install.sh        1.9.0
-      debian/install-openrc.sh 1.9.0
+      openrc/install.sh       1.9.0
       fedora/install.sh        1.10.9
       arch/install.sh          0.11.0
     End
@@ -65,7 +65,7 @@ Describe 'behaviour shared by every installer'
     Parameters
       setup.sh
       debian/install.sh
-      debian/install-openrc.sh
+      openrc/install.sh
       fedora/install.sh
       arch/install.sh
     End
@@ -81,19 +81,19 @@ Describe 'behaviour shared by every installer'
 End
 
 Describe 'the OpenRC init script'
-  Include ./debian/install-openrc.sh
+  Include ./openrc/install.sh
 
   substitute() {
     sed -e "1s|^#!/sbin/openrc-run\$|#!/usr/bin/openrc-run|" \
         -e "s|^command=\"/usr/bin/kanata\"\$|command=\"/home/mk/.cargo/bin/kanata\"|" \
         -e "s|^command_args=\".*\"\$|command_args=\"--cfg /home/mk/.config/kanata/kanata.kbd --no-wait\"|" \
         -e "s|^command_user=\"user\"\$|command_user=\"mk\"|" \
-        ./debian/kanata.openrc > "$1"
+        ./openrc/kanata.openrc > "$1"
   }
 
   Describe 'the placeholder guard'
     It 'refuses the unsubstituted template'
-      When run verify_substituted ./debian/kanata.openrc
+      When run verify_substituted ./openrc/kanata.openrc
       The status should be failure
       The stderr should include 'placeholder substitution failed'
     End
@@ -124,17 +124,17 @@ Describe 'the OpenRC init script'
 
   Describe 'the shipped template'
     It 'uses --cfg, not the --config flag kanata does not have'
-      When call grep -c -- '--cfg' ./debian/kanata.openrc
+      When call grep -c -- '--cfg' ./openrc/kanata.openrc
       The output should eq 1
     End
 
     It 'passes --no-wait so the supervisor can restart it'
-      When call grep -c -- '--no-wait' ./debian/kanata.openrc
+      When call grep -c -- '--no-wait' ./openrc/kanata.openrc
       The output should eq 1
     End
 
     It 'runs as a named user rather than root'
-      When call grep -c '^command_user=' ./debian/kanata.openrc
+      When call grep -c '^command_user=' ./openrc/kanata.openrc
       The output should eq 1
     End
   End
@@ -158,6 +158,7 @@ Describe 'the udev rule'
     debian
     fedora
     arch
+    openrc
   End
 
   Example "$1/99-input.rules grants the uinput group access to /dev/uinput"

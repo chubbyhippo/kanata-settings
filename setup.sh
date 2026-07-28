@@ -263,6 +263,7 @@ patch_desktop() {
 }
 
 config_folder() {
+    [ "$init" = openrc ] && { printf 'openrc'; return 0; }
     case "$family" in
         debian|fedora|arch) printf '%s' "$family" ;;
         *)                  printf 'debian' ;;
@@ -334,7 +335,7 @@ install_systemd() {
 
 install_openrc() {
     tmp_init="$(mktemp)"
-    fetch "debian/kanata.openrc" "$tmp_init"
+    fetch "openrc/kanata.openrc" "$tmp_init"
     openrc_run="$(command -v openrc-run || echo /sbin/openrc-run)"
     sed -e "1s|^#!/sbin/openrc-run$|#!$openrc_run|" \
         -e "s|^command=\"/usr/bin/kanata\"$|command=\"$kanata_bin\"|" \

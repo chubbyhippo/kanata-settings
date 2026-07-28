@@ -17,7 +17,7 @@
 
 set -eu
 
-LINUX_CONFIGS="debian fedora arch guix"
+LINUX_CONFIGS="debian fedora arch guix openrc"
 SYSTEMD_FOLDERS="debian fedora arch"
 ALL_CONFIGS="wins mac debian fedora arch guix"
 

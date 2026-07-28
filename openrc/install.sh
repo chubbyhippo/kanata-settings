@@ -19,16 +19,16 @@
 set -eu
 
 required_version="1.11.0"
-install_hint="No Debian-family archive carries a usable kanata: Debian's is
-  1.9.0 (sid/forky only, older than the $required_version this config needs),
-  and Ubuntu publishes none at all — nor do Mint, Pop!_OS and the rest
-  downstream of it. Install a current one directly:
+install_hint="kanata packaging varies across OpenRC distros: Artix has it in
+  the AUR (kanata-bin), Devuan inherits Debian's 1.9.0 which is below the
+  $required_version this config needs, and others may not package it at all.
+  Install a current one directly:
       cargo install kanata
   or drop a release binary from https://github.com/jtroo/kanata/releases
   into ~/.local/bin and chmod +x it."
 
 main() {
-    base="https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/debian"
+    base="https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/openrc"
     config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/kanata"
     config_path="$config_dir/kanata.kbd"
     initd_script="/etc/init.d/kanata"

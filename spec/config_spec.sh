@@ -50,6 +50,7 @@ Describe 'the shipped configs'
       fedora
       arch
       guix
+      openrc
     End
 
     Example "$1/kanata.kbd keeps def as the first deflayer"
@@ -73,6 +74,7 @@ Describe 'the shipped configs'
       fedora
       arch
       guix
+      openrc
     End
 
     Example "$1/kanata.kbd passes kanata --check"

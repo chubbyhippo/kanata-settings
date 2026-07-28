@@ -16,13 +16,13 @@ Pop!_OS and the rest. Nothing in `install.sh` is Debian-specific; see
 | **Not** from your distro's archive | Debian ships **1.9.0-12** (sid/forky only, absent from trixie) — older than the chords-v2 and virtualkey features this config needs, and `install.sh` refuses it. Ubuntu publishes **no** kanata package at all, and neither does Mint |
 | Install it with | `cargo install kanata`, or a release binary in `~/.local/bin` (`chmod +x`) |
 | Desktop | GNOME defaults — see [DE-specific aliases](../README.md#de-specific-aliases) |
-| Service | systemd user unit, or an OpenRC service — see [Derivatives](#derivatives) and [OpenRC](#openrc) |
+| Service | systemd user unit. On an OpenRC host use [`openrc/`](../openrc/README.md) instead |
 
 ## Derivatives
 
 Two things vary across the family: the **init system** — `install.sh`
-installs a systemd user unit, [`install-openrc.sh`](#openrc) installs an
-OpenRC service — and the **desktop**, which decides whether the four
+installs a systemd user unit, [`openrc/install.sh`](../openrc/README.md)
+installs an OpenRC service — and the **desktop**, which decides whether the four
 [DE-specific aliases](../README.md#de-specific-aliases) are right. Nothing
 else: the group, udev, and config steps are identical everywhere, and both
 installers share them.
@@ -34,7 +34,7 @@ installers share them.
 | Pop!_OS, Zorin, other GNOME-based | GNOME | Use as-is; spot-check `overview` and `minimize` if the shell is customised |
 | **Linux Mint** | **Cinnamon** | Install works; **`overview` and `minimize` are unbound on Cinnamon** — see the table below |
 | Mint MATE / Xfce editions, Kali, elementary | MATE, Xfce, Pantheon | Install works; review all four aliases against your desktop's own defaults |
-| Devuan, antiX, MX running **OpenRC** | varies | Use [`install-openrc.sh`](install-openrc.sh) instead — see [OpenRC](#openrc) |
+| Devuan, antiX, MX running **OpenRC** | varies | Use [`openrc/`](../openrc/README.md) instead |
 | antiX, MX running **plain sysvinit** | varies | Neither installer applies. Do the group/udev steps by hand from kanata's `docs/setup-linux.md`, then start kanata from your own init script |
 
 On Cinnamon, two of the four aliases are unbound **upstream**, so they do
@@ -79,45 +79,10 @@ systemctl --user start kanata.service
 
 ## OpenRC
 
-For hosts running OpenRC instead of systemd. Same config, same group and
-udev steps — only the service differs.
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/debian/install-openrc.sh | sh
-```
-
-Run it as your normal user; [`install-openrc.sh`](install-openrc.sh) is
-idempotent and refuses to run on a host without `rc-update`/`rc-service`.
-It does everything `install.sh` does, then installs
-[`kanata.openrc`](kanata.openrc) as `/etc/init.d/kanata` and
-`rc-update add kanata default`.
-
-| It substitutes into the init script | With |
-|---|---|
-| the `#!/sbin/openrc-run` shebang | the resolved `command -v openrc-run` |
-| `command="/usr/bin/kanata"` | the resolved `command -v kanata` |
-| `command_args=` config path | your `~/.config/kanata/kanata.kbd` |
-| `command_user="user"` | your username |
-
-If any placeholder survives, the script refuses to install rather than
-leave a broken service behind.
-
-| Service detail | Value |
-|---|---|
-| Runs as | you, not root — OpenRC's `start-stop-daemon` applies your supplementary groups, so `input` and `uinput` carry over |
-| Supervision | `command_background=true` with `pidfile=/run/kanata.pid`; kanata runs in the foreground with `--no-wait` so it never blocks on exit |
-| Ordering | `need localmount` (your `$HOME` must be mounted — the config lives there), `after udev` |
-| Logs | `/var/log/kanata.log` |
-
-| Step | Command |
-|---|---|
-| Status | `sudo rc-service kanata status` |
-| Restart after editing the config | `sudo rc-service kanata restart` |
-| Disable at boot | `sudo rc-update del kanata default` |
-
-The init script is tied to OpenRC, not to Debian — the same two files work
-on Artix, Alpine, or Gentoo. Only the "install kanata itself" advice in the
-script's error message is Debian-family wording.
+Not here — OpenRC is keyed to the init system, not the distro, so it lives
+in [`openrc/`](../openrc/README.md) and serves Artix, Alpine and Gentoo too.
+Devuan, antiX and MX running OpenRC should use that folder; the `kanata.kbd`
+is byte-identical to this one.
 
 ## Running it by hand
 
@@ -133,9 +98,8 @@ script's error message is Debian-family wording.
 |---|---|
 | Validate | `kanata --cfg kanata.kbd --check` |
 | Deploy to | `~/.config/kanata/kanata.kbd`, or re-run the installer |
-| Reload (systemd) | `systemctl --user restart kanata.service` |
-| Reload (OpenRC) | `sudo rc-service kanata restart` |
-| Logs | `journalctl --user -u kanata -f` · OpenRC: `/var/log/kanata.log` |
+| Reload | `systemctl --user restart kanata.service` |
+| Logs | `journalctl --user -u kanata -f` |
 
 ## License
 
