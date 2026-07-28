@@ -12,6 +12,7 @@ design, 34 remapped keys, F-row stock — to `~/.config/kanata/kanata.kbd`.
 | Packaging | AUR, not the official repos: [`kanata-bin`](https://aur.archlinux.org/packages/kanata-bin) (prebuilt), [`kanata`](https://aur.archlinux.org/packages/kanata) (from source), [`kanata-git`](https://aur.archlinux.org/packages/kanata-git). Both tagged packages are at 1.12.0-1, so either satisfies the version floor |
 | Install it with | `paru -S kanata-bin`, or `cargo install kanata` |
 | Desktop | GNOME defaults — see [DE-specific aliases](../README.md#de-specific-aliases) |
+| Derivatives | See [Manjaro and other Arch derivatives](#manjaro-and-other-arch-derivatives) |
 | Service | systemd user unit. On **Artix** or any other OpenRC host, use [`debian/install-openrc.sh`](../debian/README.md#openrc) with this folder's `kanata.kbd` — the init script is tied to OpenRC, not to a distro |
 
 ## Install
@@ -49,6 +50,36 @@ systemctl --user start kanata.service
 |---|---|
 | inner-left thumb (LAlt) + `c` | Ctrl+C |
 | right thumb (RAlt) + `e` | ↑ |
+
+## Manjaro and other Arch derivatives
+
+`install.sh` runs unchanged on Manjaro, EndeavourOS, Garuda and CachyOS —
+they are all systemd, and the group/udev/config steps are identical. Two
+things differ.
+
+| Distro | Getting kanata | Desktop |
+|---|---|---|
+| Arch | `paru -S kanata-bin` | none by default — check your own |
+| **Manjaro** | AUR support is **off by default** in `pamac`, and no `yay`/`paru` is preinstalled. Manjaro Stable also lags Arch by a week or two, so the source-built `kanata` AUR package can fail against an older Rust — prefer `kanata-bin`, or `cargo install kanata` | **KDE Plasma** is the flagship edition |
+| EndeavourOS, Garuda, CachyOS | `paru -S kanata-bin` as on Arch | varies by edition |
+| Artix | as Arch, but OpenRC/runit/s6 — see [`debian/install-openrc.sh`](../debian/README.md#openrc) | varies |
+
+kanata is not in Manjaro's repos, because it is not in Arch's official
+repos either — Manjaro's are built from Arch's. The installer's version gate
+catches anything below v1.11.0 whichever route you take.
+
+On the KDE Plasma edition, four aliases need the KDE values from
+[DE-specific aliases](../README.md#de-specific-aliases). The root
+[`setup.sh`](../setup.sh) detects Plasma and applies them for you; by hand
+it is:
+
+```sh
+sed -i -e 's|^  overview lmet$|  overview M-w|' \
+       -e 's|^  minimize M-h$|  minimize M-pgdn|' \
+       -e 's|^  emoji C-\.$|  emoji M-.|' \
+       -e 's|^  langtoggle M-spc$|  langtoggle M-A-k|' \
+       kanata.kbd
+```
 
 ## Running it by hand
 

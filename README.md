@@ -18,6 +18,30 @@ them differs. They assume GNOME — see
 
 ## Install
 
+One command anywhere — [`setup.sh`](setup.sh) detects the OS, distro family,
+init system, and desktop, then does the right thing:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/setup.sh | sh
+```
+
+| Detected | What it does |
+|---|---|
+| macOS | delegates to `mac/install.sh` |
+| WSL, or Windows under MSYS/Cygwin | installs the Windows config to `%USERPROFILE%` and the Startup launcher |
+| Guix | prints the declarative service snippet — nothing imperative to run |
+| Linux + systemd | groups, udev rule, config, systemd **user** unit |
+| Linux + OpenRC | groups, udev rule, config, `/etc/init.d/kanata` |
+| KDE or Cinnamon | patches the DE-dependent aliases — see [DE-specific aliases](#de-specific-aliases) |
+
+| Flag | Effect |
+|---|---|
+| `--detect-only` | print what was detected, change nothing |
+| `--dry-run` | print every action instead of performing it |
+| `--platform` `--family` `--init` `--desktop` | override any part of the detection |
+
+Or follow the per-platform guide by hand:
+
 | OS | Guide |
 |---|---|
 | Windows | [wins/README.md](wins/README.md) |
@@ -347,6 +371,21 @@ Keyboard settings, then point the alias at what you chose:
 
 Cinnamon's `switch-input-source` is also `['<Super>space']`, so `langtoggle`
 needs no change.
+
+On **KDE Plasma** (Manjaro's flagship, and available on any of the four
+distros) four values differ — `setup.sh` applies these for you:
+
+| Alias | GNOME | KDE Plasma | KDE source |
+|---|---|---|---|
+| `overview` | `lmet` | `M-w` — a bare Meta tap opens Kickoff, not an overview | KWin Overview effect = `Meta+W` |
+| `minimize` | `M-h` | `M-pgdn` | KWin `Window Minimize` = `Meta+PgDown` |
+| `emoji` | `C-.` | `M-.` — the Windows value | Emojier `X-KDE-Shortcuts=Meta+.` |
+| `langtoggle` | `M-spc` | `M-A-k` | plasma-desktop layout switch = `Meta+Alt+K` |
+| `screenshot` | `prnt` | `prnt` — works | Spectacle `X-KDE-Shortcuts=Print,Meta+Shift+S` |
+
+`langtoggle` is a fifth alias that GNOME and Windows happen to share, so it
+is absent from the four above — KDE is the case that breaks it, which also
+takes the `b`+`n` combo with it until you change the line.
 
 ## After editing the config
 
