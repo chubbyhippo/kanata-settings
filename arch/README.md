@@ -12,7 +12,7 @@ design, 34 remapped keys, F-row stock — to `~/.config/kanata/kanata.kbd`.
 | Packaging | AUR, not the official repos: [`kanata-bin`](https://aur.archlinux.org/packages/kanata-bin) (prebuilt), [`kanata`](https://aur.archlinux.org/packages/kanata) (from source), [`kanata-git`](https://aur.archlinux.org/packages/kanata-git). Both tagged packages are at 1.12.0-1, so either satisfies the version floor |
 | Install it with | `paru -S kanata-bin`, or `cargo install kanata` |
 | Desktop | GNOME defaults — see [DE-specific aliases](../README.md#de-specific-aliases) |
-| Service | systemd user unit |
+| Service | systemd user unit. On **Artix** or any other OpenRC host, use [`debian/install-openrc.sh`](../debian/README.md#openrc) with this folder's `kanata.kbd` — the init script is tied to OpenRC, not to a distro |
 
 ## Install
 

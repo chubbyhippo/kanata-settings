@@ -23,6 +23,7 @@ them differs. They assume GNOME — see
 | Windows | [wins/README.md](wins/README.md) |
 | macOS | [mac/README.md](mac/README.md) |
 | Debian, Ubuntu, Mint, derivatives | [debian/README.md](debian/README.md) |
+| Any OpenRC host (Devuan, Artix, Alpine, Gentoo) | [debian/README.md](debian/README.md#openrc) — `install-openrc.sh` |
 | Fedora | [fedora/README.md](fedora/README.md) |
 | Arch | [arch/README.md](arch/README.md) |
 | Guix | [guix/README.md](guix/README.md) |
@@ -358,6 +359,7 @@ The four Linux files stay byte-identical to one another.
 | win | `kanata.exe --cfg wins\kanata.kbd --check` | `%USERPROFILE%\kanata.kbd` | re-run `kanata.bat` |
 | mac | `kanata --cfg mac/kanata.kbd --check` | `/etc/kanata/mac.kbd`, or re-run `mac/install.sh` | `sudo launchctl kickstart -k system/dev.kanata.kanata` |
 | debian, fedora, arch | `kanata --cfg <distro>/kanata.kbd --check` | `~/.config/kanata/kanata.kbd`, or re-run that folder's `install.sh` | `systemctl --user restart kanata.service` |
+| any OpenRC host | `kanata --cfg debian/kanata.kbd --check` | `~/.config/kanata/kanata.kbd`, or re-run `debian/install-openrc.sh` | `sudo rc-service kanata restart` |
 | guix | `guix shell kanata -- kanata --cfg guix/kanata.kbd --check` | `sudo guix system reconfigure` | `sudo herd restart kanata-0` |
 
 A config that fails `--check` never loads, so the running instance keeps
