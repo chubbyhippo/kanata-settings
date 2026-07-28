@@ -105,4 +105,6 @@ version_at_least() {
     [ "$(printf '%s\n%s\n' "$2" "$1" | sort -V | head -n 1)" = "$2" ]
 }
 
+${__SOURCED__:+return}
+
 main "$@"

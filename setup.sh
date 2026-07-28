@@ -470,4 +470,6 @@ to_native() {
     fi
 }
 
+${__SOURCED__:+return}
+
 main "$@"

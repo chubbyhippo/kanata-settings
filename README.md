@@ -404,6 +404,28 @@ The four Linux files stay byte-identical to one another.
 A config that fails `--check` never loads, so the running instance keeps
 working.
 
+## Tests
+
+[shellspec](https://github.com/shellspec/shellspec) BDD specs cover every
+script and the repo's own invariants — 155 examples.
+
+```sh
+curl -fsSL https://git.io/shellspec | sh -s -- --yes
+shellspec
+```
+
+| Spec | Covers |
+|---|---|
+| `spec/setup_detection_spec.sh` | distro family from `ID`/`ID_LIKE` across 19 real identifiers, desktop from `XDG_CURRENT_DESKTOP`, WSL |
+| `spec/setup_dispatch_spec.sh` | per-platform dispatch under `--dry-run`, and the KDE / Cinnamon alias patching |
+| `spec/installers_spec.sh` | the version gate and `--version` parsing in all five installers, the OpenRC placeholder guard, the shipped unit and udev rule |
+| `spec/config_spec.sh` | the four Linux configs are byte-identical, the win↔linux delta is exactly four aliases, every config passes `kanata --check` |
+| `spec/policy_spec.sh` | GPL header on every file, license-only comments, LF against the CRLF launcher, executable bits, `sh -n` |
+
+The `kanata --check` examples skip when no kanata binary is on `PATH`;
+everything else runs anywhere. Scripts end with `${__SOURCED__:+return}` so
+the specs can source them and test their functions without running `main`.
+
 ## Tuning knobs
 
 Named `defvar`s at the top of each config — keep all six files in step.
