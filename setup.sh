@@ -320,13 +320,14 @@ install_linux_config() {
 install_systemd() {
     unit_dir="${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user"
     tmp_unit="$(mktemp)"
+    tmp_unit_out="$(mktemp)"
     fetch "$(config_folder)/kanata.service" "$tmp_unit"
-    sed "s|^ExecStart=/usr/bin/kanata |ExecStart=$kanata_bin |" "$tmp_unit" > "$tmp_unit.out"
-    grep -q "^ExecStart=$kanata_bin " "$tmp_unit.out" \
+    sed "s|^ExecStart=/usr/bin/kanata |ExecStart=$kanata_bin |" "$tmp_unit" > "$tmp_unit_out"
+    grep -q "^ExecStart=$kanata_bin " "$tmp_unit_out" \
         || die "could not substitute the kanata path into the unit — refusing to install it"
     run mkdir -p "$unit_dir"
-    run install -m 644 "$tmp_unit.out" "$unit_dir/kanata.service"
-    rm -f "$tmp_unit" "$tmp_unit.out"
+    run install -m 644 "$tmp_unit_out" "$unit_dir/kanata.service"
+    rm -f "$tmp_unit" "$tmp_unit_out"
     run systemctl --user daemon-reload
     run systemctl --user enable kanata.service
     did "$unit_dir/kanata.service"
@@ -335,17 +336,18 @@ install_systemd() {
 
 install_openrc() {
     tmp_init="$(mktemp)"
+    tmp_init_out="$(mktemp)"
     fetch "openrc/kanata.openrc" "$tmp_init"
     openrc_run="$(command -v openrc-run || echo /sbin/openrc-run)"
     sed -e "1s|^#!/sbin/openrc-run$|#!$openrc_run|" \
         -e "s|^command=\"/usr/bin/kanata\"$|command=\"$kanata_bin\"|" \
         -e "s|^command_args=\".*\"$|command_args=\"--cfg $config_path --no-wait\"|" \
         -e "s|^command_user=\"user\"$|command_user=\"$(id -un)\"|" \
-        "$tmp_init" > "$tmp_init.out"
-    ! grep -qE '^command="/usr/bin/kanata"$|/home/user/\.config|^command_user="user"$' "$tmp_init.out" \
+        "$tmp_init" > "$tmp_init_out"
+    ! grep -qE '^command="/usr/bin/kanata"$|/home/user/\.config|^command_user="user"$' "$tmp_init_out" \
         || die "placeholder substitution failed — refusing to install a broken init script"
-    run sudo install -m 755 -o root -g root "$tmp_init.out" /etc/init.d/kanata
-    rm -f "$tmp_init" "$tmp_init.out"
+    run sudo install -m 755 -o root -g root "$tmp_init_out" /etc/init.d/kanata
+    rm -f "$tmp_init" "$tmp_init_out"
     run sudo rc-update add kanata default
     did /etc/init.d/kanata
     finish_linux "sudo rc-service kanata start" "tail -f /var/log/kanata.log"
@@ -449,11 +451,12 @@ run_windows() {
     did "$home_dir/kanata.kbd"
 
     tmp_bat="$(mktemp)"
+    tmp_bat_crlf="$(mktemp)"
     fetch "wins/katana.bat" "$tmp_bat"
-    sed -e 's/\r$//' -e 's/$/\r/' "$tmp_bat" > "$tmp_bat.crlf"
+    sed -e 's/\r$//' -e 's/$/\r/' "$tmp_bat" > "$tmp_bat_crlf"
     run mkdir -p "$startup"
-    run install -m 644 "$tmp_bat.crlf" "$startup/kanata.bat"
-    rm -f "$tmp_bat" "$tmp_bat.crlf"
+    run install -m 644 "$tmp_bat_crlf" "$startup/kanata.bat"
+    rm -f "$tmp_bat" "$tmp_bat_crlf"
     did "$startup/kanata.bat"
 
     echo ""

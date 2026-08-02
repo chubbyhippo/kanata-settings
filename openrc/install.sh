@@ -93,15 +93,16 @@ main() {
     echo "installed $config_path"
 
     tmp_init="$(mktemp)"
+    tmp_subst="$(mktemp)"
     curl -fsSL "$base/kanata.openrc" -o "$tmp_init"
     sed -e "1s|^#!/sbin/openrc-run$|#!$openrc_run|" \
         -e "s|^command=\"/usr/bin/kanata\"$|command=\"$kanata_bin\"|" \
         -e "s|^command_args=\".*\"$|command_args=\"--cfg $config_path --no-wait\"|" \
         -e "s|^command_user=\"user\"$|command_user=\"$user\"|" \
-        "$tmp_init" > "$tmp_init.subst"
-    verify_substituted "$tmp_init.subst"
-    sudo install -m 755 -o root -g root "$tmp_init.subst" "$initd_script"
-    rm -f "$tmp_init" "$tmp_init.subst"
+        "$tmp_init" > "$tmp_subst"
+    verify_substituted "$tmp_subst"
+    sudo install -m 755 -o root -g root "$tmp_subst" "$initd_script"
+    rm -f "$tmp_init" "$tmp_subst"
     echo "installed $initd_script"
 
     sudo rc-update add kanata default

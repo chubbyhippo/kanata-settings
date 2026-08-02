@@ -36,11 +36,12 @@ main() {
         echo "Karabiner driver already activated"
     else
         if [ ! -x "$manager" ]; then
-            pkg="/tmp/Karabiner-DriverKit-VirtualHIDDevice-$driver_ver.pkg"
+            pkg_dir="$(mktemp -d)"
+            pkg="$pkg_dir/Karabiner-DriverKit-VirtualHIDDevice-$driver_ver.pkg"
             curl -fsSL "https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/releases/download/v$driver_ver/Karabiner-DriverKit-VirtualHIDDevice-$driver_ver.pkg" -o "$pkg"
             echo "$driver_sha  $pkg" | shasum -a 256 -c - >/dev/null
             installer -pkg "$pkg" -target /
-            rm -f "$pkg"
+            rm -rf "$pkg_dir"
         fi
         "$manager" forceActivate
         echo ""
