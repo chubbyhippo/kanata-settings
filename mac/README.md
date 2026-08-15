@@ -31,8 +31,11 @@ and it finishes.
 
 ## 2. Permissions
 
-Add the kanata binary to **both** Input Monitoring and Accessibility, under
-System Settings → Privacy & Security. Confirm its path:
+`install.sh` reads the system TCC database after install. If Input Monitoring
+or Accessibility is missing, it prints the paths to add and how to grant them.
+Add the kanata binary to **both** lists under System Settings → Privacy &
+Security — the Homebrew symlink **and** the real Cellar file. Confirm the
+path launchd will run:
 
 ```sh
 grep -A2 ProgramArguments /Library/LaunchDaemons/dev.kanata.kanata.plist
