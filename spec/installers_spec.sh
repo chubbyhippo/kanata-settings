@@ -153,6 +153,41 @@ Describe 'the systemd unit'
   End
 End
 
+Describe 'macOS TCC permission helpers'
+  BeforeAll
+    __SOURCED__=1
+    . ./mac/install.sh
+  End
+
+  make_tcc_db() {
+    sqlite3 "$1" "CREATE TABLE access (service TEXT, client TEXT, auth_value INTEGER);
+INSERT INTO access VALUES ('kTCCServiceListenEvent', '/opt/homebrew/bin/kanata', 2);
+INSERT INTO access VALUES ('kTCCServiceAccessibility', '/opt/homebrew/bin/kanata', 0);"
+  }
+
+  It 'treats auth_value 2 as granted'
+    db="$SHELLSPEC_TMPBASE/tcc.db"
+    make_tcc_db "$db"
+    When call tcc_client_allowed "$db" kTCCServiceListenEvent /opt/homebrew/bin/kanata
+    The status should be success
+  End
+
+  It 'treats auth_value 0 as missing'
+    db="$SHELLSPEC_TMPBASE/tcc.db"
+    make_tcc_db "$db"
+    When call tcc_client_allowed "$db" kTCCServiceAccessibility /opt/homebrew/bin/kanata
+    The status should be failure
+  End
+
+  It 'prints both Input Monitoring and Accessibility in the guide'
+    When call print_permission_guide /opt/homebrew/bin/kanata /opt/homebrew/Cellar/kanata/1.12.0/bin/kanata
+    The output should include 'Input Monitoring'
+    The output should include 'Accessibility'
+    The output should include '/opt/homebrew/Cellar/kanata/1.12.0/bin/kanata'
+    The output should include 'launchctl kickstart'
+  End
+End
+
 Describe 'the udev rule'
   Parameters
     debian
