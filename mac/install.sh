@@ -18,6 +18,66 @@
 
 set -eu
 
+tcc_client_allowed() {
+    db="$1"
+    service="$2"
+    client="$3"
+    [ -n "$client" ] && [ -r "$db" ] || return 1
+    command -v sqlite3 >/dev/null 2>&1 || return 1
+    val="$(sqlite3 "$db" "SELECT auth_value FROM access WHERE service='$service' AND client='$client' LIMIT 1;" 2>/dev/null || true)"
+    [ "$val" = 2 ]
+}
+
+tcc_service_allowed() {
+    service="$1"
+    shift
+    db="/Library/Application Support/com.apple.TCC/TCC.db"
+    for client in "$@"; do
+        tcc_client_allowed "$db" "$service" "$client" && return 0
+    done
+    return 1
+}
+
+resolved_bin() {
+    bin="$1"
+    dir="$(cd "$(dirname "$bin")" && pwd -P)"
+    printf '%s/%s\n' "$dir" "$(basename "$bin")"
+}
+
+print_permission_guide() {
+    bin="$1"
+    real="$2"
+    echo ""
+    echo "kanata needs macOS Input Monitoring and Accessibility."
+    echo "System Settings -> Privacy & Security -> add these paths to both lists:"
+    echo "  $bin"
+    [ "$real" = "$bin" ] || echo "  $real"
+    echo "unlock -> + -> Cmd+Shift+G -> paste the directory -> select kanata -> toggle on"
+    echo "remove any stale kanata row first (Homebrew upgrades change the Cellar path)"
+    echo "then:  sudo launchctl kickstart -k system/dev.kanata.kanata"
+    echo "re-run this script after granting, or check /var/log/kanata.log"
+}
+
+check_macos_permissions() {
+    bin="$1"
+    real="$(resolved_bin "$bin")"
+    missing=0
+    tcc_service_allowed kTCCServiceListenEvent "$bin" "$real" || {
+        echo "missing: Input Monitoring"
+        missing=1
+    }
+    tcc_service_allowed kTCCServiceAccessibility "$bin" "$real" || {
+        echo "missing: Accessibility"
+        missing=1
+    }
+    [ "$missing" -eq 0 ] || {
+        print_permission_guide "$bin" "$real"
+        return 1
+    }
+    echo "Input Monitoring and Accessibility granted for $real"
+    return 0
+}
+
 main() {
     base="https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/mac"
     daemons="/Library/LaunchDaemons"
@@ -83,7 +143,14 @@ main() {
     launchctl bootout system/dev.kanata.kanata 2>/dev/null || true
     launchctl bootstrap system "$daemons/$kanata_plist"
 
-    echo "done — test: hold the right thumb (RCmd) + e -> up arrow (NAV)   (logs: /var/log/kanata.log)"
+    if check_macos_permissions "$kanata_bin"; then
+        echo "done — test: hold the right thumb (RCmd) + e -> up arrow (NAV)   (logs: /var/log/kanata.log)"
+    else
+        echo "installed, but kanata will crash-loop until those permissions are granted"
+        exit 0
+    fi
 }
+
+${__SOURCED__:+return}
 
 main "$@"
