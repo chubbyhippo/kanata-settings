@@ -32,7 +32,7 @@ Options:
   --detect-only        Print what was detected, then exit. Changes nothing.
   --dry-run            Print every action instead of performing it.
   --platform VALUE     Override: linux | wsl | windows | darwin
-  --family VALUE       Override: fedora | arch | guix
+  --family VALUE       Override: fedora | guix
   --init VALUE         Override: systemd
   --desktop VALUE      Override: gnome | kde | cinnamon | other
   -h, --help           This text.
@@ -138,8 +138,6 @@ detect_family() {
     haystack=" $(os_release_field ID) $(os_release_field ID_LIKE) "
     case "$haystack" in
         *" guix "*)                                     family=guix ;;
-        *" arch "*|*" manjaro "*|*" artix "*|*" endeavouros "*|*" garuda "*|*" cachyos "*)
-                                                        family=arch ;;
         *" fedora "*|*" rhel "*|*" centos "*)           family=fedora ;;
         *)                                              family=unknown ;;
     esac
@@ -218,7 +216,6 @@ version_at_least() {
 install_hint() {
     case "$family" in
         fedora) echo "Fedora has no official kanata package." ;;
-        arch)   echo "kanata is in the AUR: paru -S kanata-bin. On Manjaro, AUR support is off by default in pamac." ;;
         *)      echo "Your distro may not package kanata." ;;
     esac
     echo "  Install one directly:  cargo install kanata"
@@ -258,8 +255,8 @@ patch_desktop() {
 
 config_folder() {
     case "$family" in
-        fedora|arch) printf '%s' "$family" ;;
-        *)           printf 'fedora' ;;
+        fedora) printf '%s' "$family" ;;
+        *)      printf 'fedora' ;;
     esac
 }
 

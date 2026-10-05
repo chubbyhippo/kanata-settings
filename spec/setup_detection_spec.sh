@@ -29,11 +29,6 @@ Describe 'setup.sh detection'
     }
 
     Parameters
-      arch        ""                        arch
-      manjaro     "arch"                    arch
-      endeavouros "arch"                    arch
-      artix       "arch"                    arch
-      cachyos     "arch"                    arch
       fedora      ""                        fedora
       nobara      "fedora"                  fedora
       rocky       "rhel centos fedora"      fedora
@@ -56,6 +51,8 @@ Describe 'setup.sh detection'
       void                  ""
       debian                ""
       ubuntu                "debian"
+      arch                  ""
+      manjaro               "arch"
     End
 
     Example "falls back to unknown for $1 rather than guessing"

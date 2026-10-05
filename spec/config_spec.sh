@@ -16,7 +16,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 Describe 'the shipped configs'
-  Describe 'the three Linux builds'
+  Describe 'the two Linux builds'
     It 'are byte-identical to one another'
       When call unique_hashes
       The output should eq 1
@@ -47,7 +47,6 @@ Describe 'the shipped configs'
       wins
       mac
       fedora
-      arch
       guix
     End
 
@@ -69,7 +68,6 @@ Describe 'the shipped configs'
       wins
       mac
       fedora
-      arch
       guix
     End
 

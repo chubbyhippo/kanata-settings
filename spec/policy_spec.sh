@@ -29,10 +29,6 @@ Describe 'repository policy'
       fedora/install.sh
       fedora/kanata.service
       fedora/99-input.rules
-      arch/kanata.kbd
-      arch/install.sh
-      arch/kanata.service
-      arch/99-input.rules
       guix/kanata.kbd
       guix/kanata-service.scm
     End
@@ -80,7 +76,6 @@ Describe 'repository policy'
     Parameters
       setup.sh
       mac/install.sh
-      arch/install.sh
       fedora/install.sh
     End
 
@@ -95,7 +90,6 @@ Describe 'repository policy'
       setup.sh
       mac/install.sh
       fedora/install.sh
-      arch/install.sh
     End
 
     Example "$1 parses under POSIX sh"

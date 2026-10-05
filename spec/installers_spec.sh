@@ -22,7 +22,6 @@ Describe 'behaviour shared by every installer'
       setup.sh                 1.12.0
       setup.sh                 2.0.0
       fedora/install.sh        1.12.3
-      arch/install.sh          1.12.0
     End
 
     Example "$1 accepts kanata $2"
@@ -37,7 +36,6 @@ Describe 'behaviour shared by every installer'
     Parameters
       setup.sh                 1.9.0
       fedora/install.sh        1.10.9
-      arch/install.sh          0.11.0
     End
 
     Example "$1 rejects kanata $2"
@@ -61,7 +59,6 @@ Describe 'behaviour shared by every installer'
     Parameters
       setup.sh
       fedora/install.sh
-      arch/install.sh
     End
 
     Example "$1 reads 1.11.0 from the real output shape"
@@ -77,7 +74,6 @@ End
 Describe 'the systemd unit'
   Parameters
     fedora
-    arch
   End
 
   Example "$1/kanata.service passes --no-wait"
@@ -124,7 +120,6 @@ End
 Describe 'the udev rule'
   Parameters
     fedora
-    arch
   End
 
   Example "$1/99-input.rules grants the uinput group access to /dev/uinput"

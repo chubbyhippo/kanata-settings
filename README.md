@@ -1,17 +1,16 @@
 # kanata-settings
 
 [kanata](https://github.com/jtroo/kanata) timerless home-row-mods layout —
-one design, five configs. Requires kanata v1.11.0+.
+one design, four configs. Requires kanata v1.11.0+.
 
 | Config | Platform | Remapped keys | F-row |
 |---|---|---|---|
 | [`wins/kanata.kbd`](wins/kanata.kbd) | Windows | 34 | stock F1–F12 |
 | [`mac/kanata.kbd`](mac/kanata.kbd) | macOS | 46 | printed Apple media functions |
 | [`fedora/kanata.kbd`](fedora/kanata.kbd) | Fedora | 34 | stock F1–F12 |
-| [`arch/kanata.kbd`](arch/kanata.kbd) | Arch | 34 | stock F1–F12 |
 | [`guix/kanata.kbd`](guix/kanata.kbd) | Guix | 34 | stock F1–F12 |
 
-The three Linux configs are byte-identical; only the install machinery beside
+The two Linux configs are byte-identical; only the install machinery beside
 them differs. The distro folders are keyed to the distro. They assume
 GNOME — see [DE-specific aliases](#de-specific-aliases).
 
@@ -45,7 +44,6 @@ Or follow the per-platform guide by hand:
 | Windows | [wins/README.md](wins/README.md) |
 | macOS | [mac/README.md](mac/README.md) |
 | Fedora | [fedora/README.md](fedora/README.md) |
-| Arch | [arch/README.md](arch/README.md) |
 | Guix | [guix/README.md](guix/README.md) |
 
 ## Notation
@@ -385,15 +383,15 @@ takes the `b`+`n` combo with it until you change the line.
 
 ## After editing the config
 
-Shared parts — layers, combos, templates, timings — change in ALL FIVE files;
+Shared parts — layers, combos, templates, timings — change in ALL FOUR files;
 only the alias values, the `defsrc`/`plain` rows, and the mac F-row differ.
-The three Linux files stay byte-identical to one another.
+The two Linux files stay byte-identical to one another.
 
 | Platform | Validate | Deploy to | Reload |
 |---|---|---|---|
 | win | `kanata.exe --cfg wins\kanata.kbd --check` | `%USERPROFILE%\kanata.kbd` | re-run `kanata.bat` |
 | mac | `kanata --cfg mac/kanata.kbd --check` | `/etc/kanata/mac.kbd`, or re-run `mac/install.sh` | `sudo launchctl kickstart -k system/dev.kanata.kanata` |
-| fedora, arch | `kanata --cfg <distro>/kanata.kbd --check` | `~/.config/kanata/kanata.kbd`, or re-run that folder's `install.sh` | `systemctl --user restart kanata.service` |
+| fedora | `kanata --cfg fedora/kanata.kbd --check` | `~/.config/kanata/kanata.kbd`, or re-run `fedora/install.sh` | `systemctl --user restart kanata.service` |
 | guix | `guix shell kanata -- kanata --cfg guix/kanata.kbd --check` | `sudo guix system reconfigure` | `sudo herd restart kanata-0` |
 
 A config that fails `--check` never loads, so the running instance keeps
@@ -423,7 +421,7 @@ the specs can source them and test their functions without running `main`.
 
 ## Tuning knobs
 
-Named `defvar`s at the top of each config — keep all five files in step.
+Named `defvar`s at the top of each config — keep all four files in step.
 
 | Knob | Controls |
 |---|---|
