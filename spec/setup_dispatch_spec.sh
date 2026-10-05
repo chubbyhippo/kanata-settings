@@ -73,21 +73,12 @@ Describe 'setup.sh dispatch'
     End
   End
 
-  Describe 'on an OpenRC host'
-    It 'installs an init script and never touches systemd'
-      When call linux_dry_run debian openrc gnome
-      The output should include 'sudo rc-update add kanata default'
-      The output should include '/etc/init.d/kanata'
-      The output should not include 'systemctl'
-    End
-  End
-
   Describe 'when no init system is present'
     It 'refuses rather than installing a service nothing will start'
       export PATH="$(stub_kanata 1.11.0):$PATH"
       When run script ./setup.sh --dry-run --platform linux --family debian --init none --desktop gnome
       The status should be failure
-      The stderr should include 'no systemd or OpenRC'
+      The stderr should include 'no systemd'
       The output should include 'detected:'
     End
   End

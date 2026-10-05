@@ -27,9 +27,7 @@ Describe 'repository policy'
       mac/org.pqrs.Karabiner-VirtualHIDDevice-Daemon.plist
       debian/kanata.kbd
       debian/install.sh
-      openrc/install.sh
       debian/kanata.service
-      openrc/kanata.openrc
       debian/99-input.rules
       fedora/kanata.kbd
       fedora/install.sh
@@ -54,9 +52,7 @@ Describe 'repository policy'
       setup.sh
       mac/install.sh
       debian/install.sh
-      openrc/install.sh
       debian/kanata.service
-      openrc/kanata.openrc
       debian/99-input.rules
       guix/kanata-service.scm
       wins/kanata.kbd
@@ -78,10 +74,6 @@ Describe 'repository policy'
     Parameters
       setup.sh
       debian/install.sh
-      openrc/install.sh
-      openrc/kanata.openrc
-      openrc/kanata.kbd
-      openrc/99-input.rules
       debian/kanata.kbd
       guix/kanata-service.scm
     End
@@ -97,7 +89,6 @@ Describe 'repository policy'
       setup.sh
       mac/install.sh
       debian/install.sh
-      openrc/install.sh
       arch/install.sh
       fedora/install.sh
     End
@@ -113,10 +104,8 @@ Describe 'repository policy'
       setup.sh
       mac/install.sh
       debian/install.sh
-      openrc/install.sh
       fedora/install.sh
       arch/install.sh
-      openrc/kanata.openrc
     End
 
     Example "$1 parses under POSIX sh"

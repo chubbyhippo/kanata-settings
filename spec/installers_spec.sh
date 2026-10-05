@@ -22,7 +22,6 @@ Describe 'behaviour shared by every installer'
       setup.sh                 1.12.0
       setup.sh                 2.0.0
       debian/install.sh        1.11.0
-      openrc/install.sh       1.11.0
       fedora/install.sh        1.12.3
       arch/install.sh          1.12.0
     End
@@ -39,7 +38,6 @@ Describe 'behaviour shared by every installer'
     Parameters
       setup.sh                 1.9.0
       debian/install.sh        1.9.0
-      openrc/install.sh       1.9.0
       fedora/install.sh        1.10.9
       arch/install.sh          0.11.0
     End
@@ -65,7 +63,6 @@ Describe 'behaviour shared by every installer'
     Parameters
       setup.sh
       debian/install.sh
-      openrc/install.sh
       fedora/install.sh
       arch/install.sh
     End
@@ -76,66 +73,6 @@ Describe 'behaviour shared by every installer'
       stub="$(stub_kanata 1.11.0)"
       When call kanata_version "$stub/kanata"
       The output should eq 1.11.0
-    End
-  End
-End
-
-Describe 'the OpenRC init script'
-  Include ./openrc/install.sh
-
-  substitute() {
-    sed -e "1s|^#!/sbin/openrc-run\$|#!/usr/bin/openrc-run|" \
-        -e "s|^command=\"/usr/bin/kanata\"\$|command=\"/home/mk/.cargo/bin/kanata\"|" \
-        -e "s|^command_args=\".*\"\$|command_args=\"--cfg /home/mk/.config/kanata/kanata.kbd --no-wait\"|" \
-        -e "s|^command_user=\"user\"\$|command_user=\"mk\"|" \
-        ./openrc/kanata.openrc > "$1"
-  }
-
-  Describe 'the placeholder guard'
-    It 'refuses the unsubstituted template'
-      When run verify_substituted ./openrc/kanata.openrc
-      The status should be failure
-      The stderr should include 'placeholder substitution failed'
-    End
-
-    It 'accepts a fully substituted script'
-      target="$SHELLSPEC_TMPBASE/kanata.openrc"
-      substitute "$target"
-      When call verify_substituted "$target"
-      The status should be success
-    End
-  End
-
-  Describe 'substitution'
-    Parameters
-      '^#!/usr/bin/openrc-run$'
-      '^command="/home/mk/.cargo/bin/kanata"$'
-      '^command_args="--cfg /home/mk/.config/kanata/kanata.kbd --no-wait"$'
-      '^command_user="mk"$'
-    End
-
-    Example "produces a line matching $1"
-      target="$SHELLSPEC_TMPBASE/kanata.openrc"
-      substitute "$target"
-      When call grep -c "$1" "$target"
-      The output should eq 1
-    End
-  End
-
-  Describe 'the shipped template'
-    It 'uses --cfg, not the --config flag kanata does not have'
-      When call grep -c -- '--cfg' ./openrc/kanata.openrc
-      The output should eq 1
-    End
-
-    It 'passes --no-wait so the supervisor can restart it'
-      When call grep -c -- '--no-wait' ./openrc/kanata.openrc
-      The output should eq 1
-    End
-
-    It 'runs as a named user rather than root'
-      When call grep -c '^command_user=' ./openrc/kanata.openrc
-      The output should eq 1
     End
   End
 End
@@ -193,7 +130,6 @@ Describe 'the udev rule'
     debian
     fedora
     arch
-    openrc
   End
 
   Example "$1/99-input.rules grants the uinput group access to /dev/uinput"

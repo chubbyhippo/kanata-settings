@@ -33,13 +33,13 @@ Options:
   --dry-run            Print every action instead of performing it.
   --platform VALUE     Override: linux | wsl | windows | darwin
   --family VALUE       Override: debian | fedora | arch | guix
-  --init VALUE         Override: systemd | openrc
+  --init VALUE         Override: systemd
   --desktop VALUE      Override: gnome | kde | cinnamon | other
   -h, --help           This text.
 
 Platforms: macOS delegates to mac/install.sh. WSL and MSYS/Cygwin install the
 Windows config. Guix prints its declarative service snippet. Every other Linux
-gets the group/udev setup plus a systemd user unit or an OpenRC service.
+gets the group/udev setup plus a systemd user unit.
 EOF
 }
 
@@ -149,10 +149,6 @@ detect_family() {
 detect_init() {
     if [ -d /run/systemd/system ]; then
         init=systemd
-    elif [ -f /run/openrc/softlevel ]; then
-        init=openrc
-    elif command -v openrc-run >/dev/null 2>&1 && command -v rc-update >/dev/null 2>&1; then
-        init=openrc
     elif command -v systemctl >/dev/null 2>&1; then
         init=systemd
     else
@@ -263,7 +259,6 @@ patch_desktop() {
 }
 
 config_folder() {
-    [ "$init" = openrc ] && { printf 'openrc'; return 0; }
     case "$family" in
         debian|fedora|arch) printf '%s' "$family" ;;
         *)                  printf 'debian' ;;
@@ -274,14 +269,13 @@ run_linux() {
     [ "$(id -u)" -ne 0 ] || die "run as your normal user, not root — the script sudos where it needs to"
     [ "$family" != unknown ] || warn "unrecognised distro — using the debian folder's files, which are identical anyway"
     [ "$init" != none ] && [ "$init" != n/a ] \
-        || die "no systemd or OpenRC found. Do the steps in kanata's docs/setup-linux.md by hand."
+        || die "no systemd found. Do the steps in kanata's docs/setup-linux.md by hand."
 
     require_kanata
     setup_permissions
     install_linux_config
     case "$init" in
         systemd) install_systemd ;;
-        openrc)  install_openrc ;;
         *)       die "unsupported init: $init" ;;
     esac
 }
@@ -332,25 +326,6 @@ install_systemd() {
     run systemctl --user enable kanata.service
     did "$unit_dir/kanata.service"
     finish_linux "systemctl --user start kanata.service" "journalctl --user -u kanata -f"
-}
-
-install_openrc() {
-    tmp_init="$(mktemp)"
-    tmp_init_out="$(mktemp)"
-    fetch "openrc/kanata.openrc" "$tmp_init"
-    openrc_run="$(command -v openrc-run || echo /sbin/openrc-run)"
-    sed -e "1s|^#!/sbin/openrc-run$|#!$openrc_run|" \
-        -e "s|^command=\"/usr/bin/kanata\"$|command=\"$kanata_bin\"|" \
-        -e "s|^command_args=\".*\"$|command_args=\"--cfg $config_path --no-wait\"|" \
-        -e "s|^command_user=\"user\"$|command_user=\"$(id -un)\"|" \
-        "$tmp_init" > "$tmp_init_out"
-    ! grep -qE '^command="/usr/bin/kanata"$|/home/user/\.config|^command_user="user"$' "$tmp_init_out" \
-        || die "placeholder substitution failed — refusing to install a broken init script"
-    run sudo install -m 755 -o root -g root "$tmp_init_out" /etc/init.d/kanata
-    rm -f "$tmp_init" "$tmp_init_out"
-    run sudo rc-update add kanata default
-    did /etc/init.d/kanata
-    finish_linux "sudo rc-service kanata start" "tail -f /var/log/kanata.log"
 }
 
 finish_linux() {

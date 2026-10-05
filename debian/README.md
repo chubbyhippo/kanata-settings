@@ -16,16 +16,13 @@ Pop!_OS and the rest. Nothing in `install.sh` is Debian-specific; see
 | **Not** from your distro's archive | Debian ships **1.9.0-12** (sid/forky only, absent from trixie) — older than the chords-v2 and virtualkey features this config needs, and `install.sh` refuses it. Ubuntu publishes **no** kanata package at all, and neither does Mint |
 | Install it with | `cargo install kanata`, or a release binary in `~/.local/bin` (`chmod +x`) |
 | Desktop | GNOME defaults — see [DE-specific aliases](../README.md#de-specific-aliases) |
-| Service | systemd user unit. On an OpenRC host use [`openrc/`](../openrc/README.md) instead |
+| Service | systemd user unit |
 
 ## Derivatives
 
-Two things vary across the family: the **init system** — `install.sh`
-installs a systemd user unit, [`openrc/install.sh`](../openrc/README.md)
-installs an OpenRC service — and the **desktop**, which decides whether the four
-[DE-specific aliases](../README.md#de-specific-aliases) are right. Nothing
-else: the group, udev, and config steps are identical everywhere, and both
-installers share them.
+The thing that varies across the family is the **desktop**, which decides
+whether the four [DE-specific aliases](../README.md#de-specific-aliases) are
+right. The group, udev, and config steps are identical everywhere.
 
 | Distro | Desktop | Verdict |
 |---|---|---|
@@ -34,8 +31,7 @@ installers share them.
 | Pop!_OS, Zorin, other GNOME-based | GNOME | Use as-is; spot-check `overview` and `minimize` if the shell is customised |
 | **Linux Mint** | **Cinnamon** | Install works; **`overview` and `minimize` are unbound on Cinnamon** — see the table below |
 | Mint MATE / Xfce editions, Kali, elementary | MATE, Xfce, Pantheon | Install works; review all four aliases against your desktop's own defaults |
-| Devuan, antiX, MX running **OpenRC** | varies | Use [`openrc/`](../openrc/README.md) instead |
-| antiX, MX running **plain sysvinit** | varies | Neither installer applies. Do the group/udev steps by hand from kanata's `docs/setup-linux.md`, then start kanata from your own init script |
+| Devuan, antiX, MX running **OpenRC or sysvinit** | varies | This installer doesn't apply. Do the group/udev steps by hand from kanata's `docs/setup-linux.md`, then start kanata from your own init script |
 
 On Cinnamon, two of the four aliases are unbound **upstream**, so they do
 nothing until you bind them yourself in Keyboard settings and point the
@@ -76,13 +72,6 @@ systemctl --user start kanata.service
 |---|---|
 | inner-left thumb (LAlt) + `c` | Ctrl+C |
 | right thumb (RAlt) + `e` | ↑ |
-
-## OpenRC
-
-Not here — OpenRC is keyed to the init system, not the distro, so it lives
-in [`openrc/`](../openrc/README.md) and serves Artix, Alpine and Gentoo too.
-Devuan, antiX and MX running OpenRC should use that folder; the `kanata.kbd`
-is byte-identical to this one.
 
 ## Running it by hand
 

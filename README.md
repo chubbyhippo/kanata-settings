@@ -1,7 +1,7 @@
 # kanata-settings
 
 [kanata](https://github.com/jtroo/kanata) timerless home-row-mods layout —
-one design, seven configs. Requires kanata v1.11.0+.
+one design, six configs. Requires kanata v1.11.0+.
 
 | Config | Platform | Remapped keys | F-row |
 |---|---|---|---|
@@ -11,12 +11,10 @@ one design, seven configs. Requires kanata v1.11.0+.
 | [`fedora/kanata.kbd`](fedora/kanata.kbd) | Fedora | 34 | stock F1–F12 |
 | [`arch/kanata.kbd`](arch/kanata.kbd) | Arch | 34 | stock F1–F12 |
 | [`guix/kanata.kbd`](guix/kanata.kbd) | Guix | 34 | stock F1–F12 |
-| [`openrc/kanata.kbd`](openrc/kanata.kbd) | Any OpenRC host | 34 | stock F1–F12 |
 
-The five Linux configs are byte-identical; only the install machinery beside
-them differs. The distro folders are keyed to the distro, `openrc/` to the
-init system. They assume GNOME — see
-[DE-specific aliases](#de-specific-aliases).
+The four Linux configs are byte-identical; only the install machinery beside
+them differs. The distro folders are keyed to the distro. They assume
+GNOME — see [DE-specific aliases](#de-specific-aliases).
 
 ## Install
 
@@ -33,7 +31,6 @@ curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/he
 | WSL, or Windows under MSYS/Cygwin | installs the Windows config to `%USERPROFILE%` and the Startup launcher |
 | Guix | prints the declarative service snippet — nothing imperative to run |
 | Linux + systemd | groups, udev rule, config, systemd **user** unit |
-| Linux + OpenRC | groups, udev rule, config, `/etc/init.d/kanata` from `openrc/` |
 | KDE or Cinnamon | patches the DE-dependent aliases — see [DE-specific aliases](#de-specific-aliases) |
 
 | Flag | Effect |
@@ -49,7 +46,6 @@ Or follow the per-platform guide by hand:
 | Windows | [wins/README.md](wins/README.md) |
 | macOS | [mac/README.md](mac/README.md) |
 | Debian, Ubuntu, Mint, derivatives | [debian/README.md](debian/README.md) |
-| Any OpenRC host (Devuan, Artix, Alpine, Gentoo) | [openrc/README.md](openrc/README.md) |
 | Fedora | [fedora/README.md](fedora/README.md) |
 | Arch | [arch/README.md](arch/README.md) |
 | Guix | [guix/README.md](guix/README.md) |
@@ -391,16 +387,15 @@ takes the `b`+`n` combo with it until you change the line.
 
 ## After editing the config
 
-Shared parts — layers, combos, templates, timings — change in ALL SEVEN files;
+Shared parts — layers, combos, templates, timings — change in ALL SIX files;
 only the alias values, the `defsrc`/`plain` rows, and the mac F-row differ.
-The five Linux files stay byte-identical to one another.
+The four Linux files stay byte-identical to one another.
 
 | Platform | Validate | Deploy to | Reload |
 |---|---|---|---|
 | win | `kanata.exe --cfg wins\kanata.kbd --check` | `%USERPROFILE%\kanata.kbd` | re-run `kanata.bat` |
 | mac | `kanata --cfg mac/kanata.kbd --check` | `/etc/kanata/mac.kbd`, or re-run `mac/install.sh` | `sudo launchctl kickstart -k system/dev.kanata.kanata` |
 | debian, fedora, arch | `kanata --cfg <distro>/kanata.kbd --check` | `~/.config/kanata/kanata.kbd`, or re-run that folder's `install.sh` | `systemctl --user restart kanata.service` |
-| any OpenRC host | `kanata --cfg openrc/kanata.kbd --check` | `~/.config/kanata/kanata.kbd`, or re-run `openrc/install.sh` | `sudo rc-service kanata restart` |
 | guix | `guix shell kanata -- kanata --cfg guix/kanata.kbd --check` | `sudo guix system reconfigure` | `sudo herd restart kanata-0` |
 
 A config that fails `--check` never loads, so the running instance keeps
@@ -409,7 +404,7 @@ working.
 ## Tests
 
 [shellspec](https://github.com/shellspec/shellspec) BDD specs cover every
-script and the repo's own invariants — 160 examples.
+script and the repo's own invariants.
 
 ```sh
 curl -fsSL https://git.io/shellspec | sh -s -- --yes
@@ -420,8 +415,8 @@ shellspec
 |---|---|
 | `spec/setup_detection_spec.sh` | distro family from `ID`/`ID_LIKE` across 19 real identifiers, desktop from `XDG_CURRENT_DESKTOP`, WSL |
 | `spec/setup_dispatch_spec.sh` | per-platform dispatch under `--dry-run`, and the KDE / Cinnamon alias patching |
-| `spec/installers_spec.sh` | the version gate and `--version` parsing in all five installers, the OpenRC placeholder guard, the shipped unit and udev rule |
-| `spec/config_spec.sh` | the five Linux configs are byte-identical, the win↔linux delta is exactly four aliases, every config passes `kanata --check` |
+| `spec/installers_spec.sh` | the version gate and `--version` parsing in all four installers, the shipped unit and udev rule |
+| `spec/config_spec.sh` | the four Linux configs are byte-identical, the win↔linux delta is exactly four aliases, every config passes `kanata --check` |
 | `spec/policy_spec.sh` | GPL header on every file, license-only comments, LF against the CRLF launcher, executable bits, `sh -n` |
 
 The `kanata --check` examples skip when no kanata binary is on `PATH`;
@@ -430,7 +425,7 @@ the specs can source them and test their functions without running `main`.
 
 ## Tuning knobs
 
-Named `defvar`s at the top of each config — keep all seven files in step.
+Named `defvar`s at the top of each config — keep all six files in step.
 
 | Knob | Controls |
 |---|---|
