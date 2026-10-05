@@ -25,10 +25,6 @@ Describe 'repository policy'
       mac/install.sh
       mac/dev.kanata.kanata.plist
       mac/org.pqrs.Karabiner-VirtualHIDDevice-Daemon.plist
-      debian/kanata.kbd
-      debian/install.sh
-      debian/kanata.service
-      debian/99-input.rules
       fedora/kanata.kbd
       fedora/install.sh
       fedora/kanata.service
@@ -51,12 +47,8 @@ Describe 'repository policy'
     Parameters
       setup.sh
       mac/install.sh
-      debian/install.sh
-      debian/kanata.service
-      debian/99-input.rules
       guix/kanata-service.scm
       wins/kanata.kbd
-      debian/kanata.kbd
     End
 
     Example "$1 carries no comment after the header"
@@ -73,8 +65,8 @@ Describe 'repository policy'
 
     Parameters
       setup.sh
-      debian/install.sh
-      debian/kanata.kbd
+      fedora/install.sh
+      fedora/kanata.kbd
       guix/kanata-service.scm
     End
 
@@ -88,7 +80,6 @@ Describe 'repository policy'
     Parameters
       setup.sh
       mac/install.sh
-      debian/install.sh
       arch/install.sh
       fedora/install.sh
     End
@@ -103,7 +94,6 @@ Describe 'repository policy'
     Parameters
       setup.sh
       mac/install.sh
-      debian/install.sh
       fedora/install.sh
       arch/install.sh
     End

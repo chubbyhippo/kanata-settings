@@ -64,7 +64,7 @@ Describe 'setup.sh dispatch'
 
   Describe 'on a systemd host'
     It 'sets up the groups, the udev rule and a user unit'
-      When call linux_dry_run debian systemd gnome
+      When call linux_dry_run fedora systemd gnome
       The output should include 'sudo groupadd --system uinput'
       The output should include 'sudo usermod -aG input,uinput'
       The output should include '/etc/udev/rules.d/99-input.rules'
@@ -76,7 +76,7 @@ Describe 'setup.sh dispatch'
   Describe 'when no init system is present'
     It 'refuses rather than installing a service nothing will start'
       export PATH="$(stub_kanata 1.11.0):$PATH"
-      When run script ./setup.sh --dry-run --platform linux --family debian --init none --desktop gnome
+      When run script ./setup.sh --dry-run --platform linux --family fedora --init none --desktop gnome
       The status should be failure
       The stderr should include 'no systemd'
       The output should include 'detected:'
@@ -86,7 +86,7 @@ Describe 'setup.sh dispatch'
   Describe 'with a too-old kanata'
     It 'stops before changing anything'
       export PATH="$(stub_kanata 1.9.0):$PATH"
-      When run script ./setup.sh --dry-run --platform linux --family debian --init systemd --desktop gnome
+      When run script ./setup.sh --dry-run --platform linux --family fedora --init systemd --desktop gnome
       The status should be failure
       The stderr should include 'too old'
       The output should not include 'groupadd'
@@ -100,7 +100,7 @@ Describe 'setup.sh desktop patching'
   patched() {
     desktop="$1"
     target="$SHELLSPEC_TMPBASE/patched.kbd"
-    cp ./debian/kanata.kbd "$target"
+    cp ./fedora/kanata.kbd "$target"
     patch_desktop "$target" >/dev/null 2>&1
     grep -c "$2" "$target"
   }
@@ -137,7 +137,7 @@ Describe 'setup.sh desktop patching'
     It 'warns about the two aliases Cinnamon leaves unbound'
       desktop=cinnamon
       target="$SHELLSPEC_TMPBASE/cinnamon.kbd"
-      cp ./debian/kanata.kbd "$target"
+      cp ./fedora/kanata.kbd "$target"
       When call patch_desktop "$target"
       The stderr should include 'overview'
       The stderr should include 'minimize'
@@ -154,7 +154,7 @@ Describe 'setup.sh desktop patching'
       desktop=other
       desktop_raw=XFCE
       target="$SHELLSPEC_TMPBASE/other.kbd"
-      cp ./debian/kanata.kbd "$target"
+      cp ./fedora/kanata.kbd "$target"
       When call patch_desktop "$target"
       The stderr should include 'not recognised'
     End

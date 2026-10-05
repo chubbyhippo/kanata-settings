@@ -16,7 +16,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 Describe 'the shipped configs'
-  Describe 'the four Linux builds'
+  Describe 'the three Linux builds'
     It 'are byte-identical to one another'
       When call unique_hashes
       The output should eq 1
@@ -25,7 +25,7 @@ Describe 'the shipped configs'
 
   Describe 'the Linux build against the Windows one'
     It 'differs in exactly the four DE-dependent alias lines'
-      When call changed_lines wins/kanata.kbd debian/kanata.kbd
+      When call changed_lines wins/kanata.kbd fedora/kanata.kbd
       The output should eq 8
     End
 
@@ -37,7 +37,7 @@ Describe 'the shipped configs'
     End
 
     Example "carries the GNOME value $1"
-      When call grep -c "$1" debian/kanata.kbd
+      When call grep -c "$1" fedora/kanata.kbd
       The output should eq 1
     End
   End
@@ -46,7 +46,6 @@ Describe 'the shipped configs'
     Parameters
       wins
       mac
-      debian
       fedora
       arch
       guix
@@ -69,7 +68,6 @@ Describe 'the shipped configs'
     Parameters
       wins
       mac
-      debian
       fedora
       arch
       guix

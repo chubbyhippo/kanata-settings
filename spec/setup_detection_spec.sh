@@ -29,13 +29,6 @@ Describe 'setup.sh detection'
     }
 
     Parameters
-      debian      ""                        debian
-      ubuntu      "debian"                  debian
-      linuxmint   "ubuntu"                  debian
-      pop         "ubuntu debian"           debian
-      devuan      "debian"                  debian
-      kali        "debian"                  debian
-      raspbian    "debian"                  debian
       arch        ""                        arch
       manjaro     "arch"                    arch
       endeavouros "arch"                    arch
@@ -61,6 +54,8 @@ Describe 'setup.sh detection'
       "opensuse-tumbleweed" "opensuse suse"
       alpine                ""
       void                  ""
+      debian                ""
+      ubuntu                "debian"
     End
 
     Example "falls back to unknown for $1 rather than guessing"

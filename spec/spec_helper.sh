@@ -17,9 +17,9 @@
 
 set -eu
 
-LINUX_CONFIGS="debian fedora arch guix"
-SYSTEMD_FOLDERS="debian fedora arch"
-ALL_CONFIGS="wins mac debian fedora arch guix"
+LINUX_CONFIGS="fedora arch guix"
+SYSTEMD_FOLDERS="fedora arch"
+ALL_CONFIGS="wins mac fedora arch guix"
 
 stub_kanata() {
     stub_version="$1"

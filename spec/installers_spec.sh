@@ -21,7 +21,6 @@ Describe 'behaviour shared by every installer'
       setup.sh                 1.11.0
       setup.sh                 1.12.0
       setup.sh                 2.0.0
-      debian/install.sh        1.11.0
       fedora/install.sh        1.12.3
       arch/install.sh          1.12.0
     End
@@ -37,7 +36,6 @@ Describe 'behaviour shared by every installer'
   Describe 'the version gate rejects anything below the floor'
     Parameters
       setup.sh                 1.9.0
-      debian/install.sh        1.9.0
       fedora/install.sh        1.10.9
       arch/install.sh          0.11.0
     End
@@ -50,10 +48,10 @@ Describe 'behaviour shared by every installer'
     End
   End
 
-  Describe 'the Debian trap'
+  Describe 'the version-string lexical trap'
     It 'rejects 1.9.0 against 1.11.0, which a lexical compare would accept'
       __SOURCED__=1
-      . ./debian/install.sh
+      . ./fedora/install.sh
       When call version_at_least 1.9.0 1.11.0
       The status should be failure
     End
@@ -62,7 +60,6 @@ Describe 'behaviour shared by every installer'
   Describe 'parsing the version out of kanata --version'
     Parameters
       setup.sh
-      debian/install.sh
       fedora/install.sh
       arch/install.sh
     End
@@ -79,7 +76,6 @@ End
 
 Describe 'the systemd unit'
   Parameters
-    debian
     fedora
     arch
   End
@@ -127,7 +123,6 @@ End
 
 Describe 'the udev rule'
   Parameters
-    debian
     fedora
     arch
   End

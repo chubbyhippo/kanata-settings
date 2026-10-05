@@ -32,7 +32,7 @@ Options:
   --detect-only        Print what was detected, then exit. Changes nothing.
   --dry-run            Print every action instead of performing it.
   --platform VALUE     Override: linux | wsl | windows | darwin
-  --family VALUE       Override: debian | fedora | arch | guix
+  --family VALUE       Override: fedora | arch | guix
   --init VALUE         Override: systemd
   --desktop VALUE      Override: gnome | kde | cinnamon | other
   -h, --help           This text.
@@ -141,7 +141,6 @@ detect_family() {
         *" arch "*|*" manjaro "*|*" artix "*|*" endeavouros "*|*" garuda "*|*" cachyos "*)
                                                         family=arch ;;
         *" fedora "*|*" rhel "*|*" centos "*)           family=fedora ;;
-        *" debian "*|*" ubuntu "*)                      family=debian ;;
         *)                                              family=unknown ;;
     esac
 }
@@ -218,7 +217,6 @@ version_at_least() {
 
 install_hint() {
     case "$family" in
-        debian) echo "Debian ships kanata 1.9.0 (sid/forky only) and Ubuntu/Mint ship none." ;;
         fedora) echo "Fedora has no official kanata package." ;;
         arch)   echo "kanata is in the AUR: paru -S kanata-bin. On Manjaro, AUR support is off by default in pamac." ;;
         *)      echo "Your distro may not package kanata." ;;
@@ -260,14 +258,14 @@ patch_desktop() {
 
 config_folder() {
     case "$family" in
-        debian|fedora|arch) printf '%s' "$family" ;;
-        *)                  printf 'debian' ;;
+        fedora|arch) printf '%s' "$family" ;;
+        *)           printf 'fedora' ;;
     esac
 }
 
 run_linux() {
     [ "$(id -u)" -ne 0 ] || die "run as your normal user, not root — the script sudos where it needs to"
-    [ "$family" != unknown ] || warn "unrecognised distro — using the debian folder's files, which are identical anyway"
+    [ "$family" != unknown ] || warn "unrecognised distro — using the fedora folder's files, which are identical anyway"
     [ "$init" != none ] && [ "$init" != n/a ] \
         || die "no systemd found. Do the steps in kanata's docs/setup-linux.md by hand."
 
