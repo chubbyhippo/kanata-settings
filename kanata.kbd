@@ -1,0 +1,14 @@
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+(defsrc)
+
+(deflayermap (base)
+  caps (tap-hold-release 200 200 esc lctl)
+)
+
+(defchordsv2
+  (caps lsft) caps 200 first-release ()
+)
