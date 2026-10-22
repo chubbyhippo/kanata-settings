@@ -37,5 +37,5 @@
 )
 
 (defchordsv2
-  (caps lsft) caps 200 first-release ()
+  (caps lsft) caps 50 first-release ()
 )
