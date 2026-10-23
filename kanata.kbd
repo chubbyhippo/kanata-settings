@@ -5,37 +5,10 @@
 
 (defsrc)
 
-(defvirtualkeys
-  pending-caps XX
-  held-ctrl lctl
-)
-
-(defalias
-  caps-first (tap-hold-release 0 200
-    (multi esc (hold-for-duration 300 pending-caps))
-    lctl
-  )
-  caps-second (tap-hold 0 150
-    (multi
-      (on-press release-vkey pending-caps)
-      (macro lctl 50 lctl)
-    )
-    (multi
-      (on-press release-vkey pending-caps)
-      (macro lctl 20 (on-press press-vkey held-ctrl))
-      (on-release release-vkey held-ctrl)
-    )
-  )
-  caps (switch
-    ((input virtual pending-caps)) @caps-second break
-    () @caps-first break
-  )
-)
-
 (deflayermap (base)
-  caps @caps
+  caps (tap-hold-release 200 200 esc lctl)
 )
 
 (defchordsv2
-  (caps lsft) caps 50 first-release ()
+  (caps lsft) caps 200 first-release ()
 )
