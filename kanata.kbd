@@ -8,7 +8,3 @@
 (deflayermap (base)
   caps (tap-hold-release 200 200 esc lctl)
 )
-
-(defchordsv2
-  (caps lsft) caps 200 first-release ()
-)
