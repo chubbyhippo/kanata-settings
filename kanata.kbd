@@ -7,4 +7,5 @@
 
 (deflayermap (base)
   caps (tap-hold-release 200 200 esc lctl)
+  ret (tap-hold-release 200 200 ret lctl)
 )
