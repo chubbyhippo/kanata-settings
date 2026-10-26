@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu
 
+raw_base="https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main"
+
 main() {
     locate_source
     home_dir="$(windows_home)"
@@ -49,11 +51,18 @@ locate_source() {
 }
 
 fetch() {
-    [ -n "$local_dir" ] && [ -r "$local_dir/$1" ] || {
-        echo "run this script from a local kanata-settings checkout" >&2
+    if [ -n "$local_dir" ] && [ -r "$local_dir/$1" ]; then
+        cp "$local_dir/$1" "$2"
+        return
+    fi
+    command -v curl >/dev/null 2>&1 || {
+        echo "curl not found — run this script from a local kanata-settings checkout instead" >&2
         exit 1
     }
-    cp "$local_dir/$1" "$2"
+    curl -fsSL "$raw_base/$1" -o "$2" || {
+        echo "failed to fetch $1 from $raw_base" >&2
+        exit 1
+    }
 }
 
 is_wsl() {
