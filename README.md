@@ -19,3 +19,9 @@ curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/he
 ```sh
 curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/wins/setup.sh | sh
 ```
+
+### to home dir only
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/chubbyhippo/kanata-settings/refs/heads/main/kanata.kbd -o ~/kanata.kbd
+```
